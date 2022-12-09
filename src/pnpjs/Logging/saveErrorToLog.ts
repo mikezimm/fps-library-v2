@@ -1,5 +1,5 @@
-import { IHelpfullOutput, IHelpfullInput } from '@mikezimm/fps-js/lib/indexes/HelpfullErrors';
-import { getUrlVars, getCurrentPageLink } from '@mikezimm/fps-js/lib/indexes/UrlFunctions';
+import { IHelpfullOutput, IHelpfullInput } from '../../logic/indexes/HelpfullErrors';
+import { getUrlVars, getCurrentPageLink } from '../../logic/Links/UrlFunctions';
 import { saveThisLogItem } from '@mikezimm/fps-pnp2/lib/services/sp/logging/saveThisLogItem';
 
 /**

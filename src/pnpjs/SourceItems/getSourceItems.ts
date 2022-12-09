@@ -1,5 +1,5 @@
 
-import { IHelpfullOutput, IHelpfullInput, convertHelpfullError } from '@mikezimm/fps-js/lib/indexes/HelpfullErrors';
+import { IHelpfullOutput, IHelpfullInput, convertHelpfullError } from '../../logic/indexes/HelpfullErrors';
 
 import { fetchSourceItems } from "@mikezimm/fps-pnp2/lib/services/sp/fetch/items/fetchSourceItems";
 import { IItemsError, ISourceProps } from './Interface';

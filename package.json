@@ -1,8 +1,8 @@
 {
-  "name": "@mikezimm/fps-banner-v2",
+  "name": "@mikezimm/fps-library-v2",
   "version": "1.0.0",
-  "description": "Sample Library",
-  "license": "UNLICENSED",
+  "description": "Library of reusable typescript/javascript functions, interfaces and constants",
+  "license": "MIT",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "engines": {
@@ -15,6 +15,18 @@
     "start": "webpack-dev-server --config ./webpack.config.cjs",
     "clean": "del-cli \"./?(dist|lib)\"",
     "lint": "eslint ./src --ext .ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikezimm/fps-library-v2.git"
+  },
+  "keywords": [
+    "SPFx",
+    "functions"
+  ],
+  "author": "Mike Zimmerman",
+  "bugs": {
+    "url": "https://github.com/mikezimm/fps-library-v2/issues"
   },
   "browserslist": [
     "last 1 version",

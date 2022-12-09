@@ -1,4 +1,4 @@
-import { IHelpfullOutput, IHelpfullInput } from '@mikezimm/fps-js/lib/indexes/HelpfullErrors';
+import { IHelpfullOutput, IHelpfullInput } from '../../logic/indexes/HelpfullErrors';
 import { IMinSourceFetchProps, ISeriesSortObject } from "@mikezimm/fps-pnp2/lib/services/sp/fetch/items/fetchSourceItems";
 
 export interface IItemsError {

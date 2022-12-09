@@ -1,4 +1,4 @@
-import { getExpandColumns, getSelectColumns } from '@mikezimm/fps-js/lib/indexes/pnpjsListGetBasic';
+import { getExpandColumns, getSelectColumns } from '../Lists/getVX/PnpjsListGetBasic';
 import { ISourceProps } from "./Interface";
 
 /**
