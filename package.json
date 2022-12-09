@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "del-cli \"./?(dist|lib)\" && tsc -p ./tsconfig.json && webpack",
+    "prod": "del-cli \"./?(dist|lib)\" && tsc -p ./tsconfig.json && webpack --mode production",
     "package": "webpack",
     "watch": "webpack --watch",
     "start": "webpack-dev-server --config ./webpack.config.cjs",
@@ -35,6 +36,7 @@
     "not dead"
   ],
   "devDependencies": {
+    "@types/node": "14.17.6",
     "@types/react": "16.9.51",
     "@types/react-dom": "16.9.8",
     "@types/webpack": "^5.28.0",
