@@ -5,7 +5,7 @@
  *
  * @public
  */
- export declare enum DisplayMode {
+ export enum DisplayMode {
   /**
    * The page, control, or editing surface is in a mode intended for reading.  It may have some interactive
    * features, but the authoring controls are not enabled.

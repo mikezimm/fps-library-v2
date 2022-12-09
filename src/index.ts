@@ -1,4 +1,4 @@
-export * from './banner';
+// export * from './banner';
 
 
 export * from './common/interfaces/indexes/index';

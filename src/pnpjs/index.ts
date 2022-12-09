@@ -1,7 +1,7 @@
 export * from './Fields/PnpjsFieldsConstants';
 
-export * from './Lists/getVX/pnpjsListGetBasic';
-export * from './Lists/getVX/pnpjsListGetFull';
+export * from './Lists/getVX/PnpjsListGetBasic';
+export * from './Lists/getVX/PnpjsListGetFull';
 
 export * from './Logging/saveErrorToLog';
 export * from './SourceItems';

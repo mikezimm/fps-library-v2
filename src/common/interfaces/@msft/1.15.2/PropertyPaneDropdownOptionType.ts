@@ -6,7 +6,7 @@
  *
  * @public
  */
- export declare enum PropertyPaneDropdownOptionType_15_2 {
+ export enum PropertyPaneDropdownOptionType_15_2 {
   /**
    * Render normal menu item.
    */
