@@ -14,7 +14,8 @@ import { QuickCommandsTMT, IQuickCommands, IQuickButton, }
 
  */
 
-import { IFieldDef } from '../../Pnpjs/Fields/Interfaces';
+
+import { IFieldDef } from '../../../pnpjs/Fields/Interfaces';
 
 // NOTE:  GET THIS FROM '@mikezimm/npmfunctions/dist/QuickCommands/IQuickCommands'; in 2.1.89
 export const CommandItemNotUpdatedMessage: string = `Sorry, There was nothing to update :(`;
@@ -98,6 +99,3 @@ export interface IQuickField extends Partial<IFieldDef> {
   styles?: any;
 
 }
-
-
-  

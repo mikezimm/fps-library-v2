@@ -1,4 +1,5 @@
 
-export * from './CSSCharts';
-export * from './QuickCommands';
-export * from './Refiners';
+export * from '../interfaces/indexes/index'
+
+export * from './FPSAgeSlider';
+export * from './Performance';

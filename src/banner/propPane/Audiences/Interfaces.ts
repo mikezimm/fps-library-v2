@@ -1,9 +1,10 @@
 
-export interface IPropertyPaneDropdownOptionFPS {
-  index: number;
-  key: string;
-  text: string;
-}
+
+import {
+    IPropertyPaneDropdownOption, PropertyPaneToggle,
+    PropertyPaneDropdown, IPropertyPaneDropdownProps,
+  } from '@microsoft/sp-property-pane';
+
 
 export type IAdminAudience = 'Site Admins';
 export type IOwnerAudience = 'Site Owners';
@@ -13,7 +14,7 @@ export type IVisitorAudience = 'Everyone';
 
 export type IFullControlAudience = IAdminAudience | IOwnerAudience;
 
-export const FullControlAudienceChoices: IPropertyPaneDropdownOptionFPS[] = <IPropertyPaneDropdownOptionFPS[]>[  //beAUserAudienceChoicesAll
+export const FullControlAudienceChoices: IPropertyPaneDropdownOption[] = <IPropertyPaneDropdownOption[]>[  //beAUserAudienceChoicesAll
   {   index: 0,   key: 'Site Admins', text: "Site Admins"  },
   {   index: 1,   key: 'Site Owners', text: "Site Owners"  },
 ];
@@ -21,7 +22,7 @@ export const FullControlAudienceChoices: IPropertyPaneDropdownOptionFPS[] = <IPr
 
 export type IPageEditorAudience = IAdminAudience | IOwnerAudience | IPageEditAudience;
 
-export const PageEditorAudienceChoices: IPropertyPaneDropdownOptionFPS[] = <IPropertyPaneDropdownOptionFPS[]>[  //beAUserAudienceChoicesAll
+export const PageEditorAudienceChoices: IPropertyPaneDropdownOption[] = <IPropertyPaneDropdownOption[]>[  //beAUserAudienceChoicesAll
   {   index: 0,   key: 'Site Admins', text: "Site Admins"  },
   {   index: 1,   key: 'Site Owners', text: "Site Owners"  },
   {   index: 2,   key: 'Page Editors', text: "Page Editors"  },
@@ -30,7 +31,7 @@ export const PageEditorAudienceChoices: IPropertyPaneDropdownOptionFPS[] = <IPro
 
 export type IItemEditorAudience = IAdminAudience | IOwnerAudience | IPageEditAudience | IItemEditAudience | IVisitorAudience;
 
-export const ItemEditorAudienceChoices: IPropertyPaneDropdownOptionFPS[] = <IPropertyPaneDropdownOptionFPS[]>[  //expandAudienceChoicesAll
+export const ItemEditorAudienceChoices: IPropertyPaneDropdownOption[] = <IPropertyPaneDropdownOption[]>[  //expandAudienceChoicesAll
   {   index: 0,   key: 'Site Admins', text: "Site Admins"  },
   {   index: 1,   key: 'Site Owners', text: "Site Owners"  },
   {   index: 3,   key: 'Item Editors', text: "Item Editors"  },
@@ -39,7 +40,7 @@ export const ItemEditorAudienceChoices: IPropertyPaneDropdownOptionFPS[] = <IPro
 
 export type IEditorAudience = IAdminAudience | IOwnerAudience | IPageEditAudience | IItemEditAudience;
 
-export const EditorAudienceChoices: IPropertyPaneDropdownOptionFPS[] = <IPropertyPaneDropdownOptionFPS[]>[  //expandAudienceChoicesAll
+export const EditorAudienceChoices: IPropertyPaneDropdownOption[] = <IPropertyPaneDropdownOption[]>[  //expandAudienceChoicesAll
   {   index: 0,   key: 'Site Admins', text: "Site Admins"  },
   {   index: 1,   key: 'Site Owners', text: "Site Owners"  },
   {   index: 2,   key: 'Page Editors', text: "Page Editors"  },
@@ -49,7 +50,7 @@ export const EditorAudienceChoices: IPropertyPaneDropdownOptionFPS[] = <IPropert
 
 export type IEveryoneAudience = IAdminAudience | IOwnerAudience | IPageEditAudience | IItemEditAudience | IVisitorAudience;
 
-export const EveryoneAudienceChoices: IPropertyPaneDropdownOptionFPS[] = <IPropertyPaneDropdownOptionFPS[]>[  //expandAudienceChoicesAll
+export const EveryoneAudienceChoices: IPropertyPaneDropdownOption[] = <IPropertyPaneDropdownOption[]>[  //expandAudienceChoicesAll
   {   index: 0,   key: 'Site Admins', text: "Site Admins"  },
   {   index: 1,   key: 'Site Owners', text: "Site Owners"  },
   {   index: 2,   key: 'Page Editors', text: "Page Editors"  },

@@ -8,3 +8,6 @@ https://courses.voitanos.io/products/mastering-the-sharepoint-framework-ultimate
 
 npm install @types/node@14.17.6 -DE
 
+npm install office-ui-fabric-react@7.199.1
+
+npm install @microsoft/sp-property-pane@1.15.2

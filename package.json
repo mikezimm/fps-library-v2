@@ -55,7 +55,9 @@
     "/lib"
   ],
   "dependencies": {
+    "@microsoft/sp-property-pane": "^1.15.2",
     "@mikezimm/fps-pnp2": "^1.0.3",
+    "office-ui-fabric-react": "^7.199.1",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   }

@@ -10,6 +10,7 @@ export * from './ArraySortingStrings';
 
 export * from './DOMHeadings';
 export * from './DOMTags';
+export * from './DOMSearch';
 
 export * from './HelpfullErrors';
 
