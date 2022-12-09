@@ -19,7 +19,7 @@ import { IUser, IFPSUser, ISimplePermission } from './IUserInterfaces';
   *                                                                                                                                                                              
   */
  
-import { IEveryoneAudience } from  '../../common/interfaces/AudienceInterfaces';
+import { IEveryoneAudience } from  '../../common/interfaces/fps/AudienceInterfaces';
  
 /**
  * 
