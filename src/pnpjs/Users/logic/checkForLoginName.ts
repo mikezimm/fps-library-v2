@@ -19,7 +19,7 @@ export function checkForLoginName(u: IUser): string {
   if (u.Name) {
     results = u.Name;
 
-  } else if (u.loginName) {
+  } else if (u.loginName) { //this is found in pageContext.user.loginName, looks like email address
     results = u.loginName;
 
   } else if (u.LoginName) {
@@ -27,6 +27,10 @@ export function checkForLoginName(u: IUser): string {
 
   } else if (u.email) {
     results = u.email;
+
+  } else if (u.Email) {
+    results = u.Email;
+
   }
 
   return results;

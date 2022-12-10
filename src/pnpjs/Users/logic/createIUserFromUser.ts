@@ -1,6 +1,7 @@
 
 import { ISiteUserInfo } from "../../../common/interfaces/openSource/pnpsp/@2.14.0/siteUserTypes";
 import { IUser } from "../../../logic/Users/IUserInterfaces";
+import { checkForLoginName } from "./checkForLoginName";
 
 /**
  *    user MAY need to be cast as any to avoid this error.
@@ -17,12 +18,26 @@ export function createIUserFromUser( user: ISiteUserInfo, webUrl: string, ForceI
 
   // const data = user.data;
   const data = user;
+  const notes: string[] = [];
 
-  const Title: string = data ? data.Title : 'Not valid User';
-  const Email: string = data ? data.Email : 'Not valid User';
-  const Id:    string = ForceId ? ForceId : data ? `${data.Id}` : 'Not valid User';
+  //Add these checks to find at least something based on all the different cases that might come in
+  const userName: string = checkForLoginName( data );
+
+  let Title: string =data.Title;
+  if ( !Title && data ) {  Title = data[`title`] ? data[`title`] : data[`displayName`] ? data[`displayName`] : ''; }
+  if ( !Title ) notes.push( `Not User Title` );
+
+  let Email: string = data.Email;
+  if ( !Email && data ) {  Email = data[`email`] ? data[`email`] : userName ? userName : ''; }
+  if ( !Email ) notes.push( `Not valid Email or login` );
+
+  let LoginName: string = data.LoginName;
+  if ( !LoginName && data ) { LoginName = data[`loginName`] ? data[`loginName`] : userName ? userName : ''; }
+  if ( !LoginName ) notes.push( `Not valid Email or login` );
+
+  const Id:    string = ForceId ? ForceId : data ? `${data.Id}` : 'Not valid User ID';
   const IsSiteAdmin: boolean = data ? data.IsSiteAdmin : false;
-  const LoginName: string = data ? data.LoginName : 'Not valid User';
+
   const PrincipalType: number = data ? data.PrincipalType : null;
 
   const thisUser: IUser = {
@@ -33,6 +48,9 @@ export function createIUserFromUser( user: ISiteUserInfo, webUrl: string, ForceI
     email: Email,
     Email: Email,
 
+    LoginName: LoginName,
+    Name: LoginName,
+
     id: Id,
     Id: Id,
     ID: Id,
@@ -40,9 +58,6 @@ export function createIUserFromUser( user: ISiteUserInfo, webUrl: string, ForceI
 
     isSiteAdmin: IsSiteAdmin,
     IsSiteAdmin: IsSiteAdmin,
-
-    LoginName: LoginName,
-    Name: LoginName,
 
     /**
      *  Added for src\pnpjs\Users\getSiteUsers.ts

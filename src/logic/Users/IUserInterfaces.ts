@@ -30,6 +30,7 @@ export interface IUser {
     NameId: string;
     NameIdIssuer: string;
   };
+  notes?: string[];
 
   remoteID?: any;  //This is the ID of the user on another site collection, sourceWeb ID
   PrincipalType?: number;
