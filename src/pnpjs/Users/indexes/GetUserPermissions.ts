@@ -9,8 +9,8 @@
     @ ./src/index.ts 5:0-30 5:0-30
  */
 
-import type { getUserPermissions } from "../calls/getUserPermissions";
-import { IUserPermissionsInfo } from "../interfaces/IUserPermissionsInfo";
+import type { IUserPermissionsInfo } from "../interfaces/IUserPermissionsInfo";
+import { getUserPermissions } from "../calls/getUserPermissions";
 
 export { getUserPermissions, IUserPermissionsInfo };
 // export { getUserPermissions, };

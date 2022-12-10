@@ -12,7 +12,7 @@ export async function getSiteAdmins(webUrl: string, supressError: boolean): Prom
 
   if ( check4Gulp() === true ) { console.log( `fps-library-v2 COMPLETE: getSiteAdmins ~53`, result ) };
 
-  if (supressError !== true) { alert( result.errorInfo.friendly ); }
+  if (supressError !== true && result.errorInfo ) { alert( result.errorInfo.friendly ); }
 
   return result;
 

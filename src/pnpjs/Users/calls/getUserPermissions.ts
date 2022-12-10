@@ -18,7 +18,7 @@ export async function getUserPermissions(webUrl: string, supressError: boolean):
     status: resultInfo.status,
   };
 
-  if (supressError !== true) { alert( result.errorInfo.friendly ); }
+  if (supressError !== true  && result.errorInfo ) { alert( result.errorInfo.friendly ); }
 
   return result;
 
