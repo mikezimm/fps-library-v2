@@ -1,3 +1,4 @@
+
 import { ISiteUsersInfo } from "./ISiteUsersInfo";
 
 export type IValidUserProp = 'Id' | 'Title' | 'Name' | 'Email';
