@@ -5,10 +5,13 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.3
+npm install @mikezimm/fps-library-v2@1.0.4
 
 
 # Changelog
+
+## 1.0.4 - 2022-Dec-10
+- Change createIUserFromUser to NOT put LoginName in an email property
 
 ## 1.0.3 - 2022-Dec-10
 - update createIUserFromUser:  better fill in User:  LoginName, Emails, and even Picture Url

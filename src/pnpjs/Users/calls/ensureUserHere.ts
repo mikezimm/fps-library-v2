@@ -10,7 +10,7 @@ import { createIEnsureUserInfo } from '../logic/createIEnsureUserInfo';
  *  WHY IS THIS NEEDED?  ADDING ISSUE TO ACTION NEWS which is what called it
  *  https://github.com/mikezimm/actionnews/issues/14
  * 
- * @param webURL 
+ * @param webUrl 
  * @param userEmail 
  * @returns 
  */

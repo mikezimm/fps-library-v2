@@ -27,9 +27,9 @@ export function createIUserFromUser( user: ISiteUserInfo, webUrl: string, ForceI
   if ( !Title && data ) {  Title = data[`title`] ? data[`title`] : data[`displayName`] ? data[`displayName`] : ''; }
   if ( !Title ) notes.push( `Not User Title` );
 
-  let Email: string = data.Email;
-  if ( !Email && data ) {  Email = data[`email`] ? data[`email`] : userName ? userName : ''; }
-  if ( !Email ) notes.push( `Not valid Email or login` );
+  let Email: string = data.Email; // Choosing NOT to include LoginName in Email at this point since it really isn't the same.
+  if ( !Email && data ) { Email = data[`email`] ? data[`email`] : ''; }
+  if ( !Email ) notes.push( `Not valid Email` );
 
   let LoginName: string = data.LoginName;
   if ( !LoginName && data ) { LoginName = data[`loginName`] ? data[`loginName`] : userName ? userName : ''; }
