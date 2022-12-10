@@ -58,7 +58,7 @@ export interface IHelpfullOutput {
 
 export function convertHelpfullError( inputs: IHelpfullInput ) : IHelpfullOutput {
 
-  const { e, alertMe, consoleLog, traceString, logErrors } = inputs;
+  const { e, alertMe, consoleLog, traceString, } = inputs;
   if ( consoleLog === true ) { console.log('convertHelpfullError:',e); }
 
   /**
@@ -206,7 +206,7 @@ export function convertHelpfullError( inputs: IHelpfullInput ) : IHelpfullOutput
       console.log('traceString:',traceString);
     }
 
-    if ( traceString && traceString.length > 0 && traceString.indexOf('getSiteInfo ~ 148') > - 1 ) {
+    if ( traceString && traceString.length > 0 && traceString.indexOf('getSiteInfo') > - 1 ) {
       //Skip this particular case because it breaks Easy Contents when clicking on Site Contents links and Gear Links
     } else {
       alert( returnMess );

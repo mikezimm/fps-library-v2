@@ -8,7 +8,10 @@ import { saveThisLogItem } from '@mikezimm/fps-pnp2/lib/services/sp/logging/save
  * @param errorInput
  */
 
-export function saveErrorToLog(errorInfo: IHelpfullOutput, errorInput: IHelpfullInput) {
+export function saveErrorToLog(errorInfo: IHelpfullOutput, errorInput: IHelpfullInput) : void {
+
+  //Return if you are not supposed to log an error
+  if ( errorInput.logErrors !== true ) { return ; }
 
   const muteConsole = true;
   const { traceString, e, alertMe, consoleLog, logErrors } = errorInput;

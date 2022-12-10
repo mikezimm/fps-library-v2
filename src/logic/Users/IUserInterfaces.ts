@@ -22,15 +22,24 @@ export interface IUser {
   Title?: string;
   initials?: string;  //Single person column
   email?: string;  //Single person column
+  Email?: string;  //Single person column
   id?: any;
   Id?: any;
   ID?: any;
+  UserId?: {
+    NameId: string;
+    NameIdIssuer: string;
+  };
+
   remoteID?: any;  //This is the ID of the user on another site collection, sourceWeb ID
   PrincipalType?: number;
 
   isSiteAdmin?:boolean;
+  IsSiteAdmin?:boolean;
+
   LoginName?: string;
   Name?: string;
+  UserPrincipalName?: string;
   isGuest?: boolean;
 
   //These optional props are from the React PeoplePicker control
