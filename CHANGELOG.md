@@ -5,11 +5,14 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.2
-
+npm install @mikezimm/fps-library-v2@1.0.3
 
 
 # Changelog
+
+## 1.0.3 - 2022-Dec-10
+- update createIUserFromUser:  better fill in User:  LoginName, Emails, and even Picture Url
+- fps-pnp2@1.0.8: update fetchSiteAdmins: add (per testing) - import { IList } from "@pnp/sp/lists";
 
 ## 1.0.2 - 2022-Dec-10
 - Update createIUserFromUser to find variations of email and login names when not in user object.

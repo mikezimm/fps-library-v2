@@ -35,6 +35,9 @@ export function createIUserFromUser( user: ISiteUserInfo, webUrl: string, ForceI
   if ( !LoginName && data ) { LoginName = data[`loginName`] ? data[`loginName`] : userName ? userName : ''; }
   if ( !LoginName ) notes.push( `Not valid Email or login` );
 
+  let imageUrl: string = ''; //Found this in getSiteAdmins response. 
+  if ( data && data[`Picture`]?.['Url'] ) imageUrl = data[`Picture`]?.['Url'];
+
   const Id:    string = ForceId ? ForceId : data ? `${data.Id}` : 'Not valid User ID';
   const IsSiteAdmin: boolean = data ? data.IsSiteAdmin : false;
 
@@ -68,7 +71,7 @@ export function createIUserFromUser( user: ISiteUserInfo, webUrl: string, ForceI
 
     //These optional props are from the React PeoplePicker control
     imageInitials: '',
-    imageUrl: '',
+    imageUrl: imageUrl,
     loginName: LoginName,
     text: Title,
 
