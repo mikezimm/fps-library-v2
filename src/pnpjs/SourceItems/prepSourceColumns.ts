@@ -22,9 +22,9 @@ export function prepSourceColumns(sourceProps: ISourceProps): ISourceProps {
   //  [ added: ...    baseSelectColumns, did not have the ... not sure how that worked.
   const selectThese = [...baseSelectColumns, ...selColumns];
 
-  sourceProps.columns = columns;
-  sourceProps.selectThese = selectThese;
-  sourceProps.expandThese = expColumns;
+  sourceProps.columns = columns.filter((element, index) => { return columns.indexOf(element) === index; });
+  sourceProps.selectThese = selectThese.filter((element, index) => { return selectThese.indexOf(element) === index; });
+  sourceProps.expandThese = expColumns.filter((element, index) => { return expColumns.indexOf(element) === index; });
 
   if ( check4Gulp() === true ) { console.log( `fps-library-v2 COMPLETE: prepSourceColumns ~ 29`, sourceProps ) };
 

@@ -5,10 +5,16 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.6
+npm install @mikezimm/fps-library-v2@1.0.8
 
 
 # Changelog
+
+## 1.0.8 - 2022-Dec-10
+- filter duplicate columns in prepSourceColumns
+  sourceProps.columns = columns.filter((element, index) => ...;
+  sourceProps.selectThese = selectThese.filter((element, index) => ...;
+  sourceProps.expandThese = expColumns.filter((element, index) => ...;
 
 ## 1.0.6 - 2022-Dec-10
 - Add check4Gulp to /pnpv2/SourceItems, add saveErrorToLog to /pnpv2/users functions

@@ -56,5 +56,11 @@ import { DoNotExpandColumns, } from './IGetInterfaceV2';
       }
     });
 
+    // NOT Needed since it is taken care of in prepSourceColumns on all arrays now.
+    // const noDupsColumns: string[] = [];
+    // baseSelectColumns.map( column => {
+    //   if ( noDupsColumns.indexOf( column ) === -1 ) noDupsColumns.push( column );
+    // });
+
     return baseSelectColumns;
   }
