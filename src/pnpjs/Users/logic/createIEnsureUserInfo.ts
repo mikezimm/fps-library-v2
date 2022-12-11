@@ -2,6 +2,7 @@
 import { IEnsureUserResults } from '@mikezimm/fps-pnp2/lib/services/sp/users';
 import { convertHelpfullError, IHelpfullInput, IHelpfullOutput } from '../../../logic/indexes';
 import { BaseErrorTrace } from '../../../PackageConst';
+import { saveErrorToLog } from '../../Logging';
 import { IEnsureUserInfo } from '../interfaces/IEnsureUserInfo';
 import { createIUserFromUser } from './createIUserFromUser';
 
@@ -32,6 +33,8 @@ export function createIEnsureUserInfo(webUrl: string, resultInfo: IEnsureUserRes
     errorInput: errorInput,
     status: resultInfo.status,
   };
+
+  saveErrorToLog( result.errorInfo, result.errorInput as IHelpfullInput );
 
   return result;
 

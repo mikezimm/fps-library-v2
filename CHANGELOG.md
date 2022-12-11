@@ -5,10 +5,13 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.5
+npm install @mikezimm/fps-library-v2@1.0.6
 
 
 # Changelog
+
+## 1.0.6 - 2022-Dec-10
+- Add check4Gulp to /pnpv2/SourceItems, add saveErrorToLog to /pnpv2/users functions
 
 ## 1.0.5 - 2022-Dec-10
 - fixes when turning on tsconfig rules:
@@ -18,7 +21,7 @@ npm install @mikezimm/fps-library-v2@1.0.5
 
 ## 1.0.4 - 2022-Dec-10
 - npm install @mikezimm/fps-pnp2@1.0.10
-- had LOTS of due to single UpperCase Users in src/index.ts 
+- had LOTS of due to single UpperCase Users in src/index.ts
 - Error was: multiple modules with names that only differ in casing
 
 ## 1.0.4 - 2022-Dec-10

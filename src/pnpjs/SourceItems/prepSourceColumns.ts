@@ -1,3 +1,4 @@
+import { check4Gulp } from '@mikezimm/fps-pnp2';
 import { getExpandColumns, getSelectColumns } from '../Lists/getVX/PnpjsListGetBasic';
 import { ISourceProps } from "./Interface";
 
@@ -7,6 +8,8 @@ import { ISourceProps } from "./Interface";
  * @returns 
  */
 export function prepSourceColumns(sourceProps: ISourceProps): ISourceProps {
+
+  if ( check4Gulp() === true ) { console.log( `fps-library-v2 BEFORE: prepSourceColumns ~ 12`, JSON.parse(JSON.stringify( sourceProps) ) ) };
 
   const searchProps: string[] = sourceProps.searchProps ? sourceProps.searchProps : [];
   const columns: string[] = [...sourceProps.columns, ...searchProps];
@@ -22,6 +25,8 @@ export function prepSourceColumns(sourceProps: ISourceProps): ISourceProps {
   sourceProps.columns = columns;
   sourceProps.selectThese = selectThese;
   sourceProps.expandThese = expColumns;
+
+  if ( check4Gulp() === true ) { console.log( `fps-library-v2 COMPLETE: prepSourceColumns ~ 29`, sourceProps ) };
 
   return sourceProps;
 

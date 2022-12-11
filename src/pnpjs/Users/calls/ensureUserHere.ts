@@ -22,8 +22,6 @@ export async function ensureUserHere( loginName: string | undefined, webUrl: str
 
   if ( result.errorInfo ) {
 
-    saveErrorToLog( result.errorInfo, result.errorInput as IHelpfullInput );
-
     if ( supressSaveConflict === true && ( result.errorInfo.friendly.indexOf('Save Conflict') > -1
         || result.errorInfo.returnMess.indexOf('Save Conflict') > -1 ) ) {
         //Do nothting

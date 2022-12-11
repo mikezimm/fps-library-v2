@@ -3,6 +3,8 @@ import { IHelpfullOutput, IHelpfullInput, convertHelpfullError } from '../../log
 
 import { fetchSourceItems } from "@mikezimm/fps-pnp2/lib/services/sp/fetch/items/fetchSourceItems";
 import { IItemsError, ISourceProps } from './Interface';
+import { check4Gulp } from '@mikezimm/fps-pnp2';
+import { saveErrorToLog } from '../Logging';
 
 /**
  * getSourceItems calls the Pnp function to get the results which returns the raw error.
@@ -27,7 +29,11 @@ export async function getSourceItems( sourceProps: ISourceProps, alertMe: boolea
     const errorInput: IHelpfullInput = { e: initialResult.e, alertMe:alertMe , consoleLog: consoleLog , traceString: 'getSourceItems ~ 18' , logErrors:true };
     const errorInfo: IHelpfullOutput = convertHelpfullError( errorInput );
     result.errorInfo = errorInfo;
+
+    saveErrorToLog( result.errorInfo, errorInput );
   }
+
+  if ( check4Gulp() === true ) { console.log( `fps-library-v2 COMPLETED: getSourceItems ~ 33`, result ) };
 
   return result;
 
