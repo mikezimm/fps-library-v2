@@ -51,7 +51,10 @@ export interface IUser {
   tertiaryText?: string; //                           From React People Picker control
   secondaryText?: string; // same as email;           From React People Picker control
 
-  ensureWeb?: string;
+  ensureWeb?: string; //FullUrl
+
+  // 2022-12-10:  Added fullWebUrl just because ensureWeb was not always consistant here
+  fullWebUrl?: string; //FullUrl
 
 }
 

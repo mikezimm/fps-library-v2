@@ -16,6 +16,7 @@ import { checkForLoginName } from "./checkForLoginName";
  */
 export function createIUserFromUser( user: ISiteUserInfo, webUrl: string, ForceId: string ) : IUser {
 
+  if ( !user ) return user;
   // const data = user.data;
   const data = user;
   const notes: string[] = [];
@@ -77,6 +78,9 @@ export function createIUserFromUser( user: ISiteUserInfo, webUrl: string, ForceI
 
     remoteID: null,
     ensureWeb: webUrl,
+
+    // 2022-12-10:  Added fullWebUrl just because ensureWeb was not always consistant here
+    fullWebUrl: webUrl.indexOf('https:') === 0 ? webUrl :  `${window.location.origin}${webUrl}`,
 
     PrincipalType: PrincipalType,
 

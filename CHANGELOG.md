@@ -11,6 +11,21 @@ npm install @mikezimm/fps-library-v2@1.0.4
 # Changelog
 
 ## 1.0.4 - 2022-Dec-10
+- npm install @mikezimm/fps-pnp2@1.0.10
+- had LOTS of due to single UpperCase Users in src/index.ts 
+- Error was: multiple modules with names that only differ in casing
+
+## 1.0.4 - 2022-Dec-10
+- npm install @mikezimm/fps-pnp2@1.0.9
+- Fixed errors in ensureUserHere and ensureUserInfo per below:
+- Tried passing in user.user but it errored out all the time.  Now testing for .data first
+    const userObject: any = user.data ? user.data : user.user;
+    return { user: userObject, e: null, status: 'success' }
+- Tested full and relative Urls and relative Urls errored out.  Added
+    const fullWebUrl = webUrl.indexOf('https:') === 0 ? webUrl : window.location.origin + webUrl;
+    let thisListWeb = Web(fullWebUrl);
+
+## 1.0.4 - 2022-Dec-10
 - Change createIUserFromUser to NOT put LoginName in an email property
 
 ## 1.0.3 - 2022-Dec-10

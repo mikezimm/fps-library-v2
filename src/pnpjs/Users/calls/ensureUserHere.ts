@@ -16,7 +16,7 @@ import { createIEnsureUserInfo } from '../logic/createIEnsureUserInfo';
  */
 export async function ensureUserHere( loginName: string | undefined, webUrl: string, supressSaveConflict: boolean ) : Promise<IEnsureUserInfo> {
 
-  const resultInfo: IEnsureUserResults = await ensureUserHerePnp2( webUrl, loginName );
+  const resultInfo: IEnsureUserResults = await ensureUserHerePnp2( loginName, webUrl );
   const result: IEnsureUserInfo = createIEnsureUserInfo( webUrl, resultInfo, 'Failed', 'ensureUserHere ~ 24', false, true, true );
 
   if ( result.errorInfo ) {
