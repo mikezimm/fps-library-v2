@@ -5,10 +5,13 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.8
+npm install @mikezimm/fps-library-v2@1.0.9
 
 
 # Changelog
+
+## 1.0.9 - 2022-Dec-10
+- update prepSourceColumns, componentPage based on testing
 
 ## 1.0.8 - 2022-Dec-10
 - filter duplicate columns in prepSourceColumns

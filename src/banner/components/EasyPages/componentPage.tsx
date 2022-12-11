@@ -29,7 +29,7 @@ import { IEasyIcons } from '../../../components/atoms/EasyIcons/eiTypes';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { EasyDevPages, getZGitLinks } from './devLinks';
 import { IRepoLinks } from '../../../components/atoms/Links/CreateLinks';
-import { ISourceProps } from '../../../pnpjs';
+import { ISourceProps, prepSourceColumns } from '../../../pnpjs';
 
 export type ISourceName = 'Current' | 'Parent' | 'Alternate' | typeof EasyPagesDevTab | typeof EasyPagesRepoTab ;
 
@@ -126,7 +126,7 @@ const EasyPagesPageHook: React.FC<IEasyPagesPageHookProps> = ( props ) => {
 
     if ( expandedState === true && fetched === false ) {
       const getPages = async (): Promise<void> => {
-        const pagesResults = await getPagesContent( source, props.EasyIconsObject, parentUrl, );
+        const pagesResults = await getPagesContent( prepSourceColumns( source, '' ), props.EasyIconsObject, parentUrl, );
         const actualTabs = getUsedTabs( source, pagesResults.items );
         actualTabs.push( InfoTab );
         const links: IEasyLink[] = compoundArrayFilter( pagesResults.items, actualTabs[0], '' );

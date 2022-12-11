@@ -7,7 +7,7 @@ import { ISourceProps } from "./Interface";
  * @param sourceProps 
  * @returns 
  */
-export function prepSourceColumns(sourceProps: ISourceProps): ISourceProps {
+export function prepSourceColumns(sourceProps: ISourceProps, forceWebUrl: string ): ISourceProps {
 
   if ( check4Gulp() === true ) { console.log( `fps-library-v2 BEFORE: prepSourceColumns ~ 12`, JSON.parse(JSON.stringify( sourceProps) ) ) };
 
@@ -26,6 +26,12 @@ export function prepSourceColumns(sourceProps: ISourceProps): ISourceProps {
   sourceProps.columns = columns.filter((element, index) => { return columns.indexOf(element) === index; });
   sourceProps.selectThese = selectThese.filter((element, index) => { return selectThese.indexOf(element) === index; });
   sourceProps.expandThese = expColumns.filter((element, index) => { return expColumns.indexOf(element) === index; });
+
+  // Sanitize the web urls
+  const updateUrl: string = forceWebUrl ? forceWebUrl : sourceProps.webUrl;
+  sourceProps.webUrl = updateUrl.replace( window.location.origin , '' ) ;
+  sourceProps.absoluteWebUrl = updateUrl.indexOf('https:') === 0 ? updateUrl : window.location.origin + updateUrl;
+  sourceProps.sitesWebUrls = sourceProps.webUrl.replace('/sites/', '/') ;
 
   if ( check4Gulp() === true ) { console.log( `fps-library-v2 COMPLETE: prepSourceColumns ~ 29`, sourceProps ) };
 

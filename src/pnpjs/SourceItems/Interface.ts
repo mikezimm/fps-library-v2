@@ -23,7 +23,9 @@ export interface IMinSourceWPProps {
 export interface ISourceProps extends IMinSourceFetchProps {
 
   //Must be Exact from IMinSourceFetchProps
-  webUrl: string;
+  webUrl: string; //   /sites/sitecollection/subsite
+  absoluteWebUrl?: string; //   https://tenant.sharepoint.com/sites/sitecollection/subsite
+  sitesWebUrls?: string;  //   /sitecollection/subsite => could be used for cleaner display
   listTitle: string;
   selectThese?: string[];
   expandThese?: string[];
