@@ -24,10 +24,7 @@ import { findParentElementLikeThis } from '../../../logic/DOM/Search/domSearch';
 // import { updateByClassNameEleChild } from '../otherDOMAttempts';
 import { DisplayMode } from '@microsoft/sp-core-library';
 
-
-
-require('./FPSPinMe.css');
-
+require('@mikezimm/fps-styles/dist/FPSPinMe.css');
 
 /**
  * getDefaultFPSPinState gets the default defPinState depending on if the page is in Edit Mode.

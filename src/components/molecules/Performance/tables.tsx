@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { IPerformanceOp, ILoadPerformance, ILoadPerformanceOps, LoadPerformanceOps, IMinPerformanceSetting } from './IPerformance';
 
-require('./styles.css'); //Does not work
+require('@mikezimm/fps-styles/dist/performance.css'); //Does not work
 // window.require('./styles.css');  //Does not work
 
 export function createPerformanceRows( performance: ILoadPerformance, keysToShow: ILoadPerformanceOps[] ) { //[ 'fetch', 'analyze' ]

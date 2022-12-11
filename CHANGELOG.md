@@ -5,10 +5,13 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.10
+npm install @mikezimm/fps-library-v2@1.0.11
 
 
 # Changelog
+
+## 1.0.11 - 2022-Dec-10
+- redirected all css requires to @mikezimm/fps-styles/dist/samefile.css
 
 ## 1.0.10 - 2022-Dec-10
 - update getPagesContent based on testing

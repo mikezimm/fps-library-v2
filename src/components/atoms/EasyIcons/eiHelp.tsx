@@ -8,7 +8,7 @@ import { IEasyIcons } from './eiTypes'; //, IEasyIconGroup, IEasyIconGroups, Eas
 
 import { getEasyIconElement } from './eiHelpIcons';
 
-// require('./easyicons.css');
+require('@mikezimm/fps-styles/dist/easyicons.css');
 
 export function getEasyIconsHelp ( EasyIcons: IEasyIcons, ): JSX.Element {
 

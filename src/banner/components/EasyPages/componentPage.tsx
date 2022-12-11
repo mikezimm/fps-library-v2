@@ -4,7 +4,7 @@ import { Pivot, PivotItem, PivotLinkFormat, PivotLinkSize,} from 'office-ui-fabr
 
 // import { getExpandColumns, getSelectColumns } from '../../fpsReferences';
 
-require('./easypages.css');
+require('@mikezimm/fps-styles/dist/easypages.css');
 
 // import styles from '../PropPaneCols.module.scss';
 import { WebPartContextCopy_15_2 } from '../../../common/interfaces/@msft/1.15.2/WebPartContext'; // Used in:  IEasyPagesSourceProps

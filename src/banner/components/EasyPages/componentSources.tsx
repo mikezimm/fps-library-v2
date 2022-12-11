@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Pivot, PivotItem, PivotLinkFormat, PivotLinkSize,} from 'office-ui-fabric-react/lib/Pivot';
 import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 
-require('./easypages.css');
+require('@mikezimm/fps-styles/dist/easypages.css');
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { createNewSitePagesSource, EasyPagesDevTab, EasyPagesRepoTab } from './epTypes';

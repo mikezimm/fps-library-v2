@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-require ('./SinglePage.css');
+require ('@mikezimm/fps-styles/dist/SinglePage.css');
 
 import { ISinglePageProps } from './ISinglePageProps';
 //Moved these to npmFunctions 
