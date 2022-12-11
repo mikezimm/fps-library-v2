@@ -49,7 +49,7 @@
  * 
  * @param val 
  */
-export function getChoiceText(val: string): string {
+export function getChoiceText(val: string): string | null {
 
     if (val === null) {  
       console.log('getChoiceText is null');

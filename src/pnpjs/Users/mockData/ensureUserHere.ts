@@ -1,5 +1,6 @@
+// Added  to null so it passes linting
 
-const validatedWithEmail = {
+const validatedWithEmail: any = {
   "user": {
       "title": "Mike LastName",
       "Title": "Mike LastName",
@@ -44,7 +45,7 @@ this._ensureUserInfo = await ensureUserInfo( 'https://tenant.sharepoint.com/site
 this._ensureUserHere = await ensureUserHere( loginCreds , this.context.pageContext.site.absoluteUrl , false );
 
  */
-const currentWithEmail = {
+const currentWithEmail: any = {
   "user": null,
   "errorInfo": {
       "errObj": null,
@@ -74,7 +75,7 @@ const currentWithEmail = {
   this._ensureUserHere = await ensureUserHere( loginCreds , this.context.pageContext.site.absoluteUrl , false );
  */
 
-  const remoteWithLoginName1 = {
+  const remoteWithLoginName1: any = {
     "user": null,
     "errorInfo": {
         "errObj": null,

@@ -131,10 +131,11 @@ export const EasyPagesDevTab = 'zDev';
 export const EasyPagesRepoTab = 'zGit';
 export const DefaultOverflowTab = 'Others';
 
-export function createNewSitePagesSource( source: ISourceName, webUrl: string, tabs: string[], EasyPageOverflowTab: string, showTricks: boolean ): ISourceProps {
+// Set webUrl and EasyPageOverflowTab string | undefined to solve lint errors
+export function createNewSitePagesSource( source: ISourceName, webUrl: string | undefined, tabs: string[], EasyPageOverflowTab: string | undefined, showTricks: boolean ): ISourceProps {
 
   const NewSource: ISourceProps = JSON.parse(JSON.stringify(SitePagesSource)) ;
-  NewSource.webUrl = webUrl;
+  NewSource.webUrl = webUrl ? webUrl : '';
   NewSource.meta1 = tabs;
   NewSource.meta1.push( EasyPagesSysTab );
   if ( showTricks === true && NewSource.meta1.indexOf( EasyPagesDevTab ) < 0 ) NewSource.meta1.push( EasyPagesDevTab );

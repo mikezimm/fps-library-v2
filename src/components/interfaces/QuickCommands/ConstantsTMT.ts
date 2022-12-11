@@ -31,6 +31,6 @@
     },
   ],
   onUpdateAlsoCallback: false,
-  callBack: null,
+  callBack: null as any,
 
 };

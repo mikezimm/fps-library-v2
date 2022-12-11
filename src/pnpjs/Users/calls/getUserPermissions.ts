@@ -14,7 +14,7 @@ export async function getUserPermissions(webUrl: string, supressError: boolean):
 
   const result: IUserPermissionsInfo = {
     basePerms: resultInfo.basePerms,
-    errorInfo: resultInfo.e ? convertHelpfullError(errorInput) : null,
+    errorInfo: resultInfo.e ? convertHelpfullError(errorInput) : null as any,
     status: resultInfo.status,
   };
 

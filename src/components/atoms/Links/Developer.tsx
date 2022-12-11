@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import * as devLinks from './LinksDevDocs';
 import * as chartJSLinks from './LinksChartJS';
 // import * as repoLinks from './LinksRepos';

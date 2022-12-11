@@ -214,6 +214,6 @@ export function convertHelpfullError( inputs: IHelpfullInput ) : IHelpfullOutput
 
   }
   
-  return    { errObj: errObj, friendly: friendlyMessage, result: result, returnMess: returnMess, } ;
+  return    { errObj: errObj, friendly: friendlyMessage ? friendlyMessage : '', result: result, returnMess: returnMess, } ;
 
 }

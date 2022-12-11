@@ -10,7 +10,7 @@ export interface IPerformanceOp {
     ms?: number;
     c?: number; //Count
     a?: number; //Average ms / count
-    mode?: DisplayMode;
+    mode?: DisplayMode | null;
     details: IPerformanceOp[]; //Could be used to trace individual file loads
 }
 

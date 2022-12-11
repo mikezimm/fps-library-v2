@@ -14,7 +14,7 @@ import { checkForLoginName } from "./checkForLoginName";
  * @param ForceId 
  * @returns 
  */
-export function createIUserFromUser( user: ISiteUserInfo, webUrl: string, ForceId: string ) : IUser {
+export function createIUserFromUser( user: ISiteUserInfo | null, webUrl: string, ForceId: string | null ) : IUser | null {
 
   if ( !user ) return user;
   // const data = user.data;
@@ -22,27 +22,27 @@ export function createIUserFromUser( user: ISiteUserInfo, webUrl: string, ForceI
   const notes: string[] = [];
 
   //Add these checks to find at least something based on all the different cases that might come in
-  const userName: string = checkForLoginName( data );
+  const userName: string = checkForLoginName( data as any );
 
   let Title: string =data.Title;
-  if ( !Title && data ) {  Title = data[`title`] ? data[`title`] : data[`displayName`] ? data[`displayName`] : ''; }
+  if ( !Title && data ) {  Title = data[`title` as 'Title'] ? data[`title` as 'Title'] : data[`displayName` as 'Title'] ? data[`displayName` as 'Title'] : ''; }
   if ( !Title ) notes.push( `Not User Title` );
 
   let Email: string = data.Email; // Choosing NOT to include LoginName in Email at this point since it really isn't the same.
-  if ( !Email && data ) { Email = data[`email`] ? data[`email`] : ''; }
+  if ( !Email && data ) { Email = data[`email` as 'Email' ] ? data[`email` as 'Email'] : ''; } // Added all the 'as'  so that it passes linting
   if ( !Email ) notes.push( `Not valid Email` );
 
   let LoginName: string = data.LoginName;
-  if ( !LoginName && data ) { LoginName = data[`loginName`] ? data[`loginName`] : userName ? userName : ''; }
+  if ( !LoginName && data ) { LoginName = data[`loginName` as 'LoginName' ] ? data[`loginName` as 'LoginName' ] : userName ? userName : ''; } // Added all the 'as'  so that it passes linting
   if ( !LoginName ) notes.push( `Not valid Email or login` );
 
   let imageUrl: string = ''; //Found this in getSiteAdmins response. 
-  if ( data && data[`Picture`]?.['Url'] ) imageUrl = data[`Picture`]?.['Url'];
+  if ( data && data[`Picture` as 'Email' ]?.['Url' as any ] ) imageUrl = data[`Picture` as 'Email' ]?.['Url' as any ]; // Added all the 'as'  so that it passes linting
 
   const Id:    string = ForceId ? ForceId : data ? `${data.Id}` : 'Not valid User ID';
   const IsSiteAdmin: boolean = data ? data.IsSiteAdmin : false;
 
-  const PrincipalType: number = data ? data.PrincipalType : null;
+  const PrincipalType: number | null = data ? data.PrincipalType : null;
 
   const thisUser: IUser = {
     title: Title,
@@ -58,7 +58,7 @@ export function createIUserFromUser( user: ISiteUserInfo, webUrl: string, ForceI
     id: Id,
     Id: Id,
     ID: Id,
-    UserId:  user.UserId ?  user.UserId : null,
+    UserId:  user.UserId ?  user.UserId : undefined,
 
     isSiteAdmin: IsSiteAdmin,
     IsSiteAdmin: IsSiteAdmin,
@@ -68,7 +68,7 @@ export function createIUserFromUser( user: ISiteUserInfo, webUrl: string, ForceI
      *    Through testing, found that system accounts have a LoginName but NOT UserPrincipalName
      *    So for "real test", I'm using UserPrincipalName to check.
     */
-    UserPrincipalName: user.UserPrincipalName ? user.UserPrincipalName : null,
+    UserPrincipalName: user.UserPrincipalName ? user.UserPrincipalName : undefined,
 
     //These optional props are from the React PeoplePicker control
     imageInitials: '',
@@ -82,7 +82,7 @@ export function createIUserFromUser( user: ISiteUserInfo, webUrl: string, ForceI
     // 2022-12-10:  Added fullWebUrl just because ensureWeb was not always consistant here
     fullWebUrl: webUrl.indexOf('https:') === 0 ? webUrl :  `${window.location.origin}${webUrl}`,
 
-    PrincipalType: PrincipalType,
+    PrincipalType: PrincipalType ? PrincipalType : undefined,
 
   };
 

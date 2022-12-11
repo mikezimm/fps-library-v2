@@ -54,7 +54,7 @@ export function getEasyIconsHelp ( EasyIcons: IEasyIcons, ): JSX.Element {
     </div>;
 
   const EasyIconsHelpPivot: JSX.Element = 
-  <PivotItem headerText={ null } itemIcon='ImageSearch'>
+  <PivotItem headerText={ undefined } itemIcon='ImageSearch'>
     { EasyIconsHelp }
   </PivotItem>;
 

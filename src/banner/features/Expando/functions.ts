@@ -136,7 +136,7 @@ export function setExpandoRamicMode ( domElement: HTMLElement, maximize : boolea
             parentElement.style['left'] = '48px'; //Best size for app bar on left
             //https://www.w3schools.com/cssref/func_calc.asp
             // parentElement.style['width'] =  `calc(100% - 96px)`;
-            parentElement.style['z-index'] = 10;  //Push back when maximized and wide so it is behind the app bar menu.
+            parentElement.style['z-index' as any] = `10`;  //Push back when maximized and wide so it is behind the app bar menu.
             
             //Set SuiteNavWrapper behind the parentElement so it's hidden.
             let SuiteNavWrapper = document.getElementById("SuiteNavWrapper");
@@ -145,7 +145,7 @@ export function setExpandoRamicMode ( domElement: HTMLElement, maximize : boolea
             }
         } else { 
 
-            parentElement.style['z-index'] = 12;  
+            parentElement.style['z-index' as any ] = '12';
             parentElement.style['left'] = '0px'; //Best size for app bar on left
 
         }
@@ -156,8 +156,8 @@ export function setExpandoRamicMode ( domElement: HTMLElement, maximize : boolea
         parentElement.style['top'] = '0px';
         parentElement.style['right'] = '0px'; //`${expandoPadding * 2}px`;  //Setting right and left to zero works but blocks the sp-App Bar
 
-        parentElement.style['background-color'] = 'white';
-        parentElement.style['overflow-y'] = 'scroll';
+        parentElement.style['background-color' as any] = 'white';
+        parentElement.style['overflow-y' as any] = 'scroll';
         // domElement.style['background'] = 'lightgray';
 
         parentElement.style['height'] = '100%';
@@ -165,7 +165,7 @@ export function setExpandoRamicMode ( domElement: HTMLElement, maximize : boolea
 
       //Updated code where it parses it in the main webpart class
       Object.keys( controlStyle ).map( ( key: number | string ) => {
-        domElement.style[key] = controlStyle[key];
+        domElement.style[ key as any ] = controlStyle[ key ];
       });
 
       if ( consoleResult === true || alertError === true ) {
@@ -196,9 +196,9 @@ export function setExpandoRamicMode ( domElement: HTMLElement, maximize : boolea
         parentElement.style['width'] = '';
 
         parentElement.style['position'] = '';
-        parentElement.style['background-color'] = null;
-        parentElement.style['overflow-y'] = null;
-        parentElement.style['z-index'] = null;
+        parentElement.style['background-color' as any] = 'null';
+        parentElement.style['overflow-y' as any] = 'null';
+        parentElement.style[`z-index` as any] = 'null';
         parentElement.style['background'] = '';
 
         parentElement.style['height'] = '';

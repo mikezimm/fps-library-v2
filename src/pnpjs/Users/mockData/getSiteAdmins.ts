@@ -1,4 +1,4 @@
-const SiteAdminItem = {
+const SiteAdminItem: any = {
   "odata.type": "SP.Data.UserInfoItem",
   "odata.id": "be402cd5-07f9-42a6-b6e2-dc00da253078",
   "odata.etag": "\"70\"",

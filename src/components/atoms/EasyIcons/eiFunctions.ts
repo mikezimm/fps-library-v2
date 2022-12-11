@@ -7,12 +7,12 @@ export function setEasyIconsObjectProps( easyIconWPProps: IEasyIconsWPProps, ): 
 
   const EasyIcons: IEasyIcons = EasyIconObjectDefault;
 
-  const GroupKeys: any[] = getStringArrayFromString( easyIconWPProps.easyIconKeys , ';', true, null, true );
-  const Ignore: any[] = getStringArrayFromString( easyIconWPProps.easyIconIgnore , ';', true, null, true );
+  const GroupKeys: any[] | null = getStringArrayFromString( easyIconWPProps.easyIconKeys , ';', true, null, true );
+  const Ignore: any[] | null = getStringArrayFromString( easyIconWPProps.easyIconIgnore , ';', true, null, true );
 
   if ( easyIconWPProps ) EasyIcons.Enabled = easyIconWPProps.easyIconEnable === false ? false : true;
-  if ( easyIconWPProps ) EasyIcons.GroupKeys = GroupKeys;
-  if ( easyIconWPProps ) EasyIcons.Ignore = Ignore;
+  if ( easyIconWPProps ) EasyIcons.GroupKeys = GroupKeys ? GroupKeys : [];
+  if ( easyIconWPProps ) EasyIcons.Ignore = Ignore ? Ignore : [];
 
   return EasyIcons;
 }
@@ -28,10 +28,10 @@ export function setEasyIconsObjectProps( easyIconWPProps: IEasyIconsWPProps, ): 
  */
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function getEasyIcon( EasyIcons: IEasyIcons, item: any, ) : string {
+export function getEasyIcon( EasyIcons: IEasyIcons, item: any, ) : string | null {
 
   //If this is disabled, then exit
-  if ( EasyIcons.Enabled !== true ) return null;
+  if ( EasyIcons.Enabled !== true ) return null ;
 
   const EasyErrors: string[] = [];
   let EasyIconUrl = '';

@@ -19,4 +19,6 @@ export function getPrincipalTypeString(type: PrincipalType) : string {
   if (type === 4) { return 'Security'; }
   if (type === 8) { return 'SharePoint'; }
   if (type === 15) { return 'All'; }
+  else { return ''; }
+
 }

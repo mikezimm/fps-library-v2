@@ -61,7 +61,7 @@ export async function getSiteUsers(url: string, props: IValidUserProp[], realPeo
       if (isReal === true || realPeopleOnly === false) {
         if (props.indexOf('Id') > -1 && uId !== null) { validUserInfos.Ids.push(uId); }
         if (props.indexOf('Title') > -1 && uTitle !== null) { validUserInfos.Titles.push(uTitle); }
-        if (props.indexOf('Name') > -1 && uName !== null) { validUserInfos.Names.push(uName); }
+        if (props.indexOf('Name') > -1 && uName !== null && uName !== undefined ) { validUserInfos.Names.push(uName); }
         if (props.indexOf('Email') > -1 && uEmail !== null) { validUserInfos.Emails.push(uEmail); }
         validUserInfos.Users.push(u);
       }

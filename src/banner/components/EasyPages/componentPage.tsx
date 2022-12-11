@@ -167,7 +167,7 @@ const EasyPagesPageHook: React.FC<IEasyPagesPageHookProps> = ( props ) => {
   }
 
   // item SHOULD BE IPivotItemProps but have to cast as any in order to get itemKey and headerText
-  const pivotClick = ( item?: PivotItem, ev?: React.MouseEvent<HTMLElement> ): void => {
+  const pivotClick = ( item: PivotItem, ev?: React.MouseEvent<HTMLElement> ): void => {
     //Because of Performance Tab, need to adjust what is returned.   have to use .indexOf because itemKey value is .$FetchInfo
     const itemKey = !item.props.headerText ? InfoTab : item.props.headerText ;
     onTextSearch( itemKey );

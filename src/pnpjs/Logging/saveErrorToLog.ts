@@ -32,8 +32,8 @@ export function saveErrorToLog(errorInfo: IHelpfullOutput, errorInput: IHelpfull
     zzzText2: trace[5] ? trace[5] : null,
     zzzText3: trace[6] ? trace[6] : null,
 
-    zzzText6: typeof alertMe === 'string' ? alertMe : alertMe.toString(),
-    zzzText7: typeof consoleLog === 'string' ? consoleLog : consoleLog.toString(),
+    zzzText6: typeof alertMe === 'string' ? alertMe : `${alertMe}`,
+    zzzText7: typeof consoleLog === 'string' ? consoleLog : `${consoleLog}`,
 
     zzzNumber1: trace[7] ? trace[7] : null,
     zzzNumber2: trace[8] ? trace[8] : null,

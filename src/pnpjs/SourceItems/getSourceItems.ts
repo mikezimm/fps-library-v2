@@ -19,7 +19,7 @@ export async function getSourceItems( sourceProps: ISourceProps, alertMe: boolea
 
   const result: IItemsError = {
     items: initialResult.items,
-    errorInfo: null,
+    errorInfo: null as any,
   };
 
   //Clean up the raw error and return a human readable result

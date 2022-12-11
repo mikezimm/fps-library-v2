@@ -1,5 +1,5 @@
 
-import { IHelpfullInput, convertHelpfullError } from '../../../logic/indexes/HelpfullErrors';
+import { IHelpfullInput, convertHelpfullError, IHelpfullOutput } from '../../../logic/indexes/HelpfullErrors';
 import { ISiteUsersResults } from '@mikezimm/fps-pnp2/lib/services/sp/users/FetchSiteAdmins';
 import { BaseErrorTrace } from '../../../PackageConst';
 import { IUser } from '../../../logic/Users/IUserInterfaces';
@@ -14,16 +14,16 @@ export function createISiteUsersInfoObject(webUrl: string, resultInfo: ISiteUser
   const errorInput: IHelpfullInput = { e: resultInfo.e, alertMe: false, consoleLog: true, traceString: traceString, logErrors: true };
 
   const result: ISiteUsersInfo = {
-    users: resultInfo.users,
-    errorInfo: resultInfo.e ? convertHelpfullError(errorInput) : null,
+    users: resultInfo.users as IUser[],
+    errorInfo: resultInfo.e ? convertHelpfullError(errorInput) : null as any,
     status: resultInfo.status,
   };
 
   const newIUsers: IUser[] = [];
   // Need to add async modifier here to fix error await must be at top level
   resultInfo.users.map(async (user) => {
-    const newuser: IUser = createIUserFromUser(user, webUrl, null);
-    newIUsers.push(newuser);
+    const newuser: IUser | null = createIUserFromUser(user, webUrl, null);
+    if ( newuser !== null ) newIUsers.push(newuser);
   });
 
   result.users = newIUsers;

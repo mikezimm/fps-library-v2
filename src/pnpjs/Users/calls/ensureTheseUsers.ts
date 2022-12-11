@@ -54,7 +54,7 @@ export async function ensureTheseUsers(theseUsers: IUser[], checkTheseUsers: IUs
   ensureLogin.map( async user => {
     const resultInfo: IEnsureUserInfo = await ensureUserHere( user.loginName, webUrl, false);
     let localId = user.id ? user.id : user.Id;
-    resultInfo.user = createIUserFromUser( resultInfo.user as any, webUrl, localId );
+    resultInfo.user = createIUserFromUser( resultInfo.user as any, webUrl, localId ) as any;
     recentUsers.push( resultInfo.user );
   });
 

@@ -1,6 +1,6 @@
 
 // 2022-12-10
-const onTemplatesTesting = {
+const onTemplatesTesting: any = {
     "basePerms": {
         "odata.metadata": "https://tenant.sharepoint.com/sites/Templates/_api/$metadata#SP.BasePermissions",
         "High": "2147483647",
@@ -10,7 +10,7 @@ const onTemplatesTesting = {
     "status": "success"
 }
 
-const onRemoteHub = {
+const onRemoteHub: any = {
   "basePerms": {
       "odata.metadata": "https://tenant.sharepoint.com/sites/PivotHub/_api/$metadata#SP.BasePermissions",
       "High": "2147483647",

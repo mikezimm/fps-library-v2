@@ -12,9 +12,9 @@ import { IUser } from '../../../logic/Users/IUserInterfaces';
  *
  */
 
-export function checkForLoginName(u: IUser): string {
+export function checkForLoginName(u: IUser): string  {
 
-  let results = undefined;
+  let results = '' ;
 
   if (u.Name) {
     results = u.Name;

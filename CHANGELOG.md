@@ -5,10 +5,16 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.4
+npm install @mikezimm/fps-library-v2@1.0.5
 
 
 # Changelog
+
+## 1.0.5 - 2022-Dec-10
+- fixes when turning on tsconfig rules:
+    "strictNullChecks": true, ==>> reduced to false after some udpates/fixes
+    "noUnusedLocals": true, ==>> reduced to false after some udpates/fixes
+    "noImplicitAny": true,
 
 ## 1.0.4 - 2022-Dec-10
 - npm install @mikezimm/fps-pnp2@1.0.10

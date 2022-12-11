@@ -1,5 +1,5 @@
 
-const getFromCurrentTemplates = {
+const getFromCurrentTemplates: any = {
   "user": {
       "title": "Mike LastName",
       "Title": "Mike LastName",
@@ -37,7 +37,7 @@ const getFromCurrentTemplates = {
   "status": "success"
 }
 
-const getRemoteHub = {
+const getRemoteHub: any = {
   "user": {
       "title": "Mike LastName",
       "Title": "Mike LastName",

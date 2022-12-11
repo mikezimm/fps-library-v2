@@ -4,6 +4,7 @@ import { saveErrorToLog } from '../../Logging/saveErrorToLog';
 import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
 import { IEnsureUserInfo } from '../interfaces/IEnsureUserInfo';
 import { createIEnsureUserInfo } from '../logic/createIEnsureUserInfo';
+import { IHelpfullInput } from '../../../logic/indexes';
 
 /**
  *  NOTE:  THIS IS SAME AS ensureUserInfo EXCEPT IT TRIES TO ADD USER IF NOT THERE.
@@ -21,7 +22,7 @@ export async function ensureUserHere( loginName: string | undefined, webUrl: str
 
   if ( result.errorInfo ) {
 
-    saveErrorToLog( result.errorInfo, result.errorInput );
+    saveErrorToLog( result.errorInfo, result.errorInput as IHelpfullInput );
 
     if ( supressSaveConflict === true && ( result.errorInfo.friendly.indexOf('Save Conflict') > -1
         || result.errorInfo.returnMess.indexOf('Save Conflict') > -1 ) ) {

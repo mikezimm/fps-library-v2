@@ -25,7 +25,7 @@ export function easyLinkElement( link: IEasyLink, target: string = '_blank' ) : 
   if ( tabs.indexOf(EasyPagesDevTab) > -1 ) newClass.push( 'easy-link-2col' );
 
   const isCurrentPage = linkUrl?.toLocaleLowerCase().indexOf( window.location.pathname.toLocaleLowerCase() ) > -1 ? true : false;
-  const titleStyle: React.CSSProperties = { fontSize: title ? '' : 'smaller', fontWeight: title ? null : 400 };
+  const titleStyle: React.CSSProperties = { fontSize: title ? '' : 'smaller', fontWeight: title ? '' : 400 };
   const titleClass: string[] = [ 'easy-link-title' ];
 
   // https://github.com/mikezimm/drilldown7/issues/264

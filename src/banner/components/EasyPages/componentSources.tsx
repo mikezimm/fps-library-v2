@@ -117,8 +117,9 @@ const EasyPagesHook: React.FC<IEasyPagesHookProps> = ( props ) => {
     setSource( EasyPagesRepoTab );
   }
 
+  // Set item from ? to : to solve 'item' is possibly 'undefined'.ts(18048)
   // item SHOULD BE IPivotItemProps but have to cast as any in order to get itemKey and headerText
-  const sourceClick = ( item?: PivotItem, ev?: React.MouseEvent<HTMLElement> ): void => {
+  const sourceClick = ( item: PivotItem, ev?: React.MouseEvent<HTMLElement> ): void => {
     //Because of Performance Tab, need to adjust what is returned.   have to use .indexOf because itemKey value is .$FetchInfo
     const itemKey: ISourceName = !item.props.headerText ? InfoTab as ISourceName : item.props.headerText as ISourceName;
     if ( itemKey === 'Current' ) setSourceCurrent( );

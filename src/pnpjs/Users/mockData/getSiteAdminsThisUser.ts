@@ -27,7 +27,7 @@
     userPrincipalName : "mike.tenant@tenant.onmicrosoft.com"
 
  */
-const ThisUser = {
+const ThisUser: any = {
   "title": "Mike LastName",
   "Title": "Mike LastName",
   "initials": "MM",

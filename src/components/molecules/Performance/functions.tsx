@@ -54,7 +54,7 @@ export function startPerformanceInit_SS7( classic:  boolean, modern:  boolean, r
  * @param includeMsStr - Add time MS to startStr so that it is easier to verify timing.  https://github.com/mikezimm/pivottiles7/issues/192
  * @returns 
  */
-export function startPerformOp ( label: string, editMode: DisplayMode, includeMsStr: boolean = false ) {
+export function startPerformOp ( label: string, editMode: DisplayMode | null, includeMsStr: boolean = false ) {
     const start = new Date();
     const startStr: string = includeMsStr === true ? `${start.toLocaleTimeString()} : ${start.getMilliseconds()}` : start.toLocaleTimeString();
     const result: IPerformanceOp = {

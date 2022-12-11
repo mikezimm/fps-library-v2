@@ -20,7 +20,7 @@ const FPSAgeSliderHook: React.FC<IFPSAgeSliderHookProps> = ( props ) => {
   // min needs to be negative sign so that slider looks correct... slide left to show more
   const min = ( FPSAgeSliderOptions.length -1 )  * -1;
   // const IconStyles: React.CSSProperties = { cursor: 'pointer', fontSize: 'x-large', marginLeft: '20px' };
-  const AgeSlider: JSX.Element = FPSAgeIsVisible === false ? null : <Slider 
+  const AgeSlider: JSX.Element = FPSAgeIsVisible === false ? <div/> : <Slider 
     disabled={ disabled === true ? true : false }
     label={ `${FPSAgeColumnTitle} ${ isOOTBMeta !== true ? 'age (days ago)' : '' }` }
     min={ min }

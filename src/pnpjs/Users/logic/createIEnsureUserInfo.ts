@@ -1,6 +1,6 @@
 
 import { IEnsureUserResults } from '@mikezimm/fps-pnp2/lib/services/sp/users';
-import { convertHelpfullError, IHelpfullInput } from '../../../logic/indexes';
+import { convertHelpfullError, IHelpfullInput, IHelpfullOutput } from '../../../logic/indexes';
 import { BaseErrorTrace } from '../../../PackageConst';
 import { IEnsureUserInfo } from '../interfaces/IEnsureUserInfo';
 import { createIUserFromUser } from './createIUserFromUser';
@@ -27,8 +27,8 @@ export function createIEnsureUserInfo(webUrl: string, resultInfo: IEnsureUserRes
   const errorInput: IHelpfullInput = { e: resultInfo.e, alertMe: alertMe, consoleLog: consoleLog, traceString: traceString, logErrors: logErrors };
 
   const result: IEnsureUserInfo = {
-    user: createIUserFromUser(resultInfo.user as any, webUrl, null),
-    errorInfo: resultInfo.e ? convertHelpfullError(errorInput) : null,
+    user: createIUserFromUser(resultInfo.user as any, webUrl, null) as any,
+    errorInfo: resultInfo.e ? convertHelpfullError(errorInput) : null as any,
     errorInput: errorInput,
     status: resultInfo.status,
   };

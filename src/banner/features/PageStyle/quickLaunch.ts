@@ -21,15 +21,16 @@
     //specifically not undefined or null in case it is not yet preset.
     if ( minimize === true || minimize === false ) { 
       try {
-          if ( document.getElementById( 'spLeftNav' ) ) {
+          const spLeftNav: HTMLElement | null = document.getElementById( 'spLeftNav' ) ;
+          if ( spLeftNav !== null ) {
               if ( minimize === false ) {
-                document.getElementById( 'spLeftNav' ).style.width = null;
-                document.getElementById( 'spLeftNav' ).style.marginRight = null;
-                document.getElementById( 'spLeftNav' ).style.overflow = null;
+                spLeftNav.style.width = 'null';
+                spLeftNav.style.marginRight = 'null';
+                spLeftNav.style.overflow = 'null';
               } else { 
-                document.getElementById( 'spLeftNav' ).style.width = '20px';
-                document.getElementById( 'spLeftNav' ).style.marginRight = '50px';
-                document.getElementById( 'spLeftNav' ).style.overflow = 'hidden';
+                spLeftNav.style.width = '20px';
+                spLeftNav.style.marginRight = '50px';
+                spLeftNav.style.overflow = 'hidden';
             }
           }
 

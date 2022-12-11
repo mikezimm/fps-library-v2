@@ -9,7 +9,7 @@
  *
  */
 
-export function getEmailFromLoginName(uName: string) : string {
+export function getEmailFromLoginName(uName: string) : string | null {
 
   let result = null;
 

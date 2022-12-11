@@ -1,5 +1,5 @@
 
-const validatedWithEmail2 = {
+const validatedWithEmail2: any = {
   "user": {
       "title": "Mike LastName",
       "Title": "Mike LastName",
@@ -44,7 +44,7 @@ const validatedWithEmail2 = {
   this._ensureUserHere = await ensureUserHere( loginCreds , this.context.pageContext.site.absoluteUrl , false );
 
  */
-const remoteUbWEmail = {
+const remoteUbWEmail: any = {
   "user": {
       "title": "",
       "Title": "",
@@ -82,7 +82,7 @@ const remoteUbWEmail = {
   this._ensureUserHere = await ensureUserHere( loginCreds , this.context.pageContext.site.absoluteUrl , false );
  */
 
-const remoteWithLoginName2 = {
+const remoteWithLoginName2: any = {
   "user": {
       "title": "",
       "Title": "",

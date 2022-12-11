@@ -24,7 +24,8 @@ export function createPerformanceRows( performance: ILoadPerformance, keysToShow
     keysToShow.map( ( part: string ) => {
 
       if ( part.indexOf('setting') >-1 ) {
-        const thisPart : IMinPerformanceSetting | undefined = performance.sets[part];
+        const sets: any = performance.sets;
+        const thisPart : IMinPerformanceSetting | undefined = sets[part];
 
         if ( thisPart ) {
           loadRows.push( <tr>
@@ -33,8 +34,8 @@ export function createPerformanceRows( performance: ILoadPerformance, keysToShow
           </tr>);
         }
       } else {
-
-        const thisPart : IPerformanceOp | undefined = performance.ops[part];
+        const ops: any = performance.ops;
+        const thisPart : IPerformanceOp | undefined = ops[part];
 
         if ( thisPart ) {
           let time: string = thisPart.startStr;

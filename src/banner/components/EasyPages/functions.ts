@@ -14,6 +14,7 @@ import { EasyIconLocation, EasyIconObjectDefault, IEasyIcons,  } from "../../../
 import { getEasyIcon } from "../../../components/atoms/EasyIcons/eiFunctions";
 import { IHelpfullOutput } from "../../../logic/Errors/friendly";
 import { getSourceItems, IItemsError, ISourceProps } from "../../../pnpjs";
+import { DisplayMode } from "../../../common/interfaces/indexes";
 
 /**
  * This filters first by a meta string and then by text search string
@@ -73,8 +74,8 @@ export function getUsedTabs( sourceProps: ISourceProps, items: IEasyLink[] ) : s
   });
 
   const sortedTabs: string[] = [];
-  sourceProps.meta1.map( tab => { if ( foundTabs.indexOf( tab ) > -1 ) sortedTabs.push( tab ) ;} );
-  if ( showOverFlow === true ) sortedTabs.push( sourceProps.EasyPageOverflowTab );
+  sourceProps.meta1?.map( tab => { if ( foundTabs.indexOf( tab ) > -1 ) sortedTabs.push( tab ) ;} );
+  if ( showOverFlow === true && sourceProps.EasyPageOverflowTab ) sortedTabs.push( sourceProps.EasyPageOverflowTab );
   if ( systemTab === true ) sortedTabs.push( EasyPagesSysTab );  //  https://github.com/mikezimm/drilldown7/issues/280
 
   return sortedTabs;
@@ -120,7 +121,7 @@ export async function getPagesContent( sourceProps: ISourceProps, EasyIconObject
   items = sortObjectArrayByStringKeyCollator( items, 'asc', 'title', true, 'en' );
 
   // eslint-disable-next-line no-eval
-  if ( sourceProps.evalFilter ) items = items.filter( item => eval( sourceProps.evalFilter ) === true );
+  if ( sourceProps.evalFilter ) items = items.filter( item => eval( sourceProps.evalFilter ? sourceProps.evalFilter : '' ) === true );
 
   console.log( sourceProps.defType, sourceProps.listTitle , items );
 
@@ -176,7 +177,7 @@ export function addSearchMeta ( items: IEasyLink[], sourceProps: ISourceProps, E
     });
 
     //Only add to user tabs if it's NOT a known System page
-    if ( item.tabs.indexOf( EasyPagesSysTab ) < 0 ) {
+    if ( sourceProps.meta1 && item.tabs.indexOf( EasyPagesSysTab ) < 0 ) {
       sourceProps.meta1.map( ( tab : string ) => {
         if ( item.searchTextLC.indexOf( tab.toLocaleLowerCase() ) > -1 ) item.tabs.push( tab );
       } );
@@ -185,7 +186,7 @@ export function addSearchMeta ( items: IEasyLink[], sourceProps: ISourceProps, E
   });
 
   items.map( item => {
-    if ( item.tabs.length === 0 ) item.tabs.push( sourceProps.EasyPageOverflowTab );
+    if ( item.tabs.length === 0 && sourceProps.EasyPageOverflowTab ) item.tabs.push( sourceProps.EasyPageOverflowTab );
 
   });
 
