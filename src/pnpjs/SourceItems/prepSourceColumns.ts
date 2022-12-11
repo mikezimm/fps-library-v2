@@ -22,6 +22,7 @@ export function prepSourceColumns(sourceProps: ISourceProps): ISourceProps {
   //  [ added: ...    baseSelectColumns, did not have the ... not sure how that worked.
   const selectThese = [...baseSelectColumns, ...selColumns];
 
+  //Filtering dups from all columns :  https://dev.to/soyleninjs/3-ways-to-remove-duplicates-in-an-array-in-javascript-259o
   sourceProps.columns = columns.filter((element, index) => { return columns.indexOf(element) === index; });
   sourceProps.selectThese = selectThese.filter((element, index) => { return selectThese.indexOf(element) === index; });
   sourceProps.expandThese = expColumns.filter((element, index) => { return expColumns.indexOf(element) === index; });
