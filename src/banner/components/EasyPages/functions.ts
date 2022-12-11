@@ -100,7 +100,7 @@ export async function getPagesContent( sourceProps: ISourceProps, EasyIconObject
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, prefer-const
   let { items, errorInfo, } = fetchResults;
 
-  if ( errorInfo.returnMess.indexOf(`"List 'Site Pages' does not exist`) > 1 ) alert( `I'm sorry, this site does NOT have a library Titled 'Site Pages :(`);
+  if ( errorInfo && errorInfo.returnMess.indexOf(`"List 'Site Pages' does not exist`) > 1 ) alert( `I'm sorry, this site does NOT have a library Titled 'Site Pages :(`);
 
   performance.ops.fetch1 = updatePerformanceEnd( performance.ops.fetch1, true, items.length );
 
@@ -125,7 +125,7 @@ export async function getPagesContent( sourceProps: ISourceProps, EasyIconObject
 
   console.log( sourceProps.defType, sourceProps.listTitle , items );
 
-  return { items: items as IEasyLink[], performance: performance, errMessage: errorInfo.returnMess };
+  return { items: items as IEasyLink[], performance: performance, errMessage: errorInfo ? errorInfo.returnMess : '' };
 
 }
 

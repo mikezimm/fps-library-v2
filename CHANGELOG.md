@@ -5,10 +5,13 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.9
+npm install @mikezimm/fps-library-v2@1.0.10
 
 
 # Changelog
+
+## 1.0.10 - 2022-Dec-10
+- update getPagesContent based on testing
 
 ## 1.0.9 - 2022-Dec-10
 - update prepSourceColumns, componentPage based on testing
