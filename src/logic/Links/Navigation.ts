@@ -1,6 +1,6 @@
 
 // import { PageContext } from '@microsoft/sp-page-context';
-import { PageContextCopy_15_2 } from '../../common/interfaces/indexes';
+import { PageContextCopy_15_2 } from '../../common/interfaces/indexes/WebPartContext@152';
 
 export function goToParentSite( e: any, pageContext: PageContextCopy_15_2 ): void {
   // let e: any = event;

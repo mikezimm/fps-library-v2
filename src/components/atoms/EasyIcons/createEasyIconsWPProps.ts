@@ -1,5 +1,5 @@
 import { EasyIconObjectDefault, IEasyIcons, IEasyIconsWPProps } from './eiTypes';
-import { getStringArrayFromString } from '../../../logic/indexes/StringsIndex';
+import { getStringArrayFromString } from '../../../logic/Strings/arraysFromString';
 
 export function createEasyIconsWPProps(easyIconWPProps: IEasyIconsWPProps): IEasyIcons {
 

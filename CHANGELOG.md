@@ -5,12 +5,12 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.14
+npm install @mikezimm/fps-library-v2@1.0.15
 
 
 # Changelog
 
-## 1.0.14 - 2022-Dec-11
+## 1.0.15 - 2022-Dec-11
 - More cleanup imports
 
 ## 1.0.13 - 2022-Dec-11

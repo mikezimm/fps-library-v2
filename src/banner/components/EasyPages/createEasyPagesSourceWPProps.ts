@@ -1,4 +1,4 @@
-import { WebPartContextCopy_15_2 } from "../../../common/interfaces/indexes";
+import { WebPartContextCopy_15_2 } from "../../../common/interfaces/indexes/WebPartContext@152";
 import { ISupportedHost } from "../../../common/interfaces/indexes/Layout";
 import { IRepoLinks } from "../../../components/atoms/Links/CreateLinks";
 import { getReactCSSFromString } from "../../../logic/Strings/reactCSS";

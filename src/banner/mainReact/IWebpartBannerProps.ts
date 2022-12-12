@@ -8,12 +8,12 @@ import { DisplayMode, } from '@microsoft/sp-core-library';
 import { PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { ISpecialMessage } from '../components/SpecialBanner/interface';
 import { IPageLayoutType } from '../../common/interfaces/indexes/Layout';
-import { ILoadPerformance } from '../../components/indexes';
+import { ILoadPerformance } from '../../components/indexes/Performance';
 import { IRepoLinks } from '../../components/atoms/Links/CreateLinks';
 import { IWebpartHistory } from '../features/WebPartHistory/Interface';
-import { IFPSUser } from '../../logic/indexes';
+import { IFPSUser } from '../../logic/indexes/Users';
 import { IKeySiteProps } from '../components/Gear/IKeySiteProps';
-import { PageContextCopy_15_2 } from '../../common/interfaces/indexes';
+import { PageContextCopy_15_2 } from '../../common/interfaces/indexes/WebPartContext@152';
 
 export interface IBannerPages {
 

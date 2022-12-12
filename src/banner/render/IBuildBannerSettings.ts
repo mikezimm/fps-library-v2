@@ -5,7 +5,7 @@
 
 import { WebPartContextCopy_15_2, } from "../../common/interfaces/@msft/1.15.2/WebPartContext";
 import { IRepoLinks } from '../../components/atoms/Links/CreateLinks';
-import { IFPSUser } from '../../logic/indexes';
+import { IFPSUser } from '../../logic/indexes/Users';
 // import { DisplayMode, Version } from '@microsoft/sp-core-library';
 
 //  import { IRepoLinks } from '../../Links_/CreateLinks';

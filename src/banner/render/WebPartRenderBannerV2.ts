@@ -7,7 +7,7 @@ import { DisplayMode, } from "../../common/interfaces/@msft/1.15.2/displayMode";
 import { IRepoLinks } from "../../components/atoms/Links/CreateLinks";
 import { createPerformanceTableVisitor, ILoadPerformance } from "../../components/indexes/Performance";
 import { ILoadPerformanceOps } from "../../components/molecules/Performance/IPerformance";
-import { IFPSUser, verifyAudienceVsUser } from "../../logic/indexes";
+import { IFPSUser, verifyAudienceVsUser } from "../../logic/indexes/Users";
 import { getReactCSSFromString, ICurleyBraceCheck } from "../../logic/Strings/reactCSS";
 import { ISpecialMessage } from "../components/SpecialBanner/interface";
 import { visitorPanelInfo } from "../components/VisitorPanel/VisitorPanelComponent";

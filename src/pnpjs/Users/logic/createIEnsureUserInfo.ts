@@ -1,6 +1,6 @@
 
 import { IEnsureUserResults } from '@mikezimm/fps-pnp2/lib/services/sp/users/interfaces/IEnsureUserResults';
-import { convertHelpfullError, IHelpfullInput, IHelpfullOutput } from '../../../logic/indexes';
+import { convertHelpfullError, IHelpfullInput, IHelpfullOutput } from '../../../logic/indexes/HelpfullErrors';
 import { BaseErrorTrace } from '../../../PackageConst';
 import { saveErrorToLog } from '../../Logging';
 import { IEnsureUserInfo } from '../interfaces/IEnsureUserInfo';

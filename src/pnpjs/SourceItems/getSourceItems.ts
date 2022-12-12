@@ -3,7 +3,7 @@ import { IHelpfullOutput, IHelpfullInput, convertHelpfullError } from '../../log
 
 import { fetchSourceItems } from "@mikezimm/fps-pnp2/lib/services/sp/fetch/items/fetchSourceItems";
 import { IItemsError, ISourceProps } from './Interface';
-import { check4Gulp } from '@mikezimm/fps-pnp2';
+import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
 import { saveErrorToLog } from '../Logging';
 
 /**

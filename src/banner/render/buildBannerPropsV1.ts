@@ -10,7 +10,7 @@ import { DisplayMode, } from '@microsoft/sp-core-library';
  // For SPPermission:  let addAndCustomizePages = pageContext.web.permissions.hasPermission( SPPermission.addAndCustomizePages );
 import { SPPermission } from '@microsoft/sp-page-context';
 import { baseBannerCmdStyles, baseBannerStyles } from '../../common/commandStyles/defaults';
-import { IFPSUser, verifyAudienceVsUser } from '../../logic/indexes';
+import { IFPSUser, verifyAudienceVsUser } from '../../logic/indexes/Users';
 import { getReactCSSFromString, ICurleyBraceCheck } from '../../logic/Strings/reactCSS';
 import { IMinWPBannerProps } from '../interfaces/MinWP/IMinWPBannerProps';
 import { IWebpartBannerProps } from '../mainReact/IWebpartBannerProps';

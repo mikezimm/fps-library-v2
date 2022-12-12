@@ -1,6 +1,6 @@
 
 import { IRepoLinks } from "../../components/atoms/Links/CreateLinks";
-import { createPerformanceTableVisitor } from "../../components/indexes";
+import { createPerformanceTableVisitor } from "../../components/indexes/Performance";
 import { ILoadPerformance, ILoadPerformanceOps } from "../../components/molecules/Performance/IPerformance";
 import { visitorPanelInfo } from "../components/VisitorPanel/VisitorPanelComponent";
 import { IMinWPBannerProps } from "../interfaces/MinWP/IMinWPBannerProps";
