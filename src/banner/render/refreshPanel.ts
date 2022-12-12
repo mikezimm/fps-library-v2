@@ -1,8 +1,9 @@
-import { IMinWPBannerProps } from "./BannerInterface_";
-import { IRepoLinks } from "../../Links_/CreateLinks";
-import { visitorPanelInfo } from '../../CoreFPS_/VisitorPanelComponent_';
-import { ILoadPerformance, ILoadPerformanceOps } from "../../Performance_/IPerformance";
-import { createPerformanceTableVisitor } from "../../Performance_/tables";
+
+import { IRepoLinks } from "../../components/atoms/Links/CreateLinks";
+import { createPerformanceTableVisitor } from "../../components/indexes";
+import { ILoadPerformance, ILoadPerformanceOps } from "../../components/molecules/Performance/IPerformance";
+import { visitorPanelInfo } from "../components/VisitorPanel/VisitorPanelComponent";
+import { IMinWPBannerProps } from "../interfaces/MinWP/IMinWPBannerProps";
 
 export function refreshPanel(bannerProps: IMinWPBannerProps, repoLink: IRepoLinks, performance: ILoadPerformance, keysToShow: ILoadPerformanceOps[]) {
 

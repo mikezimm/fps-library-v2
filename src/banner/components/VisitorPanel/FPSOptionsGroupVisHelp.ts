@@ -19,9 +19,11 @@ import {
 } from '@microsoft/sp-property-pane';
 
 import { PropertyFieldPeoplePicker, PrincipalType } from '@pnp/spfx-property-controls/lib/PropertyFieldPeoplePicker';
+import { IMinWPBannerProps } from '../../interfaces/MinWP/IMinWPBannerProps';
   
-import { IMinWPBannerProps } from '../HelpPanelOnNPM/onNpm/BannerInterface';
+// import { IMinWPBannerProps } from '../HelpPanelOnNPM/onNpm/BannerInterface';
 import { EveryoneAudienceChoices } from '../../propPane/Audiences/Interfaces';
+import { IMinCustomHelpProps, IMinWPVisitorPanelInfo } from './Interfaces';
   
     
     /**
@@ -43,7 +45,7 @@ import { EveryoneAudienceChoices } from '../../propPane/Audiences/Interfaces';
     /**
      * Generates prop pane FIELDS for:  bannerStyleChoice, bannerStyle, bannerCmdStyle, bannerHoverEffect
      */
-     export function BannerPropVisHelp( wpContext: any, onPropertyPaneFieldChanged: any, wpProperties: IMinWPBannerProps ){
+     export function BannerPropVisHelp( wpContext: any, onPropertyPaneFieldChanged: any, wpProperties: IMinCustomHelpProps ) {
   
       let fields : any[] = [];
       let disabled: boolean =  wpProperties.showCustomHelp === false ? true : false;

@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 
-import * as links from '../../../Links_/AllLinks';
+import * as links from '../../../components/atoms/Links/AllLinks';
 
 import { Stack, IStackTokens } from 'office-ui-fabric-react';
 

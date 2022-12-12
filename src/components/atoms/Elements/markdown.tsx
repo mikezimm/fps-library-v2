@@ -1,10 +1,13 @@
 
 import * as React from 'react';
+import { RegexHashNumber } from '../../../logic/Regex/constants';
+import { INullOrStringArray, splitByHashNumbers } from '../../../logic/Strings/splitHash';
+import { IRepoLinks } from '../Links/CreateLinks';
 
-import { IRepoLinks } from '../Links_/CreateLinks';
+// import { IRepoLinks } from '../Links_/CreateLinks';
 
-import { RegexHashNumber, INullOrStringArray } from '../Services/Regex_/constants_';
-import { splitByHashNumbers } from '../Services/Regex_/functions_';
+// import { RegexHashNumber, INullOrStringArray } from '../Services/Regex_/constants_';
+// import { splitByHashNumbers } from '../Services/Regex_/functions_';
 
 export function replaceHashNumStringWithRepoIssues( testString: string, repoLinks: IRepoLinks ) {
   //Replace any # with link to issue

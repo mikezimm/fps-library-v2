@@ -1,7 +1,6 @@
 
 import { PageContext } from '@microsoft/sp-page-context';
 
-
 export function goToParentSite( e: any, pageContext: PageContext ): void {
   // let e: any = event;
   console.log('goToParentSite event:',e);

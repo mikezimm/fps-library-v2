@@ -3,32 +3,21 @@
  * To benefit from typescript, it's meant to be copied to the specific webpart using it
  */
 
-import {  WebPartContext } from '@microsoft/sp-webpart-base';
+import { WebPartContextCopy_15_2, } from "../../common/interfaces/@msft/1.15.2/WebPartContext";
+import { IRepoLinks } from '../../components/atoms/Links/CreateLinks';
+import { IFPSUser } from '../../logic/indexes';
 // import { DisplayMode, Version } from '@microsoft/sp-core-library';
 
- import { IRepoLinks } from '../../Links_/CreateLinks';
+//  import { IRepoLinks } from '../../Links_/CreateLinks';
 
-//  import { verifyAudienceVsUser } from '../../Services/Users/CheckPermissions';
- import { IFPSUser, } from '../../Services/Users_/IUserInterfaces_';
+// //  import { verifyAudienceVsUser } from '../../Services/Users/CheckPermissions';
+//  import { IFPSUser, } from '../../Services/Users_/IUserInterfaces_';
 
-export const changefpsOptions2 : string[] = [  'fpsPageStyle', 'fpsContainerMaxWidth' ];
-
-// export const changeBanner : string[] = [ ...changeBannerBasics, ...changeBannerNav, ...changeBannerTheme, ...changeBannerUtility  ];
-
-/**
- * Usage:  export interface FutureMailable extends IMinWPBannerProps {
- */
-//  export interface IMinWPBannerProps extends 
-//   IMinBannerUIProps, IMinPinMeProps, IMinPandoramicProps, 
-//   IMinBannerThemeProps, IMinCustomHelpProps, IMinPageStyleProps, 
-//   IMinBannerUtilityProps, IMinFPSLegacyProps {
-//     [key: string]: any;
-// }
 
  export interface IBuildBannerSettings {
 
      //this. related info
-     context: WebPartContext;
+     context: WebPartContextCopy_15_2;
      clientWidth: number;
      exportProps: any;
  

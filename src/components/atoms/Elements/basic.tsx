@@ -2,8 +2,7 @@ import * as React from 'react';
 
 import { Image, ImageFit, ImageCoverStyle} from 'office-ui-fabric-react/lib/Image';
 
-
-import { IDefIcon, IMyTextElementTypes } from './IElements';
+import { IMyTextElementTypes } from './IElements';
 
 import { ColoredLine } from './draw';
 /**
@@ -92,7 +91,7 @@ export function MyImage ( title: string, src: string, styles?: any, href?: any) 
   return thisImage;
 }
 
-export function convertTextToListItems ( value: string, delim: string, leftPad: number, type: 'ul' | 'ol', otherSettings = null ) {
+export function convertTextToListItems ( value: string, delim: string, leftPad: number, type: 'ul' | 'ol', ) {
 
     let result : any = value;
   

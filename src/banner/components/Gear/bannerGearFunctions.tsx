@@ -6,8 +6,7 @@ import { PageContext, SPPermission } from '@microsoft/sp-page-context';
 import { Pivot, PivotItem, PivotLinkFormat, PivotLinkSize,} from 'office-ui-fabric-react/lib/Pivot';
 
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
-
-import { IKeySiteProps } from '../../onNpm/interfaces';
+import { IKeySiteProps } from "./IKeySiteProps";
 
 require ('./bannerSettings.css');
 

@@ -1,8 +1,12 @@
 
-import { WebPartContext, } from "@microsoft/sp-webpart-base";
+import { WebPartContextCopy_15_2, } from "../../common/interfaces/@msft/1.15.2/WebPartContext";
 
 
 import { DisplayMode } from '@microsoft/sp-core-library';
+import { ISitePreConfigProps } from "../../common/PropPaneHelp/IPreConfig";
+import { IWebpartBannerProps } from "./IWebpartBannerProps";
+import { IWebpartHistory } from "../features/WebPartHistory/Interface";
+import { IFPSPinMenu } from "../features/PinMe/Interfaces";
 
 // import { IWebpartBannerProps, } from '../HelpPanelOnNPM/onNpm/bannerProps';
 // import { IWebpartHistory, } from '../Services/PropPane/WebPartHistory_/Interface';
@@ -25,7 +29,7 @@ export interface IFPSCoreReactComponentProps {  // WITHOUT PinMe option
   displayMode: DisplayMode;
 
   //Environement props
-  context: WebPartContext;
+  context: WebPartContextCopy_15_2;
 
   //Banner related props
   errMessage: any;

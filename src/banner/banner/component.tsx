@@ -10,30 +10,42 @@ import { DisplayMode,  } from '@microsoft/sp-core-library';
 import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 
 // import { getHelpfullErrorV2 } from "../../../Services/Logging/ErrorHandler";
-import { createStyleFromString, } from "../../../Services/PropPane/StringToReactCSS";
-import { IWebpartHistoryItem2, } from "../../../Services/PropPane/WebPartHistory_/Interface";
+// import { createStyleFromString, } from "../../../Services/PropPane/StringToReactCSS";
+// import { IWebpartHistoryItem2, } from "../../../Services/PropPane/WebPartHistory_/Interface";
 
-import { bannerSettingsContent } from './bannerGearFunctions_';
+// import { bannerSettingsContent } from './bannerGearFunctions_';
 
-import { checkDeepProperty } from "../../../Services/Objects_/properties"; 
-import { goToParentSite, goToHomePage } from "../../../Services/Navigation/site"; 
+// import { checkDeepProperty } from "../../../Services/Objects_/properties"; 
+// import { goToParentSite, goToHomePage } from "../../../Services/Navigation/site"; 
 
-import { setExpandoRamicMode } from '../../../Services/DOM_/Expando_/FPSExpandoramic';
-import { defaultBannerCommandStyles, } from "../../onNpm/defaults_";
+// import { setExpandoRamicMode } from '../../../Services/DOM_/Expando_/FPSExpandoramic';
+// import { defaultBannerCommandStyles, } from "../../onNpm/defaults_";
 
-import { IWebpartBannerProps, IWebpartBannerState, } from '../../../HelpPanelOnNPM/onNpm/bannerProps';
-import { IKeySiteProps } from '../../onNpm/Moved_/interfaces_';
+// import { IWebpartBannerProps, IWebpartBannerState, } from '../../../HelpPanelOnNPM/onNpm/bannerProps';
+// import { IKeySiteProps } from '../../onNpm/Moved_/interfaces_';
 
-import * as links from '../../../Links_/LinksRepos';
+import * as links from '../../components/atoms/Links/LinksRepos';
 
-import WebPartLinks from './WebPartLinks_';
+import WebPartLinks from '../components/WebPartLinks/WebPartLinks';
 
-import SinglePage from '../SinglePage_/SinglePage';
+import SinglePage from '../components/SingleHelpPage/SinglePage';
 
 import ReactJson from "react-json-view";
-import { createPerformanceTableVisitor } from "../../../Performance_/tables";
 
-import { createSpecialElement } from '../../specialX_/component';
+// import { createPerformanceTableVisitor } from "../../../Performance_/tables";
+
+// import { createSpecialElement } from '../../specialX_/component';
+import { IWebpartBannerProps, IWebpartBannerState } from "../mainReact/IWebpartBannerProps";
+import { IWebpartHistoryItem2 } from "../features/WebPartHistory/Interface";
+import { goToHomePage, goToParentSite } from "../../logic/Links/Navigation";
+import { checkDeepProperty } from "../../logic/indexes";
+import { IKeySiteProps } from "../components/Gear/IKeySiteProps";
+import { createStyleFromString } from "../../logic/Strings/reactCSS";
+import { createPerformanceTableVisitor } from "../../components/indexes";
+import { createSpecialElement } from "../components/SpecialBanner/component";
+import { setExpandoRamicMode } from "../features/Expando/functions";
+import { bannerSettingsContent } from "../components/Gear/bannerGearFunctions";
+import { defaultBannerCommandStyles } from "../../common/commandStyles/defaults";
 
 
 require ('./banner.css');
@@ -69,7 +81,7 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 
 	private hoverEffect = this.props.hoverEffect === false ? false : true;
 
-	private dev= undefined ; //devTable( );  https://github.com/mikezimm/ALVFinMan/issues/171
+	private dev: any = undefined ; //devTable( );  https://github.com/mikezimm/ALVFinMan/issues/171
 
 	private wideToggle = this.props.wideToggle === null || this.props.wideToggle === undefined ? true : this.props.wideToggle ;
 

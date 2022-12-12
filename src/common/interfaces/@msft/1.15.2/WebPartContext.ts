@@ -2,9 +2,11 @@
 export class LegacyPageContextCopy_15_2 {
   readonly isSiteAdmin: boolean;
   readonly userId: string;
+  isWebWelcomePage: boolean;
 }
 
 export class PageContextCopy_15_2 {
+    
     listItem: { 
       readonly id: number;
     }

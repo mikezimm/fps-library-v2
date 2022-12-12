@@ -1,23 +1,36 @@
 
-import { WebPartContext } from "@microsoft/sp-webpart-base";
-import { DisplayMode } from "@microsoft/sp-core-library";
+// import { DisplayMode } from "@microsoft/sp-core-library";
+
+import { baseBannerCmdStyles, baseBannerStyles } from "../../common/commandStyles/defaults";
+import { WebPartContextCopy_15_2, } from "../../common/interfaces/@msft/1.15.2/WebPartContext";
+import { DisplayMode, } from "../../common/interfaces/@msft/1.15.2/displayMode";
+import { IRepoLinks } from "../../components/atoms/Links/CreateLinks";
+import { createPerformanceTableVisitor, ILoadPerformance } from "../../components/indexes/Performance";
+import { ILoadPerformanceOps } from "../../components/molecules/Performance/IPerformance";
+import { IFPSUser, verifyAudienceVsUser } from "../../logic/indexes";
+import { getReactCSSFromString, ICurleyBraceCheck } from "../../logic/Strings/reactCSS";
+import { ISpecialMessage } from "../components/SpecialBanner/interface";
+import { visitorPanelInfo } from "../components/VisitorPanel/VisitorPanelComponent";
+import { IMinWPBannerProps } from "../interfaces/MinWP/IMinWPBannerProps";
+import { IWebpartBannerProps } from "../mainReact/IWebpartBannerProps";
+import { IBuildBannerSettings } from "./IBuildBannerSettings";
 
 import { SPPermission } from '@microsoft/sp-page-context';
 
-import { IMinWPBannerProps, IBuildBannerSettings, } from "./BannerInterface_";
-import { IRepoLinks, } from "../../Links_/CreateLinks";
-import { IFPSUser } from "../../Services/Users_/IUserInterfaces_";
-import { IWebpartBannerProps, } from "./bannerProps";
+// import { IMinWPBannerProps, IBuildBannerSettings, } from "./BannerInterface_";
+// import { IRepoLinks, } from "../../Links_/CreateLinks";
+// import { IFPSUser } from "../../Services/Users_/IUserInterfaces_";
+// import { IWebpartBannerProps, } from "./bannerProps";
 
-import { visitorPanelInfo,  } from '../../CoreFPS_/VisitorPanelComponent_';
-import { verifyAudienceVsUser } from '../../Services/Users_/CheckPermissions_';
-// import { } from "../fpsReferences";
-import { ILoadPerformance, ILoadPerformanceOps } from "../../Performance_/IPerformance";
+// import { visitorPanelInfo,  } from '../../CoreFPS_/VisitorPanelComponent_';
+// import { verifyAudienceVsUser } from '../../Services/Users_/CheckPermissions_';
+// // import { } from "../fpsReferences";
+// import { ILoadPerformance, ILoadPerformanceOps } from "../../Performance_/IPerformance";
 
-import { getReactCSSFromString, ICurleyBraceCheck } from '../../Services/PropPane/StringToReactCSS';
-import { baseBannerCmdStyles, baseBannerStyles} from './defaults_';
-import { createPerformanceTableVisitor } from "../../Performance_/tables";
-import { ISpecialMessage } from "../specialX_/interface";
+// import { getReactCSSFromString, ICurleyBraceCheck } from '../../Services/PropPane/StringToReactCSS';
+// import { baseBannerCmdStyles, baseBannerStyles} from './defaults_';
+// import { createPerformanceTableVisitor } from "../../Performance_/tables";
+// import { ISpecialMessage } from "../specialX_/interface";
 
 export interface IMainWPBanerSetup {
   displayMode: DisplayMode,
@@ -29,7 +42,7 @@ export interface IMainWPBanerSetup {
   exportProps: IBuildBannerSettings,
   strings: any,
   clientWidth: number,
-  thisContext: WebPartContext,
+  thisContext: WebPartContextCopy_15_2,
   modifyBannerTitle: boolean,
   forceBanner: boolean,
   disablePandoramic: boolean,
@@ -166,19 +179,16 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
        *                                                      
        *                                                      
        */
-    
-    
-    
+
       //  Updated for SPA to get Title which is also the window.name property  https://github.com/mikezimm/drilldown7/issues/243
        let bannerTitle = modifyBannerTitle === true && minWPBannerProps.bannerTitle && minWPBannerProps.bannerTitle.length > 0 ? minWPBannerProps.bannerTitle : 
-          anyContext._pageLayoutType === 'SingleWebPartAppPageLayout' ? document.title : repoLink.desc;       let bannerStyle: ICurleyBraceCheck = getReactCSSFromString( 'bannerStyle', minWPBannerProps.bannerStyle, baseBannerStyles );
-    
+          anyContext._pageLayoutType === 'SingleWebPartAppPageLayout' ? document.title : repoLink.desc;       
+
+      let bannerStyle: ICurleyBraceCheck = getReactCSSFromString( 'bannerStyle', minWPBannerProps.bannerStyle, baseBannerStyles );
        let bannerCmdStyle: ICurleyBraceCheck = getReactCSSFromString( 'bannerCmdStyle', minWPBannerProps.bannerCmdStyle, baseBannerCmdStyles );
-    
-    
+
        //Over-rides gear for certain users
        let showRepoLinks = renderAsReader === true || minWPBannerProps.showRepoLinks === false ? false : true;
-    
 
        let isSiteAdmin = renderAsReader !== true && FPSUser.isSiteAdmin === true ? true : false;
 
@@ -245,7 +255,7 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
         refreshId: refreshId,
         FPSUser: FPSUser,
         exportProps: exportProps,
-        pageContext: thisContext.pageContext,
+        pageContext: thisContext.pageContext as any,
         displayMode: displayMode,
 
         WebPartHelpElement: null,
@@ -301,7 +311,7 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
         wideToggle: wideToggle,
 
         //2022-02-17:  Added these for expandoramic mode
-        domElement: thisContext.domElement,
+        domElement: thisContext.domElement, //Looking at renderCustomStyles, it seems that domElement is on this.domElement ( aka main webpart this )
         pageLayout: minWPBannerProps.pageLayout, // like SinglePageApp etc... this.context[_pageLayout];
         enableExpandoramic: enableExpandoramic,
         expandoDefault: minWPBannerProps.expandoDefault,

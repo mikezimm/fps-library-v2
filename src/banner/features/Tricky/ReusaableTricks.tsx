@@ -1,8 +1,9 @@
 import * as React from 'react';
+import { IHelpTable } from '../../components/SingleHelpPage/ISinglePageProps';
 
 
 //import { IHelpTableRow, IHelpTable, IPageContent, ISinglePageProps } from '../Component/ISinglePageProps';
-import { IHelpTable, } from '../HelpPanelOnNPM/banner/SinglePage_/ISinglePageProps';
+// import { IHelpTable, } from '../HelpPanelOnNPM/banner/SinglePage_/ISinglePageProps';
 
 /**
  * tricksTable creates table of "tricks" which provide url paramters to reload the page in different modes

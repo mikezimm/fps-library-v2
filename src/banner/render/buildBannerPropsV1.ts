@@ -9,10 +9,13 @@ import { DisplayMode, } from '@microsoft/sp-core-library';
 
  // For SPPermission:  let addAndCustomizePages = pageContext.web.permissions.hasPermission( SPPermission.addAndCustomizePages );
 import { SPPermission } from '@microsoft/sp-page-context';
+import { baseBannerCmdStyles, baseBannerStyles } from '../../common/commandStyles/defaults';
+import { IFPSUser, verifyAudienceVsUser } from '../../logic/indexes';
+import { getReactCSSFromString, ICurleyBraceCheck } from '../../logic/Strings/reactCSS';
+import { IMinWPBannerProps } from '../interfaces/MinWP/IMinWPBannerProps';
+import { IWebpartBannerProps } from '../mainReact/IWebpartBannerProps';
+import { IBuildBannerSettings } from './IBuildBannerSettings';
 
- import "@pnp/sp/webs";
- import "@pnp/sp/site-groups/web";
- 
  /***
   *    d888888b .88b  d88. d8888b.  .d88b.  d8888b. d888888b      d8b   db d8888b. .88b  d88.      d88888b db    db d8b   db  .o88b. d888888b d888888b  .d88b.  d8b   db .d8888. 
   *      `88'   88'YbdP`88 88  `8D .8P  Y8. 88  `8D `~~88~~'      888o  88 88  `8D 88'YbdP`88      88'     88    88 888o  88 d8P  Y8 `~~88~~'   `88'   .8P  Y8. 888o  88 88'  YP 
@@ -24,9 +27,9 @@ import { SPPermission } from '@microsoft/sp-page-context';
   *                                                                                                                                                                              
   */
 
- import { getReactCSSFromString, ICurleyBraceCheck } from '../../Services/PropPane/StringToReactCSS';
- import { IWebpartBannerProps,} from './bannerProps';
- import { baseBannerCmdStyles, baseBannerStyles} from './defaults_';
+//  import { getReactCSSFromString, ICurleyBraceCheck } from '../../Services/PropPane/StringToReactCSS';
+//  import { IWebpartBannerProps,} from './bannerProps';
+//  import { baseBannerCmdStyles, baseBannerStyles} from './defaults_';
  
 // import { IEveryoneItemPageAudience } from  '../../Services/DOM/Expando/FPSOptionsExpando';
 
@@ -34,8 +37,8 @@ import { SPPermission } from '@microsoft/sp-page-context';
  
 //  import { IRepoLinks } from '../../Links/CreateLinks';
 
- import { verifyAudienceVsUser } from '../../Services/Users_/CheckPermissions_';
- import { IFPSUser,  } from '../../Services/Users_/IUserInterfaces_';
+//  import { verifyAudienceVsUser } from '../../Services/Users_/CheckPermissions_';
+//  import { IFPSUser,  } from '../../Services/Users_/IUserInterfaces_';
  
 // import { IWebpartHistory, } from '../../Services/PropPane/WebPartHistory/Interface';
 // import { ISupportedHost } from '../../Services/PropPane/FPSInterfaces';
@@ -43,13 +46,17 @@ import { SPPermission } from '@microsoft/sp-page-context';
 // import { IPinMeState } from "../../Services/DOM/PinMe/FPSPinMenu";
 
  
-import { IMinWPBannerProps, IBuildBannerSettings } from "./Moved_/BannerInterface_";
- /**
-  * This function builds up the final bannerProps object that is passed to the banner component
-  * @param wpProps 
-  * @param bbs 
-  * @returns 
-  */
+// import { IMinWPBannerProps, IBuildBannerSettings } from "./Moved_/BannerInterface_";
+
+/**
+ * 
+ * @param wpProps 
+ * @param FPSUser 
+ * @param bbs 
+ * @param showTricks 
+ * @param displayMode 
+ * @returns 
+ */
  export function buildBannerProps ( wpProps : IMinWPBannerProps, FPSUser: IFPSUser, bbs: IBuildBannerSettings, showTricks: boolean, displayMode: DisplayMode ) {
  
      
