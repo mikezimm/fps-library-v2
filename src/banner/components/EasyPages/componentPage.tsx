@@ -6,6 +6,7 @@ import { Pivot, PivotItem, PivotLinkFormat, PivotLinkSize,} from 'office-ui-fabr
 
 require('@mikezimm/fps-styles/dist/easypages.css');
 
+
 // import styles from '../PropPaneCols.module.scss';
 import { WebPartContextCopy_15_2 } from '../../../common/interfaces/@msft/1.15.2/WebPartContext'; // Used in:  IEasyPagesSourceProps
 
@@ -202,7 +203,7 @@ const EasyPagesPageHook: React.FC<IEasyPagesPageHookProps> = ( props ) => {
         selectedKey={ tab }
       >
       { activeTabs.map( ( tab: string ) => {
-        return <PivotItem key={ tab } itemKey={ tab } headerText={ tab !== InfoTab ? tab : '' } itemIcon={ tab === InfoTab ? InfoIcon : null } />
+        return <PivotItem key={ tab } itemKey={ tab } headerText={ tab !== InfoTab ? tab : '' } itemIcon={ tab === InfoTab ? InfoIcon : undefined } />
       })}
 
     </Pivot>}

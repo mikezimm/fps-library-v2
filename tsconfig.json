@@ -11,14 +11,14 @@
     "skipLibCheck": true,
     "outDir": "lib",
 
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "noUnusedLocals": false,
     "noImplicitAny": true,
 
     "allowSyntheticDefaultImports": true,
     "declarationMap": true,
     "useDefineForClassFields": false,
-    
+
     "typeRoots": [
       "./node_modules/@types",
     ],

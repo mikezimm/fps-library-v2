@@ -5,50 +5,77 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.11
+npm install @mikezimm/fps-library-v2@1.0.12
 
 
 # Changelog
 
 ## 1.0.12 - 2022-Dec-11
+
+### Installs
+
+- npm install react-json-view@1.21.3
+- npm install @pnp/spfx-property-controls@3.6.0
+- npm install @mikezimm/fps-styles@1.0.1
+
+### Linting - Set these to true and cleaned up warnings
+
+  "strictNullChecks": true,
+  "noUnusedLocals": false,
+- Turned off noUnusedLocals when done... saved error count to zNotes/Errors - noUnusedLocals
+- Keeping strictNullChecks ON for now since I was able to clean all current warnings
+
+### Decamelize 
+
+- Created local version of https://github.com/sindresorhus/decamelize,
+
 - Moved PropPane help pages into separate files:  src/common/PropPaneHelp/pages/FPSCommonOnNpm.tsx
 - Moved duplicate Audiences from banner sub-folter to src/common/Audiences
 
 ### CommandStyles
+
 - import npmFunctions/src/HelpPanelOnNPM/onNpm/defaults_.ts to /src/common/commandStyles/defaults.ts
 - import npmFunctions/src/HelpPanelOnNPM/onNpm/adjustCmdThemes_.ts to /src/common/commandStyles/adjustCmdThemes.ts
 
 ### VisitorPanel
+
 - Move VisitorPanelHelp Interfaces to src/banner/components/VisitorPanel/Interfaces.ts
 - import npmFunctions/src/CoreFPS/VisitorPanelComponent_.tsx to src/banner/components/VisitorPanel/VisitorPanelComponent.tsx
 - import npmFuctions/src/CoreFPS/FPSOptionsGroupVisHelp_ to src/banner/components/VisitorPanel/FPSOptionsGroupVisHelp.ts
 
 ### CoreFPS
+
 - import npmFuctions/src/CoreFPS/ReactComponentProps to src/banner/mainReact --- Props and State separated
 - import npmFuctions/src/CoreFPS_/BannerPageMisc_.tsx to src/banner/components/Panel/createAboutRow.tsx <<< FILE RENAME >>>
 
 ### Gear
+
 - import npmFuctions/src/HelpPanelOnNPM/onNpm/interfaces_.ts to src/banner/components/Gear/IKeySiteProps.ts
 - import npmFuctions/src/HelpPanelOnNPM/banner/onLocal/bannerGearFunctions_.tsx to 
 - import npmFuctions/src/HelpPanelOnNPM/banner/onLocal/bannerGearFunctions_.tsx to src/banner/components/Gear
 - import npmFuctions/src/HelpPanelOnNPM/banner/onLocal/bannerSettings_.css to src/banner/components/Gear
 
 ### SpecialBanner
+
 - import npmFuctions/src/HelpPanelOnNPM/specialX to src/banner/components/SpecialBanner
 
 ### WebPartLinks
+
 - import npmFuctions/src/HelpPanelOnNPM/banner/onLocal/WebPartLinks_.tsx to src/banner/components/WebPartLinks/WebPartLinks.tsx
 
 ### Main Component
+
 - import npmFuctions/src/HelpPanelOnNPM/banner/onLocal/component_.tsx to src/banner/banner/component.tsx
 - import npmFuctions/src/HelpPanelOnNPM/banner/onLocal/banner_.css to src/banner/banner/banner.css
 
 ### Main Render
+
 - import npmFuctions/src/HelpPanelOnNPM/onNpm/BannerInterface_.ts to src/banner/renderBBP/BannerInterface.ts
 - import npmFuctions/src/HelpPanelOnNPM/onNpm/buildBannerPropsV1_.ts to src/banner/renderBBP/buildBannerPropsV1.ts
 - import npmFuctions/src/HelpPanelOnNPM/onNpm/Moved_/WebPartRenderBannerV2_.ts to src/banner/renderBBP/WebPartRenderBannerV2.ts
 
 ### Others
+
 - import npmFuctions/src/Services/PropPane/StringToReactCSS.ts to src/logic/Strings/reactCSS.ts
 - import npmFuctions/src/Services/Navigation/site.ts to src/logic/Links/Navigation.ts
 - import npmFuctions/src/Elements_ to src/components/atoms/Elements

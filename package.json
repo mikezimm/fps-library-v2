@@ -1,6 +1,6 @@
 {
   "name": "@mikezimm/fps-library-v2",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Library of reusable typescript/javascript functions, interfaces and constants",
   "license": "MIT",
   "main": "./lib/index.js",
@@ -57,8 +57,11 @@
   "dependencies": {
     "@microsoft/sp-property-pane": "^1.15.2",
     "@mikezimm/fps-pnp2": "^1.0.11",
+    "@mikezimm/fps-styles": "^1.0.1",
+    "@pnp/spfx-property-controls": "^3.6.0",
     "office-ui-fabric-react": "^7.199.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-json-view": "^1.21.3"
   }
 }

@@ -17,8 +17,10 @@ export function  applyHeadingCSS( wpProps: IMinHeadingStyleProps, ): void {
       let classes: IFPSHeadingClass[] = [];
       let cssStyles: string[] = [];
       pieces.map( piece => {
+        // piece = decamelize( piece.trim(), '-', false ); // not needed at this point
         piece = piece.trim();
-        if ( piece.indexOf('.') === 0 ) { classes.push( piece.replace('.','') ) ; } else { cssStyles.push( piece ) ; }
+        if ( piece.indexOf('.') === 0 ) piece = piece.replace('.','') ;
+        cssStyles.push( piece ) ;
       });
 //FPSApplyTagCSSAndStyles
       if ( cssStyles.length > 0 || classes.length > 0 ) FPSApplyTagCSSAndStyles( HTMLRegEx.h2 as IRegExTag, cssStyles.join( ';' ) , classes, true, false, );
@@ -29,8 +31,10 @@ export function  applyHeadingCSS( wpProps: IMinHeadingStyleProps, ): void {
       let classes: IFPSHeadingClass[] = [];
       let cssStyles: string[] = [];
       pieces.map( piece => {
+        // piece = decamelize( piece.trim(), '-', false ); // not needed at this point
         piece = piece.trim();
-        if ( piece.indexOf('.') === 0 ) { classes.push( piece.replace('.','') ) ; } else { cssStyles.push( piece ) ; }
+        if ( piece.indexOf('.') === 0 )piece = piece.replace('.','') ; ;
+        cssStyles.push( piece ) ;
       });
 
       if ( cssStyles.length > 0 || classes.length > 0 ) FPSApplyTagCSSAndStyles( HTMLRegEx.h3 as IRegExTag, cssStyles.join( ';' ) , classes, true, false, );
@@ -42,8 +46,10 @@ export function  applyHeadingCSS( wpProps: IMinHeadingStyleProps, ): void {
       let classes: IFPSHeadingClass[] = [];
       let cssStyles: string[] = [];
       pieces.map( piece => {
+        // piece = decamelize( piece.trim(), '-', false ); // not needed at this point
         piece = piece.trim();
-        if ( piece.indexOf('.') === 0 ) { classes.push( piece.replace('.','') ) ; } else { cssStyles.push( piece ) ; }
+        if ( piece.indexOf('.') === 0 ) piece = piece.replace('.','') ; ;
+        cssStyles.push( piece ) ; 
       });
 
       if ( cssStyles.length > 0 || classes.length > 0 ) FPSApplyTagCSSAndStyles( HTMLRegEx.h4 as IRegExTag, cssStyles.join( ';' ) , classes, true, false, );

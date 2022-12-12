@@ -4,6 +4,12 @@ import { IEasyPagesWPProps } from "./epTypes";
 
 export function createEasyPagesExtraWPProps( epXtraWPProps: IEasyPagesWPProps, showTricks: boolean, ) : IEasyPagesExtraProps {
 
+  const tabsC = getStringArrayFromString( epXtraWPProps.EasyPageTabsC , ';', true, null, true ) ;
+  const tabsP = getStringArrayFromString( epXtraWPProps.EasyPageTabsP , ';', true, null, true ) ;
+  const tabsA = getStringArrayFromString( epXtraWPProps.EasyPageTabsA , ';', true, null, true ) ;
+  const tabsB = getStringArrayFromString( epXtraWPProps.EasyPageTabsB , ';', true, null, true ) ;
+
+  // Updated this to convert tabs to empty array so getStringArrayFromString can still return null... it's used LOTS of places
   const easyPagesExtraProps:  IEasyPagesExtraProps = {
       easyPagesExpanded: false,
       showTricks: showTricks,
@@ -17,10 +23,10 @@ export function createEasyPagesExtraWPProps( epXtraWPProps: IEasyPagesWPProps, s
 
       EasyPageOverflowTab: epXtraWPProps.EasyPageOverflowTab,
 
-      tabsC: getStringArrayFromString( epXtraWPProps.EasyPageTabsC , ';', true, null, true ) ,
-      tabsP: getStringArrayFromString( epXtraWPProps.EasyPageTabsP , ';', true, null, true ) ,
-      tabsA: getStringArrayFromString( epXtraWPProps.EasyPageTabsA , ';', true, null, true ) ,
-      tabsB: getStringArrayFromString( epXtraWPProps.EasyPageTabsB , ';', true, null, true ) ,
+      tabsC: tabsC === null ? [] : tabsC ,
+      tabsP: tabsP === null ? [] : tabsP ,
+      tabsA: tabsA === null ? [] : tabsA ,
+      tabsB: tabsB === null ? [] : tabsB ,
 
     }
 

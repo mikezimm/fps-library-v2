@@ -28,7 +28,8 @@ export function getEasyIcon(EasyIcons: IEasyIcons, item: any): string | null {
           EasyIcons.Groups[Key]?.Icons.map((Icon: string) => {
             if (!EasyIconUrl && Icon) { //Only continue if EasyIconUrl is not found and Icon is a non-empty string
               //Combine all the options into regex as optional qualifiers
-              const Options: string = EasyIcons.Groups[Key].Options ? `(${EasyIcons.Groups[Key]?.Options.join(')?(')})?` : '';
+              const KeyOptions = EasyIcons.Groups[Key]; // Added this to remove type error in line below where its' possibly undefined
+              const Options: string = KeyOptions.Options ? `(${KeyOptions?.Options.join(')?(')})?` : '';
               // eslint-disable-next-line @rushstack/security/no-unsafe-regexp
               const IconRegex = new RegExp(`(\\b)${Icon}${Options}(\\b)`, 'i');
               if (item[prop].match(IconRegex)) {

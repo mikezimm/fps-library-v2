@@ -43,6 +43,10 @@ import { camelToSentanceCase, camelize, upperFirstLetter, lowerFirstLetter, rand
 
 export { camelToSentanceCase, camelize, upperFirstLetter, lowerFirstLetter, randomizeCase };
 
+// ./decamelize
+import { decamelize } from '../Strings/decamelize';
+
+export { decamelize };
 
 // ./urlServices
 import { encodeDecodeString, cleanSPListURL, cleanURL, getFullUrlFromSlashSitesUrl, getSiteCollectionUrlFromLink, standardizeLocalLink } from '../Strings/urlServices';

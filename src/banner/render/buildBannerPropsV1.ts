@@ -234,10 +234,14 @@ import { IBuildBannerSettings } from './IBuildBannerSettings';
 
      };
 
-      //close #129:  This makes the maxWidth added in fps options apply to banner as well.
-      if ( wpProps.fpsContainerMaxWidth && wpProps.fpsContainerMaxWidth.length > 0 && bannerProps.bannerReactCSS ) {
-        bannerProps.bannerReactCSS.maxWidth = wpProps.fpsContainerMaxWidth;
-      }
+  //close #129:  This makes the maxWidth added in fps options apply to banner as well.
+  // if ( wpProps.fpsContainerMaxWidth && wpProps.fpsContainerMaxWidth.length > 0 && bannerProps.bannerReactCSS ) {
+  //   bannerProps.bannerReactCSS.maxWidth = wpProps.fpsContainerMaxWidth;
+  // }
+  // 2022-12-12:  VERIFY THIS IS NEEDED, it's in buildBannerPropsv1 AND WebPartRenderBannerV2.ts
+  if ( wpProps.allSectionMaxWidthEnable && wpProps.allSectionMaxWidth > 0 && bannerProps.bannerReactCSS ) {
+    bannerProps.bannerReactCSS.maxWidth = wpProps.allSectionMaxWidth;
+  }
 
       return { errMessage: bbs.errMessage, bannerProps: bannerProps, errorObjArray: [ expandoStyleObject.errMessage ], };
 

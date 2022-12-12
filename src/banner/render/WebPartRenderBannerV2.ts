@@ -328,8 +328,13 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
       };
 
        //close #129:  This makes the maxWidth added in fps options apply to banner as well.
-       if ( minWPBannerProps.fpsContainerMaxWidth && minWPBannerProps.fpsContainerMaxWidth.length > 0 && bannerProps.bannerReactCSS ) {
-         bannerProps.bannerReactCSS.maxWidth = minWPBannerProps.fpsContainerMaxWidth;
+      //  if ( minWPBannerProps.fpsContainerMaxWidth && minWPBannerProps.fpsContainerMaxWidth.length > 0 && bannerProps.bannerReactCSS ) {
+      //    bannerProps.bannerReactCSS.maxWidth = minWPBannerProps.fpsContainerMaxWidth;
+      //  }
+
+      // 2022-12-12:  VERIFY THIS IS NEEDED, it's in buildBannerPropsv1 AND WebPartRenderBannerV2.ts
+       if ( minWPBannerProps.allSectionMaxWidthEnable && minWPBannerProps.allSectionMaxWidth > 0 && bannerProps.bannerReactCSS ) {
+         bannerProps.bannerReactCSS.maxWidth = minWPBannerProps.allSectionMaxWidth;
        }
 
       //  return { errMessage: errMessage, bannerProps: bannerProps, errorObjArray: [ expandoStyleObject.errMessage ], };

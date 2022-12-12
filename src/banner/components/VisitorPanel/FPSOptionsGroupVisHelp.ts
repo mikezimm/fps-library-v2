@@ -105,7 +105,7 @@ import { IMinCustomHelpProps, IMinWPVisitorPanelInfo } from './Interfaces';
           //https://github.com/pnp/sp-dev-fx-controls-react/issues/851#issuecomment-978990638
           context: wpContext as any,
           properties: wpProperties,
-          onGetErrorMessage: null,
+          onGetErrorMessage: undefined, // 2022-12-12:  Changed from null to undefined to resolve linting error
           deferredValidationTime: 0,
           key: 'peopleFieldId',
           disabled:disabled,

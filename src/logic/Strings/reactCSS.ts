@@ -12,11 +12,11 @@ export interface ICurleyBraceCheck {
  * @param value 
  */
 
-export function getReactCSSFromString( key: string, value: string, fallback: React.CSSProperties,  ) : ICurleyBraceCheck {
+export function getReactCSSFromString( key: string, value: string | undefined, fallback: React.CSSProperties,  ) : ICurleyBraceCheck {
 
   let result: ICurleyBraceCheck = {
     errMessage: '',
-    string: value,
+    string: value as string,
     parsed: fallback,
   };
 

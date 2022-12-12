@@ -8,7 +8,7 @@ export * from './ArraySortingObjects';
 export * from './ArraySortingStrings';
 
 
-export * from './DOMHeadings';
+// export * from './DOMHeadings';  // Removed from here so it can bundle the css reference
 export * from './DOMTags';
 export * from './DOMSearch';
 

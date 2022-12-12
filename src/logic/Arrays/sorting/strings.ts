@@ -29,7 +29,7 @@
     } else if ( order === 'dec' ) {
         arr.sort((a,b) => b.localeCompare(a));
     } else {
-        
+
     }
     return arr;
 }

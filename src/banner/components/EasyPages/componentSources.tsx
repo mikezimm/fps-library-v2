@@ -180,7 +180,8 @@ const EasyPagesHook: React.FC<IEasyPagesHookProps> = ( props ) => {
         selectedKey={ source }
       >
       { sourceTabs.map( ( tab: string ) => {
-        return <PivotItem key={ tab } itemKey={ tab } headerText={ tab !== InfoTab ? tab : '' } itemIcon={ tab === InfoTab ? InfoIcon : null } />
+        //changed itemIcon from null to undefined due to linting error... but may cause issue.
+        return <PivotItem key={ tab } itemKey={ tab } headerText={ tab !== InfoTab ? tab : '' } itemIcon={ tab === InfoTab ? InfoIcon : undefined } />
       })}
 
     </Pivot>

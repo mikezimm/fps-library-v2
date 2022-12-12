@@ -3,6 +3,7 @@ export class LegacyPageContextCopy_15_2 {
   readonly isSiteAdmin: boolean;
   readonly userId: string;
   isWebWelcomePage: boolean;
+  isSiteOwner: boolean;
 }
 
 export class PageContextCopy_15_2 {
@@ -83,6 +84,6 @@ export class PageContextCopy_15_2 {
 export class WebPartContextCopy_15_2 {
 
   pageContext: PageContextCopy_15_2;
-
+  domElement: any;
 }
 

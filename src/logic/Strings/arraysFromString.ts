@@ -51,6 +51,10 @@ import { sortStringArray } from '../Arrays/sorting/strings';
  *  use delim = ',or;' || ';or,' to clean up string property pane values (uses 2 delimiters)
  * @param trim - default = false.  true will just remove any leading or trailing spaces from string value
  */
+
+// 2022-12-12:  Verify all other web parts can handle returning empty string instead of null.
+// Testing indicated that !return === true when return === null but !return === false when return === []
+
 export function getStringArrayFromString ( input : any, delim: string, removeEmpty: boolean, sort: 'asc' | 'dec' | null, trim: boolean = false ) : string[] | null {
 
   let str: string = typeof input === 'string' ? input : input && input.target && input.target.value ? input.target.value : '';
