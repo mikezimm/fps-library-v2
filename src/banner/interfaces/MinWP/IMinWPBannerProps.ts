@@ -1,4 +1,4 @@
-import { IMinCustomHelpProps } from "../CustomHelp/Interfaces";
+import { IMinCustomHelpProps } from "../../components/VisitorPanel/Interfaces";
 import { IMinPandoramicProps } from "../../features/Expando/Interfaces";
 import { IMinPageStyleProps } from "../../features/PageStyle/Interfaces";
 import { IMinPinMeProps } from "../../features/PinMe/Interfaces";

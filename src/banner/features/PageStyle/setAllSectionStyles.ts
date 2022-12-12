@@ -1,7 +1,7 @@
 
 import { createFPSWindowProps, defWpInstanceID, initializeFPSSection, initializeFPSPage, webpartInstance} from '../FPSDOM/FPSDocument';
 import { IFPSWindowProps, IFPSSection, IFPSSectionStyle } from '../FPSDOM/Interfaces';
-import { IMinWPBannerProps } from '../../interfaces/Banner/IMinWPBannerProps';
+import { IMinWPBannerProps } from '../../interfaces/MinWP/IMinWPBannerProps';
 import { sendStandardConsole, sendFPSWindowConsole } from './console';
 
 /**

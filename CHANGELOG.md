@@ -10,7 +10,52 @@ npm install @mikezimm/fps-library-v2@1.0.11
 
 # Changelog
 
-## 1.0.11 - 2022-Dec-10
+## 1.0.12 - 2022-Dec-11
+- Moved PropPane help pages into separate files:  src\common\PropPaneHelp\pages\FPSCommonOnNpm.tsx
+- Moved duplicate Audiences from banner sub-folter to src\common\Audiences
+- Move VisitorPanelHelp Interfaces to src\banner\components\VisitorPanel\Interfaces.ts
+
+- import npmFunctions/src/HelpPanelOnNPM/onNpm/defaults_.ts to /src/common/commandStyles/defaults.ts
+- import npmFunctions/src/HelpPanelOnNPM/onNpm/adjustCmdThemes_.ts to /src/common/commandStyles/adjustCmdThemes.ts
+- import npmFunctions/src\CoreFPS\VisitorPanelComponent_.tsx to src\banner\components\VisitorPanel\VisitorPanelComponent.tsx
+- import npmFuctions/src\CoreFPS\FPSOptionsGroupVisHelp_ to src\banner\components\VisitorPanel\FPSOptionsGroupVisHelp.ts
+- import npmFuctions/src\CoreFPS\ReactComponentProps to src\banner\mainReact --- Props and State separated
+
+- import npmFuctions/src\Elements_ to src\components\atoms\Elements
+- import npmFuctions/src\CoreFPS_\BannerPageMisc_.tsx to src\banner\components\Panel\createAboutRow.tsx <<< FILE RENAME >>>
+
+- import npmFuctions/src\HelpPanelOnNPM\onNpm\interfaces_.ts to src\banner\components\Gear\IKeySiteProps.ts
+
+### Gear
+- import npmFuctions/src\HelpPanelOnNPM\banner\onLocal\bannerGearFunctions_.tsx to 
+- import npmFuctions/src\HelpPanelOnNPM\banner\onLocal\bannerGearFunctions_.tsx to src\banner\components\Gear
+- import npmFuctions/src\HelpPanelOnNPM\banner\onLocal\bannerSettings_.css to src\banner\components\Gear
+
+### SpecialBanner
+- import npmFuctions/src\HelpPanelOnNPM\specialX to src\banner\components\SpecialBanner
+
+### WebPartLinks
+- import npmFuctions/src\HelpPanelOnNPM\banner\onLocal\WebPartLinks_.tsx to src\banner\components\WebPartLinks\WebPartLinks.tsx
+
+### Main Component
+- import npmFuctions/src\HelpPanelOnNPM\banner\onLocal\component_.tsx to src\banner\banner\component.tsx
+- import npmFuctions/src\HelpPanelOnNPM\banner\onLocal\banner_.css to src\banner\banner\banner.css
+
+
+- import npmFuctions/src\HelpPanelOnNPM\onNpm\BannerInterface_.ts to src\banner\renderBBP\BannerInterface.ts
+- import npmFuctions/src\HelpPanelOnNPM\onNpm\buildBannerPropsV1_.ts to src\banner\renderBBP\buildBannerPropsV1.ts
+- import npmFuctions/src\HelpPanelOnNPM\onNpm\Moved_\WebPartRenderBannerV2_.ts to src\banner\renderBBP\WebPartRenderBannerV2.ts
+
+- import npmFuctions/src\Services\PropPane\StringToReactCSS.ts to src\logic\Strings\reactCSS.ts
+
+
+- import npmFuctions/ to 
+- import npmFuctions/ to 
+- import npmFuctions/ to 
+- import npmFuctions/ to 
+
+
+## 1.0.11 - 2022-Dec-11
 - redirected all css requires to @mikezimm/fps-styles/dist/samefile.css
 
 ## 1.0.10 - 2022-Dec-10

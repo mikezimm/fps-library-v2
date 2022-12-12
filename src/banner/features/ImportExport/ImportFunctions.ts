@@ -11,7 +11,7 @@ import { exportNotAvailMess } from './ExportFunctions';
 
 // import { IMinBannerUtilityProps, } from "../../HelpPanelOnNPM/onNpm/BannerInterface";
 import { JSON_Edit_Link } from '../../components/PropPane/ReusableLinks';
-import { IMinBannerUtilityProps } from '../../interfaces/Banner/IMinBannerUtilityProps';
+import { IMinBannerUtilityProps } from '../../interfaces/MinWP/IMinBannerUtilityProps';
 
 // import { JSON_Edit_Link } from './zReusablePropPane_';
 

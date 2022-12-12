@@ -11,7 +11,7 @@ import { ILoadPerformance, } from '../../../components/molecules/Performance/IPe
 // import { warnMutuallyExclusive } from 'office-ui-fabric-react';
 
 import { EasyIconLocation, EasyIconObjectDefault, IEasyIcons,  } from "../../../components/atoms/EasyIcons/eiTypes";
-import { getEasyIcon } from "../../../components/atoms/EasyIcons/eiFunctions";
+import { getEasyIcon } from "../../../components/atoms/EasyIcons/getEasyIcon";
 import { IHelpfullOutput } from "../../../logic/Errors/friendly";
 import { getSourceItems, IItemsError, ISourceProps } from "../../../pnpjs";
 import { DisplayMode } from "../../../common/interfaces/indexes";

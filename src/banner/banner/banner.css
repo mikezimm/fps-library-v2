@@ -1,0 +1,166 @@
+
+/* These are the classes found in the banner component:
+history-item 
+container 
+opacity 
+flex-container 
+flex-left-nowrap-start 
+show-settings-pivot 
+show-settings-flex 
+hide-settings 
+banner-component */
+
+.banner-component * {
+	/* Was this in scss
+	* {
+		box-sizing: border-box;
+	} */
+
+	box-sizing: border-box;
+
+}
+
+/* Copied from Pivot Tiles showSearch */
+.banner-component .show-settings {
+	transition:all 0.4s ease;
+	opacity: 1;
+	overflow: hidden;
+}
+
+.banner-component .show-settings-flex {
+	/* Had to remove @extend due to error */
+	/* transition:all 0.4s ease;
+	opacity: 1;
+	overflow: hidden; */
+	/* @extend .show-settings; */
+
+	height: 530px;
+}
+
+.banner-component .show-settings-pivot {
+	/* Had to remove @extend due to error */
+	/* transition:all 0.4s ease;
+	opacity: 1;
+	overflow: hidden; */
+	/* @extend .show-settings; */
+
+	height: 560px;
+}
+
+
+.banner-component .hide-settings {
+	height: 0px;
+	overflow: hidden;
+	background: transparent;
+	opacity: 0;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	transition:all 0.6s ease;
+}
+
+.banner-component .container {
+	margin: 0px auto;
+}
+
+.banner-component .opacity {
+	opacity: .6;
+	transition: all, .3s ease;
+
+}
+
+.banner-component .opacity:hover {
+	opacity: 1;
+	transition: all, .3s ease;
+	font-size: 15px;
+}
+
+.banner-component .flex-container {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	display: flex;
+
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.banner-component .flex-left-nowrap-start {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	-webkit-flex-wrap: nowrap;
+	-moz-flex-wrap: nowrap;
+	display: flex;
+
+	flex-wrap: nowrap;
+	justify-content: start;
+	margin: 0px;
+	box-sizing: border-box;
+	align-items: center;
+}
+
+.history-item {
+
+	padding: 0px 30px 20px 30px;
+
+}
+
+.history-item div {
+	font-weight: 600;
+	font-size: larger;
+}
+
+.history-item table tr {
+	padding: 3px;
+}
+
+.history-item table tr td {
+	font-weight: 600;
+	padding-right: 10px;
+	text-align: left;
+	/* https://github.com/mikezimm/PageInfo/issues/42 */
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+.history-item table tr td:first-child {
+	max-width: 175px;
+}
+
+.history-item table tr td:nth-child(2) {
+	color: darkblue;
+	max-width: 330px;
+}
+
+.banner-component .banner-special {
+  transition:all 0.4s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 50px;
+  color: red;
+  background: yellow;
+  font-size: larger;
+  font-weight: 600;
+  width: 100%;
+  cursor: default;
+
+}
+
+.banner-component .banner-special * {
+  cursor: pointer;
+}
+
+.banner-component .banner-special .special-link:hover {
+  text-decoration: underline;
+}

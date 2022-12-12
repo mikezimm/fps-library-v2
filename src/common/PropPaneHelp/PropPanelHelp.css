@@ -1,0 +1,103 @@
+
+  .fps-pph-content {
+	padding: 0.5em 1em 1em 1em;
+}
+
+/* aka: stylesP.helpPropsShow */
+.fps-pph-show {
+	opacity: 1;
+	background: lightgray;
+	transition: all 0.6s ease;
+	padding: 30px;
+	box-sizing: border-box;
+	border-bottom: dashed 5px white;
+}
+
+.fps-pph-show .fps-pph-topic {
+	font-size: larger;
+	font-weight: 600;
+	padding-top: 15px;
+	box-sizing: border-box;
+}
+
+.fps-pph-content table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: scroll;
+}
+
+/* aka:  stylesP.bannerHide */
+.fps-pph-hide {
+   height: 0px;
+   background: transparent;
+   opacity: 0;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   transition:all 0.6s ease;
+   overflow: hidden;
+ }
+
+
+ .fps-pph-content table.configured-props {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: scroll;
+    margin-top: 15px;
+}
+
+.fps-pph-content table.configured-props tr {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.fps-pph-content table.configured-props tr.red {
+    background: #ffe6e6;
+}
+
+.fps-pph-content table.configured-props tr.yellow {
+    background: #ffffcc;
+}
+
+.fps-pph-content table.configured-props tr.green {
+    background: #ccffcc;
+}
+
+.fps-pph-content table.configured-props tr td:first-child {
+    width: 200px;
+    padding: 5px 15px 5px 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.fps-pph-content table.configured-props tr td:nth-child(2) {
+    width: 120px;
+    padding: 5px 15px 5px 0px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.fps-pph-content table.configured-props tr td:nth-child(3) {
+    width: 100px;
+    padding: 5px 15px 5px 0px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.fps-pph-content table.configured-props tr td:nth-child(4) {
+    /* width: calc(100% - 500px); */
+
+}
+
+.fps-pph-content table.configured-props tr.fps-policy {
+    font-size: larger;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.fps-pph-content table.configured-props .was-forced {
+    font-weight: bolder;
+}
+
+.fps-pph-content .width90 {
+    width: 90%;
+}

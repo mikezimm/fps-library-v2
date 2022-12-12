@@ -4,7 +4,7 @@ import { HTMLRegEx,  } from '../Tags/regexHtmlTags';
 import { IRegExTag } from '../Tags/Interfaces';
 
 // This needs to be moved downstream
-// require('@mikezimm/fps-styles/dist/FPSHeadings.css');
+require('@mikezimm/fps-styles/dist/FPSHeadings.css');
 
 /**
  * Processes web part prop heading props and preps to update h2, h3, h4 tag styles.  NOTE SharePoint does not have h1 on the page.

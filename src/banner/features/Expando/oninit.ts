@@ -1,6 +1,6 @@
 
 import { DisplayMode } from '@microsoft/sp-core-library';
-import { IMinBannerUtilityProps } from '../../interfaces/Banner/IMinBannerUtilityProps';
+import { IMinBannerUtilityProps } from '../../interfaces/MinWP/IMinBannerUtilityProps';
 
 import { setExpandoRamicMode } from "./functions";
 import { IMinPandoramicProps,  } from './Interfaces';  //thisProps: IMinPandoramicProps, 

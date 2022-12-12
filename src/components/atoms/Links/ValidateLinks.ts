@@ -1,5 +1,5 @@
 
-import { IMinCustomHelpProps,  } from "../../../banner/interfaces/CustomHelp/Interfaces";
+import { IMinCustomHelpProps,  } from "../../../banner/components/VisitorPanel/Interfaces";
 import { _LinkIsValid } from './AllLinks';
 
 export async function validateDocumentationUrl ( thisProps: IMinCustomHelpProps, propertyPath: string , newValue: any) {
