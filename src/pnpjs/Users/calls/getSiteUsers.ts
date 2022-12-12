@@ -4,7 +4,7 @@ import { getFullUrlFromSlashSitesUrl } from '../../../logic/Strings/urlServices'
 import { createISiteUsersInfoObject } from '../logic/createISiteUsersInfoObject';
 import { IValidUserProp, IValueUserInfos } from '../interfaces/IValueUserInfos';
 import { ISiteUsersInfo } from '../interfaces/ISiteUsersInfo';
-import { check4Gulp } from '@mikezimm/fps-pnp2';
+import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
 
 /***
  *     d888b  d88888b d888888b      .d8888. d888888b d888888b d88888b      db    db .d8888. d88888b d8888b. .d8888.

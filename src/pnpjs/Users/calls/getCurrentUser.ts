@@ -1,5 +1,5 @@
 
-import { fetchCurrentUser, IEnsureUserResults } from '@mikezimm/fps-pnp2/lib/services/sp/users';
+import { fetchCurrentUser, IEnsureUserResults } from '@mikezimm/fps-pnp2/lib/services/sp/users/FetchCurrentUser';
 import { createIEnsureUserInfo } from '../logic/createIEnsureUserInfo';
 import { IEnsureUserInfo } from '../interfaces/IEnsureUserInfo';
 

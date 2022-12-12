@@ -1,4 +1,4 @@
-import { check4Gulp } from '@mikezimm/fps-pnp2';
+import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
 import { getExpandColumns, getSelectColumns } from '../Lists/getVX/PnpjsListGetBasic';
 import { ISourceProps } from "./Interface";
 
