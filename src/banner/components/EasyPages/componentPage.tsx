@@ -30,7 +30,7 @@ import { IEasyIcons } from '../../../components/atoms/EasyIcons/eiTypes';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { EasyDevPages, getZGitLinks } from './devLinks';
 import { IRepoLinks } from '../../../components/atoms/Links/CreateLinks';
-import { ISourceProps, prepSourceColumns } from '../../../pnpjs';
+import { ISourceProps, prepSourceColumns } from '../../../pnpjs/SourceItems/index';
 
 export type ISourceName = 'Current' | 'Parent' | 'Alternate' | typeof EasyPagesDevTab | typeof EasyPagesRepoTab ;
 

@@ -1,10 +1,8 @@
 
 import { IEnsureUserResults, ensureUserHere as ensureUserHerePnp2 } from '@mikezimm/fps-pnp2/lib/services/sp/users/EnsureUserHere';
-import { saveErrorToLog } from '../../Logging/saveErrorToLog';
 import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
 import { IEnsureUserInfo } from '../interfaces/IEnsureUserInfo';
 import { createIEnsureUserInfo } from '../logic/createIEnsureUserInfo';
-import { IHelpfullInput } from '../../../logic/indexes';
 
 /**
  *  NOTE:  THIS IS SAME AS ensureUserInfo EXCEPT IT TRIES TO ADD USER IF NOT THERE.

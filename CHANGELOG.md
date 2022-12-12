@@ -5,10 +5,14 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.12
+npm install @mikezimm/fps-library-v2@1.0.13
 
 
 # Changelog
+
+## 1.0.13 - 2022-Dec-11
+- Target more specific imports instead of just import { ... } from '../../../pnpjs
+- was causing web part to suck in entire folder and all dependancies
 
 ## 1.0.12 - 2022-Dec-11
 

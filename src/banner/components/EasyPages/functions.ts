@@ -13,8 +13,8 @@ import { ILoadPerformance, } from '../../../components/molecules/Performance/IPe
 import { EasyIconLocation, EasyIconObjectDefault, IEasyIcons,  } from "../../../components/atoms/EasyIcons/eiTypes";
 import { getEasyIcon } from "../../../components/atoms/EasyIcons/getEasyIcon";
 import { IHelpfullOutput } from "../../../logic/Errors/friendly";
-import { getSourceItems, IItemsError, ISourceProps } from "../../../pnpjs";
-import { DisplayMode } from "../../../common/interfaces/indexes";
+import { getSourceItems, IItemsError, ISourceProps } from "../../../pnpjs/SourceItems/index";
+import { DisplayMode } from "../../../common/interfaces/indexes/DisplayMode";
 
 /**
  * This filters first by a meta string and then by text search string

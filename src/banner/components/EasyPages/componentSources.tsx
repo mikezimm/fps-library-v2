@@ -8,7 +8,7 @@ require('@mikezimm/fps-styles/dist/easypages.css');
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { createNewSitePagesSource, EasyPagesDevTab, EasyPagesRepoTab } from './epTypes';
 import { IEasyIcons } from '../../../components/atoms/EasyIcons/eiTypes';
-import { ISourceProps } from '../../../pnpjs';
+import { ISourceProps } from '../../../pnpjs/SourceItems/index';
 import EasyPagesPageHook, { IEasyPagesSourceProps, ISourceName, InfoTab, InfoIcon } from './componentPage';
 
 export interface IEasyPagesExtraProps {

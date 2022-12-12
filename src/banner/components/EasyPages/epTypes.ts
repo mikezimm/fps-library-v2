@@ -1,5 +1,5 @@
 
-import { ISourceProps } from "../../../pnpjs";
+import { ISourceProps } from "../../../pnpjs/SourceItems/index";
 import { IEveryoneAudience } from "../../propPane/Audiences/Interfaces";
 import { ISourceName } from "./componentPage";
 
