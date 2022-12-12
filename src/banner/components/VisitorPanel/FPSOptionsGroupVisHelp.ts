@@ -24,11 +24,10 @@ import { IMinWPBannerProps } from '../../interfaces/MinWP/IMinWPBannerProps';
 // import { IMinWPBannerProps } from '../HelpPanelOnNPM/onNpm/BannerInterface';
 import { EveryoneAudienceChoices } from '../../propPane/Audiences/Interfaces';
 import { IMinCustomHelpProps, IMinWPVisitorPanelInfo } from './Interfaces';
-  
-    
+
     /**
-     * FPSBanner3VisHelpGroup - Builds FPS Banner Visitor Help Group:  
-     * fullPanelAudience, panelMessageDescription1, panelMessageSupport, 
+     * FPSBanner3VisHelpGroup - Builds FPS Banner Visitor Help Group:
+     * fullPanelAudience, panelMessageDescription1, panelMessageSupport,
      * panelMessageDocumentation, documentationLinkUrl, documentationLinkDesc,
      * panelMessageIfYouStill, supportContacts
      * 
