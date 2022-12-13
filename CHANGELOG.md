@@ -5,18 +5,24 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.16
+npm install @mikezimm/fps-library-v2@1.0.17
 
 
 # Changelog
 
-## 1.0.16 - 2022-Dec-11
+## 1.0.17 - 2022-Dec-13
+- update PresetFPSBanner with EasyPages EasyIcons
+- migrate updateBannerThemeStyles, refreshBannerStylesOnPropChange to src/banner/features/PageStyle/bannerThemes.ts
+- migrate renderCustomStyles to src/banner/features/PageStyle/renderCustStyles.ts
+- import PreConfig EasyPages/EasyIcons from Drilldown to src/common/PropPaneHelp/PreConfiguredConstants.ts
+
+## 1.0.16 - 2022-Dec-12
 - clean up build errors - moved temp files back to npmFunctions so could build
 
-## 1.0.15 - 2022-Dec-11
+## 1.0.15 - 2022-Dec-12
 - More cleanup imports
 
-## 1.0.13 - 2022-Dec-11
+## 1.0.13 - 2022-Dec-12
 - Target more specific imports instead of just import { ... } from '../../../pnpjs
 - was causing web part to suck in entire folder and all dependancies
 

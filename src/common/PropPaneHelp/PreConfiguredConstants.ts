@@ -1,3 +1,5 @@
+import { DefaultEasyPagesTabs, DefaultOverflowTab } from '../../banner/components/EasyPages/epTypes';
+import { EasyIconDefaultKeys } from '../../components/atoms/EasyIcons/eiTypes';
 import { IPreConfigSettings, } from './IPreConfig';
 
 export const PresetFPSBanner : IPreConfigSettings = {
@@ -37,6 +39,26 @@ export const PresetFPSBanner : IPreConfigSettings = {
         expandoAudience : "Everyone",
 
         showBanner : true,
+
+        EasyPagesEnable: false, //Disabled by default on Drilldown until can test in prod
+        EasyPagesAudience: 'Everyone',
+        EasyPageTabsC:  DefaultEasyPagesTabs.join(' ; '), // Added spaces for readability
+        EasyPageTabsP:  DefaultEasyPagesTabs.join(' ; '), // Added spaces for readability
+        EasyPageTabsA:  DefaultEasyPagesTabs.join(' ; '), // Added spaces for readability
+        EasyPageTabsB:  DefaultEasyPagesTabs.join(' ; '), // Added spaces for readability
+        EasyPageOverflowTab:  DefaultOverflowTab,
+        EasyPageParent: true, //Include parent site pages
+        EasyPageUrlA: '', //Include alternate site's site pages
+        EasyPagesSiteTitleA:  '', //Include navigation elements from other site
+        EasyPageUrlB: '', //Include alternate site's site pages
+        EasyPagesSiteTitleB:  '', //Include navigation elements from other site
+        easyPageSeparateExtras:  true, //Include navigation elements from other site
+        EasyPageStyles:  '',  //Optional styles on entire page
+        EasyPageContainerStyles:  '',  //Optional styles on container element
+
+        easyIconEnable: true, // Used 
+        easyIconKeys:  EasyIconDefaultKeys.join(' ; '), // Added spaces for readability
+        easyIconIgnore:  '',
 
     }
 };
