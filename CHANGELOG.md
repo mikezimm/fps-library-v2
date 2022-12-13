@@ -5,10 +5,13 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.15
+npm install @mikezimm/fps-library-v2@1.0.16
 
 
 # Changelog
+
+## 1.0.16 - 2022-Dec-11
+- clean up build errors - moved temp files back to npmFunctions so could build
 
 ## 1.0.15 - 2022-Dec-11
 - More cleanup imports

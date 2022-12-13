@@ -37,6 +37,7 @@ import { IMinPandoramicProps } from '../features/Expando/Interfaces';
 import { setExpandoRamicMode } from '../features/Expando/functions';
 // import { IFieldPanelProps } from '../../components/molecules/FieldPanel/IFieldPanelProps';
 
+require('@mikezimm/fps-styles/dist/banner.css');
 
 /***
  *    db       .d88b.   .o88b.  .d8b.  db      
@@ -248,6 +249,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
       const showSettings = this.state.showSettings;
 
       const forceNarrowStyles = getForceNarrow( this.props.pinState, this.props.updatePinState );
+      
       const farBannerElementsArray = updateFarElementsPinMe({ farBannerElementsArray: this.buildFarBannerElements(),
         displayMode: displayMode, fpsPinMenu: fpsPinMenu, pinState: this.props.pinState, updatePinState: this.props.updatePinState, pimMeCmdStyles: this.pimMeCmdStyles });
 
@@ -264,22 +266,22 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
        *                                                                                                                        
        */
 
-      const bannerContent = mainBannerContent( bannerProps, forceNarrowStyles, showSettings, 
+      const bannerContent = mainBannerContent( bannerProps, forceNarrowStyles, 
         nearBannerElementsArray, farBannerElementsArray,
-        this._openPanel.bind( this ) ,this._togglePropsHelp.bind( this ) );
+        showSettings, this._openPanel.bind( this ) ,this._togglePropsHelp.bind( this ) );
 
 
 
       /***
- *     d888b  d88888b d888888b      .88b  d88. d888888b d8b   db      d8888b.  .d8b.  d8b   db d88888b db      
- *    88' Y8b 88'     `~~88~~'      88'YbdP`88   `88'   888o  88      88  `8D d8' `8b 888o  88 88'     88      
- *    88      88ooooo    88         88  88  88    88    88V8o 88      88oodD' 88ooo88 88V8o 88 88ooooo 88      
- *    88  ooo 88~~~~~    88         88  88  88    88    88 V8o88      88~~~   88~~~88 88 V8o88 88~~~~~ 88      
- *    88. ~8~ 88.        88         88  88  88   .88.   88  V888      88      88   88 88  V888 88.     88booo. 
- *     Y888P  Y88888P    YP         YP  YP  YP Y888888P VP   V8P      88      YP   YP VP   V8P Y88888P Y88888P 
- *                                                                                                             
- *                                                                                                             
- */
+       *     d888b  d88888b d888888b      .88b  d88. d888888b d8b   db      d8888b.  .d8b.  d8b   db d88888b db      
+       *    88' Y8b 88'     `~~88~~'      88'YbdP`88   `88'   888o  88      88  `8D d8' `8b 888o  88 88'     88      
+       *    88      88ooooo    88         88  88  88    88    88V8o 88      88oodD' 88ooo88 88V8o 88 88ooooo 88      
+       *    88  ooo 88~~~~~    88         88  88  88    88    88 V8o88      88~~~   88~~~88 88 V8o88 88~~~~~ 88      
+       *    88. ~8~ 88.        88         88  88  88   .88.   88  V888      88      88   88 88  V888 88.     88booo. 
+       *     Y888P  Y88888P    YP         YP  YP  YP Y888888P VP   V8P      88      YP   YP VP   V8P Y88888P Y88888P 
+       *                                                                                                             
+       *                                                                                                             
+       */
       let panelContent = null;
 
       if ( showPanel === true && this.props.bannerProps.showFullPanel !== true ) {

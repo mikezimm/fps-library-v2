@@ -11,11 +11,11 @@ import { makeInfoElement } from './InfoElement';
 import { IPinMeState } from '../features/PinMe/Interfaces';
 import { bannerSettingsContent } from '../components/Gear/bannerGearFunctions';
 
-export function mainBannerContent( bannerProps: IWebpartBannerProps, 
-    nearBannerElementsArray: JSX.Element[], farBannerElementsArray: JSX.Element[], 
-    forceNarrowStyles: boolean, showSettings: boolean, _openPanel: any, _togglePropsHelp: any ) {
+export function mainBannerContent( bannerProps: IWebpartBannerProps, forceNarrowStyles: boolean,
+    nearBannerElementsArray: JSX.Element[], farBannerElementsArray: JSX.Element[],
+    showSettings: boolean, _openPanel: any, _togglePropsHelp: any ) {
 
-  const { showTricks, context, keySiteProps, bannerWidth } = bannerProps;
+  // const { showTricks, context, keySiteProps, bannerWidth } = bannerProps;
 
   let settingsContent = null;
   let settingsPage = null;
@@ -118,8 +118,6 @@ export function mainBannerContent( bannerProps: IWebpartBannerProps,
   const styleRightTitle : React.CSSProperties = { padding: '10px', cursor: titleInfoCursor, maxWidth: moreInfoRatio * remainingWidth, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }; 
 
 
-
-
   /***
  *    d888888b d8b   db d88888b  .d88b.       d88888b db      d88888b .88b  d88. d88888b d8b   db d888888b 
  *      `88'   888o  88 88'     .8P  Y8.      88'     88      88'     88'YbdP`88 88'     888o  88 `~~88~~' 
@@ -134,21 +132,24 @@ export function mainBannerContent( bannerProps: IWebpartBannerProps,
   const infoElement = makeInfoElement( bannerProps, moreInfoText, styleRightTitle, titleInfoOnClick, _togglePropsHelp )
 
 
-
-
 /***
- *     .d8b.  d88888b d888888b d88888b d8888b.      d888888b d8b   db d88888b  .d88b.  
- *    d8' `8b 88'     `~~88~~' 88'     88  `8D        `88'   888o  88 88'     .8P  Y8. 
- *    88ooo88 88ooo      88    88ooooo 88oobY'         88    88V8o 88 88ooo   88    88 
- *    88~~~88 88~~~      88    88~~~~~ 88`8b           88    88 V8o88 88~~~   88    88 
- *    88   88 88         88    88.     88 `88.        .88.   88  V888 88      `8b  d8' 
- *    YP   YP YP         YP    Y88888P 88   YD      Y888888P VP   V8P YP       `Y88P'  
- *                                                                                     
- *                                                                                     
+ *    d8888b. db    db d888888b db      d8888b.                                       
+ *    88  `8D 88    88   `88'   88      88  `8D                                       
+ *    88oooY' 88    88    88    88      88   88                                       
+ *    88~~~b. 88    88    88    88      88   88                                       
+ *    88   8D 88b  d88   .88.   88booo. 88  .8D                                       
+ *    Y8888P' ~Y8888P' Y888888P Y88888P Y8888D'                                       
+ *                                                                                    
+ *                                                                                    
+ *    db      d88888b d88888b d888888b      d8888b. d888888b  d888b  db   db d888888b 
+ *    88      88'     88'     `~~88~~'      88  `8D   `88'   88' Y8b 88   88 `~~88~~' 
+ *    88      88ooooo 88ooo      88         88oobY'    88    88      88ooo88    88    
+ *    88      88~~~~~ 88~~~      88         88`8b      88    88  ooo 88~~~88    88    
+ *    88booo. 88.     88         88         88 `88.   .88.   88. ~8~ 88   88    88    
+ *    Y88888P Y88888P YP         YP         88   YD Y888888P  Y888P  YP   YP    YP    
+ *                                                                                    
+ *                                                                                    
  */
-
-
-
 
 
   const appendTitle = bannerProps.appendTitle ? bannerProps.appendTitle : '';
@@ -164,6 +165,8 @@ export function mainBannerContent( bannerProps: IWebpartBannerProps,
       { [ ...farBannerElementsArray, ...infoElement, ] }
     </div>;
 
+
+
   let showSettingStyle = showSettingsAsPivot === true ? 'show-settings show-settings-pivot' : 'show-settings show-settings-flex';
   console.log('showSettingStyle ~ 326', showSettingStyle );
 
@@ -171,7 +174,6 @@ export function mainBannerContent( bannerProps: IWebpartBannerProps,
   <div>
     <div className={ classNames } style={ bannerStyle } onClick = { bannerOnClick }>
       { bannerLeft }
-      {/* { <div style={{width: '100%', overflow: 'hidden', color: 'green'}}></div>} */}
       { bannerRight }
     </div>
     <div className={ showSettings ? showSettingStyle: 'hide-settings' } style={ {} }>

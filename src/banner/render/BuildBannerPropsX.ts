@@ -271,6 +271,7 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
           domElement: thisContext.domElement,
           pageLayout: minWPBannerProps.pageLayout,
         },
+
         refreshId: refreshId,
         FPSUser: FPSUser,
         exportProps: exportProps,
