@@ -2,7 +2,7 @@
 // import { PageContext } from '@microsoft/sp-page-context';
 import { PageContextCopy_15_2 } from '../../common/interfaces/indexes/WebPartContext@152';
 
-export function goToParentSite( e: any, pageContext: PageContextCopy_15_2 ): void {
+export function goToParentSite( pageContext: PageContextCopy_15_2 ): void {
   // let e: any = event;
   console.log('goToParentSite event:',e);
 
@@ -12,7 +12,7 @@ export function goToParentSite( e: any, pageContext: PageContextCopy_15_2 ): voi
 
 }
 
-export function  goToHomePage( e: any, pageContext: PageContextCopy_15_2 ): void {
+export function  goToHomePage( pageContext: PageContextCopy_15_2 ): void {
   // let e: any = event;
   console.log('goToHomePage event',e);
 

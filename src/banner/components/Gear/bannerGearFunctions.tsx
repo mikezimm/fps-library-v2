@@ -7,6 +7,8 @@ import { Pivot, PivotItem, PivotLinkFormat, PivotLinkSize,} from 'office-ui-fabr
 
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { IKeySiteProps } from "./IKeySiteProps";
+import { IWebpartBannerProps } from "../../mainReact/IWebpartBannerProps";
+import { defaultBannerCommandStyles } from "../../../common/commandStyles/defaults";
 
 require ('./bannerSettings.css');
 
@@ -114,8 +116,14 @@ export function TenantSiteColumns( siteUrl: string, showIcon: boolean, iconStyle
 
 //	forceNarrowStyles?: boolean; //If true (like when web part is pinned or in vertical section, force Gear settings to narrow mode )
 
-export function bannerSettingsContent( showTricks: boolean,	pageContext: PageContext, keySiteProps: IKeySiteProps, bannerCommandStylesX: React.CSSProperties, bannerWidth: number, forceNarrowStyles: boolean | null | undefined ) {
+// export function bannerSettingsContent( showTricks: boolean,	pageContext: PageContext, keySiteProps: IKeySiteProps, bannerCommandStylesX: React.CSSProperties, bannerWidth: number, forceNarrowStyles: boolean | null | undefined ) {
+export function bannerSettingsContent( bannerProps: IWebpartBannerProps, forceNarrowStyles: boolean | null | undefined ) {
 
+  const { context, keySiteProps, bannerWidth } = bannerProps;
+  const pageContext = context.pageContext;
+  const legacyPageContext = pageContext.legacyPageContext;
+  const LPC = `pageContext.legacyPageContext.`;
+  const bannerCommandStylesX: React.CSSProperties = defaultBannerCommandStyles;
   //Admin links
   let bannerCommandStyles = JSON.parse(JSON.stringify(bannerCommandStylesX));
   if ( bannerCommandStyles && bannerCommandStyles.background ) { bannerCommandStyles.background = 'transparent'; }
@@ -124,36 +132,36 @@ export function bannerSettingsContent( showTricks: boolean,	pageContext: PageCon
   let addAndCustomizePages = pageContext.web.permissions.hasPermission( SPPermission.addAndCustomizePages );
   console.log('Current user can addAndCustomizePages', addAndCustomizePages );
 
-  let showAdmin = pageContext.legacyPageContext.isSiteAdmin === true ? true : false;
+  let showAdmin = legacyPageContext.isSiteAdmin === true ? true : false;
   let siteUrl = pageContext.site.absoluteUrl;
   let contentTypeHub = `${window.location.origin}/sites/contentTypeHub`;
 
-  let isFraudTenant = pageContext.legacyPageContext.isFraudTenant ;
-  let allowInfectedDownload = pageContext.legacyPageContext.allowInfectedDownload ;
+  let isFraudTenant = legacyPageContext.isFraudTenant ;
+  let allowInfectedDownload = legacyPageContext.allowInfectedDownload ;
   let isNoScriptEnabled = pageContext.site.isNoScriptEnabled ;
   let noScriptStyle = isNoScriptEnabled !== true ? 'redLabel' : 'justLabel'  ;
 
-  let blockDownloads = pageContext.legacyPageContext.blockDownloadsExperienceEnabled ;
+  let blockDownloads = legacyPageContext.blockDownloadsExperienceEnabled ;
   let blockDownloadStyle = blockDownloads !== true ? 'redLabel' : 'justLabel' ;
 
-  let disableFlows = pageContext.legacyPageContext.disableFlows ;
-  let isWebWelcomePage = pageContext.legacyPageContext.isWebWelcomePage ;
-  let hasManageWebPermissions = pageContext.legacyPageContext.hasManageWebPermissions ;
-  let guestsEnabled = pageContext.legacyPageContext.guestsEnabled ;
+  let disableFlows = legacyPageContext.disableFlows ;
+  let isWebWelcomePage = legacyPageContext.isWebWelcomePage ;
+  let hasManageWebPermissions = legacyPageContext.hasManageWebPermissions ;
+  let guestsEnabled = legacyPageContext.guestsEnabled ;
   let guestStyle = guestsEnabled === true ? 'redLabel' : 'justLabel';
 
-  let isSiteOwner = pageContext.legacyPageContext.isSiteOwner ;
-  let isArchived = pageContext.legacyPageContext.isArchived ;
+  let isSiteOwner = legacyPageContext.isSiteOwner ;
+  let isArchived = legacyPageContext.isArchived ;
 
   let liIsNoScriptEnabled = <li className={ noScriptStyle } title='pageContext.site.isNoScriptEnabled'>{ `Scripts Disabled: ${ isNoScriptEnabled }` }</li>;
-  let liGuestsEnabled = <li className={ guestStyle } title='pageContext.legacyPageContext.guestsEnabled'>{ `Guests Enabled: ${ guestsEnabled}` }</li>;
-  let liBlockDownloads = <li className={ blockDownloadStyle } title='pageContext.legacyPageContext.blockDownloadsExperienceEnabled'>{ `Block Downloads: ${ blockDownloads }` }</li>;
+  let liGuestsEnabled = <li className={ guestStyle } title={ `${LPC}guestsEnabled`} >{ `Guests Enabled: ${ guestsEnabled}` }</li>;
+  let liBlockDownloads = <li className={ blockDownloadStyle } title={`${LPC}blockDownloadsExperienceEnabled`}>{ `Block Downloads: ${ blockDownloads }` }</li>;
 
   let flowStyle = disableFlows === true ? 'redLabel' : 'justLabel';
-  let liDisableFlows = <li className={ flowStyle } title='pageContext.legacyPageContext.disableFlows'>{ `Disable Flows: ${ disableFlows }` }</li>;
+  let liDisableFlows = <li className={ flowStyle } title={ `${LPC}disableFlows`}>{ `Disable Flows: ${ disableFlows }` }</li>;
 
-  let licGuestsEnabled = <li className={ 'compressedLabel' } title='pageContext.legacyPageContext.guestsEnabled'>{ `Guests Enabled: ${ guestsEnabled}` }</li>;
-  let licBlockDownloads = <li className={ 'compressedLabel' } title='pageContext.legacyPageContext.blockDownloadsExperienceEnabled'>{ `Block Downloads: ${ blockDownloads }` }</li>;
+  let licGuestsEnabled = <li className={ 'compressedLabel' } title={ `${LPC}guestsEnabled`}>{ `Guests Enabled: ${ guestsEnabled}` }</li>;
+  let licBlockDownloads = <li className={ 'compressedLabel' } title={ `${LPC}blockDownloadsExperienceEnabled`}>{ `Block Downloads: ${ blockDownloads }` }</li>;
 
   // Highlight red color if you are NOT on z-Account
   let tenantColor: hoverColor = pageContext.user.loginName.indexOf('z-')  === 0 ? 'green' : 'red';
@@ -175,7 +183,7 @@ export function bannerSettingsContent( showTricks: boolean,	pageContext: PageCon
   </div>;
 
   //Admin links
-  let showOwner = pageContext.legacyPageContext.isSiteAdmin === true || pageContext.legacyPageContext.isSiteOwner === true ? true : false;
+  let showOwner = legacyPageContext.isSiteAdmin === true || legacyPageContext.isSiteOwner === true ? true : false;
   let webUrl = pageContext.web.absoluteUrl;
   if ( siteUrl === webUrl && showAdmin === true ) { showOwner = false; }
 
@@ -194,7 +202,7 @@ export function bannerSettingsContent( showTricks: boolean,	pageContext: PageCon
   
   //Tenant links
 
-  let trickyContent = showTricks !== true ? null : <div className={ 'tileBox' }>
+  let trickyContent = bannerProps.showTricks !== true ? null : <div className={ 'tileBox' }>
     <h2>Tenant Links</h2>
     <ul className={ 'boxLinks' }>
       { TenantSites( webUrl, true, bannerCommandStyles, tenantColor ) }
@@ -209,8 +217,8 @@ export function bannerSettingsContent( showTricks: boolean,	pageContext: PageCon
       { liGuestsEnabled }
       { liBlockDownloads }
 
-      <li className={ 'justLabel' } title='pageContext.legacyPageContext.isFraudTenant'>{ `FraudTenant: ${ isFraudTenant}` }</li>
-      <li className={ 'justLabel' } title='pageContext.legacyPageContext.allowInfectedDownload'>{ `Inf Download: ${ allowInfectedDownload}` }</li>
+      <li className={ 'justLabel' } title={ `${LPC}isFraudTenant`}>{ `FraudTenant: ${ isFraudTenant}` }</li>
+      <li className={ 'justLabel' } title={ `${LPC}allowInfectedDownload`}>{ `Inf Download: ${ allowInfectedDownload}` }</li>
 
     </ul>
   </div>;
@@ -221,7 +229,7 @@ export function bannerSettingsContent( showTricks: boolean,	pageContext: PageCon
   //Tenant links
 
   //  _layouts/15/regionalsetng.aspx
-  let webTime24 = pageContext.legacyPageContext.webTime24;
+  let webTime24 = legacyPageContext.webTime24;
   let WebTimeTitle = `Web Timezone: ( ${ webTime24 === true ? 24 : 12 } hour )`;
   let webRegionalSettings = webUrl + '/_layouts/15/regionalsetng.aspx';
   let settingsContent = <div className={ ['tileBox', 'summaryBox'].join(' ') }>
@@ -254,9 +262,9 @@ export function bannerSettingsContent( showTricks: boolean,	pageContext: PageCon
       { liDisableFlows }
 
       <li className={ 'compressedLabel' } title='pageContext.site.isArchived'>{ `Is archived: ${ isArchived }` }</li>
-      <li className={ 'compressedLabel' } title='pageContext.legacyPageContext.isWebWelcomePage'>{ `Is Welcome Page: ${ isWebWelcomePage}` }</li>
-      <li className={ 'compressedLabel' } title='pageContext.legacyPageContext.hasManageWebPermissions'>{ `Can Manage Web: ${ hasManageWebPermissions}` }</li>
-      <li className={ 'compressedLabel' } title='pageContext.legacyPageContext.isSiteOwner'>{ `Is Site Owner: ${ isSiteOwner }` }</li>
+      <li className={ 'compressedLabel' } title={ `${LPC}isWebWelcomePage`}>{ `Is Welcome Page: ${ isWebWelcomePage}` }</li>
+      <li className={ 'compressedLabel' } title={ `${LPC}hasManageWebPermissions`}>{ `Can Manage Web: ${ hasManageWebPermissions}` }</li>
+      <li className={ 'compressedLabel' } title={ `${LPC}isSiteOwner`}>{ `Is Site Owner: ${ isSiteOwner }` }</li>
 
       <li>{ `Members can edit: ${ keySiteProps.BrokenPermissions ===null ? 'TBD' : keySiteProps.LimitedDownload }` }</li>
       <li>{ `Broken permissions: ${ keySiteProps.BrokenPermissions ===null ? 'TBD' : keySiteProps.BrokenPermissions}` }</li>

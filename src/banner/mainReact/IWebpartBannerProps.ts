@@ -13,7 +13,14 @@ import { IRepoLinks } from '../../components/atoms/Links/CreateLinks';
 import { IWebpartHistory } from '../features/WebPartHistory/Interface';
 import { IFPSUser } from '../../logic/indexes/Users';
 import { IKeySiteProps } from '../components/Gear/IKeySiteProps';
-import { PageContextCopy_15_2 } from '../../common/interfaces/indexes/WebPartContext@152';
+import { PageContextCopy_15_2, WebPartContextCopy_15_2 } from '../../common/interfaces/indexes/WebPartContext@152';
+import { IEasyPagesSourceProps } from '../components/EasyPages/componentPage';
+import { IEasyPagesExtraProps } from '../components/EasyPages/componentSources';
+import { IEasyIcons } from '../../components/atoms/EasyIcons/eiTypes';
+import { IFPSPinMenu } from '../features/PinMe/Interfaces';
+import { ISitePreConfigProps } from '../../common/PropPaneHelp/IPreConfig';
+import { IMinPandoramicProps } from '../features/Expando/Interfaces';
+import { IFieldPanelProps } from '../../components/molecules/FieldPanel/IFieldPanelProps';
 
 export interface IBannerPages {
 
@@ -43,7 +50,9 @@ export interface IWebpartBannerProps {
 
 	displayMode: DisplayMode;
 	// WebPartHelpElement: JSX.Element | null;
-	WebPartHelpElement: any | null; //Had to remove JSX.Element since it was not getting compiled due to error.
+	WebPartHelpElements: JSX.Element[] ; //Had to remove JSX.Element since it was not getting compiled due to error.
+
+  fieldPanelProps?: IFieldPanelProps;  //For future PropPaneColumns component
 
   // Special message put above the banner... like Wanring to upgrade
   SpecialMessage?: ISpecialMessage;
@@ -60,7 +69,10 @@ export interface IWebpartBannerProps {
 
 	panelTitle: string;
 	styleString?: string;
-	pageContext: PageContextCopy_15_2;
+
+  context: WebPartContextCopy_15_2;
+	// pageContext: PageContextCopy_15_2;
+
 	pageLayout: IPageLayoutType // like SinglePageApp etc... this.context[_pageLayout];
 
 	infoElement: string; //More information text or IconName = format
@@ -86,15 +98,9 @@ export interface IWebpartBannerProps {
 	showBannerGear: boolean; //Show gear to SiteAdmins and SiteOwners (as determined by page context.)
 	gitHubRepo: IRepoLinks; // replace with IRepoLinks from npmFunctions v0.1.0.3
 
-
 	//2022-02-17:  Added these for expandoramic mode
 	domElement: HTMLElement; 
-	enableExpandoramic: boolean;
-	expandoDefault: boolean;
-	expandoStyle: any;
-	expandAlert: boolean;
-	expandConsole: boolean;
-	expandoPadding: number;
+
 	//2022-02-17:  END additions for expandoramic mode
 
 	wideToggle?: boolean; //enables panel width expander, true by default
@@ -106,6 +112,14 @@ export interface IWebpartBannerProps {
 	exportProps: any;
 
 	webpartHistory: IWebpartHistory;
+
+  easyPagesSourceProps: IEasyPagesSourceProps;  // General props which apply to all Sources/Pages
+  easyPagesExtraProps: IEasyPagesExtraProps;  // General props which are used on the SourcesPage but not component page
+  EasyIconsObject: IEasyIcons;
+  fpsPinMenu: IFPSPinMenu;
+  sitePresets: ISitePreConfigProps;
+	expandoProps: IMinPandoramicProps;
+  keySiteProps: IKeySiteProps;
 
 	FPSUser: IFPSUser;
 
@@ -124,7 +138,7 @@ export interface IWebpartBannerState {
 	showPropsHelp: boolean;
 
 	panelType: PanelType;
-	keySiteProps: IKeySiteProps;
+	// keySiteProps: IKeySiteProps;
 	expandoramicMode: boolean;
 	renderCount: number;
 

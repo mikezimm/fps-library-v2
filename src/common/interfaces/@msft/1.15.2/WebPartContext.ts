@@ -1,9 +1,21 @@
+import { IPageLayoutType } from "./layout";
 
 export class LegacyPageContextCopy_15_2 {
   readonly isSiteAdmin: boolean;
   readonly userId: string;
   isWebWelcomePage: boolean;
   isSiteOwner: boolean;
+
+  // These are used in the Banner Gear Settings
+  isFraudTenant: boolean;
+  allowInfectedDownload: boolean;
+  blockDownloadsExperienceEnabled: boolean;
+  disableFlows: boolean;
+  hasManageWebPermissions: boolean;
+  guestsEnabled: boolean;
+  isArchived: boolean;
+  webTime24: boolean;
+
 }
 
 export class PageContextCopy_15_2 {
@@ -85,5 +97,6 @@ export class WebPartContextCopy_15_2 {
 
   pageContext: PageContextCopy_15_2;
   domElement: any;
+  _pageLayoutType: IPageLayoutType;
 }
 

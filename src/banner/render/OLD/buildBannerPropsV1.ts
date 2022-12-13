@@ -9,12 +9,12 @@ import { DisplayMode, } from '@microsoft/sp-core-library';
 
  // For SPPermission:  let addAndCustomizePages = pageContext.web.permissions.hasPermission( SPPermission.addAndCustomizePages );
 import { SPPermission } from '@microsoft/sp-page-context';
-import { baseBannerCmdStyles, baseBannerStyles } from '../../common/commandStyles/defaults';
-import { IFPSUser, verifyAudienceVsUser } from '../../logic/indexes/Users';
-import { getReactCSSFromString, ICurleyBraceCheck } from '../../logic/Strings/reactCSS';
-import { IMinWPBannerProps } from '../interfaces/MinWP/IMinWPBannerProps';
-import { IWebpartBannerProps } from '../mainReact/IWebpartBannerProps';
-import { IBuildBannerSettings } from './IBuildBannerSettings';
+import { baseBannerCmdStyles, baseBannerStyles } from '../../../common/commandStyles/defaults';
+import { IFPSUser, verifyAudienceVsUser } from '../../../logic/indexes/Users';
+import { getReactCSSFromString, ICurleyBraceCheck } from '../../../logic/Strings/reactCSS';
+import { IMinWPBannerProps } from '../../interfaces/MinWP/IMinWPBannerProps';
+import { IWebpartBannerProps } from '../../mainReact/IWebpartBannerProps';
+import { IBuildBannerSettings } from '../IBuildBannerSettings';
 
  /***
   *    d888888b .88b  d88. d8888b.  .d88b.  d8888b. d888888b      d8b   db d8888b. .88b  d88.      d88888b db    db d8b   db  .o88b. d888888b d888888b  .d88b.  d8b   db .d8888. 

@@ -73,17 +73,6 @@ const pivotHeadingB = 'Health';  //Templates
 
 export default class WebpartBanner extends React.Component<IWebpartBannerProps, IWebpartBannerState > {
 
-  /***
- *         dD      d8888b.  .d8b.  d8b   db d8888b.      d888888b d888888b d8888b. 
- *        d8'      88  `8D d8' `8b 888o  88 88  `8D      `~~88~~'   `88'   88  `8D 
- *       d8'       88oobY' 88ooo88 88V8o 88 88   88         88       88    88oodD' 
- *      d8'        88`8b   88~~~88 88 V8o88 88   88         88       88    88~~~   
- *     d8'         88 `88. 88   88 88  V888 88  .8D         88      .88.   88      
- *    C8'          88   YD YP   YP VP   V8P Y8888D'         YP    Y888888P 88      
- *                                                                                 
- *                                                                                 
- */
-
 	private getRandomTip( webParTipsX: any[] ) {
 
 		return webParTipsX[Math.floor(Math.random() * webParTipsX.length)];
@@ -109,19 +98,6 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 	private isSiteAdmin = this.props.pageContext.legacyPageContext.isSiteAdmin;
 	private isSiteOwner = this.isSiteAdmin === true ? true : this.props.pageContext.legacyPageContext.isSiteOwner;
 
-
-
-
-  /***
- *         dD      .88b  d88.  .d8b.  db   dD d88888b      db    db d88888b db      db       .d88b.  db   d8b   db 
- *        d8'      88'YbdP`88 d8' `8b 88 ,8P' 88'          `8b  d8' 88'     88      88      .8P  Y8. 88   I8I   88 
- *       d8'       88  88  88 88ooo88 88,8P   88ooooo       `8bd8'  88ooooo 88      88      88    88 88   I8I   88 
- *      d8'        88  88  88 88~~~88 88`8b   88~~~~~         88    88~~~~~ 88      88      88    88 Y8   I8I   88 
- *     d8'         88  88  88 88   88 88 `88. 88.             88    88.     88booo. 88booo. `8b  d8' `8b d8'8b d8' 
- *    C8'          YP  YP  YP YP   YP YP   YD Y88888P         YP    Y88888P Y88888P Y88888P  `Y88P'   `8b8' `8d8'  
- *                                                                                                                 
- *                                                                                                                 
- */
 	private makeYellowStyles( defStyles: React.CSSProperties | undefined ) {
 
 		if ( !defStyles ) {
@@ -139,17 +115,6 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 
 	}
 
-
-  /***
- *         dD       .o88b. d8888b. d88888b  .d8b.  d888888b d88888b      db   db d888888b .d8888. d888888b  .d88b.  d8888b. db    db 
- *        d8'      d8P  Y8 88  `8D 88'     d8' `8b `~~88~~' 88'          88   88   `88'   88'  YP `~~88~~' .8P  Y8. 88  `8D `8b  d8' 
- *       d8'       8P      88oobY' 88ooooo 88ooo88    88    88ooooo      88ooo88    88    `8bo.      88    88    88 88oobY'  `8bd8'  
- *      d8'        8b      88`8b   88~~~~~ 88~~~88    88    88~~~~~      88~~~88    88      `Y8b.    88    88    88 88`8b      88    
- *     d8'         Y8b  d8 88 `88. 88.     88   88    88    88.          88   88   .88.   db   8D    88    `8b  d8' 88 `88.    88    
- *    C8'           `Y88P' 88   YD Y88888P YP   YP    YP    Y88888P      YP   YP Y888888P `8888Y'    YP     `Y88P'  88   YD    YP    
- *                                                                                                                                   
- *                                                                                                                                   
- */
 	private PropPaneCmdStyles: React.CSSProperties = this.makeYellowStyles ( this.props.bannerCmdReactCSS );
 
 	private createHistoryItem( item: IWebpartHistoryItem2 ) {
@@ -166,22 +131,6 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 
 	}
 
-
-/***
- *       d88b db    db .88b  d88. d8888b.      d888888b  .d88b.       
- *       `8P' 88    88 88'YbdP`88 88  `8D      `~~88~~' .8P  Y8.      
- *        88  88    88 88  88  88 88oodD'         88    88    88      
- *        88  88    88 88  88  88 88~~~           88    88    88      
- *    db. 88  88b  d88 88  88  88 88              88    `8b  d8'      
- *    Y8888P  ~Y8888P' YP  YP  YP 88              YP     `Y88P'       
- *                                                                    
- *                                                                    
- */
-
-
-
-
-
 	private jumpToParentSite(  ) {
 		let e: any = event;
 		goToParentSite( e, this.props.pageContext );		
@@ -191,20 +140,6 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 		let e: any = event;
 		goToHomePage( e, this.props.pageContext );		
 	}
-
-
-
-
-  /***
- *    db    db d8888b. d8888b.  .d8b.  d888888b d88888b      d8b   db d88888b  .d8b.  d8888b. 
- *    88    88 88  `8D 88  `8D d8' `8b `~~88~~' 88'          888o  88 88'     d8' `8b 88  `8D 
- *    88    88 88oodD' 88   88 88ooo88    88    88ooooo      88V8o 88 88ooooo 88ooo88 88oobY' 
- *    88    88 88~~~   88   88 88~~~88    88    88~~~~~      88 V8o88 88~~~~~ 88~~~88 88`8b   
- *    88b  d88 88      88  .8D 88   88    88    88.          88  V888 88.     88   88 88 `88. 
- *    ~Y8888P' 88      Y8888D' YP   YP    YP    Y88888P      VP   V8P Y88888P YP   YP 88   YD 
- *                                                                                            
- *                                                                                            
- */
 
 	private updateNearElements( keySiteProps: IKeySiteProps ) {
 		this.nearElements = [];
@@ -263,29 +198,6 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 		this.nearElements.push(...this.props.nearElements );
 	}
 
-
-
-
-
-
-
-
-
-
-
-/***
- *     .o88b.  .d88b.  d8b   db .d8888. d888888b d8888b. db    db  .o88b. d888888b  .d88b.  d8888b. 
- *    d8P  Y8 .8P  Y8. 888o  88 88'  YP `~~88~~' 88  `8D 88    88 d8P  Y8 `~~88~~' .8P  Y8. 88  `8D 
- *    8P      88    88 88V8o 88 `8bo.      88    88oobY' 88    88 8P         88    88    88 88oobY' 
- *    8b      88    88 88 V8o88   `Y8b.    88    88`8b   88    88 8b         88    88    88 88`8b   
- *    Y8b  d8 `8b  d8' 88  V888 db   8D    88    88 `88. 88b  d88 Y8b  d8    88    `8b  d8' 88 `88. 
- *     `Y88P'  `Y88P'  VP   V8P `8888Y'    YP    88   YD ~Y8888P'  `Y88P'    YP     `Y88P'  88   YD 
- *                                                                                                  
- *                                                                                                  
- */
-
-
-
     constructor(props: IWebpartBannerProps) {
 			super(props);
 			
@@ -293,21 +205,6 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 
 			let LimtedDowload = null;
 			
-
-
-
-      /***
- *    .d8888. d8888b.      d88888b d88888b  .d8b.  d888888b db    db d8888b. d88888b .d8888. 
- *    88'  YP 88  `8D      88'     88'     d8' `8b `~~88~~' 88    88 88  `8D 88'     88'  YP 
- *    `8bo.   88oodD'      88ooo   88ooooo 88ooo88    88    88    88 88oobY' 88ooooo `8bo.   
- *      `Y8b. 88~~~        88~~~   88~~~~~ 88~~~88    88    88    88 88`8b   88~~~~~   `Y8b. 
- *    db   8D 88           88      88.     88   88    88    88b  d88 88 `88. 88.     db   8D 
- *    `8888Y' 88           YP      Y88888P YP   YP    YP    ~Y8888P' 88   YD Y88888P `8888Y' 
- *                                                                                           
- *                                                                                           
- */
-
-
 			let spFeatures = pageContext.spFeatureInfo && pageContext.spFeatureInfo.features && pageContext.spFeatureInfo.features.length > 0 ? pageContext.spFeatureInfo.features : null;
 
 			if ( spFeatures ) {
@@ -324,18 +221,6 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 				});
 			}
 
-
-
-      /***
- *    db   dD d88888b db    db      .d8888. d888888b d888888b d88888b      d8888b. d8888b.  .d88b.  d8888b. .d8888. 
- *    88 ,8P' 88'     `8b  d8'      88'  YP   `88'   `~~88~~' 88'          88  `8D 88  `8D .8P  Y8. 88  `8D 88'  YP 
- *    88,8P   88ooooo  `8bd8'       `8bo.      88       88    88ooooo      88oodD' 88oobY' 88    88 88oodD' `8bo.   
- *    88`8b   88~~~~~    88           `Y8b.    88       88    88~~~~~      88~~~   88`8b   88    88 88~~~     `Y8b. 
- *    88 `88. 88.        88         db   8D   .88.      88    88.          88      88 `88. `8b  d8' 88      db   8D 
- *    YP   YD Y88888P    YP         `8888Y' Y888888P    YP    Y88888P      88      88   YD  `Y88P'  88      `8888Y' 
- *                                                                                                                  
- *                                                                                                                  
- */
 			let keySiteProps: IKeySiteProps = {
 				SiteLogoUrl: pageContext.web.logoUrl,  // pageContext.web.logoUrl;
 				LimitedDownload: null, // TBD
@@ -400,17 +285,6 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 			}
 		}
 
-
-    /***
- *    d8888b. d88888b d8b   db d8888b. d88888b d8888b. 
- *    88  `8D 88'     888o  88 88  `8D 88'     88  `8D 
- *    88oobY' 88ooooo 88V8o 88 88   88 88ooooo 88oobY' 
- *    88`8b   88~~~~~ 88 V8o88 88   88 88~~~~~ 88`8b   
- *    88 `88. 88.     88  V888 88  .8D 88.     88 `88. 
- *    88   YD Y88888P VP   V8P Y8888D' Y88888P 88   YD 
- *                                                     
- *                                                     
- */
 		public render(): React.ReactElement<IWebpartBannerProps> {
 		const { showBanner, showTricks, showRepoLinks } = this.props;
 		const showPanel = this.state.showPanel;
@@ -419,26 +293,12 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 			return ( <div></div> );
 		} else {
 
-
-
-
-
-
-
-
-
-
-
-/***
- *    d8888b.  .d8b.  d8b   db       .o88b.  .d88b.  d8b   db d888888b d88888b d8b   db d888888b 
- *    88  `8D d8' `8b 888o  88      d8P  Y8 .8P  Y8. 888o  88 `~~88~~' 88'     888o  88 `~~88~~' 
- *    88oooY' 88ooo88 88V8o 88      8P      88    88 88V8o 88    88    88ooooo 88V8o 88    88    
- *    88~~~b. 88~~~88 88 V8o88      8b      88    88 88 V8o88    88    88~~~~~ 88 V8o88    88    
- *    88   8D 88   88 88  V888      Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88    
- *    Y8888P' YP   YP VP   V8P       `Y88P'  `Y88P'  VP   V8P    YP    Y88888P VP   V8P    YP    
- *                                                                                               
- *                                                                                               
- */
+			let propsHelp = null;
+			if ( this.props.WebPartHelpElement ) { 
+				propsHelp = <div className={ this.state.showPropsHelp !== true ? 'fps-pph-hide' : 'fps-pph-show'  }>
+					{ this.props.WebPartHelpElement ? this.props.WebPartHelpElement : null }
+				</div>;
+			}
 
 			//  Estimated width pixels used by banner.  Used to determine max size of the title component.
 			let usedWidth = 40; //20px padding on outside of all elements
@@ -493,23 +353,6 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 			const styleLeftTitle : React.CSSProperties = { padding: '10px', cursor: titleInfoCursor, maxWidth: maxWidth, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }; 
 			const styleRightTitle : React.CSSProperties = { padding: '10px', cursor: titleInfoCursor, maxWidth: moreInfoRatio * remainingWidth, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }; 
 
-
-
-
-
-
-/***
- *    d888888b d8b   db d88888b  .d88b.       d88888b db      d88888b .88b  d88. d88888b d8b   db d888888b 
- *      `88'   888o  88 88'     .8P  Y8.      88'     88      88'     88'YbdP`88 88'     888o  88 `~~88~~' 
- *       88    88V8o 88 88ooo   88    88      88ooooo 88      88ooooo 88  88  88 88ooooo 88V8o 88    88    
- *       88    88 V8o88 88~~~   88    88      88~~~~~ 88      88~~~~~ 88  88  88 88~~~~~ 88 V8o88    88    
- *      .88.   88  V888 88      `8b  d8'      88.     88booo. 88.     88  88  88 88.     88  V888    88    
- *    Y888888P VP   V8P YP       `Y88P'       Y88888P Y88888P Y88888P YP  YP  YP Y88888P VP   V8P    YP    
- *                                                                                                         
- *                                                                                                         
- */
-
-
 			const isMoreInfoButton = typeof this.props.infoElement === 'string' && this.props.infoElement.toLowerCase().indexOf('iconname=') === 0 ? true : false;
 
 			const infoElement = [];
@@ -533,28 +376,6 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 				);
 			  }
       
-
-
-
-
-
-/***
- *     .d8b.  d88888b d888888b d88888b d8888b.      d888888b d8b   db d88888b  .d88b.  
- *    d8' `8b 88'     `~~88~~' 88'     88  `8D        `88'   888o  88 88'     .8P  Y8. 
- *    88ooo88 88ooo      88    88ooooo 88oobY'         88    88V8o 88 88ooo   88    88 
- *    88~~~88 88~~~      88    88~~~~~ 88`8b           88    88 V8o88 88~~~   88    88 
- *    88   88 88         88    88.     88 `88.        .88.   88  V888 88      `8b  d8' 
- *    YP   YP YP         YP    Y88888P 88   YD      Y888888P VP   V8P YP       `Y88P'  
- *                                                                                     
- *                                                                                     
- */
-
-
-
-
-
-
-
       const appendTitle = this.props.appendTitle ? this.props.appendTitle : '';
 
 			const bannerLeft = this.nearElements.length === 0 ? <div style={ styleFlexElements } onClick = { titleInfoOnClick } > { bannerTitleText } </div> :
@@ -582,27 +403,10 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 				</div>
 			</div>;
 
-
-
-
-
-
-
 			let thisPage = null;
 
 			let panelContent = null;
 
-
-/***
- *     d888b  d88888b d888888b      .88b  d88. d888888b d8b   db      d8888b.  .d8b.  d8b   db d88888b db      
- *    88' Y8b 88'     `~~88~~'      88'YbdP`88   `88'   888o  88      88  `8D d8' `8b 888o  88 88'     88      
- *    88      88ooooo    88         88  88  88    88    88V8o 88      88oodD' 88ooo88 88V8o 88 88ooooo 88      
- *    88  ooo 88~~~~~    88         88  88  88    88    88 V8o88      88~~~   88~~~88 88 V8o88 88~~~~~ 88      
- *    88. ~8~ 88.        88         88  88  88   .88.   88  V888      88      88   88 88  V888 88.     88booo. 
- *     Y888P  Y88888P    YP         YP  YP  YP Y888888P VP   V8P      88      YP   YP VP   V8P Y88888P Y88888P 
- *                                                                                                             
- *                                                                                                             
- */
 			if ( showPanel === true && this.props.showFullPanel !== true ) {
 
 				const bonusHTML1: any = this.props.bonusHTML1 ? this.props.bonusHTML1 : null;
@@ -616,28 +420,7 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 					{ bonusHTML2 ? <div>{ bonusHTML2 }</div> : null }
 				</div>;
 
-
-
-
-
-
-
-
-
-
-
-/***
- *     d888b  d88888b d888888b      d88888b db    db db      db           d8888b.  .d8b.  d8b   db d88888b db      
- *    88' Y8b 88'     `~~88~~'      88'     88    88 88      88           88  `8D d8' `8b 888o  88 88'     88      
- *    88      88ooooo    88         88ooo   88    88 88      88           88oodD' 88ooo88 88V8o 88 88ooooo 88      
- *    88  ooo 88~~~~~    88         88~~~   88    88 88      88           88~~~   88~~~88 88 V8o88 88~~~~~ 88      
- *    88. ~8~ 88.        88         88      88b  d88 88booo. 88booo.      88      88   88 88  V888 88.     88booo. 
- *     Y888P  Y88888P    YP         YP      ~Y8888P' Y88888P Y88888P      88      YP   YP VP   V8P Y88888P Y88888P 
- *                                                                                                                 
- *                                                                                                                 
- */
 			} else if ( showPanel === true ) {
-
 				const webPartLinks =  <WebPartLinks 
 					parentListURL = { '' } //Get from list item
 					childListURL = { '' } //Get from list item
@@ -825,22 +608,6 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 				</div>;
 			}
 
-
-
-
-
-
-
-/***
- *     .o88b.  .d88b.  d8b   db .d8888. d888888b      d8888b.  .d8b.  d8b   db d88888b db      
- *    d8P  Y8 .8P  Y8. 888o  88 88'  YP `~~88~~'      88  `8D d8' `8b 888o  88 88'     88      
- *    8P      88    88 88V8o 88 `8bo.      88         88oodD' 88ooo88 88V8o 88 88ooooo 88      
- *    8b      88    88 88 V8o88   `Y8b.    88         88~~~   88~~~88 88 V8o88 88~~~~~ 88      
- *    Y8b  d8 `8b  d8' 88  V888 db   8D    88         88      88   88 88  V888 88.     88booo. 
- *     `Y88P'  `Y88P'  VP   V8P `8888Y'    YP         88      YP   YP VP   V8P Y88888P Y88888P 
- *                                                                                             
- *                                                                                             
- */
 			const bannerPanel = <div><Panel
 					isOpen={ showPanel }
 					// this prop makes the panel non-modal
@@ -853,59 +620,8 @@ export default class WebpartBanner extends React.Component<IWebpartBannerProps, 
 				{ panelContent }
 			</Panel></div>;
 
-
-
-/***
- *    .d8888. d8888b. d88888b  .o88b. d888888b  .d8b.  db      
- *    88'  YP 88  `8D 88'     d8P  Y8   `88'   d8' `8b 88      
- *    `8bo.   88oodD' 88ooooo 8P         88    88ooo88 88      
- *      `Y8b. 88~~~   88~~~~~ 8b         88    88~~~88 88      
- *    db   8D 88      88.     Y8b  d8   .88.   88   88 88booo. 
- *    `8888Y' 88      Y88888P  `Y88P' Y888888P YP   YP Y88888P 
- *                                                             
- *                                                             
- */
-
-
-
       let SpecialElement: any = this.props.SpecialMessage ? createSpecialElement( this.props.SpecialMessage ) : undefined;
 
-
-
-      
-
-
-      /***
- *    d8888b. d8888b.  .d88b.  d8888b. .d8888.      db   db d88888b db      d8888b. 
- *    88  `8D 88  `8D .8P  Y8. 88  `8D 88'  YP      88   88 88'     88      88  `8D 
- *    88oodD' 88oobY' 88    88 88oodD' `8bo.        88ooo88 88ooooo 88      88oodD' 
- *    88~~~   88`8b   88    88 88~~~     `Y8b.      88~~~88 88~~~~~ 88      88~~~   
- *    88      88 `88. `8b  d8' 88      db   8D      88   88 88.     88booo. 88      
- *    88      88   YD  `Y88P'  88      `8888Y'      YP   YP Y88888P Y88888P 88      
- *                                                                                  
- *                                                                                  
- */
-			let propsHelp = null;
-			if ( this.props.WebPartHelpElement ) { 
-				propsHelp = <div className={ this.state.showPropsHelp !== true ? 'fps-pph-hide' : 'fps-pph-show'  }>
-					{ this.props.WebPartHelpElement ? this.props.WebPartHelpElement : null }
-				</div>;
-			}
-
-
-
-
-
-      /***
- *    d8888b. d88888b d888888b db    db d8888b. d8b   db 
- *    88  `8D 88'     `~~88~~' 88    88 88  `8D 888o  88 
- *    88oobY' 88ooooo    88    88    88 88oobY' 88V8o 88 
- *    88`8b   88~~~~~    88    88    88 88`8b   88 V8o88 
- *    88 `88. 88.        88    88b  d88 88 `88. 88  V888 
- *    88   YD Y88888P    YP    ~Y8888P' 88   YD VP   V8P 
- *                                                       
- *                                                       
- */
 			return (
 				<div className={ 'banner-component' } >
           { SpecialElement }

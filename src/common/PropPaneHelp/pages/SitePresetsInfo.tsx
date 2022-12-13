@@ -1,3 +1,4 @@
+import { PivotItem } from 'office-ui-fabric-react';
 import * as React from 'react';
 import { ISitePreConfigProps } from '../IPreConfig';
 
@@ -8,7 +9,7 @@ import { ISitePreConfigProps } from '../IPreConfig';
  */
 
 
-export function SitePresetsInfo(sitePresets: ISitePreConfigProps) {
+export function SitePresetsInfo(sitePresets: ISitePreConfigProps): JSX.Element | undefined {
 
   const usePreSets = sitePresets && (sitePresets.forces.length > 0 || sitePresets.presets.length > 0) ? true : false;
 
@@ -71,6 +72,7 @@ export function SitePresetsInfo(sitePresets: ISitePreConfigProps) {
 
     </div>;
 
+
     const preSetsContent: JSX.Element = <div className={'fps-pph-content'} style={{ display: 'flex' }}>
       <div>
         {forces}
@@ -78,11 +80,17 @@ export function SitePresetsInfo(sitePresets: ISitePreConfigProps) {
       </div>
     </div>;
 
-    return preSetsContent;
+    const returnPivot: JSX.Element = 
+      <PivotItem headerText={ undefined } itemIcon='Badge'>
+        { preSetsContent }
+      </PivotItem>;
+
+
+    return returnPivot;
 
   } else {
 
-    return null;
+    return undefined;
   }
 
 }

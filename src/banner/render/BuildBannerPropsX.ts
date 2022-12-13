@@ -16,6 +16,14 @@ import { IWebpartBannerProps } from "../mainReact/IWebpartBannerProps";
 import { IBuildBannerSettings } from "./IBuildBannerSettings";
 
 import { SPPermission } from '@microsoft/sp-page-context';
+import { createEasyPagesSourceWPProps } from "../components/EasyPages/createEasyPagesSourceWPProps";
+import { createEasyPagesExtraWPProps } from "../components/EasyPages/createEasyPagesExtraWPProps";
+import { createEasyIconsWPProps } from "../../components/atoms/EasyIcons/createEasyIconsWPProps";
+import { IPinMeState } from "../features/PinMe/Interfaces";
+import { ISitePreConfigProps } from "../../common/PropPaneHelp/IPreConfig";
+import { checkDeepProperty } from "../../logic/indexes";
+import { IKeySiteProps } from "../components/Gear/IKeySiteProps";
+import { createKeySiteProps } from "../components/Gear/CreateKeySiteProps";
 
 // import { IMinWPBannerProps, IBuildBannerSettings, } from "./BannerInterface_";
 // import { IRepoLinks, } from "../../Links_/CreateLinks";
@@ -50,6 +58,7 @@ export interface IMainWPBanerSetup {
   keysToShow: ILoadPerformanceOps[],
   wideToggle: boolean,
   expandConsole: boolean,
+  sitePresets: ISitePreConfigProps,
   SpecialMessage?: ISpecialMessage,
 }
 
@@ -73,11 +82,13 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
     keysToShow,
     wideToggle,
     expandConsole,
+    sitePresets,
     SpecialMessage,
   } = main;
 
+  const { pageContext, _pageLayoutType } = thisContext;
 
-    let anyContext: any = thisContext;
+    // let anyContext: any = thisContext;
 
     const renderAsReader = displayMode === DisplayMode.Read && beAReader === true ? true : false;
 
@@ -85,7 +96,7 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
     // Verify if this is a duplicate of the code in FPSUser (copied and commented out below )
     let showTricks: any = false;
     trickyEmails.map( getsTricks => {
-      if ( thisContext.pageContext.user && thisContext.pageContext.user.loginName && thisContext.pageContext.user.loginName.toLowerCase().indexOf( getsTricks ) > -1 ) { 
+      if ( pageContext.user && pageContext.user.loginName && pageContext.user.loginName.toLowerCase().indexOf( getsTricks ) > -1 ) { 
         showTricks = true ;
         minWPBannerProps.showRepoLinks = true; //Always show these users repo links
       }
@@ -182,7 +193,7 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
 
       //  Updated for SPA to get Title which is also the window.name property  https://github.com/mikezimm/drilldown7/issues/243
        let bannerTitle = modifyBannerTitle === true && minWPBannerProps.bannerTitle && minWPBannerProps.bannerTitle.length > 0 ? minWPBannerProps.bannerTitle : 
-          anyContext._pageLayoutType === 'SingleWebPartAppPageLayout' ? document.title : repoLink.desc;       
+        _pageLayoutType === 'SingleWebPartAppPageLayout' ? document.title : repoLink.desc;
 
       let bannerStyle: ICurleyBraceCheck = getReactCSSFromString( 'bannerStyle', minWPBannerProps.bannerStyle, baseBannerStyles );
        let bannerCmdStyle: ICurleyBraceCheck = getReactCSSFromString( 'bannerCmdStyle', minWPBannerProps.bannerCmdStyle, baseBannerCmdStyles );
@@ -194,7 +205,6 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
 
       let hasCustomizePages = isSiteAdmin === true ? true :
           verifyAudienceVsUser( FPSUser, showTricks, minWPBannerProps.homeParentGearAudience , SPPermission.addAndCustomizePages, renderAsReader );
-
 
        let homeParentGearAudience = isSiteAdmin === true ? true : verifyAudienceVsUser( FPSUser, showTricks, minWPBannerProps.homeParentGearAudience , null, renderAsReader );
        let showBannerGear = isSiteAdmin === true ? true : minWPBannerProps.showBannerGear === true && homeParentGearAudience === true ? true : false;
@@ -210,10 +220,6 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
        let showFullPanel = isSiteAdmin === true ? true : verifyAudienceVsUser( FPSUser, showTricks, minWPBannerProps.fullPanelAudience , SPPermission.editListItems, renderAsReader );
     
        //Over-rides expand for certain users
-    
-
-       console.log('_pageLayoutType:', anyContext._pageLayoutType );
-       console.log('pageLayoutType:', anyContext.pageLayoutType );
     
      //  Changed expandoStyle from buildExpandoStyle function based on https://github.com/mikezimm/CoreFPS114/issues/6
      //  let expandobuildExpandoStyle = buildExpandoStyle( errMessage, minWPBannerProps, bbs.errorObjArray, bbs.expandoErrorObj );
@@ -250,15 +256,28 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
       let startTime = new Date();
       let refreshId = startTime.toISOString().replace('T', ' T'); // + ' ~ ' + startTime.toLocaleTimeString();
 
-     let bannerProps: IWebpartBannerProps = {
+     const bannerProps: IWebpartBannerProps = {
+
         webpartHistory: minWPBannerProps.webpartHistory,
+        easyPagesSourceProps: createEasyPagesSourceWPProps( minWPBannerProps, thisContext, repoLink ),
+        easyPagesExtraProps: createEasyPagesExtraWPProps( minWPBannerProps, showTricks ),
+        EasyIconsObject: createEasyIconsWPProps( minWPBannerProps ),
+        sitePresets: sitePresets,
+        keySiteProps: createKeySiteProps( pageContext ),
+
+        fpsPinMenu: {
+          defPinState: minWPBannerProps.defPinState ? minWPBannerProps.defPinState : 'disabled',
+          forcePinState: minWPBannerProps.forcePinState ? minWPBannerProps.forcePinState : true,
+          domElement: thisContext.domElement,
+          pageLayout: minWPBannerProps.pageLayout,
+        },
         refreshId: refreshId,
         FPSUser: FPSUser,
         exportProps: exportProps,
-        pageContext: thisContext.pageContext as any,
+        context: thisContext,
         displayMode: displayMode,
 
-        WebPartHelpElement: null,
+        WebPartHelpElements: [],
         SpecialMessage: SpecialMessage,
 
         panelTitle: showBannerError === true ? errMessage : bannerTitle ,
@@ -296,7 +315,7 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
         replacePanelWarning: replacePanelWarning,
 
         // onHomePage: anyContext._pageLayoutType === 'Home' ? true : false,
-        onHomePage: thisContext.pageContext.legacyPageContext.isWebWelcomePage === true ? true : false,
+        onHomePage: pageContext.legacyPageContext.isWebWelcomePage === true ? true : false,
         hoverEffect: minWPBannerProps.bannerHoverEffect === false ? false : true,
 
         //This was my modified attempt that didn't work
@@ -313,13 +332,16 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
         //2022-02-17:  Added these for expandoramic mode
         domElement: thisContext.domElement, //Looking at renderCustomStyles, it seems that domElement is on this.domElement ( aka main webpart this )
         pageLayout: minWPBannerProps.pageLayout, // like SinglePageApp etc... this.context[_pageLayout];
-        enableExpandoramic: enableExpandoramic,
-        expandoDefault: minWPBannerProps.expandoDefault,
-        expandoStyle: expandoStyleObject.parsed,
-        expandAlert: false,
-        expandConsole: expandConsole,
-        expandoPadding: minWPBannerProps.expandoPadding,
-        //2022-02-17:  END additions for expandoramic mode
+        expandoProps: {
+          enableExpandoramic: enableExpandoramic,
+          expandoDefault: minWPBannerProps.expandoDefault,
+          expandoStyle: expandoStyleObject.parsed,
+          expandAlert: false,
+          expandConsole: expandConsole,
+          expandoPadding: minWPBannerProps.expandoPadding,
+          expandoAudience: minWPBannerProps.expandoAudience,
+          //2022-02-17:  END additions for expandoramic mode
+        },
 
         beAUser: renderAsReader,
         showBeAUserIcon: showBeAUserIcon,
@@ -356,8 +378,6 @@ export function mainWebPartRenderBannerSetup( main: IMainWPBanerSetup ) : IWebpa
         if ( !minWPBannerProps.bannerTitle || minWPBannerProps.bannerTitle.length < 3 ) { bannerProps.title = 'Page Contents' ; }
       }
     }
-
-    bannerProps.enableExpandoramic = enableExpandoramic; //Hard code this option for FPS PageInfo web part only because of PinMe option
 
     minWPBannerProps.replacePanelHTML = visitorPanelInfo( minWPBannerProps, repoLink, '', '', createPerformanceTableVisitor( performance, keysToShow ) );
 
