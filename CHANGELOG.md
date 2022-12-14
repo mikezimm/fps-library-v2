@@ -5,10 +5,14 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.17
+npm install @mikezimm/fps-library-v2@1.0.18
 
 
 # Changelog
+
+## 1.0.18 - 2022-Dec-13
+- fix this. errors in functional components
+- update css import statements
 
 ## 1.0.17 - 2022-Dec-13
 - update PresetFPSBanner with EasyPages EasyIcons

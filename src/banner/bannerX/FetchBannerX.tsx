@@ -268,7 +268,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
 
       const bannerContent = mainBannerContent( bannerProps, forceNarrowStyles, 
         nearBannerElementsArray, farBannerElementsArray,
-        showSettings, this._openPanel.bind( this ) ,this._togglePropsHelp.bind( this ) );
+        showSettings, this._openPanel.bind( this ) ,this._togglePropsHelp.bind( this ), );
 
 
 
@@ -300,7 +300,8 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
  *                                                                                                                 
  */
       } else if ( showPanel === true ) {
-        panelContent = getFullPanel( this.props.bannerProps, this.state.selectedKey );
+        panelContent = getFullPanel( this.props.bannerProps, this.state.selectedKey, 
+          this.state.panelType, this._selectedIndex.bind(this), this._panelWidth.bind(this) );
       }
 
 
@@ -452,6 +453,14 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
     }
 
   }
+
+  public _selectedIndex = (item: any ): void => {
+    //This sends back the correct pivot category which matches the category on the tile.
+    let e: any = event;
+		let itemKey = item.props.itemKey;
+		this.setState({ selectedKey: itemKey });
+
+	}
 
   private _toggleExpando ( )  {
     const { domElement, pageLayout } = this.props.bannerProps;

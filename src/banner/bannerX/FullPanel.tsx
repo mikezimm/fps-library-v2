@@ -30,7 +30,7 @@ const HB = 'Health';  //Templates
 export const pivotHeadingX = HX;
 export const pivotHeading0 = H0;
 
-export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: string ) : JSX.Element {
+export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: string, panelType: PanelType, _selectedIndex: any, _panelWidth: any ) : JSX.Element {
 
     const { gitHubRepo, showRepoLinks, replacePanelWarning, replacePanelHTML, contentPages, exportProps, webpartHistory } = bannerProps;
 
@@ -50,7 +50,7 @@ export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: s
     let content = null;
     let thisPage = null;
     // let showMedical = this.isShowTricks && ( thisWindow.FPSUser || thisWindow.FPSOptions )  ? true : false;
-    let showMedical = this.isShowTricks === true && ( thisWindow.FPSUser || thisWindow.FPSOptions )  ? true : false;
+    let showMedical = bannerProps.showTricks === true && ( thisWindow.FPSUser || thisWindow.FPSOptions )  ? true : false;
 
     const bonusHTML1: any = bannerProps.bonusHTML1 ? bannerProps.bonusHTML1 : null;
     const panelPerformance = bannerProps.panelPerformance ? createPerformanceTableVisitor( bannerProps.panelPerformance, [] ): null;
@@ -79,8 +79,8 @@ export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: s
     } else if ( selectedKey === H4 ) {
         content=  contentPages.futureContent;
 
-    } else if ( selectedKey === H5 ) {
-        content=  this.dev;
+    // } else if ( selectedKey === H5 ) {
+    //     content=  this.dev;
 
     } else if ( selectedKey === H6 ) {
         content=  contentPages.errorsContent;
@@ -148,8 +148,8 @@ export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: s
         <div style={{minHeight: '30px'}} >{ tipsTable }</div>
       </MessageBar>;
 
-      const wideIcon = this.wideToggle !== true ? null : <Icon iconName= { this.state.panelType === PanelType.medium ? 'MaximumValue' : 'MinimumValue' } style={{ fontSize: 'xx-large', cursor: 'pointer' }} 
-        onClick={ this._panelWidth.bind(this) }/>;
+      const wideIcon = bannerProps.wideToggle !== true ? null : <Icon iconName= { panelType === PanelType.medium ? 'MaximumValue' : 'MinimumValue' } style={{ fontSize: 'xx-large', cursor: 'pointer' }} 
+        onClick={ _panelWidth.bind(this) }/>;
 
 
       const showExport = bannerProps.showExport === true && exportProps !== null ? true : false;
@@ -165,7 +165,7 @@ export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: s
       { webPartLinks }
       <div style={{display: 'flex', flexWrap: 'nowrap', justifyContent: 'space-between', alignItems: 'center' }}>
           <h3> { panelTitle }</h3>
-          <div title={ this.state.panelType === PanelType.medium ? 'Make panel wider' : 'Make panel narrower' }>
+          <div title={ panelType === PanelType.medium ? 'Make panel wider' : 'Make panel narrower' }>
           { wideIcon }
         </div>
       </div>
@@ -173,7 +173,7 @@ export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: s
       <Pivot
           linkFormat={PivotLinkFormat.links}
           linkSize={PivotLinkSize.normal }
-          onLinkClick={this._selectedIndex.bind(this)}
+          onLinkClick={ _selectedIndex }
       > 
         {/* changed null to undefined :  https://github.com/mikezimm/ALVFinMan/issues/171 */}
         { replacePanelHTML == '' ? undefined : <PivotItem headerText={HX} ariaLabel={HX} title={HX} itemKey={HX} itemIcon={ 'SunQuestionMark' }/> }
@@ -185,7 +185,9 @@ export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: s
         { contentPages.advancedContent			 === undefined ?  undefined : <PivotItem headerText={H3} ariaLabel={H3} title={H3} itemKey={H3} itemIcon={ undefined }/> }
         { contentPages.futureContent		 === undefined ?  undefined : <PivotItem headerText={H4} ariaLabel={H4} title={H4} itemKey={H4} itemIcon={ 'RenewalFuture' }/> }
         { contentPages.errorsContent 				 === undefined ?  undefined : <PivotItem headerText={H6} ariaLabel={H6} title={H6} itemKey={H6} itemIcon={ 'Warning12' }/> }
-        { this.dev						 === undefined ?  undefined : <PivotItem headerText={ undefined } ariaLabel={H5} title={H5} itemKey={H5} itemIcon={ 'TestAutoSolid' }/> }
+
+        {/* Dev tab was here */}
+
         { bannerProps.showTricks !== true || contentPages.tricksTable === undefined ?  undefined : <PivotItem headerText={ undefined } ariaLabel={H7} title={H7} itemKey={H7} itemIcon={ 'AutoEnhanceOn' }/> }
         { contentPages.aboutTable 				 === undefined ?  undefined : <PivotItem headerText={ undefined } ariaLabel={H8} title={H8} itemKey={H8} itemIcon={ 'Info' }/> }
         { showExport !== true ? null : <PivotItem headerText={ undefined } ariaLabel={H9} title={H9} itemKey={H9} itemIcon={ 'Export' }/> }

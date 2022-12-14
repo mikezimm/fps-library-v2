@@ -40,7 +40,7 @@ export function updateNearElements( parentNearElements: JSX.Element[], bannerPro
 
   nearElements = addBeAUserIcons( nearElements, bannerProps );
 
-  if ( this.props.showBannerGear === true ) {
+  if ( bannerProps.showBannerGear === true ) {
     addGearIcon( nearElements, bannerProps, onClickShowSettings );
   }
 

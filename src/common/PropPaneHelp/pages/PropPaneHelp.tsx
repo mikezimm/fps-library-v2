@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-require('@mikezimm/npmfunctions/dist/PropPaneHelp/PropPanelHelp.css');
+require('@mikezimm/fps-styles/dist/PropPanelHelp.css');
 
 import { Pivot, PivotLinkFormat, PivotLinkSize,} from 'office-ui-fabric-react/lib/Pivot';
 

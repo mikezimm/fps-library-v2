@@ -10,7 +10,7 @@ import { IKeySiteProps } from "./IKeySiteProps";
 import { IWebpartBannerProps } from "../../mainReact/IWebpartBannerProps";
 import { defaultBannerCommandStyles } from "../../../common/commandStyles/defaults";
 
-require ('./bannerSettings.css');
+require ('@mikezimm/fps-styles/dist/bannerSettings.css');
 
 type hoverColor = 'red' | 'green' | 'yellow' | null;
 
