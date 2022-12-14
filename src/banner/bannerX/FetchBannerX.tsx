@@ -35,6 +35,8 @@ import { getForceNarrow } from './Near/CheckNarrow';
 import { updateNearElements } from './Near/updateNearElements';
 import { IMinPandoramicProps } from '../features/Expando/Interfaces';
 import { setExpandoRamicMode } from '../features/Expando/functions';
+
+import EasyPagesHook from '../components/EasyPages/componentSources';
 // import { IFieldPanelProps } from '../../components/molecules/FieldPanel/IFieldPanelProps';
 
 require('@mikezimm/fps-styles/dist/banner.css');
@@ -92,6 +94,7 @@ export interface IFetchBannerXState {
 	// keySiteProps: IKeySiteProps;
 	expandoramicMode: boolean;
 	// renderCount: number;
+  showEasyPages: boolean;
 
 }
 
@@ -162,6 +165,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
       expandoramicMode: expandoProps.enableExpandoramic === true && expandoProps.expandoDefault === true ? true : false ,
       // renderCount: 0,
       showPropsHelp: false,
+      showEasyPages: false,
     };
 
   }
@@ -245,15 +249,15 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
       const { displayMode, fpsPinMenu, } = this.props.bannerProps;
 
       const { showBanner, showTricks, showRepoLinks } = this.props.bannerProps;
-      const showPanel = this.state.showPanel;
-      const showSettings = this.state.showSettings;
+      const { showPanel, showSettings, showEasyPages, showPropsHelp } = this.state;
+
 
       const forceNarrowStyles = getForceNarrow( this.props.pinState, this.props.updatePinState );
       
       const farBannerElementsArray = updateFarElementsPinMe({ farBannerElementsArray: this.buildFarBannerElements(),
         displayMode: displayMode, fpsPinMenu: fpsPinMenu, pinState: this.props.pinState, updatePinState: this.props.updatePinState, pimMeCmdStyles: this.pimMeCmdStyles });
 
-      const nearBannerElementsArray = updateNearElements( this.nearBannerElements, this.props.bannerProps, this.showSettings.bind(this), this._toggleExpando.bind(this) );
+      const nearBannerElementsArray = updateNearElements( this.nearBannerElements, this.props.bannerProps, this.showSettings.bind(this), this._toggleExpando.bind(this), this._toggleEasyLinks.bind(this) );
 
         /***
        *    d8888b.  .d8b.  d8b   db d8b   db d88888b d8888b.      d88888b db      d88888b .88b  d88. d88888b d8b   db d888888b 
@@ -268,7 +272,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
 
       const bannerContent = mainBannerContent( bannerProps, forceNarrowStyles, 
         nearBannerElementsArray, farBannerElementsArray,
-        showSettings, this._openPanel.bind( this ) ,this._togglePropsHelp.bind( this ), );
+        showSettings, showPropsHelp, this._openPanel.bind( this ) ,this._togglePropsHelp.bind( this ) );
 
 
 
@@ -367,6 +371,11 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
 			}
 
 
+    const EasyPagesElement = <EasyPagesHook 
+      easyPagesExtraProps={ { ...bannerProps.easyPagesExtraProps, ...{ easyPagesExpanded: showEasyPages, easyPagesToggleExpanded: this._toggleEasyLinks.bind(this) } } }
+      easyPagesSourceProps= { bannerProps.easyPagesSourceProps }
+      EasyIconsObject= { bannerProps.EasyIconsObject }
+    />;
 
 
       /***
@@ -384,6 +393,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
         <div className={ 'banner-component' } >
           { SpecialElement }
           { bannerContent }
+          { EasyPagesElement }
           { propsHelp }
           { bannerPanel }
         </div>
@@ -453,6 +463,11 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
     }
 
   }
+
+  private _toggleEasyLinks( ): void {
+    this.setState({ showEasyPages: !this.state.showEasyPages });
+  }
+
 
   public _selectedIndex = (item: any ): void => {
     //This sends back the correct pivot category which matches the category on the tile.

@@ -17,6 +17,7 @@ import { IKeySiteProps } from "../../components/Gear/IKeySiteProps";
 import { IPinMeState } from '../../features/PinMe/Interfaces';
 import { IWebpartBannerProps } from "../../mainReact/IWebpartBannerProps";
 import { addBeAUserIcons } from "./beAUserIcon";
+import { addEasyPagesIcon } from './easyPagesIcon';
 import { addExpandoIcon } from './expandoIcon';
 import { addGearIcon } from './gearIcon';
 import { addHomeIcon } from './goHomeIcon';
@@ -34,11 +35,12 @@ import { addParentIcon } from './goParentIcon';
 *                                                                                            
 */
 
-export function updateNearElements( parentNearElements: JSX.Element[], bannerProps: IWebpartBannerProps, onClickShowSettings: any, onClickToggleExpando: any ): JSX.Element[] {
+export function updateNearElements( parentNearElements: JSX.Element[], bannerProps: IWebpartBannerProps, onClickShowSettings: any, onClickToggleExpando: any, _toggleEasyLinks: any ): JSX.Element[] {
   
   let nearElements: JSX.Element[] = [];
 
   nearElements = addBeAUserIcons( nearElements, bannerProps );
+  nearElements = addEasyPagesIcon( nearElements, bannerProps, _toggleEasyLinks );
 
   if ( bannerProps.showBannerGear === true ) {
     addGearIcon( nearElements, bannerProps, onClickShowSettings );

@@ -27,8 +27,8 @@ export function getWebPartHelpElementX ( WebPartHelpPivots: JSX.Element[], banne
     ImportHelp,
   ];
 
-  let preSetsContent = SitePresetsInfo( bannerProps.sitePresets );
-  if ( preSetsContent ) DefaultPivots.unshift( preSetsContent )
+  const preSetsContent = SitePresetsInfo( bannerProps.sitePresets );
+  if ( preSetsContent ) DefaultPivots.push( preSetsContent )
 
   const AllPivots: JSX.Element[] = [ ...WebPartHelpPivots, ...DefaultPivots ];
 

@@ -16,7 +16,7 @@ export interface IEasyPagesExtraProps {
   showTricks: boolean;  // For special dev links in EasyPages
   EasyPagesEnable: boolean;
 
-  easyPagesToggleExpanded?: any;
+  easyPagesToggleExpanded: any;  // callback function?
   easyPagesExpanded: boolean;
 
   EasyPageOverflowTab?: string;
@@ -156,7 +156,12 @@ const EasyPagesHook: React.FC<IEasyPagesHookProps> = ( props ) => {
 
   } else {
     if ( repo.href.toLowerCase().indexOf('drilldown') > -1 ) classNames.push( 'ep-drilldown' );
-    if ( ( props.easyPagesSourceProps.pinState === 'pinFull' || props.easyPagesSourceProps.pinState === 'pinMini' ) && classNames.indexOf('easy-pages-spa') < 0 ) classNames.push ( 'easy-pages-spa' );
+    if ( ( props.easyPagesSourceProps.pinState === 'pinFull' || props.easyPagesSourceProps.pinState === 'pinMini' ) && classNames.indexOf('easy-pages-spa') < 0 ) {
+      classNames.push ( 'easy-pages-spa' );
+    } else if ( props.easyPagesSourceProps.pageLayout === 'Article' ) {
+      classNames.push('easy-pages-article');
+    }
+
 
   }
 

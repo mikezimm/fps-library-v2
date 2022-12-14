@@ -12,6 +12,7 @@ export function createEasyPagesExtraWPProps( epXtraWPProps: IEasyPagesWPProps, s
   // Updated this to convert tabs to empty array so getStringArrayFromString can still return null... it's used LOTS of places
   const easyPagesExtraProps:  IEasyPagesExtraProps = {
       easyPagesExpanded: false,
+      easyPagesToggleExpanded: null, // Placeholder for callback function to banner
       showTricks: showTricks,
       EasyPagesEnable: epXtraWPProps.EasyPagesEnable,
       EasyPageParentFetch: epXtraWPProps.EasyPagesEnable === true ? epXtraWPProps.EasyPageParent : false,

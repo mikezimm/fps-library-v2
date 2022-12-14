@@ -5,10 +5,21 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.18
+npm install @mikezimm/fps-library-v2@1.0.21
 
 
 # Changelog
+
+## 1.0.21 - 2022-Dec-13
+- update easyPagesSources - add 'Article' css class and logic based on testing
+
+## 1.0.20 - 2022-Dec-13
+- Add EasyPages component to banner
+
+## 1.0.19 - 2022-Dec-13
+export { FPSBanner4BasicGroup,  } from './FPSBanner4BasicGroup';
+export { FPSBanner3NavGroup, } from './FPSBanner3NavGroup';
+export { FPSBanner3ThemeGroup } from './FPSBanner3ThemeGroup';
 
 ## 1.0.18 - 2022-Dec-13
 - fix this. errors in functional components

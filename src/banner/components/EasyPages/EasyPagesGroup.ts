@@ -21,6 +21,7 @@ import {
 
 import { IEasyIconsWPProps } from '../../../components/atoms/EasyIcons/eiTypes';
 import { createAudienceGroup } from '../../propPane/Audiences/AudiencePropGroup';
+import { PageContextCopy_15_2 } from '../../../common/interfaces/@msft/1.15.2/WebPartContext';
 
 // import { getHelpfullErrorV2 } from '../Logging/ErrorHandler';
 // import { JSON_Edit_Link } from './zReusablePropPane';
@@ -31,13 +32,14 @@ import { IEasyPagesWPProps } from './epTypes';
 
 export interface IEasyPagesIconsWPProps extends IEasyPagesWPProps, IEasyIconsWPProps {}
 
-export function buildEasyPagesGroup( wpProps: IEasyPagesIconsWPProps, hasParent: boolean ) : IPropertyPaneGroup {
+export function FPSEasyPagesGroup( wpProps: IEasyPagesIconsWPProps, pageContext: PageContextCopy_15_2 ) : IPropertyPaneGroup {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { EasyPagesEnable, EasyPageTabsC, EasyPageTabsP, EasyPageTabsA, EasyPageTabsB, EasyPageOverflowTab, EasyPageParent, easyIconEnable, easyIconIgnore, easyIconKeys, 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     EasyPagesAudience, EasyPagesSiteTitleA, EasyPageUrlA, EasyPagesSiteTitleB, EasyPageUrlB, EasyPageContainerStyles, EasyPageStyles } = wpProps;
 
+const hasParent: boolean = pageContext.site.absoluteUrl !== pageContext.web.absoluteUrl ? true : false;
 // export interface IEasyPagesWPProps {
 //   EasyPagesEnable: boolean;
 //   easyPageTabs: string;

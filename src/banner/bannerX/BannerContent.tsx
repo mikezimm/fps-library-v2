@@ -11,9 +11,10 @@ import { makeInfoElement } from './InfoElement';
 import { IPinMeState } from '../features/PinMe/Interfaces';
 import { bannerSettingsContent } from '../components/Gear/bannerGearFunctions';
 
+
 export function mainBannerContent( bannerProps: IWebpartBannerProps, forceNarrowStyles: boolean,
     nearBannerElementsArray: JSX.Element[], farBannerElementsArray: JSX.Element[],
-    showSettings: boolean, _openPanel: any, _togglePropsHelp: any ) {
+    showSettings: boolean, showPropsHelp: boolean, _openPanel: any, _togglePropsHelp: any, ) {
 
   // const { showTricks, context, keySiteProps, bannerWidth } = bannerProps;
 
@@ -164,7 +165,6 @@ export function mainBannerContent( bannerProps: IWebpartBannerProps, forceNarrow
     <div className={ 'flex-left-nowrap-start' }>
       { [ ...farBannerElementsArray, ...infoElement, ] }
     </div>;
-
 
 
   let showSettingStyle = showSettingsAsPivot === true ? 'show-settings show-settings-pivot' : 'show-settings show-settings-flex';
