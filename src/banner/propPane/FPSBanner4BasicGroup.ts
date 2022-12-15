@@ -6,6 +6,7 @@ import {
   } from '@microsoft/sp-property-pane';
 
 import { bannerInfoEleChoices } from '../../common/commandStyles/defaults';
+import { IThisFPSWebPartClass } from '../FPSWebPartClass/IThisFPSWebPartClass';
 import { PageEditorAudienceChoices } from './Audiences/Interfaces';
 /**
  * FPSBanner3BasicGroup builds FPS Banner Basics Prop Pane Group: showBanner, bannerTitle, infoElementChoice, infoElementText,
@@ -16,9 +17,12 @@ import { PageEditorAudienceChoices } from './Audiences/Interfaces';
  * @returns
  */
 
-export function FPSBanner4BasicGroup(forceBanner: boolean, modifyBannerTitle: boolean, showBanner: boolean, infoElementText: boolean,
-  feedback: boolean, enableBeAUser: boolean) {
-  let fields: any[] = BannerPropPaneButtonBasics(forceBanner, modifyBannerTitle, showBanner, infoElementText, feedback, enableBeAUser);
+// export function FPSBanner4BasicGroup(forceBanner: boolean, modifyBannerTitle: boolean, showBanner: boolean, infoElementText: boolean,
+//   feedback: boolean, enableBeAUser: boolean) {
+
+export function FPSBanner4BasicGroup(thisWPClass: IThisFPSWebPartClass) {
+
+  let fields: any[] = BannerPropPaneButtonBasics(thisWPClass);
   let bannerGroup = {
     groupName: 'FPS Banner - Basics',
     isCollapsed: true,
@@ -36,15 +40,17 @@ export function FPSBanner4BasicGroup(forceBanner: boolean, modifyBannerTitle: bo
    * @param infoElementText 
    * @returns 
    */
-  export function BannerPropPaneButtonBasics( forceBanner: boolean, modifyBannerTitle: boolean, showBanner: boolean, 
-    infoElementText: boolean, feedback: boolean, enableBeAUser: boolean ) {
+  // export function BannerPropPaneButtonBasics( forceBanner: boolean, modifyBannerTitle: boolean, showBanner: boolean, 
+  //   infoElementText: boolean, feedback: boolean, enableBeAUser: boolean ) {
+  export function BannerPropPaneButtonBasics( thisWPClass: IThisFPSWebPartClass ) {
   
     let fields : any[] = [];
+    const { showBanner, infoElementChoice } = thisWPClass.properties;
 
     fields.push(
         PropertyPaneToggle('showBanner', {
             label: 'Show Banner',
-            disabled: forceBanner !== false ? true : false ,
+            disabled: thisWPClass._forceBanner !== false ? true : false ,
             })
       );
 
@@ -52,7 +58,7 @@ export function FPSBanner4BasicGroup(forceBanner: boolean, modifyBannerTitle: bo
         PropertyPaneTextField('bannerTitle', {
             label: 'Webpart Title',
             description: '',
-            disabled: modifyBannerTitle !== true || showBanner !== true ? true : false,
+            disabled: thisWPClass._modifyBannerTitle !== true || showBanner !== true ? true : false,
             })
       );
 
@@ -68,17 +74,17 @@ export function FPSBanner4BasicGroup(forceBanner: boolean, modifyBannerTitle: bo
         PropertyPaneTextField('infoElementText', {
             label: 'More Information text on right of banner',
             description: 'Keep simple to one word if possible.',
-            disabled:infoElementText !== true || showBanner !== true ? true : false,
+            disabled: infoElementChoice !== 'Text' || showBanner !== true ? true : false,
         }) );
 //feedbackEmail: string;
     fields.push(
         PropertyPaneTextField('feedbackEmail', {
             label: 'Feedback email',
             description: 'Adds Feedback icon in the banner.',
-            disabled:feedback !== true || showBanner !== true ? true : false,
+            disabled:thisWPClass._allowFeedback !== true || showBanner !== true ? true : false,
         }) );
     
-    if ( enableBeAUser === true ) { 
+    if ( thisWPClass._allowBeAUser === true ) { 
         fields.push(
         PropertyPaneDropdown('beAUserAudience', <IPropertyPaneDropdownProps>{
             label: 'Audience for Be A User mode',

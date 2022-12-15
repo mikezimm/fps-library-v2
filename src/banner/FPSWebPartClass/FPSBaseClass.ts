@@ -1,6 +1,7 @@
 
 import { DisplayMode } from '@microsoft/sp-core-library';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
+import { IFPSEnviro } from '../../common/interfaces/fps/IFPSEnviro';
 import { ISitePreConfigProps } from '../../common/PropPaneHelp/IPreConfig';
 import { IRepoLinks } from '../../components/atoms/Links/CreateLinks';
 import { ILoadPerformance, ILoadPerformanceOps } from '../../components/molecules/Performance/IPerformance';
@@ -49,6 +50,19 @@ export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TP
   protected _modifyBannerStyle: boolean = true;
   protected _keysToShow: ILoadPerformanceOps[] = [];
 
+  protected _allowQuickLaunchHide: boolean = true;
+  protected _allowPageHeaderHide: boolean = true;
+  protected _allowToolBarHide: boolean = true;
+  protected _allowAllSectWidth: boolean = true;
+  protected _allowBeAUser: boolean = true;
+  protected _allowFeedback: boolean = true;
+  protected _allowExpando: boolean = true;
+  protected _allowSiteThemeChoice: boolean = false;
+  protected _allowEasyPages: boolean = true;
+
+  //Set this to true if webpart has a search bar and you want the user to be able to turn it on or off
+  protected _allowShowSearch: boolean = false;
+
   /**
    * These are updated later in the code
    */
@@ -61,6 +75,8 @@ export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TP
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public _FPSUser: IFPSUser = null as any; //Set as any but will get created in FPSSuperOnOnit
+
+  public _FPSEnviro: IFPSEnviro = null as any; //Set as any but will get created in FPSSuperOnOnit
 
 
   /**

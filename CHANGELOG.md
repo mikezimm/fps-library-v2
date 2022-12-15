@@ -5,10 +5,15 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.24
+npm install @mikezimm/fps-library-v2@1.0.25
 
 
 # Changelog
+
+## 1.0.25 - 2022-Dec-15
+- Create window.FPSEnviro:  IFPSEnviro using createFPSEnviroOnWindow during runSuperOnInit
+- Add FPSEnviro to HelpPanel User tab
+- Update PropertyPaneGroups to accept thisWPClass: IThisFPSWebPartClass - make life a LOT easier
 
 ## 1.0.24 - 2022-Dec-14
 - change _exportIgnoreProps to _exportIgnorePropsWP, webpart only passes it's props.  runFPSInit adds FPS ignores

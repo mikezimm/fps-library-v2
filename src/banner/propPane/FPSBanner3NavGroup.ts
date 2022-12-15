@@ -24,6 +24,7 @@ export const BannerPropNavButtonFields : any[] = [
   }),
 
 ];
+
 /**
  * FPSBanner3NavGroup - Builds Prop Pane group for Nav Buttons:  showGoToHome, showGoToParent, homeParentGearAudience
  * @returns

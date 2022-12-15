@@ -5,6 +5,7 @@ import { trickyEmails } from '../../components/atoms/Links/LinksRepos';
 import { createBasePerformanceInit, startPerformOp, updatePerformanceEnd } from '../../components/indexes';
 import { getFPSUser } from '../../logic/indexes';
 import { expandoOnInit } from '../features/Expando/oninit';
+import { createFPSEnviroOnWindow } from '../features/FPSDOM/FPSEnviro';
 import { updateBannerThemeStyles } from '../features/PageStyle/bannerThemes';
 import { renderCustomStyles } from '../features/PageStyle/renderCustStyles';
 import { getWebPartHistoryOnInit } from '../features/WebPartHistory/OnInit';
@@ -43,10 +44,14 @@ export function runFPSSuperOnInit( thisWPClass: IThisFPSWebPartClass, PreConfigu
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const pageLayout: any = context['_pageLayoutType']?context['_pageLayoutType'] : context['_pageLayoutType'];
     thisWPClass.properties.pageLayout = pageLayout;
+
+    thisWPClass._FPSEnviro = createFPSEnviroOnWindow( thisWPClass ) ;
     // _urlParameters = getUrlVars();
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     thisWPClass._FPSUser = getFPSUser( context as any, thisWPClass._trickyEmailsAll, _trickyApp, SPPermission ) ;
+
+
     console.log( 'FPSUser: ', thisWPClass._FPSUser );
 
     expandoOnInit( properties, context.domElement, displayMode );

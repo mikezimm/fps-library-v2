@@ -6,6 +6,7 @@ import type { WebPartContextCopy_15_2 } from '../../common/interfaces/@msft/1.15
 
 import { IUser, IFPSUser, ISimplePermission } from './IUserInterfaces';
 import { checkDeepProperty } from '../Objects/deep';
+import { IFPSWindow } from '../../common/interfaces/fps/Window';
 
 /**
  * Sets thisWindow.FPSUser = FPSUser; and then returns FPSUser
@@ -23,9 +24,12 @@ import { checkDeepProperty } from '../Objects/deep';
 // import { SPPermission,  } from '@microsoft/sp-page-context';
 export function getFPSUser ( context: WebPartContextCopy_15_2, trickyEmailsAll: string[], trickyApp: string, SPPermission: any ): IFPSUser {
 
+  const thisWindow : IFPSWindow = window as any;
+
     const { user, web }  = context.pageContext;
     let startTime = new Date();
-    const thisWindow : any = window;
+
+
     let currentCultureName = checkDeepProperty(context.pageContext, ['cultureInfo','currentCultureName'], 'ShortError');
     let isSiteAdmin = checkDeepProperty(context.pageContext, ['legacyPageContext','isSiteAdmin'], 'ShortError');
 

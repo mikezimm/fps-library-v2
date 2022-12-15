@@ -18,16 +18,20 @@ import { PageContextCopy_15_2 } from '../../../common/interfaces/@msft/1.15.2/We
 
 // import * as strings from 'DrilldownV2WebPartStrings';
 import { IEasyPagesWPProps } from './epTypes';
+import { IThisFPSWebPartClass } from '../../FPSWebPartClass/IThisFPSWebPartClass';
 // import { JSON_Edit_Link, ValidLocalLanguages } from '../fpsReferences';
 
 export interface IEasyPagesIconsWPProps extends IEasyPagesWPProps, IEasyIconsWPProps {}
 
-export function FPSEasyPagesGroup( wpProps: IEasyPagesIconsWPProps, pageContext: PageContextCopy_15_2 ) : IPropertyPaneGroup {
+// export function FPSEasyPagesGroup( wpProps: IEasyPagesIconsWPProps, pageContext: PageContextCopy_15_2 ) : IPropertyPaneGroup {
+export function FPSEasyPagesGroup(  thisWPClass: IThisFPSWebPartClass  ) : IPropertyPaneGroup {
+
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { EasyPagesEnable, EasyPageTabsC, EasyPageTabsP, EasyPageTabsA, EasyPageTabsB, EasyPageOverflowTab, EasyPageParent, easyIconEnable, easyIconIgnore, easyIconKeys, 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    EasyPagesAudience, EasyPagesSiteTitleA, EasyPageUrlA, EasyPagesSiteTitleB, EasyPageUrlB, EasyPageContainerStyles, EasyPageStyles } = wpProps;
+    EasyPagesAudience, EasyPagesSiteTitleA, EasyPageUrlA, EasyPagesSiteTitleB, EasyPageUrlB, EasyPageContainerStyles, EasyPageStyles } = thisWPClass.properties;
+const { pageContext } = thisWPClass.context;
 
 const hasParent: boolean = pageContext.site.absoluteUrl !== pageContext.web.absoluteUrl ? true : false;
 // export interface IEasyPagesWPProps {

@@ -14,6 +14,7 @@ import { IFPSBasicToggleSetting, } from '../../../common/interfaces/fps/IFPSBasi
 import { JSON_Edit_Link } from '../../propPane/ReusableLinks';
 
 import { EveryoneAudienceChoices, IEveryoneAudience } from '../../propPane/Audiences/Interfaces' 
+import { IThisFPSWebPartClass } from '../../FPSWebPartClass/IThisFPSWebPartClass';
   /**
    * This is the second version which is more simple (toggles and sliders)
    * @param showSearch
@@ -26,10 +27,10 @@ import { EveryoneAudienceChoices, IEveryoneAudience } from '../../propPane/Audie
     * Model for IFPSBasicToggleSetting properties
     * For if ( allSectWidth !== 'skip' ) {
     */
-  export function FPSOptionsExpando( enableExpandoramic: IFPSBasicToggleSetting, expandoEnabled: boolean, expandoDefault: IFPSBasicToggleSetting, expandoAudience:  IEveryoneAudience ) {
+  export function FPSOptionsExpando( thisWPClass: IThisFPSWebPartClass ) {
   
       let fields: any[] = [];
-      if ( enableExpandoramic !== 'skip' ) {
+      if ( thisWPClass._allowExpando === true ) {
 
           fields.push(
             PropertyPaneLabel('expandoText1', {
@@ -53,19 +54,19 @@ import { EveryoneAudienceChoices, IEveryoneAudience } from '../../propPane/Audie
               label: 'Page load default',
               offText: 'Normal',
               onText: 'Expanded',
-              disabled: enableExpandoramic === true ? false: true,
+              disabled: thisWPClass.properties.enableExpandoramic === true ? false: true,
             }) );
 
           fields.push(
             PropertyPaneDropdown('expandoAudience', <IPropertyPaneDropdownProps>{
-              disabled: enableExpandoramic === true ? false : true ,
+              disabled: thisWPClass.properties.enableExpandoramic === true ? false : true ,
               label: 'Expandoramic Audience',
               options: EveryoneAudienceChoices,
             }) );
 
             fields.push(
             PropertyPaneTextField('expandoStyle', {
-              disabled: enableExpandoramic === true ? false : true ,
+              disabled: thisWPClass.properties.enableExpandoramic === true ? false : true ,
               label: 'Expandoramic Styling',
               description: 'React.CSSProperties format like:  "fontSize":"larger","color":"red"',
               multiline: true,
@@ -74,7 +75,7 @@ import { EveryoneAudienceChoices, IEveryoneAudience } from '../../propPane/Audie
             fields.push(
               PropertyPaneSlider('expandoPadding', { //hidePageHeader, allSectionMaxWidthEnable, allSectionMaxWidth, allSectionMarginEnable, allSectionMargin
                   label: 'Expanded padding',
-                  disabled: enableExpandoramic === true ? false : true ,
+                  disabled: thisWPClass.properties.enableExpandoramic === true ? false : true ,
                   min: 0,
                   max: 100,
                   step: 10,
@@ -91,6 +92,5 @@ import { EveryoneAudienceChoices, IEveryoneAudience } from '../../propPane/Audie
       };
 
       return optionsGroup;
-      
+
   }
-  

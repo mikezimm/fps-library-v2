@@ -6,6 +6,7 @@ import {
   } from '@microsoft/sp-property-pane';
 
 import { bannerThemeChoices, bannerThemeChoicesWSiteTheme } from '../../common/commandStyles/defaults';
+import { IThisFPSWebPartClass } from '../FPSWebPartClass/IThisFPSWebPartClass';
 
 /**
  * FPSBanner3ThemeGroup - Builds FPS Banner Theme Group:  bannerStyleChoice, bannerStyle, bannerCmdStyle, bannerHoverEffect
@@ -15,8 +16,9 @@ import { bannerThemeChoices, bannerThemeChoicesWSiteTheme } from '../../common/c
  * @returns
  */
 
-export function FPSBanner3ThemeGroup(modifyBannerStyle: boolean, showBanner: boolean, lockStyles: boolean, includeSiteTheme: boolean) {
-  let fields: any[] = BannerPropButtonThemes(modifyBannerStyle, showBanner, lockStyles, includeSiteTheme);
+// export function FPSBanner3ThemeGroup(modifyBannerStyle: boolean, showBanner: boolean, lockStyles: boolean, includeSiteTheme: boolean) {
+export function FPSBanner3ThemeGroup( thisWPClass: IThisFPSWebPartClass ) {
+  let fields: any[] = BannerPropButtonThemes( thisWPClass );
   let bannerGroup = {
     groupName: 'FPS Banner - Theme',
     isCollapsed: true,
@@ -33,16 +35,17 @@ export function FPSBanner3ThemeGroup(modifyBannerStyle: boolean, showBanner: boo
    * @param lockStyles 
    * @returns 
    */
-  export function BannerPropButtonThemes( modifyBannerStyle: boolean, showBanner: boolean, lockStyles: boolean, includeSiteTheme: boolean ){
+  // export function BannerPropButtonThemes( modifyBannerStyle: boolean, showBanner: boolean, lockStyles: boolean, includeSiteTheme: boolean ){
+  export function BannerPropButtonThemes( thisWPClass: IThisFPSWebPartClass ){
 
     let fields : any[] = [];
-
+    const { showBanner, lockStyles,  } = thisWPClass.properties;
 
     fields.push(
         PropertyPaneDropdown('bannerStyleChoice', <IPropertyPaneDropdownProps>{
             label: 'Banner Theme',
-            options: includeSiteTheme === true ? bannerThemeChoicesWSiteTheme : bannerThemeChoices,
-            disabled: modifyBannerStyle !== true || showBanner !== true ? true : false,
+            options: thisWPClass._allowSiteThemeChoice === true ? bannerThemeChoicesWSiteTheme : bannerThemeChoices,
+            disabled: thisWPClass._modifyBannerStyle !== true || showBanner !== true ? true : false,
         }) );
 
     // if ( lockStyles !== true ) {
@@ -50,7 +53,7 @@ export function FPSBanner3ThemeGroup(modifyBannerStyle: boolean, showBanner: boo
         PropertyPaneTextField('bannerStyle', {
             label: 'Style options',
             description: 'React.CSSProperties format like:  "fontSize":"larger","color":"red"',
-            disabled: modifyBannerStyle !== true || showBanner !== true || lockStyles === true ? true : false,
+            disabled: thisWPClass._modifyBannerStyle !== true || showBanner !== true || lockStyles === true ? true : false,
             multiline: true,
         }) );
     // }
@@ -60,7 +63,7 @@ export function FPSBanner3ThemeGroup(modifyBannerStyle: boolean, showBanner: boo
         PropertyPaneTextField('bannerCmdStyle', {
             label: 'Button Style options',
             description: 'React.CSSProperties format like:  "fontSize":"larger","color":"red"',
-            disabled: modifyBannerStyle !== true || showBanner !== true || lockStyles === true ? true : false,
+            disabled: thisWPClass._modifyBannerStyle !== true || showBanner !== true || lockStyles === true ? true : false,
             multiline: true,
             }) );
     // }
@@ -68,7 +71,7 @@ export function FPSBanner3ThemeGroup(modifyBannerStyle: boolean, showBanner: boo
     fields.push(
         PropertyPaneToggle('bannerHoverEffect', {
             label: 'Banner Hover Effect',
-            disabled: modifyBannerStyle !== true || showBanner !== true ? true : false ,
+            disabled: thisWPClass._modifyBannerStyle !== true || showBanner !== true ? true : false ,
             }) );
 
     return fields;

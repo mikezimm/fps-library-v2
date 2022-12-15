@@ -9,6 +9,7 @@ import {
 } from '@microsoft/sp-property-pane';
 
 import { PropertyFieldPeoplePicker, PrincipalType } from '@pnp/spfx-property-controls/lib/PropertyFieldPeoplePicker';
+import { IThisFPSWebPartClass } from '../../FPSWebPartClass/IThisFPSWebPartClass';
 
 // import { IMinWPBannerProps } from '../HelpPanelOnNPM/onNpm/BannerInterface';
 import { EveryoneAudienceChoices } from '../../propPane/Audiences/Interfaces';
@@ -21,8 +22,10 @@ import { IMinCustomHelpProps, } from './Interfaces';
      * panelMessageIfYouStill, supportContacts
      * 
   */
-    export function FPSBanner3VisHelpGroup( wpContext: any, onPropertyPaneFieldChanged: any, wpProperties: any ) {
-    let fields: any[] = BannerPropVisHelp( wpContext, onPropertyPaneFieldChanged, wpProperties );
+    // export function FPSBanner3VisHelpGroup( wpContext: any, onPropertyPaneFieldChanged: any, wpProperties: any ) {
+    export function FPSBanner3VisHelpGroup(  thisWPClass: IThisFPSWebPartClass  ) {
+
+    let fields: any[] = BannerPropVisHelp( thisWPClass.context, thisWPClass.onPropertyPaneFieldChanged, thisWPClass.properties );
     let bannerGroup = { groupName: 'Visitor Help Info (required)',
         isCollapsed: true ,
         groupFields: fields

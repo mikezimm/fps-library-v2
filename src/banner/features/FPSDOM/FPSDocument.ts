@@ -1,6 +1,6 @@
 
 import { IFPSWindowProps, IFPSSection, IFPSSectionStyle, IFPSPage } from './Interfaces';
-
+import { IFPSWindow } from '../../../common/interfaces/fps/Window';
 /**
  * The purpose of this file is to establish a node in the dom to store all current page variables that can easily be seen and updated by any FPS Webpart
  */
@@ -86,7 +86,7 @@ export const defHideQuicklaunchTitle = 'Hide Quick Launch';
 export const defToolBarTitle = 'Hide Toolbar';
 
 export function createFPSWindowProps() {
-  const thisWindow : any = window;
+  const thisWindow : IFPSWindow = window as any;
 
   let didThis: string = 'Did not do anything this time';
 
