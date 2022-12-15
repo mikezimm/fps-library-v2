@@ -5,10 +5,13 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.22
+npm install @mikezimm/fps-library-v2@1.0.23
 
 
 # Changelog
+
+## 1.0.23 - 2022-Dec-14
+- move consolidate some PropPane files
 
 ## 1.0.22 - 2022-Dec-14
 - Add baseline files for updated IThisFPSWebPartClass, FPSBaseClass

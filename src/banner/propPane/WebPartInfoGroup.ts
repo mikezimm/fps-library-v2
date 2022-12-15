@@ -22,9 +22,9 @@ import {
 
 // import { PropertyPaneWebPartInformation } from '@pnp/spfx-property-controls/lib/PropertyPaneWebPartInformation';
 
-import { fpsLogo326 } from '../../../components/atoms/SVGIcons/fpsLogo326';
+import { fpsLogo326 } from '../../components/atoms/SVGIcons/fpsLogo326';
 
-import { IRepoLinks } from '../../../components/atoms/Links/CreateLinks';
+import { IRepoLinks } from '../../components/atoms/Links/CreateLinks';
 
 /**
  * 

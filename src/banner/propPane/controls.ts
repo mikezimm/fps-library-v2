@@ -6,7 +6,7 @@ import {
   PropertyPaneSlider,
 } from '@microsoft/sp-property-pane';
 
-import { camelToSentanceCase } from '../../../logic/Strings/stringCase';
+import { camelToSentanceCase } from '../../logic/Strings/stringCase';
 
 
 /**

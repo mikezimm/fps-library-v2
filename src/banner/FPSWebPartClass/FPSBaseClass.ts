@@ -8,6 +8,8 @@ import { IFPSUser } from '../../logic/Users/IUserInterfaces';
 import { webpartInstance } from '../features/FPSDOM/FPSDocument';
 
 /**
+ * REQUIREMENT:  Update wepbart's tsconfig to target 'es6' or higher
+ * 
  * The purpose of this class is to easily add all required setup to use the banner.
  * Then minimal set up is required in each webpart project
  * 
@@ -20,6 +22,8 @@ import { webpartInstance } from '../features/FPSDOM/FPSDocument';
  *  - runWebPartRender
  *
  */
+
+
 export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TProperties> {
 
   /**
@@ -66,7 +70,7 @@ export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TP
   protected _exitPropPaneChanged: boolean = false;
   protected _importErrorMessage: string = '';
   protected _trickyEmailsALL: string[] = []; // These are emails that get tricky functionality for this specific web part
-  
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   protected _urlParameters: any = {};
 

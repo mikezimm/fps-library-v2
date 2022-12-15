@@ -20,7 +20,7 @@ import {
   
 import { IFPSBasicToggleSetting, } from '../../../common/interfaces/fps/IFPSBasicToggleSetting';
 
-import { JSON_Edit_Link } from '../../components/PropPane/ReusableLinks';
+import { JSON_Edit_Link } from '../../propPane/ReusableLinks';
 
 import { EveryoneAudienceChoices, IEveryoneAudience } from '../../propPane/Audiences/Interfaces' 
 
