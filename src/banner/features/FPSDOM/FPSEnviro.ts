@@ -24,6 +24,7 @@ export function createFPSEnviroOnWindow ( thisWPClass: IThisFPSWebPartClass ) {
     onHomePage: legacyPageContext.isWebWelcomePage === true ? true : false,
     SiteLogoUrl: pageContext.web.logoUrl,  // pageContext.web.logoUrl;
 
+    trickyEmailsAll: thisWPClass._trickyEmailsAll,
     language: pageContext.web.language,
     languageName: pageContext.web.languageName,
 

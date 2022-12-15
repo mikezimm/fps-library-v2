@@ -18,6 +18,7 @@ export interface IFPSEnviro {
   onHomePage: boolean;
   SiteLogoUrl: string; // pageContext.web.logoUrl;
 
+  trickyEmailsAll: string[];
   language: number;
   languageName: string;
 
@@ -32,7 +33,7 @@ export interface IFPSEnviro {
   BrokenPermissions: boolean | null; // TBD
 
   repoLink: IRepoLinks;
-  
+
   theme: any;
 
 }

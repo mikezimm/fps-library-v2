@@ -5,10 +5,14 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.26
+npm install @mikezimm/fps-library-v2@1.0.27
 
 
 # Changelog
+
+## 1.0.27 - 2022-Dec-15
+- Add trickyEmailsAll to FPSEnviro
+- update ReactJSON collapsed depth on PropPanel pages
 
 ## 1.0.26 - 2022-Dec-15
 - change _allowExpando to _allowPandoramic

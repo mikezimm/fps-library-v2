@@ -98,7 +98,7 @@ export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: s
         content= <div id="CommandsJSONPanel" style={{paddingTop: '20px'}}>
           <h3>Summary of Exportable Properties</h3>
           <ReactJson src={ exportProps } name={ 'Export Properties' } collapsed={ false } displayDataTypes={ true } displayObjectSize={ true } enableClipboard={ true } style={{ padding: '10px 0px' }}/>
-          <ReactJson src={ webpartHistory } name={ 'Webpart History' } collapsed={ true } displayDataTypes={ true } displayObjectSize={ true } enableClipboard={ true } style={{ padding: '10px 0px' }}/>
+          <ReactJson src={ webpartHistory } name={ 'Webpart History' } collapsed={ 2 } displayDataTypes={ true } displayObjectSize={ true } enableClipboard={ true } style={{ padding: '10px 0px' }}/>
         </div>;
 
     } else if ( selectedKey === HA ) {  //2022-01-31: Added Pivot Tiles
@@ -110,7 +110,7 @@ export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: s
       if ( showMedical === true ) {
         let medicalElements : any = [];
         if ( thisWindow.FPSEnviro ) {
-          medicalElements.push( <ReactJson src={ thisWindow.FPSEnviro } name={ 'FPSEnviro' } collapsed={ false } displayDataTypes={ true } displayObjectSize={ true } enableClipboard={ false } style={{ padding: '10px 0px' }}/> );
+          medicalElements.push( <ReactJson src={ thisWindow.FPSEnviro } name={ 'FPSEnviro' } collapsed={ 1 } displayDataTypes={ true } displayObjectSize={ true } enableClipboard={ false } style={{ padding: '10px 0px' }}/> );
         }
         if ( thisWindow.FPSUser ) {
           medicalElements.push( <ReactJson src={ thisWindow.FPSUser } name={ 'FPSUser' } collapsed={ true } displayDataTypes={ true } displayObjectSize={ true } enableClipboard={ false } style={{ padding: '10px 0px' }}/> );
