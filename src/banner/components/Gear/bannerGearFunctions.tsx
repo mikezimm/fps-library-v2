@@ -1,12 +1,11 @@
 import * as React from "react";
 
 // For SPPermission:  let addAndCustomizePages = pageContext.web.permissions.hasPermission( SPPermission.addAndCustomizePages );
-import { PageContext, SPPermission } from '@microsoft/sp-page-context';
+import { SPPermission } from '@microsoft/sp-page-context';
 
 import { Pivot, PivotItem, PivotLinkFormat, PivotLinkSize,} from 'office-ui-fabric-react/lib/Pivot';
 
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
-import { IKeySiteProps } from "./IKeySiteProps";
 import { IWebpartBannerProps } from "../../mainReact/IWebpartBannerProps";
 import { defaultBannerCommandStyles } from "../../../common/commandStyles/defaults";
 

@@ -1,45 +1,19 @@
 
 
 import {
-  //  IPropertyPanePage,
-  //  IPropertyPaneGroup,
-   PropertyPaneLabel,
-  //  IPropertyPaneLabelProps,
-  //  PropertyPaneHorizontalRule,
+
+    PropertyPaneLabel,
     PropertyPaneTextField, 
-    // IPropertyPaneTextFieldProps,
-    // PropertyPaneLink, IPropertyPaneLinkProps,
-   PropertyPaneDropdown, IPropertyPaneDropdownProps,
+    PropertyPaneDropdown, IPropertyPaneDropdownProps,
     IPropertyPaneDropdownOption,PropertyPaneToggle,
-  //  IPropertyPaneConfiguration,
-  //  PropertyPaneButton,
-  //  PropertyPaneButtonType,
-  //   PropertyPaneSlider, IPropertyPaneSliderProps,
-  PropertyPaneSlider
+    PropertyPaneSlider
   } from '@microsoft/sp-property-pane';
-  
+
 import { IFPSBasicToggleSetting, } from '../../../common/interfaces/fps/IFPSBasicToggleSetting';
 
 import { JSON_Edit_Link } from '../../propPane/ReusableLinks';
 
 import { EveryoneAudienceChoices, IEveryoneAudience } from '../../propPane/Audiences/Interfaces' 
-
-
-//  //This will be in npmFunctions > Services/PropPane/FPSOptionsExpando in next release.
-//  export type IEveryoneItemPageAudience = 'Site Admins' | 'Site Owners' | 'Page Editors' | 'Item Editors' | 'Everyone';
-
-// // Replace expandAudiences with IEveryoneItemPageAudience
-// // export type expandAudiences = 'Site Admins' | 'Site Owners' | 'Page Editors' | 'Everyone';
-
-// //'Everyone' | 'Site Admins' | 'Site Owners' | 'Page Editors' ;
-// export const EveryoneItemPageAudienceChoices: IPropertyPaneDropdownOption[] = <IPropertyPaneDropdownOption[]>[
-//   {   index: 0,   key: 'Site Admins', text: "Site Admins"  },
-//   {   index: 1,   key: 'Site Owners', text: "Site Owners"  },
-//   {   index: 2,   key: 'Page Editors', text: "Page Editors"  },
-//   {   index: 3,   key: 'Item Editors', text: "Item Editors"  },
-//   {   index: 4,   key: 'Everyone', text: "Everyone"  },
-// ];
-
   /**
    * This is the second version which is more simple (toggles and sliders)
    * @param showSearch

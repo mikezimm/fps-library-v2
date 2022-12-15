@@ -2,7 +2,7 @@ import { DisplayMode } from '../../../common/interfaces/@msft/1.15.2/displayMode
 import { IFPSWindowProps, IFPSSectionStyle, IFPSSection } from '../FPSDOM/Interfaces';
 import { createFPSWindowProps } from '../FPSDOM/FPSDocument';
 import { applySectionStyle} from './setAllSectionStyles';
-import { sendStandardConsole, sendFPSWindowConsole } from './console';
+import { sendFPSWindowConsole } from './console';
 import { initializeMinimalStyle } from '../FPSDOM/FPSDocument';
 
  /**

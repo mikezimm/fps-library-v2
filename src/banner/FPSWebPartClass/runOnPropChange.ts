@@ -18,7 +18,7 @@ export async function onFPSPropPaneCHanged(  thisWPClass: IThisFPSWebPartClass, 
 
   if ( propertyPath === 'fpsImportProps' ) {
 
-    thisWPClass._importErrorMessage = updateFpsImportProps( thisWPClass.properties, thisWPClass._importBlockProps, propertyPath, newValue,
+    thisWPClass._importErrorMessage = updateFpsImportProps( thisWPClass.properties, thisWPClass._importBlockPropsWP, propertyPath, newValue,
       thisWPClass.context.propertyPane.refresh,
       thisWPClass.onPropertyPaneConfigurationStart,
       thisWPClass._exitPropPaneChanged,

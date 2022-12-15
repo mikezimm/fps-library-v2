@@ -1,8 +1,7 @@
 
 
 import {
-    IPropertyPaneDropdownOption, PropertyPaneToggle,
-    PropertyPaneDropdown, IPropertyPaneDropdownProps,
+    IPropertyPaneDropdownOption,
   } from '@microsoft/sp-property-pane';
 
 

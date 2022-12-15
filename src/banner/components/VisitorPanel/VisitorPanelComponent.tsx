@@ -4,9 +4,6 @@ import { IRepoLinks } from '../../../components/atoms/Links/CreateLinks';
 import { TeamsLogo } from '../../../components/atoms/SVGIcons/TeamsLogo';
 import { IMinWPVisitorPanelInfo } from './Interfaces';
 
-// import { ILoadPerformanceALVFM } from '../Performance/IPerformance';
-// import { createPerformanceTableVisitor } from '../Performance/tables';
-
 
 /***
  *    db    db d888888b .d8888. d888888b d888888b  .d88b.  d8888b.      d8888b.  .d8b.  d8b   db d88888b db           d888888b d8b   db d88888b  .d88b.  

@@ -1,29 +1,18 @@
 
 
 import {
-    //  IPropertyPanePage,
-    //  IPropertyPaneGroup,
-    //  PropertyPaneLabel,
-    //  IPropertyPaneLabelProps,
-    //  PropertyPaneHorizontalRule,
-      PropertyPaneTextField, IPropertyPaneTextFieldProps,
-    //   PropertyPaneLink, IPropertyPaneLinkProps,
-     PropertyPaneDropdown, IPropertyPaneDropdownProps,
-      IPropertyPaneDropdownOption,PropertyPaneToggle,
-    //  IPropertyPaneConfiguration,
-    //  PropertyPaneButton,
-    //  PropertyPaneButtonType,
-    //   PropertyPaneSlider, IPropertyPaneSliderProps,
-    // PropertyPaneHorizontalRule,
-    // PropertyPaneSlider
+
+  PropertyPaneTextField, IPropertyPaneTextFieldProps,
+  IPropertyPaneDropdownOption,PropertyPaneToggle,
+  PropertyPaneDropdown, IPropertyPaneDropdownProps,
+
 } from '@microsoft/sp-property-pane';
 
 import { PropertyFieldPeoplePicker, PrincipalType } from '@pnp/spfx-property-controls/lib/PropertyFieldPeoplePicker';
-import { IMinWPBannerProps } from '../../interfaces/MinWP/IMinWPBannerProps';
-  
+
 // import { IMinWPBannerProps } from '../HelpPanelOnNPM/onNpm/BannerInterface';
 import { EveryoneAudienceChoices } from '../../propPane/Audiences/Interfaces';
-import { IMinCustomHelpProps, IMinWPVisitorPanelInfo } from './Interfaces';
+import { IMinCustomHelpProps, } from './Interfaces';
 
     /**
      * FPSBanner3VisHelpGroup - Builds FPS Banner Visitor Help Group:

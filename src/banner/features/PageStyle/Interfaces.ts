@@ -1,7 +1,5 @@
 
 export interface IMinPageStyleProps {
-  // [key: string]: string | number | boolean ;  //Added string because of error on IMinWPBannerProps
-    //FPS Options part II
     quickLaunchHide: boolean;
     pageHeaderHide: boolean;
     allSectionMaxWidthEnable: boolean;

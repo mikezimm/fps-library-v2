@@ -48,24 +48,24 @@ export interface IPropChange {
 }
 
 export interface IWebpartHistoryItem2 {
-  // [key: string]: string | IPropChange[];
-    time: string;
-    user: string;
-    changes: IPropChange[];
+// [key: string]: string | IPropChange[];
+  time: string;
+  user: string;
+  changes: IPropChange[];
 
-  }
+}
 
-  export interface IWebpartHistoryItem1 {
-    // [key: string]: string | string[];
-    time: string;
-    user: string;
-    fields: string[];
-    newValues: string[];
-  }
+export interface IWebpartHistoryItem1 {
+  // [key: string]: string | string[];
+  time: string;
+  user: string;
+  fields: string[];
+  newValues: string[];
+}
 
-  export interface IWebpartHistory {
-    // [key: string]: IWebpartHistoryItem2 | IWebpartHistoryItem2[];
-    thisInstance: IWebpartHistoryItem2;
-    history: IWebpartHistoryItem2[];
+export interface IWebpartHistory {
+  // [key: string]: IWebpartHistoryItem2 | IWebpartHistoryItem2[];
+  thisInstance: IWebpartHistoryItem2;
+  history: IWebpartHistoryItem2[];
 
-  }
+}

@@ -2,7 +2,6 @@
 // ####################################################### #######################################################
 
 export interface IMinBannerThemeProps {
-  // [key: string]: string | boolean;
   bannerStyleChoice: string;
   bannerStyle: string;
   bannerCmdStyle: string;

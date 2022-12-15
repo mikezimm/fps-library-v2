@@ -1,8 +1,6 @@
 
 import * as React from 'react';  //Needed for interface
 
-import { PageContext } from '@microsoft/sp-page-context';
-
 import { DisplayMode, } from '@microsoft/sp-core-library';
 
 import { PanelType } from 'office-ui-fabric-react/lib/Panel';
@@ -13,7 +11,7 @@ import { IRepoLinks } from '../../components/atoms/Links/CreateLinks';
 import { IWebpartHistory } from '../features/WebPartHistory/Interface';
 import { IFPSUser } from '../../logic/indexes/Users';
 import { IKeySiteProps } from '../components/Gear/IKeySiteProps';
-import { PageContextCopy_15_2, WebPartContextCopy_15_2 } from '../../common/interfaces/indexes/WebPartContext@152';
+import { WebPartContextCopy_15_2 } from '../../common/interfaces/indexes/WebPartContext@152';
 import { IEasyPagesSourceProps } from '../components/EasyPages/componentPage';
 import { IEasyPagesExtraProps } from '../components/EasyPages/componentSources';
 import { IEasyIcons } from '../../components/atoms/EasyIcons/eiTypes';

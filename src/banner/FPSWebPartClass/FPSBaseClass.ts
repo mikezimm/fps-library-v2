@@ -30,8 +30,8 @@ export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TP
    * These are intended to be set or adjusted right at the beginning of the main webpart class
    */
   protected _repoLink: IRepoLinks = null as any; //Set as any but will get created in FPSSuperOnOnit
-  protected _exportIgnoreProps: string[] = [];
-  protected _importBlockProps: string[] = [];
+  protected _exportIgnorePropsWP: string[] = [];
+  protected _importBlockPropsWP: string[] = [];
   protected _trickyApp = 'FPS UPDATE FPSBaseClass';
   protected _trickyEmailsWP: string[] = []; // These are emails that get tricky functionality for this specific web part
 

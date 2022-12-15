@@ -9,7 +9,6 @@ import { getHelpfullErrorV2 } from '../../../logic/Errors/friendly';
 import { indexOfAnyCase } from '../../../logic/Arrays/searching/objectfind';
 import { exportNotAvailMess } from './ExportFunctions';
 
-// import { IMinBannerUtilityProps, } from "../../HelpPanelOnNPM/onNpm/BannerInterface";
 import { JSON_Edit_Link } from '../../propPane/ReusableLinks';
 import { IMinBannerUtilityProps } from '../../interfaces/MinWP/IMinBannerUtilityProps';
 

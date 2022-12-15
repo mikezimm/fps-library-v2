@@ -23,8 +23,8 @@ export interface IThisFPSWebPartClass {
    * These are intended to be set or adjusted right at the beginning of the main webpart class
    */
   _repoLink: IRepoLinks;
-  _exportIgnoreProps: string[];
-  _importBlockProps: string[];
+  _exportIgnorePropsWP: string[];
+  _importBlockPropsWP: string[];
   _trickyApp: string;
   _trickyEmailsWP: string[]; // These are emails that get tricky functionality for this specific web part
 

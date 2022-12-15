@@ -1,22 +1,12 @@
 import {
-  //  IPropertyPanePage,
-   IPropertyPaneGroup,
-  //  PropertyPaneLabel,
-  //  IPropertyPaneLabelProps,
-  //  PropertyPaneHorizontalRule,
-    PropertyPaneTextField, 
-    // IPropertyPaneTextFieldProps,
-  //   PropertyPaneLink, IPropertyPaneLinkProps,
+  IPropertyPaneGroup,
+  PropertyPaneTextField, 
+
   // PropertyPaneDropdown, IPropertyPaneDropdownProps,
   // IPropertyPaneDropdownOption,
   PropertyPaneToggle,
   IPropertyPaneField,
-  //  IPropertyPaneConfiguration,
-  //  PropertyPaneButton,
-  //  PropertyPaneButtonType,
-  //   PropertyPaneSlider, IPropertyPaneSliderProps,
-  // PropertyPaneHorizontalRule,
-  // PropertyPaneSlider
+
 } from '@microsoft/sp-property-pane';
 
 import { IEasyIconsWPProps } from '../../../components/atoms/EasyIcons/eiTypes';

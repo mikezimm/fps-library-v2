@@ -9,10 +9,6 @@
  *                                                                                                                                  
  */
 
-// import * as React from 'react';
-// import { Icon, IIconProps } from 'office-ui-fabric-react/lib/Icon';
-
-
 import { getIconStyles, buildAppWarnIcon, IFPSApps } from './stdIconsBuildersV02';
 
 import * as StdIcons from './iconNames';

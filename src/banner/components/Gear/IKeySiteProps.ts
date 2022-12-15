@@ -1,5 +1,4 @@
 
-
 export interface IKeySiteProps {
 	SiteLogoUrl: string;  // pageContext.web.logoUrl;
 	LimitedDownload: boolean | null; // TBD

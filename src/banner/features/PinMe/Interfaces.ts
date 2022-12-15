@@ -19,11 +19,6 @@ export interface IPinStatus {
 // ####################################################### #######################################################
 
 export interface IMinPinMeProps {
-  // When I add this set of key types, erros in ALVFinMan go away.
-  // error TS2430: Interface 'IAlvFinManWebPartProps' incorrectly extends interface 'IMinPinMeProps'.
-  // [key: string]: string | IPinMeState | boolean | number | string[] | IWebpartHistory | ILoadPerformanceALVFM | IPropertyFieldGroupOrPerson[] ;
-  // [key: string]: string | IPinMeState | boolean ;  //Added string because of error on IMinWPBannerProps
-
     // For FPS Pin Me function
     defPinState: IPinMeState;
     forcePinState: boolean;

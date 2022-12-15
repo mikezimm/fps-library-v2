@@ -1,21 +1,9 @@
 
 import {
-  //  IPropertyPanePage,
-  //  IPropertyPaneGroup,
-  //  PropertyPaneLabel,
-  //  IPropertyPaneLabelProps,
-  //  PropertyPaneHorizontalRule,
     PropertyPaneTextField, 
-    // IPropertyPaneTextFieldProps,
-    // PropertyPaneLink, IPropertyPaneLinkProps,
-   PropertyPaneDropdown, IPropertyPaneDropdownProps,
-    // IPropertyPaneDropdownOption,
+    PropertyPaneDropdown, IPropertyPaneDropdownProps,
     PropertyPaneToggle,
-  //  IPropertyPaneConfiguration,
-  //  PropertyPaneButton,
-  //  PropertyPaneButtonType,
-  //   PropertyPaneSlider, IPropertyPaneSliderProps,
-    PropertyPaneHorizontalRule  } from '@microsoft/sp-property-pane';
+  } from '@microsoft/sp-property-pane';
 
 import { bannerInfoEleChoices } from '../../common/commandStyles/defaults';
 import { PageEditorAudienceChoices } from './Audiences/Interfaces';

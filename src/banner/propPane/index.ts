@@ -1,8 +1,3 @@
-// export type { IItemsError,IMinSourceWPProps, ISourceProps } from './Interface';
-// export { getSourceItems } from './getSourceItems';
-// export { prepSourceColumns } from './prepSourceColumns';
-
-// export * from '';
 
 export { FPSOptionsGroupBasic, } from './FPSOptionsGroupBasic';
 export { FPSBanner4BasicGroup,  } from './FPSBanner4BasicGroup';

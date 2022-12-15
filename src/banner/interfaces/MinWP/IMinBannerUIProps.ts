@@ -1,8 +1,6 @@
 import { IEveryoneAudience, IPageEditorAudience } from "../../propPane/Audiences/Interfaces";
 
 export interface IMinBannerUIProps {
-  // Added number due to ALVFinManWebPartProps
-  // [key: string]: string | number |boolean | IEveryoneAudience | IPageEditorAudience;
   showBanner: boolean;
   showBannerGear: boolean; // Not in Prop Pane - enables the site settings links
 

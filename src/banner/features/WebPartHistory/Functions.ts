@@ -42,7 +42,7 @@
 
  */
 
-    import { IWebpartHistoryItem1, IWebpartHistoryItem2, IWebpartHistory, IPropChange } from './Interface';
+  import { IWebpartHistoryItem2, IWebpartHistory, IPropChange } from './Interface';
 
   export function createWebpartHistory( prop: any, newValue: any, user: string ) {
 

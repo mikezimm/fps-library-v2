@@ -1,8 +1,6 @@
 import * as devLinks from './LinksDevDocs';
 import * as chartJSLinks from './LinksChartJS';
-// import * as repoLinks from './LinksRepos';
 
-//import { IHelpTableRow, IHelpTable, IPageContent, ISinglePageProps } from '../Component/ISinglePageProps';
 import { IHelpTable,  } from '../../../banner/components/SingleHelpPage/ISinglePageProps';
 
 export function devTable() {

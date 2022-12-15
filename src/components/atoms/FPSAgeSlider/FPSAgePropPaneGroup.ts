@@ -1,35 +1,15 @@
 
 import {
-  //  IPropertyPanePage,
-   IPropertyPaneGroup,
-  //  PropertyPaneLabel,
-  //  IPropertyPaneLabelProps,
-  //  PropertyPaneHorizontalRule,
-    PropertyPaneTextField, 
-    // IPropertyPaneTextFieldProps,
-  //   PropertyPaneLink, IPropertyPaneLinkProps,
+  IPropertyPaneGroup,
+  PropertyPaneTextField, 
   PropertyPaneDropdown, IPropertyPaneDropdownProps,
-  // IPropertyPaneDropdownOption,
   PropertyPaneToggle,
   IPropertyPaneField,
-  //  IPropertyPaneConfiguration,
-  //  PropertyPaneButton,
-  //  PropertyPaneButtonType,
-  //   PropertyPaneSlider, IPropertyPaneSliderProps,
-  // PropertyPaneHorizontalRule,
-
 } from '@microsoft/sp-property-pane';
 
 import { IFPSAgeSliderWPProps, FPSAgeSliderOptions } from './FPSAgeTypes';
 
 export function buildAgeSliderGroup( wpProps: IFPSAgeSliderWPProps ) {
-
-  // export interface IFPSAgeSliderWPProps {
-  //   FPSAgeIsVisible: boolean;
-  //   FPSAgeColumnName: string;
-  //   FPSAgeColumnTitle: string;
-  //   FPSAgeDefault: number; //Should be index of AgeSliderOption
-  // }
 
   var groupFields: IPropertyPaneField<any>[] = [];
 

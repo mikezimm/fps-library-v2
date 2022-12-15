@@ -44,10 +44,8 @@ export function  renderCustomStyles( sty: IRenderCustomStyles ) {
     setQuickLaunch( sty.wpProps.quickLaunchHide ); // >> change to: minimizeQuickLaunch
     // minimizeHeader( document, sty.wpProps.pageHeaderHide, false, true );
 
-
     //Dropped sending document because it is always there
     minimizeHeader( sty.wpProps.pageHeaderHide, false, true ); 
-
 
     // Deprecating - No longer needed with more modern styling options in updateSectionStyles.
     // setThisPageFormatting( sty.wpInstanceID, sty.domElement, sty.wpProps.fpsPageStyle, sty.fpsPageDone, sty.fpsPageArray );

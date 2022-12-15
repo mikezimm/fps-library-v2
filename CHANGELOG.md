@@ -5,10 +5,15 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.23
+npm install @mikezimm/fps-library-v2@1.0.24
 
 
 # Changelog
+
+## 1.0.24 - 2022-Dec-14
+- change _exportIgnoreProps to _exportIgnorePropsWP, webpart only passes it's props.  runFPSInit adds FPS ignores
+- change _importBlockProps to _importBlockPropsWP, webpart only passes it's props.  runFPSInit adds FPS ignores
+- clean up old comments
 
 ## 1.0.23 - 2022-Dec-14
 - move consolidate some PropPane files

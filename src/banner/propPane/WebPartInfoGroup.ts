@@ -1,26 +1,8 @@
 // was src\Services\PropPane\zReusablePropPane.ts
 
 import {
-//  IPropertyPanePage,
-//  IPropertyPaneGroup,
-//  PropertyPaneLabel,
-//  IPropertyPaneLabelProps,
-//  PropertyPaneHorizontalRule,
-  PropertyPaneTextField, 
-  // IPropertyPaneTextFieldProps,
   PropertyPaneLink, 
-  // IPropertyPaneLinkProps,
- // PropertyPaneDropdown, IPropertyPaneDropdownProps,
-  // IPropertyPaneDropdownOption,
-  PropertyPaneToggle,
-//  IPropertyPaneConfiguration,
-//  PropertyPaneButton,
-//  PropertyPaneButtonType,
-  PropertyPaneSlider, 
-  // IPropertyPaneSliderProps,
 } from '@microsoft/sp-property-pane';
-
-// import { PropertyPaneWebPartInformation } from '@pnp/spfx-property-controls/lib/PropertyPaneWebPartInformation';
 
 import { fpsLogo326 } from '../../components/atoms/SVGIcons/fpsLogo326';
 

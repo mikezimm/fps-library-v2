@@ -1,23 +1,11 @@
 
 import {
-  //  IPropertyPanePage,
-  //  IPropertyPaneGroup,
-  //  PropertyPaneLabel,
-  //  IPropertyPaneLabelProps,
-  //  PropertyPaneHorizontalRule,
     PropertyPaneTextField, 
-    // IPropertyPaneTextFieldProps,
-    // PropertyPaneLink, IPropertyPaneLinkProps,
-   PropertyPaneDropdown, IPropertyPaneDropdownProps,
-    // IPropertyPaneDropdownOption,
+    PropertyPaneDropdown, IPropertyPaneDropdownProps,
     PropertyPaneToggle,
-  //  IPropertyPaneConfiguration,
-  //  PropertyPaneButton,
-  //  PropertyPaneButtonType,
-  //   PropertyPaneSlider, IPropertyPaneSliderProps,
-    PropertyPaneHorizontalRule  } from '@microsoft/sp-property-pane';
+  } from '@microsoft/sp-property-pane';
+
 import { bannerThemeChoices, bannerThemeChoicesWSiteTheme } from '../../common/commandStyles/defaults';
-  
 
 /**
  * FPSBanner3ThemeGroup - Builds FPS Banner Theme Group:  bannerStyleChoice, bannerStyle, bannerCmdStyle, bannerHoverEffect
@@ -26,7 +14,6 @@ import { bannerThemeChoices, bannerThemeChoicesWSiteTheme } from '../../common/c
  * @param lockStyles
  * @returns
  */
-
 
 export function FPSBanner3ThemeGroup(modifyBannerStyle: boolean, showBanner: boolean, lockStyles: boolean, includeSiteTheme: boolean) {
   let fields: any[] = BannerPropButtonThemes(modifyBannerStyle, showBanner, lockStyles, includeSiteTheme);
