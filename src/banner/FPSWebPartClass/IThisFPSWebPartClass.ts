@@ -69,7 +69,8 @@ export interface IThisFPSWebPartClass {
   _exitPropPaneChanged: boolean;
   _importErrorMessage: string;
   _trickyEmailsAll: string[]; // These are emails that get tricky functionality for this specific web part
-  
+  _isSPA: boolean; // Is SinglePageApp ( Layout === SingleWebPartAppPageLayout )
+
   _urlParameters: any;
 
   _beAReader: boolean;
@@ -90,11 +91,6 @@ export interface IThisFPSWebPartClass {
   properties: IMinWPBannerProps;
   onPropertyPaneConfigurationStart: any;
   onPropertyPaneFieldChanged: any;
-
- 
-
-
-
 
 
 

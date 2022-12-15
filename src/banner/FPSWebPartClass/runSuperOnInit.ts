@@ -1,4 +1,5 @@
 
+import { IPageLayoutType, ISupportedHost } from '../../common/interfaces/indexes/Layout';
 import { applyPresetCollectionDefaults } from '../../common/PropPaneHelp/ApplyPresets';
 import { IAllPreConfigSettings } from '../../common/PropPaneHelp/IPreConfig';
 import { trickyEmails } from '../../components/atoms/Links/LinksRepos';
@@ -42,8 +43,12 @@ export function runFPSSuperOnInit( thisWPClass: IThisFPSWebPartClass, PreConfigu
 
     //This indicates if its SPA, Teams etc.... always keep.
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const pageLayout: any = context['_pageLayoutType']?context['_pageLayoutType'] : context['_pageLayoutType'];
-    thisWPClass.properties.pageLayout = pageLayout;
+    const pageLayout: IPageLayoutType = context['_pageLayoutType']?context['_pageLayoutType'] : context['_pageLayoutType'];
+    thisWPClass.properties.pageLayout = pageLayout as ISupportedHost;
+    if ( pageLayout === 'SingleWebPartAppPageLayout' ) {
+      thisWPClass._isSPA = true;
+      thisWPClass._allowPinMe = false;
+    }
 
     thisWPClass._FPSEnviro = createFPSEnviroOnWindow( thisWPClass ) ;
     // _urlParameters = getUrlVars();

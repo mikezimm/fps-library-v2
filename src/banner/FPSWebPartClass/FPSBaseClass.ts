@@ -85,6 +85,7 @@ export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TP
   protected _exitPropPaneChanged: boolean = false;
   protected _importErrorMessage: string = '';
   protected _trickyEmailsALL: string[] = []; // These are emails that get tricky functionality for this specific web part
+  protected _isSPA: boolean = false; // This is set properly in runSuperOnInit
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   protected _urlParameters: any = {};

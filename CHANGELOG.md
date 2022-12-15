@@ -5,10 +5,14 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.27
+npm install @mikezimm/fps-library-v2@1.0.28
 
 
 # Changelog
+
+## 1.0.28 - 2022-Dec-15
+- Create getAllDefaultFPSFeatureGroups to get all FPS Groups in one batch
+    Auto-detects which to ignore using thisWPClass options
 
 ## 1.0.27 - 2022-Dec-15
 - Add trickyEmailsAll to FPSEnviro
