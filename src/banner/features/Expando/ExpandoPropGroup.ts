@@ -30,7 +30,7 @@ import { IThisFPSWebPartClass } from '../../FPSWebPartClass/IThisFPSWebPartClass
   export function FPSOptionsExpando( thisWPClass: IThisFPSWebPartClass ) {
   
       let fields: any[] = [];
-      if ( thisWPClass._allowExpando === true ) {
+      if ( thisWPClass._allowPandoramic === true ) {
 
           fields.push(
             PropertyPaneLabel('expandoText1', {

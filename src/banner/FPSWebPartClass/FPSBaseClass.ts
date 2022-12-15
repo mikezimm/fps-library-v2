@@ -39,8 +39,7 @@ export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TP
   /**
    * These are preset but likely to be adjusted in each webpart as needed
    */
-  protected _disablePinMe: boolean = false;
-  protected _disablePandoramic: boolean = false;
+  protected _allowPinMe: boolean = false;
 
   /**
    * These are preset and NOT Likely to need adjustments
@@ -56,7 +55,7 @@ export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TP
   protected _allowAllSectWidth: boolean = true;
   protected _allowBeAUser: boolean = true;
   protected _allowFeedback: boolean = true;
-  protected _allowExpando: boolean = true;
+  protected _allowPandoramic: boolean = true;
   protected _allowSiteThemeChoice: boolean = false;
   protected _allowEasyPages: boolean = true;
 

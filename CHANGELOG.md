@@ -5,10 +5,18 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.25
+npm install @mikezimm/fps-library-v2@1.0.26
 
 
 # Changelog
+
+## 1.0.26 - 2022-Dec-15
+- change _allowExpando to _allowPandoramic
+- change _disablePandoramic to _allowPandoramic
+- change _disablePinMe to _allowPinMe for consistancy of this._properties
+
+- NOTE That this change requires logic check on all PinMe applications since 
+    now true means allow vs in past it meant disable
 
 ## 1.0.25 - 2022-Dec-15
 - Create window.FPSEnviro:  IFPSEnviro using createFPSEnviroOnWindow during runSuperOnInit

@@ -32,8 +32,7 @@ export interface IThisFPSWebPartClass {
   /**
    * These are preset but likely to be adjusted in each webpart as needed
    */
-  _disablePinMe: boolean;
-  _disablePandoramic: boolean;
+  _allowPinMe: boolean;
 
   /**
    * These are preset and NOT Likely to need adjustments
@@ -51,7 +50,7 @@ export interface IThisFPSWebPartClass {
   _allowShowSearch: boolean; //Adds 'Show Search' Toggle to property pane, only needed if web part needs it.
   _allowBeAUser: boolean; //Allows page editors to 'BeAUser' and adds to property pane where needed.
   _allowFeedback: boolean; //Allows page editors to add 'Feedback email' in banner.
-  _allowExpando: boolean;  //Allows page editors the modify Expandoramic settings
+  _allowPandoramic: boolean;  //Allows page editors the modify Expandoramic settings
   _allowSiteThemeChoice: boolean; //Allows page editors the choice to inherit SiteTheme as a Theme choice
   _allowEasyPages: boolean; //Allows page editors use EasyPages and EasyIcons
 

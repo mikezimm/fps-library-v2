@@ -37,7 +37,7 @@ export interface IMainWPBannerSetupX {
 
 export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IWebpartBannerProps {
 
-  const { displayMode, _beAReader, _FPSUser, properties, _modifyBannerTitle, _forceBanner, _sitePresets, _disablePandoramic, } = setup.main;
+  const { displayMode, _beAReader, _FPSUser, properties, _modifyBannerTitle, _forceBanner, _sitePresets, _allowPandoramic, } = setup.main;
   const { pageContext, _pageLayoutType } = setup.main.context;
 
   const renderAsReader = displayMode === DisplayMode.Read && _beAReader === true ? true : false;
@@ -92,7 +92,7 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
 
   const showExport = isSiteAdmin === true ? true : properties.showExport === true && hasCustomizePages !== true ? false : true; 
 
-  const enableExpandoramic = _disablePandoramic === true || properties.enableExpandoramic === false ? false :
+  const enableExpandoramic = _allowPandoramic === true || properties.enableExpandoramic === false ? false :
       verifyAudienceVsUser( _FPSUser, showTricks, properties.expandoAudience , null, renderAsReader );
 
   //Always show full panel if you are SCA
