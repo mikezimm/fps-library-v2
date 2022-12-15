@@ -1,12 +1,4 @@
 
-// import { trickyEmails } from './fpsMinIndex';
-
-
-// import { applyPresetCollectionDefaults, createBasePerformanceInit, expandoOnInit, getFPSUser, 
-//   getWebPartHistoryOnInit, 
-//   IAllPreConfigSettings, renderCustomStyles, startPerformOp, 
-//   updateBannerThemeStyles, updatePerformanceEnd } from "./fpsMinIndex";
-
 import { applyPresetCollectionDefaults } from '../../common/PropPaneHelp/ApplyPresets';
 import { IAllPreConfigSettings } from '../../common/PropPaneHelp/IPreConfig';
 import { trickyEmails } from '../../components/atoms/Links/LinksRepos';
@@ -43,6 +35,7 @@ export function runFPSSuperOnInit( thisWPClass: IThisFPSWebPartClass, PreConfigu
     thisWPClass._performance = createBasePerformanceInit( displayMode, false );
     thisWPClass._performance.ops.superOnInit = startPerformOp( 'superOnInit', displayMode );
 
+    thisWPClass._trickyEmailsAll = [ ...trickyEmails, ...thisWPClass._trickyEmailsWP ];
     //NEED TO APPLY THIS HERE as well as follow-up in render for it to not visibly change
     thisWPClass._sitePresets = applyPresetCollectionDefaults( thisWPClass._sitePresets, PreConfiguredProps, thisWPClass.properties, thisWPClass.context.pageContext.web.serverRelativeUrl ) ;
 
@@ -53,7 +46,7 @@ export function runFPSSuperOnInit( thisWPClass: IThisFPSWebPartClass, PreConfigu
     // _urlParameters = getUrlVars();
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    thisWPClass._FPSUser = getFPSUser( context as any, trickyEmails, _trickyApp, SPPermission ) ;
+    thisWPClass._FPSUser = getFPSUser( context as any, thisWPClass._trickyEmailsAll, _trickyApp, SPPermission ) ;
     console.log( 'FPSUser: ', thisWPClass._FPSUser );
 
     expandoOnInit( properties, context.domElement, displayMode );

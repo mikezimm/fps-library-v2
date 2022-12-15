@@ -5,10 +5,14 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.21
+npm install @mikezimm/fps-library-v2@1.0.22
 
 
 # Changelog
+
+## 1.0.22 - 2022-Dec-14
+- Add baseline files for updated IThisFPSWebPartClass, FPSBaseClass
+- Add runFPSSuperOnInit, runFPSWebPartRender, runOnPropChange buildExportPropsX
 
 ## 1.0.21 - 2022-Dec-13
 - update easyPagesSources - add 'Article' css class and logic based on testing

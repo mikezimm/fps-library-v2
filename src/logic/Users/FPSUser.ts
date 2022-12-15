@@ -10,7 +10,7 @@ import { checkDeepProperty } from '../Objects/deep';
 /**
  * Sets thisWindow.FPSUser = FPSUser; and then returns FPSUser
  * @param context 
- * @param trickyEmails 
+ * @param trickyEmailsAll 
  * @param trickyApp 
  * @returns 
  * 
@@ -21,7 +21,7 @@ import { checkDeepProperty } from '../Objects/deep';
 
 // 2022-11-30:  in npmFunctions was context: WebPartContext, added SPPermission as input because I am not bringing in the context
 // import { SPPermission,  } from '@microsoft/sp-page-context';
-export function getFPSUser ( context: WebPartContextCopy_15_2, trickyEmails: string[], trickyApp: string, SPPermission: any ): IFPSUser {
+export function getFPSUser ( context: WebPartContextCopy_15_2, trickyEmailsAll: string[], trickyApp: string, SPPermission: any ): IFPSUser {
 
     const { user, web }  = context.pageContext;
     let startTime = new Date();
@@ -32,7 +32,7 @@ export function getFPSUser ( context: WebPartContextCopy_15_2, trickyEmails: str
     if ( isSiteAdmin !== true && isSiteAdmin !== false ) { isSiteAdmin = false; }
 
     let showTricks: any = false;
-    trickyEmails.map( getsTricks => {
+    trickyEmailsAll.map( getsTricks => {
       if ( user.loginName && user.loginName.toLowerCase().indexOf( getsTricks ) > -1 ) { 
         showTricks = true ;
       }

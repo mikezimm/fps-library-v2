@@ -37,7 +37,7 @@ export class PageContextCopy_15_2 {
         readonly title: string;
         readonly description: string;
         readonly serverRelativeUrl: string;
-        readonly : any; //Normally this is string or number but is actually Guid here
+        readonly id: any; //Normally this is string or number but is actually Guid here
         readonly absoluteUrl: string;
         readonly language: number;
         readonly languageName: string;
@@ -46,7 +46,7 @@ export class PageContextCopy_15_2 {
     };
     site: {
         readonly absoluteUrl: string;
-        readonly : any; //Normally this is string or number but is actually Guid here
+        readonly id: any; //Normally this is string or number but is actually Guid here
         readonly isNoScriptEnabled: boolean;
     };
     cultureInfo: {
@@ -76,9 +76,16 @@ export class PageContextCopy_15_2 {
     };
     legacyPageContext: LegacyPageContextCopy_15_2;
 }
+
+
+export class propertyPaneCopy_15_2 {
+  refresh: any;
+}
+
 export class WebPartContextCopy_15_2 {
     pageContext: PageContextCopy_15_2;
     domElement: any;
+    propertyPane: propertyPaneCopy_15_2;
     _pageLayoutType: IPageLayoutType;
 }
 //# sourceMappingURL=WebPartContext.d.ts.map
