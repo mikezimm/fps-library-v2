@@ -5,10 +5,15 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.32
+npm install @mikezimm/fps-library-v2@1.0.33
 
 
 # Changelog
+
+NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.33 - 2022-Dec-15
+- Add PropPaneCols component
 
 ## 1.0.32 - 2022-Dec-15
 - udpate IFPSEnviro.web.id and .site.id to check for complex id object
