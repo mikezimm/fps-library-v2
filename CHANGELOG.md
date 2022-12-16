@@ -5,12 +5,17 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.33
+npm install @mikezimm/fps-library-v2@1.0.34
 
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.34 - 2022-Dec-15
+- Updated styles references in PropPaneCols component
+- Bumped styles version to 1.0.3
+
 
 ## 1.0.33 - 2022-Dec-15
 - Add PropPaneCols component - NEEDS CSS FIXED
