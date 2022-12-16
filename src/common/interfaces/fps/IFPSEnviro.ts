@@ -12,8 +12,12 @@ export interface IFPSEnviro {
   siteUrl: string;
   webUrl: string;
   webServerRelativeUrl: string;
+  SiteID: string;
+  WebID: string;
+  SiteTitle: string; // Web Title
 
   pageLayout: IPageLayoutType;
+  isSPA: Boolean;
   pageName: string;
   onHomePage: boolean;
   SiteLogoUrl: string; // pageContext.web.logoUrl;

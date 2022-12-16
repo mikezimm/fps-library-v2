@@ -5,14 +5,26 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.28
+npm install @mikezimm/fps-library-v2@1.0.31
 
 
 # Changelog
 
+## 1.0.31 - 2022-Dec-15
+- migrate saveAnalytics.ts, interfaces and functions
+- add SiteID, WebID, SiteTitle to IFPSEnviro
+
+## 1.0.30 - 2022-Dec-15
+- Add analyticsProps
+
+## 1.0.29 - 2022-Dec-15
+- Changed Const: FPSPinMePropsGroup to Function:  FPSPinMePropsGroupX - to auto-detect enviro
+- fix _trickyEmailsALL to _trickyEmailsAll (All lower cased)
+
 ## 1.0.28 - 2022-Dec-15
 - Create getAllDefaultFPSFeatureGroups to get all FPS Groups in one batch
     Auto-detects which to ignore using thisWPClass options
+
 
 ## 1.0.27 - 2022-Dec-15
 - Add trickyEmailsAll to FPSEnviro

@@ -15,7 +15,7 @@ import { DisplayMode } from '@microsoft/sp-core-library';
  */
 
 
-import { IFPSPinMenu, IPinMeState, IPinStatus } from '../features/PinMe/Interfaces';
+import { IPinMeState, IPinStatus } from '../features/PinMe/Interfaces';
 import { FPSPinMe, getDefaultFPSPinState, } from '../features/PinMe/FPSPinMenu';
 import { ILoadPerformance } from '../../components/molecules/Performance/IPerformance';
 

@@ -36,10 +36,13 @@ if ( thisWPClass._performance.ops.renderWebPartStart === undefined || alreadySta
      doHeadings: false } );  //doHeadings is currently only used in PageInfo so set to false.
 
 const exportProps = buildExportPropsX( 'Panel', properties , _wpInstanceID, context.pageContext.web.serverRelativeUrl, WebPartAnalyticsChanges, WebPartPanelChanges, thisWPClass._exportIgnorePropsWP );
+const analyticsProps = buildExportPropsX( 'Analytics', properties , _wpInstanceID, context.pageContext.web.serverRelativeUrl, WebPartAnalyticsChanges, WebPartPanelChanges, thisWPClass._exportIgnorePropsWP );
+
 
 const buildBannerProps: IMainWPBannerSetupX = {
   main: thisWPClass,
   exportProps: exportProps,
+  analyticsProps: analyticsProps,
   strings: strings,
   wideToggle: true,
   expandConsole: true,

@@ -19,7 +19,12 @@ export function createFPSEnviroOnWindow ( thisWPClass: IThisFPSWebPartClass ) {
     webUrl: pageContext.web.absoluteUrl,
     webServerRelativeUrl: pageContext.web.serverRelativeUrl,
 
+    SiteID: pageContext.site.id,
+    WebID: pageContext.web.id,
+    SiteTitle: pageContext.web.title,
+
     pageLayout: pageLayout,
+    isSPA:pageLayout === 'SingleWebPartAppPageLayout' ? true : false,
     pageName: pageName,
     onHomePage: legacyPageContext.isWebWelcomePage === true ? true : false,
     SiteLogoUrl: pageContext.web.logoUrl,  // pageContext.web.logoUrl;

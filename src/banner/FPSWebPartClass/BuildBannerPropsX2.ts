@@ -23,6 +23,7 @@ import { IThisFPSWebPartClass } from "./IThisFPSWebPartClass";
 export interface IMainWPBannerSetupX {
   main: IThisFPSWebPartClass
   exportProps: any;
+  analyticsProps: any;
   strings: any;
   wideToggle: boolean;
   expandConsole: boolean;
@@ -154,6 +155,7 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
       refreshId: refreshId,
       FPSUser: _FPSUser,
       exportProps: setup.exportProps,
+      analyticsProps: setup.analyticsProps,
       context: setup.main.context,
       displayMode: displayMode,
 

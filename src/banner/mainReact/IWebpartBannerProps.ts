@@ -108,6 +108,7 @@ export interface IWebpartBannerProps {
 	farElements: any[];
 
 	exportProps: any;
+	analyticsProps: any; // minimal WP Props to analytics
 
 	webpartHistory: IWebpartHistory;
 
