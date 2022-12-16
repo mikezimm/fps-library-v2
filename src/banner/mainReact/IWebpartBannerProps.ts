@@ -48,7 +48,7 @@ export interface IWebpartBannerProps {
 
 	displayMode: DisplayMode;
 	// WebPartHelpElement: JSX.Element | null;
-	WebPartHelpElements: JSX.Element[] ; //Had to remove JSX.Element since it was not getting compiled due to error.
+	WebPartHelpPivots: JSX.Element[] ; //Had to remove JSX.Element since it was not getting compiled due to error.
 
   fieldPanelProps?: IFieldPanelProps;  //For future PropPaneColumns component
 

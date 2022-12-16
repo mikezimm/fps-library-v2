@@ -159,7 +159,7 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
       context: setup.main.context,
       displayMode: displayMode,
 
-      WebPartHelpElements: [],
+      WebPartHelpPivots: [],
       SpecialMessage: setup.SpecialMessage,
 
       panelTitle: showBannerError === true ? errMessage : bannerTitle ,

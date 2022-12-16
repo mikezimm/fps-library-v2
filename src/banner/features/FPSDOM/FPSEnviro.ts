@@ -19,8 +19,8 @@ export function createFPSEnviroOnWindow ( thisWPClass: IThisFPSWebPartClass ) {
     webUrl: pageContext.web.absoluteUrl,
     webServerRelativeUrl: pageContext.web.serverRelativeUrl,
 
-    SiteID: pageContext.site.id,
-    WebID: pageContext.web.id,
+    SiteID: pageContext.site.id['_guid'] ?pageContext.site.id['_guid']  : pageContext.site.id,
+    WebID: pageContext.web.id['_guid'] ?pageContext.web.id['_guid']  : pageContext.web.id,
     SiteTitle: pageContext.web.title,
 
     pageLayout: pageLayout,

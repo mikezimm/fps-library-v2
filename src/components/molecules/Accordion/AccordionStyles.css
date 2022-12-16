@@ -1,0 +1,49 @@
+
+.fps-accordion-title-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.fps-accordion-title {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.fps-accordion {
+    overflow: hidden;
+    transition:all 0.4s ease;
+    /* height:50px; NOTE:  You must define a height on the component for this to work*/
+    /* padding-bottom: 20px; NOTE:  You must define a height on the component for this to work */
+}
+
+.show-fps-accordion-1 {
+    opacity: 1;
+}
+
+.hide-fps-accordion-1 {
+    height:0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    opacity: 0;
+    background-color: transparent;
+}
+
+.show-fps-accordion-2 {
+
+    transform:scaleY(1);
+    transform-origin:top;
+    opacity: 1;
+}
+
+.hide-fps-accordion-2 {
+    height:0;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    transform:scaleY(0);
+    opacity: 0;
+}

@@ -1,5 +1,7 @@
 
+import { EasyIconDefaultKeys } from "../../components/atoms/EasyIcons/eiTypes";
 import { validateDocumentationUrl } from "../../components/atoms/Links/ValidateLinks";
+import { DefaultEasyPagesTabs, DefaultOverflowTab } from "../components/EasyPages/epTypes";
 import { updateFpsImportProps } from "../features/ImportExport/ImportFunctions";
 import { refreshBannerStylesOnPropChange, updateBannerThemeStyles } from "../features/PageStyle/bannerThemes";
 import { updateWebpartHistoryV2 } from "../features/WebPartHistory/Functions";
@@ -23,6 +25,29 @@ export async function onFPSPropPaneCHanged(  thisWPClass: IThisFPSWebPartClass, 
       thisWPClass.onPropertyPaneConfigurationStart,
       thisWPClass._exitPropPaneChanged,
     );
+
+  } else if ( propertyPath === 'easyIconKeys' && !newValue )  {
+    //https://github.com/mikezimm/Pnpjs-v2-Upgrade-sample/issues/59
+    this.properties.easyIconKeys = EasyIconDefaultKeys.join(' ; ');
+
+  } else if ( propertyPath === 'EasyPageTabsC' && !newValue )  {
+    //https://github.com/mikezimm/Pnpjs-v2-Upgrade-sample/issues/59
+    this.properties.EasyPageTabsC = DefaultEasyPagesTabs.join(' ; ');
+
+  } else if ( propertyPath === 'EasyPageTabsP' && !newValue )  {
+    //https://github.com/mikezimm/Pnpjs-v2-Upgrade-sample/issues/59
+    this.properties.EasyPageTabsP = DefaultEasyPagesTabs.join(' ; ');
+
+  } else if ( propertyPath === 'EasyPageTabsA' && !newValue )  {
+    //https://github.com/mikezimm/Pnpjs-v2-Upgrade-sample/issues/59
+    this.properties.EasyPageTabsA = DefaultEasyPagesTabs.join(' ; ');
+
+  } else if ( propertyPath === 'EasyPageTabsB' && !newValue )  {
+    //https://github.com/mikezimm/Pnpjs-v2-Upgrade-sample/issues/59
+    this.properties.EasyPageTabsB = DefaultEasyPagesTabs.join(' ; ');
+
+  } else if ( propertyPath === 'EasyPageOverflowTab' && !newValue )  {
+    this.properties.EasyPageOverflowTab = DefaultOverflowTab;
 
    } else if ( propertyPath === 'bannerStyle' || propertyPath === 'bannerCmdStyle' )  {
 

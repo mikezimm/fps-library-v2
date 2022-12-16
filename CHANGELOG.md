@@ -5,10 +5,17 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.31
+npm install @mikezimm/fps-library-v2@1.0.32
 
 
 # Changelog
+
+## 1.0.32 - 2022-Dec-15
+- udpate IFPSEnviro.web.id and .site.id to check for complex id object
+- Add EasyPages updates in runOnPropChange from Pnpjs-v2 testing
+- Migrate src\zComponents\Accordion_ to components/molecules
+- Migrate src\zComponents\Arrows_ to components/molecules
+
 
 ## 1.0.31 - 2022-Dec-15
 - migrate saveAnalytics.ts, interfaces and functions
