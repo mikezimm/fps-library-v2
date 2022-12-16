@@ -4,10 +4,12 @@ import { IFPSEnviro } from '../../common/interfaces/fps/IFPSEnviro';
 import { WebPartContextCopy_15_2 } from '../../common/interfaces/indexes';
 import { ISitePreConfigProps } from '../../common/PropPaneHelp/IPreConfig';
 import { IRepoLinks } from '../../components/atoms/Links/CreateLinks';
+import { IFieldPanelDesignMode } from '../../components/molecules/FieldPanel/components/IMinWPFieldPanelProps';
 import { ILoadPerformance, ILoadPerformanceOps } from '../../components/molecules/Performance/IPerformance';
 import { IFPSUser } from '../../logic/Users/IUserInterfaces';
 import { IMinWPBannerProps } from '../interfaces/MinWP/IMinWPBannerProps';
 
+export type IFieldPanelMode = 'Auto' | 'Manual' | 'Disabled';
 /**
  *
  * WARNING:  THIS SHOULD MATCH THE CLASS IN FPSBaseClass
@@ -54,6 +56,12 @@ export interface IThisFPSWebPartClass {
   _allowSiteThemeChoice: boolean; //Allows page editors the choice to inherit SiteTheme as a Theme choice
   _allowEasyPages: boolean; //Allows page editors use EasyPages and EasyIcons
 
+  _allowFieldPanel: IFieldPanelMode;
+
+  _FieldPanelDesignMode: IFieldPanelDesignMode;  // Other web part prop that will get mapped to the FieldPanelProps - in case it's different property name for retro compatibility
+  _FieldPanelWebProp: 'webUrl' | string;  // Other web part prop that will get mapped to the FieldPanelProps - in case it's different property name for retro compatibility
+  _FieldPanelListProp: 'listTitle' | string;  // Other web part prop that will get mapped to the FieldPanelProps - in case it's different property name for retro compatibility
+
   /**
    * These are updated later in the code
    */
@@ -81,6 +89,8 @@ export interface IThisFPSWebPartClass {
    */
 
   _beAUserFunction(): void;
+  _saveFieldPanelViewsFunction(): void;
+  _saveFieldPanelCommandsFunction(): void;
 
   /**
    * These are here JUST FOR INTERFACE but come from SharePoint class

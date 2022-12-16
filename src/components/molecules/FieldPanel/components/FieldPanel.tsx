@@ -9,7 +9,7 @@ import ReactJson from 'react-json-view';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // import { getHighlightedText , } from '@mikezimm/fps-library-v2/lib/components/atoms/Elements/HighlightedText';
 
-import { IMinField } from "./IPropPaneColsProps";
+import { IMinField } from "./IFieldPanelHookProps";
 import { panelActionToggles } from './common';
 import { getHighlightedText } from '../../../atoms/Elements/HighlightedText';
 

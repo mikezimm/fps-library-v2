@@ -9,8 +9,8 @@
  *    88~~~~~ 88 V8o88 8b      88    88 88   88 88~~~~~      88   88 88~~~~~ 8b      88    88 88   88 88~~~~~        `Y8b.    88    88`8b      88    88 V8o88 88  ooo 
  *    88.     88  V888 Y8b  d8 `8b  d8' 88  .8D 88.          88  .8D 88.     Y8b  d8 `8b  d8' 88  .8D 88.          db   8D    88    88 `88.   .88.   88  V888 88. ~8~ 
  *    Y88888P VP   V8P  `Y88P'  `Y88P'  Y8888D' Y88888P      Y8888D' Y88888P  `Y88P'  `Y88P'  Y8888D' Y88888P      `8888Y'    YP    88   YD Y888888P VP   V8P  Y888P  
- *                                                                                                                                                                    
- *                                                                                                                                                                    
+ *                                                     
+ *                                                     
  */
 
  export function encodeDecodeString( str : string , doThis: 'encode' | 'decode'): string {
@@ -62,8 +62,8 @@
  *    8b      88      88~~~~~ 88~~~88 88 V8o88        `Y8b. 88~~~        88         88      `Y8b.    88         88    88 88`8b   88      
  *    Y8b  d8 88booo. 88.     88   88 88  V888      db   8D 88           88booo.   .88.   db   8D    88         88b  d88 88 `88. 88booo. 
  *     `Y88P' Y88888P Y88888P YP   YP VP   V8P      `8888Y' 88           Y88888P Y888888P `8888Y'    YP         ~Y8888P' 88   YD Y88888P 
- *                                                                                                                                       
- *                                                                                                                                       
+ *                        
+ *                        
  */
 /**
  * SharePoint automatically removes characters from library names

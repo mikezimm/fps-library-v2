@@ -1,4 +1,5 @@
 
+import { IMinWPFieldPanelProps } from "../../../components/molecules/FieldPanel/components/IMinWPFieldPanelProps";
 import { IEasyPagesIconsWPProps } from "../../components/EasyPages/EasyPagesGroup";
 import { IMinCustomHelpProps } from "../../components/VisitorPanel/Interfaces";
 import { IMinPandoramicProps } from "../../features/Expando/Interfaces";
@@ -15,7 +16,7 @@ import { changeBannerUtility, IMinBannerUtilityProps } from "./IMinBannerUtility
  export interface IMinWPBannerProps extends 
   IMinBannerUIProps, IEasyPagesIconsWPProps, IMinPinMeProps, IMinPandoramicProps, 
   IMinBannerThemeProps, IMinCustomHelpProps, IMinPageStyleProps, 
-  IMinBannerUtilityProps {
+  IMinBannerUtilityProps, IMinWPFieldPanelProps {
 
 }
 

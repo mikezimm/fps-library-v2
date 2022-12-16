@@ -14,7 +14,7 @@ import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 
 // import styles from '../PropPaneCols.module.scss';
 
-import { IMinField } from "../IPropPaneColsProps";
+import { IMinField } from "../IFieldPanelHookProps";
 import { createThisViewField } from './functions';
 import ReactJson from 'react-json-view';
 import Accordion from '../../../../molecules/Accordion/Accordion';

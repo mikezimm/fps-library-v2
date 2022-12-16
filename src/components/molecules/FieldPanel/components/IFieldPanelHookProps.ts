@@ -1,25 +1,6 @@
-import { DisplayMode } from '@microsoft/sp-core-library';
 import { IFieldInfo, } from "@pnp/sp/presets/all";
 
 export type IValidTemplate = 100 | 101;
-
-export interface IMinListProps {
-  webURL: string;
-  listTitle: string,
-
-}
-
-export interface IFieldPanelProps {
-  displayMode: DisplayMode;
-  lists: IMinListProps[];
-  disableDesign?: boolean; //Default is false
-  
-  tryCommands?: any;  //if function is passed down, parent web part could use this to temporarily replace the saved button commands.
-  saveCommands?: any;  // callback function to save current command
-  tryViews?: any;  //if function is passed down, parent web part could use this to temporarily replace the saved button commands.
-  saveViews?: any;  // callback function to save current command
-}
-
 
 /**
  *  IFieldPanelFetchState was split off to easily return back object from the fetch
@@ -42,7 +23,7 @@ export interface IFieldPanelState extends IFieldPanelFetchState {
 
   listIdx: number;
 
-  designMode: boolean;
+  showDesignMode: boolean;
   fullDesign: boolean;
 
   panelItem: IMinField;

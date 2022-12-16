@@ -85,8 +85,8 @@ export function lowerFirstLetter( str : string, onErrorReturnEmpty : boolean ): 
  *    88`8b   88~~~88 88 V8o88 88   88 88    88 88  88  88    88      d8'   88~~~~~      8b      88~~~88   `Y8b. 88~~~~~ 
  *    88 `88. 88   88 88  V888 88  .8D `8b  d8' 88  88  88   .88.    d8' db 88.          Y8b  d8 88   88 db   8D 88.     
  *    88   YD YP   YP VP   V8P Y8888D'  `Y88P'  YP  YP  YP Y888888P d88888P Y88888P       `Y88P' YP   YP `8888Y' Y88888P 
- *                                                                                                                       
- *                                                                                                                       
+ *        
+ *        
  */
 
 export function randomizeCase(str: string): string {

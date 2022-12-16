@@ -7,7 +7,7 @@
  *    88  ooo 88~~~~~    88           `Y8b.    88      d8'   88~~~~~      88      88~~~88 88~~~b. 88~~~~~ 88      
  *    88. ~8~ 88.        88         db   8D   .88.    d8' db 88.          88booo. 88   88 88   8D 88.     88booo. 
  *     Y888P  Y88888P    YP         `8888Y' Y888888P d88888P Y88888P      Y88888P YP   YP Y8888P' Y88888P Y88888P 
- *                                                                                                                
+ * 
  *    import { getSizeLabel } from '@mikezimm/npmfunctions/dist/Services/Strings/stringServices';                   
  */
 

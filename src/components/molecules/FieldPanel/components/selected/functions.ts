@@ -1,4 +1,4 @@
-import { IMinField } from "../IPropPaneColsProps";
+import { IMinField } from "../IFieldPanelHookProps";
 
 // private _onKeeperClick = ( ev: React.MouseEvent<HTMLElement>  ): void => {
   export function getKeeperClicks ( ev: React.MouseEvent<HTMLElement>, selected: IMinField[]  ): IMinField[] {

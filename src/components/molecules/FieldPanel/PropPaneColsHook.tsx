@@ -12,7 +12,7 @@
 // // import { doesObjectExistInArray, } from '../fpsReferences';
 // // import {  addItemToArrayIfItDoesNotExist } from '../fpsReferences';
 
-// // import { getFullUrlFromSlashSitesUrl } from '@mikezimm/npmfunctions/dist/Services/Strings/urlServices';  //    webURL = getFullUrlFromSlashSitesUrl( webURL );
+// // import { getFullUrlFromSlashSitesUrl } from '@mikezimm/npmfunctions/dist/Services/Strings/urlServices';  //    webUrl = getFullUrlFromSlashSitesUrl( webUrl );
 
 // // import { getHelpfullErrorV2 } from '../fpsReferences';
 
@@ -26,8 +26,8 @@
 
 // }
 
-// export interface IFieldPanelProps {
-//   webURL: string;
+// export interface IMinWPFieldPanelProps {
+//   webUrl: string;
 //   listTitle: string,
 //   tryCommands?: any;  //if function is passed down, parent web part could use this to temporarily replace the saved button commands.
 //   saveCommands?: any;  // callback function to save current command
@@ -35,11 +35,11 @@
 //   saveViews?: any;  // callback function to save current command
 // }
 
-// const ListFieldsHook: React.FC<IFieldPanelProps> = ( props ) => {
+// const ListFieldsHook: React.FC<IMinWPFieldPanelProps> = ( props ) => {
 
 //   const {
 //      listTitle,
-//      webURL,
+//      webUrl,
 //   } = props;
 
 //   // Got https://reactjs.org/docs/error-decoder.html/?invariant=321 on this line
@@ -51,12 +51,12 @@
 //   useEffect(() => {
 //     ( async () => {
 //       if ( fetch === true ) {
-//         console.log( 'ListFieldsHook: started', webURL, listTitle, fetch );
+//         console.log( 'ListFieldsHook: started', webUrl, listTitle, fetch );
 //         try {
-//           if ( listTitle && webURL ) {
-//             //setListFields( await allAvailableFields( webURL, listTitle, ) );
-//             // const fetchWebURL = getFullUrlFromSlashSitesUrl( webURL );
-//             const fetchWebURL = webURL ;
+//           if ( listTitle && webUrl ) {
+//             //setListFields( await allAvailableFields( webUrl, listTitle, ) );
+//             // const fetchWebURL = getFullUrlFromSlashSitesUrl( webUrl );
+//             const fetchWebURL = webUrl ;
 //             const thisWebInstance : IWeb = Web(fetchWebURL);
 //             const allFields : IMinField[] = await thisWebInstance.lists.getByTitle(listTitle).fields.orderBy("Title", true)();
 //             const FilteredFields : IMinField[] = allFields.filter( field => field.Hidden !== true );
@@ -76,7 +76,7 @@
 //       }
 //     });
     
-//   }, [ fetch ]);  //Tried  [listTitle, webURL,] but got react #321
+//   }, [ fetch ]);  //Tried  [listTitle, webUrl,] but got react #321
 
 //   const fieldRows : any [] = [];
 
@@ -123,13 +123,13 @@
 
 
 // // //export async function provisionTestPage( makeThisPage:  IContentsFieldInfo, readOnly: boolean, setProgress: any, markComplete: any ): Promise<IServiceLog[]>{
-// //   export async function allAvailableFields( webURL: string, listTitle: string, ): Promise<IMinField[] | any> { //addTheseFieldsToState: any, 
+// //   export async function allAvailableFields( webUrl: string, listTitle: string, ): Promise<IMinField[] | any> { //addTheseFieldsToState: any, 
 
-// //     webURL = getFullUrlFromSlashSitesUrl( webURL );
+// //     webUrl = getFullUrlFromSlashSitesUrl( webUrl );
 
 // //     let allFields : IMinField[] = [];
 
-// //     let thisWebInstance : IWeb = Web(webURL);
+// //     let thisWebInstance : IWeb = Web(webUrl);
 // //     allFields= await thisWebInstance.lists.getByTitle(listTitle).fields.orderBy("Title", true).get();
 // //     allFields = allFields.filter( field => field.Hidden !== true );
 
@@ -137,7 +137,7 @@
 
 // //     // try {
 // //     //   if ( listTitle != '' ) {
-// //     //     thisWebInstance = Web(webURL);
+// //     //     thisWebInstance = Web(webUrl);
 // //     //     allFields= await thisWebInstance.lists.getByTitle(listTitle).fields.orderBy("Title", true).get();
 // //     //     allFields = allFields.filter( field => field.Hidden !== true )
 
@@ -153,8 +153,8 @@
 
 
 
-// // export async function GetFieldPanel( fieldPanel: IFieldPanelProps ) {
-// //   const fields = await allAvailableFields( fieldPanel.webURL, fieldPanel.listTitle, null );
+// // export async function GetFieldPanel( fieldPanel: IMinWPFieldPanelProps ) {
+// //   const fields = await allAvailableFields( fieldPanel.webUrl, fieldPanel.listTitle, null );
 // //   const fieldRows : any [] = [];
 
 // //   fieldRows.push( 

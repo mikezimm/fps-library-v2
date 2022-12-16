@@ -13,15 +13,16 @@ import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 
 // import styles from '../PropPaneCols.module.scss';
 
-import { IFieldPanelProps, IFieldPanelState, IsEditable } from '../IPropPaneColsProps';
+import { IFieldPanelState, IsEditable } from '../IFieldPanelHookProps';
+import { IMinWPFieldPanelProps } from "../IMinWPFieldPanelProps";
 
 // import { buildMainFieldTable } from './MainFieldTable';
 import MainFieldTableHook  from './FieldTable';
 
-export function mainSiteLink( webURL: string ): JSX.Element {
+export function mainSiteLink( webUrl: string ): JSX.Element {
   return (<div style={{paddingBottom: '15px', fontSize: 'larger', fontWeight: 'bolder' }}>on this site:  
         <span style = {{ color: 'darkblue',cursor: 'pointer', marginLeft: '25px' }} 
-          onClick={ () => { window.open( webURL , '_blank' )}}>{ webURL }
+          onClick={ () => { window.open( webUrl , '_blank' )}}>{ webUrl }
         </span>
       </div>);
 }
@@ -41,7 +42,7 @@ export interface IMainCallbacks {
 
 }
 
-export function MainPane ( props: IFieldPanelProps, state: IFieldPanelState, callbacks: IMainCallbacks ): JSX.Element {
+export function MainPane ( props: IMinWPFieldPanelProps, state: IFieldPanelState, callbacks: IMainCallbacks ): JSX.Element {
 
   const { selectFiltered, onFilterClick2, onSelectItem, } = callbacks;
   const { onTextSearch, onTypeClick, } = callbacks;
@@ -51,8 +52,8 @@ export function MainPane ( props: IFieldPanelProps, state: IFieldPanelState, cal
   // const onTextSearch: any = null;
   // const toggleDesign: any = null;
 
-  const { lists, disableDesign } = props;
-  const { status, filtered, listFields, designMode, searchProp, searchText, fetched, listIdx } = state;
+  const { lists, designMode } = props;
+  const { status, filtered, listFields, showDesignMode, searchProp, searchText, fetched, listIdx } = state;
 
   const searchBoxStyles: Partial<ISearchBoxStyles> = { root: { width: 200 } };
 
@@ -73,8 +74,8 @@ export function MainPane ( props: IFieldPanelProps, state: IFieldPanelState, cal
       inlineLabel={ true } 
       // onChange={ () => toggleDesign() } 
       onChange={ toggleDesign } 
-      checked={ designMode }
-      disabled= { disableDesign }
+      checked={ showDesignMode }
+      disabled= { designMode === 'Disabled' ? true : false }
       styles={ { root: { width: 160, float: 'right' } } }
     />;
 
@@ -119,7 +120,7 @@ export function MainPane ( props: IFieldPanelProps, state: IFieldPanelState, cal
 
   const MainFieldTable : JSX.Element = <MainFieldTableHook
     filtered={ filtered }
-    designMode={ designMode }
+    showDesignMode={ showDesignMode }
     listFields={ listFields }
     searchProp={ searchProp }
     searchText={ searchText }
@@ -132,7 +133,7 @@ export function MainPane ( props: IFieldPanelProps, state: IFieldPanelState, cal
   return (
     <div className={ 'right-side' }>
       <h3 style={{ marginTop: '0px' }}>{ `Fields from '${ listTitle }'`  } { DesignToggle}</h3>
-      { mainSiteLink( lists[ listIdx ].webURL ) }
+      { mainSiteLink( lists[ listIdx ].webUrl ) }
       <div style={{paddingBottom: '15px', display: 'flex', alignContent: 'space-between' }}>{ FieldSearchBox  } {  FilterButtons }</div>
       <div style={{paddingBottom: '15px', fontSize: 'smaller' }}>CTRL-click <b>Add</b> to add to Top of list, Click <b>Type</b> to filter on column type</div>
       {/* { callbacks.MainFieldTable } */}

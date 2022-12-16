@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 
-import { IMinField, IMinFieldCmds } from "../IPropPaneColsProps";
+import { IMinField, IMinFieldCmds } from "../IFieldPanelHookProps";
 import { IIconTableRow } from './IAccordion';
 
 

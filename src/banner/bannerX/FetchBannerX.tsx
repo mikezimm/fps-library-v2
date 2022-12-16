@@ -37,7 +37,7 @@ import { IMinPandoramicProps } from '../features/Expando/Interfaces';
 import { setExpandoRamicMode } from '../features/Expando/functions';
 
 import EasyPagesHook from '../components/EasyPages/componentSources';
-// import { IFieldPanelProps } from '../../components/molecules/FieldPanel/IFieldPanelProps';
+// import { IMinWPFieldPanelProps } from '../../components/molecules/FieldPanel/IMinWPFieldPanelProps';
 
 require('@mikezimm/fps-styles/dist/banner.css');
 
@@ -266,8 +266,8 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
        *    88~~~b. 88~~~88 88 V8o88 88 V8o88 88~~~~~ 88`8b        88~~~~~ 88      88~~~~~ 88  88  88 88~~~~~ 88 V8o88    88    
        *    88   8D 88   88 88  V888 88  V888 88.     88 `88.      88.     88booo. 88.     88  88  88 88.     88  V888    88    
        *    Y8888P' YP   YP VP   V8P VP   V8P Y88888P 88   YD      Y88888P Y88888P Y88888P YP  YP  YP Y88888P VP   V8P    YP    
-       *                                                                                                                        
-       *                                                                                                                        
+       *         
+       *         
        */
 
       const bannerContent = mainBannerContent( bannerProps, forceNarrowStyles, 
@@ -300,8 +300,8 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
  *    88  ooo 88~~~~~    88         88~~~   88    88 88      88           88~~~   88~~~88 88 V8o88 88~~~~~ 88      
  *    88. ~8~ 88.        88         88      88b  d88 88booo. 88booo.      88      88   88 88  V888 88.     88booo. 
  *     Y888P  Y88888P    YP         YP      ~Y8888P' Y88888P Y88888P      88      YP   YP VP   V8P Y88888P Y88888P 
- *                                                                                                                 
- *                                                                                                                 
+ *  
+ *  
  */
       } else if ( showPanel === true ) {
         panelContent = getFullPanel( this.props.bannerProps, this.state.selectedKey, 

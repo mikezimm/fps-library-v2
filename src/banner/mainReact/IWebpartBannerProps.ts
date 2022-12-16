@@ -18,7 +18,7 @@ import { IEasyIcons } from '../../components/atoms/EasyIcons/eiTypes';
 import { IFPSPinMenu } from '../features/PinMe/Interfaces';
 import { ISitePreConfigProps } from '../../common/PropPaneHelp/IPreConfig';
 import { IMinPandoramicProps } from '../features/Expando/Interfaces';
-import { IFieldPanelProps } from '../../components/molecules/FieldPanel/IFieldPanelProps';
+import { IMinWPFieldPanelProps } from '../../components/molecules/FieldPanel/components/IMinWPFieldPanelProps';
 
 export interface IBannerPages {
 
@@ -50,7 +50,7 @@ export interface IWebpartBannerProps {
 	// WebPartHelpElement: JSX.Element | null;
 	WebPartHelpPivots: JSX.Element[] ; //Had to remove JSX.Element since it was not getting compiled due to error.
 
-  fieldPanelProps?: IFieldPanelProps;  //For future PropPaneColumns component
+  fieldPanelProps?: IMinWPFieldPanelProps;  //For future PropPaneColumns component
 
   // Special message put above the banner... like Wanring to upgrade
   SpecialMessage?: ISpecialMessage;

@@ -15,7 +15,7 @@ import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 
 // import styles from '../PropPaneCols.module.scss';
 
-import { IMinField } from "../IPropPaneColsProps";
+import { IMinField } from "../IFieldPanelHookProps";
 import SelectedItemPanelHook from "../FieldPanel";
 
 export interface IMainFieldTableHookProps {
@@ -24,7 +24,7 @@ export interface IMainFieldTableHookProps {
   // onDirectionClick: any;
 
   filtered: IMinField[];
-  designMode: boolean;
+  showDesignMode: boolean;
   listFields: IMinField[];
   searchProp: string;
   searchText: string;
@@ -35,10 +35,10 @@ export interface IMainFieldTableHookProps {
   // showFieldPanel: any;
 }
 
-// export function buildMainFieldTable( filtered: IMinField[], designMode: boolean, listFields: IMinField[], searchProp: string, searchText: string, onSelectItem: any, onTypeClick: any, showFieldPanel: any ) : JSX.Element {
+// export function buildMainFieldTable( filtered: IMinField[], showDesignMode: boolean, listFields: IMinField[], searchProp: string, searchText: string, onSelectItem: any, onTypeClick: any, showFieldPanel: any ) : JSX.Element {
 const MainFieldTableHook: React.FC<IMainFieldTableHookProps> = ( props ) => {
 
-  const { filtered, designMode, listFields, searchProp, searchText, onSelectItem, onTypeClick, } = props;
+  const { filtered, showDesignMode, listFields, searchProp, searchText, onSelectItem, onTypeClick, } = props;
 
   const [ panelItem, setPanelItem ] = useState<IMinField>(null);
 
@@ -67,7 +67,7 @@ const MainFieldTableHook: React.FC<IMainFieldTableHookProps> = ( props ) => {
   const tableRows: any[] = [];
   tableRows.push( 
     <tr>
-      <th style={{ display: designMode === true ? '' : 'none' }}>Add</th>
+      <th style={{ display: showDesignMode === true ? '' : 'none' }}>Add</th>
       <th>Title ( { filtered.length } )</th>
       <th>InternalName</th>
       <th>Type</th>
@@ -98,7 +98,7 @@ const MainFieldTableHook: React.FC<IMainFieldTableHookProps> = ( props ) => {
       //   onClick= { onKeeperClick } iconName={ isKeeper === true ? 'CheckboxComposite' : 'Checkbox' }/>;
 
     const row = <tr>
-      <td style={{ display: designMode === true ? '' : 'none' }}>{SelectIcon}</td>
+      <td style={{ display: showDesignMode === true ? '' : 'none' }}>{SelectIcon}</td>
       <td data-fieldname={ field.InternalName } data-fieldindex={ field.idx } onClick= { () => showFieldPanel( field )  } >
         { getHighlightedText (field.Title , searchText ) }</td>
 

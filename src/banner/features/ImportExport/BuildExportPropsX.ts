@@ -7,8 +7,8 @@
  *       88    88  88  88 88~~~   88    88 88`8b      88         88    88 88~~~   88~~~      88    8b         88    88~~~88 88      
  *      .88.   88  88  88 88      `8b  d8' 88 `88.    88         `8b  d8' 88      88        .88.   Y8b  d8   .88.   88   88 88booo. 
  *    Y888888P YP  YP  YP 88       `Y88P'  88   YD    YP          `Y88P'  YP      YP      Y888888P  `Y88P' Y888888P YP   YP Y88888P 
- *                                                                                                                                  
- *                                                                                                                                  
+ *                   
+ *                   
  */
 import { changeEasyIcons } from '../../../components/atoms/EasyIcons/eiTypes';
 import { changeEasyPages } from '../../components/EasyPages/epTypes';

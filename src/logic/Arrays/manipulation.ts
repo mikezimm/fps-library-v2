@@ -34,8 +34,8 @@ export function expandArray ( count: number ) : any[] {
  *      `Y8b. 88~~~   88         88    8b      88~~~~~ 8b      88    88 88~~~      88    88~~~88 88`8b   88`8b   88~~~88    88    
  *    db   8D 88      88booo.   .88.   Y8b  d8 88.     Y8b  d8 `8b  d8' 88         88    88   88 88 `88. 88 `88. 88   88    88    
  *    `8888Y' 88      Y88888P Y888888P  `Y88P' Y88888P  `Y88P'  `Y88P'  88         YP    YP   YP 88   YD 88   YD YP   YP    YP    
- *                                                                                                                                
- *                                                                                                                                
+ *                 
+ *                 
  */
 
 /**
@@ -94,7 +94,7 @@ export function expandArray ( count: number ) : any[] {
  *    88~~~88 88   88 88   88    88       88    88~~~~~ 88  88  88         88    88    88 88~~~88 88`8b   88`8b   88~~~88    88            88    88~~~           88       88    88   88 88    88 88~~~~~   `Y8b. 88 V8o88 88    88    88    88~~~~~  .dPYb.     88      `Y8b.    88    
  *    88   88 88  .8D 88  .8D   .88.      88    88.     88  88  88         88    `8b  d8' 88   88 88 `88. 88 `88. 88   88    88           .88.   88             .88.      88    88  .8D `8b  d8' 88.     db   8D 88  V888 `8b  d8'    88    88.     .8P  Y8.   .88.   db   8D    88    
  *    YP   YP Y8888D' Y8888D' Y888888P    YP    Y88888P YP  YP  YP         YP     `Y88P'  YP   YP 88   YD 88   YD YP   YP    YP         Y888888P YP           Y888888P    YP    Y8888D'  `Y88P'  Y88888P `8888Y' VP   V8P  `Y88P'     YP    Y88888P YP    YP Y888888P `8888Y'    YP    
- *                                                                                                                                                                                                                                                                                     
+ *                                                                                                                                                                      
  *     2020-09-24:  Updated from drilldown-filter webpart                                                                                                                                                                                                                                                                                
  */
 
@@ -119,11 +119,11 @@ export function addItemToArrayIfItDoesNotExist (arr : string[], item: string, su
  *    8b      88    88 88 V8o88 `8b  d8' 88~~~~~ 88`8b      88         88 V8o88 88    88 88  88  88 88~~~b. 88~~~~~ 88`8b   88~~~88 88`8b   88`8b   88~~~88    88            88    88    88 88`8b   88~~~~~ 88      88~~~88    88       88    `8b  d8' 88~~~~~      88~~~   88~~~~~ 88`8b   8b      88~~~~~ 88 V8o88    88      `Y8b. 
  *    Y8b  d8 `8b  d8' 88  V888  `8bd8'  88.     88 `88.    88         88  V888 88b  d88 88  88  88 88   8D 88.     88 `88. 88   88 88 `88. 88 `88. 88   88    88            88    `8b  d8' 88 `88. 88.     88booo. 88   88    88      .88.    `8bd8'  88.          88      88.     88 `88. Y8b  d8 88.     88  V888    88    db   8D 
  *     `Y88P'  `Y88P'  VP   V8P    YP    Y88888P 88   YD    YP         VP   V8P ~Y8888P' YP  YP  YP Y8888P' Y88888P 88   YD YP   YP 88   YD 88   YD YP   YP    YP            YP     `Y88P'  88   YD Y88888P Y88888P YP   YP    YP    Y888888P    YP    Y88888P      88      Y88888P 88   YD  `Y88P' Y88888P VP   V8P    YP    `8888Y' 
- *                                                                                                                                                                                                                                                                                                                                    
+ *                                                                                                                                                                                                                     
  * 
  * @param arr 
  * @param percentsAsWholeNumbers -- If true, converts 25% from 0.25 to 25.
- *                                                                                                                                                                                                                                                                                                                                 
+ *                                                                                                                                                                                                                  
  */
 
 export function convertNumberArrayToRelativePercents( arr: number[] , percentsAsWholeNumbers : boolean = true ): number[] {
@@ -157,7 +157,7 @@ export function convertNumberArrayToRelativePercents( arr: number[] , percentsAs
  * 
  * import { removeItemFromArrayOnce, removeItemFromArrayAll } from '../../../services/arrayServices';
  * https://stackoverflow.com/a/5767357                                                                                                                                                                                                                               
- *                                                                                                                                                                                                                                 
+ *                                                                                                                  
  */
 
 export function removeItemFromArrayOnce(arr: any[], value : any): any[] {
@@ -179,7 +179,7 @@ export function removeItemFromArrayOnce(arr: any[], value : any): any[] {
  *    88`8b   88~~~~~ 88  88  88 88    88 `8b  d8' 88~~~~~         88       88    88~~~~~ 88  88  88      88~~~   88`8b   88    88 88  88  88      88~~~88 88`8b   88`8b   88~~~88    88         88~~~88 88      88      
  *    88 `88. 88.     88  88  88 `8b  d8'  `8bd8'  88.            .88.      88    88.     88  88  88      88      88 `88. `8b  d8' 88  88  88      88   88 88 `88. 88 `88. 88   88    88         88   88 88booo. 88booo. 
  *    88   YD Y88888P YP  YP  YP  `Y88P'     YP    Y88888P      Y888888P    YP    Y88888P YP  YP  YP      YP      88   YD  `Y88P'  YP  YP  YP      YP   YP 88   YD 88   YD YP   YP    YP         YP   YP Y88888P Y88888P 
- *                                                                                                                                                                                                                       
+ *                                                                                                        
  * import { removeItemFromArrayOnce, removeItemFromArrayAll } from '../../../services/arrayServices';
  * https://stackoverflow.com/a/5767357                                                                                                                                                                                                                        
  */
@@ -207,7 +207,7 @@ export function removeItemFromArrayAll(arr: any[], value : any): any[] {
  *    88    88 88~~~   88   88 88~~~88    88    88~~~~~      88 V8o88 88~~~~~  .dPYb.     88         88    88 88~~~   88~~~~~ 88 V8o88         88    88 V8o88 88   88 88~~~~~  .dPYb.  
  *    88b  d88 88      88  .8D 88   88    88    88.          88  V888 88.     .8P  Y8.    88         `8b  d8' 88      88.     88  V888        .88.   88  V888 88  .8D 88.     .8P  Y8. 
  *    ~Y8888P' 88      Y8888D' YP   YP    YP    Y88888P      VP   V8P Y88888P YP    YP    YP          `Y88P'  88      Y88888P VP   V8P      Y888888P VP   V8P Y8888D' Y88888P YP    YP 
- *                                                                                                                                                                                     
+ *                                                                      
  *    import { updateNextOpenIndex } from '@mikezimm/npmfunctions/dist/Services/Arrays/manipulation';
  * 
  * The purpose of this array is to get an array of items [ 0, 1, null, 3,  4,  null ]

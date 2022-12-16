@@ -1,10 +1,10 @@
-import { IMinField } from "./IPropPaneColsProps";
+import { IMinField } from "./IFieldPanelHookProps";
 
 
 export interface ISelectedInfo {
   listFields: IMinField[];
   selected: IMinField[];
-  designMode: boolean;
+  showDesignMode: boolean;
 }
 
 
@@ -64,7 +64,7 @@ export function  updateSelectedInfo ( ev: React.MouseEvent<HTMLElement>, listFie
     });
   }
 
-  const result: ISelectedInfo = { listFields: listFields, selected: selected, designMode: true };
+  const result: ISelectedInfo = { listFields: listFields, selected: selected, showDesignMode: true };
 
   return result;
 

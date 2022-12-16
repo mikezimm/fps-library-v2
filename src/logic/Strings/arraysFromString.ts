@@ -27,16 +27,16 @@ import { sortStringArray } from '../Arrays/sorting/strings';
  *    88  ooo 88~~~~~    88           `Y8b.    88    88`8b      88    88 V8o88 88  ooo      88~~~88 88`8b   88`8b   88~~~88    88    
  *    88. ~8~ 88.        88         db   8D    88    88 `88.   .88.   88  V888 88. ~8~      88   88 88 `88. 88 `88. 88   88    88    
  *     Y888P  Y88888P    YP         `8888Y'    YP    88   YD Y888888P VP   V8P  Y888P       YP   YP 88   YD 88   YD YP   YP    YP    
- *                                                                                                                                   
- *                                                                                                                                   
+ *                    
+ *                    
  *    d88888b d8888b.  .d88b.  .88b  d88.      .d8888. d888888b d8888b. d888888b d8b   db  d888b                                     
  *    88'     88  `8D .8P  Y8. 88'YbdP`88      88'  YP `~~88~~' 88  `8D   `88'   888o  88 88' Y8b                                    
  *    88ooo   88oobY' 88    88 88  88  88      `8bo.      88    88oobY'    88    88V8o 88 88                                         
  *    88~~~   88`8b   88    88 88  88  88        `Y8b.    88    88`8b      88    88 V8o88 88  ooo                                    
  *    88      88 `88. `8b  d8' 88  88  88      db   8D    88    88 `88.   .88.   88  V888 88. ~8~                                    
  *    YP      88   YD  `Y88P'  YP  YP  YP      `8888Y'    YP    88   YD Y888888P VP   V8P  Y888P                                     
- *                                                                                                                                   
- *                                                                                                                                   
+ *                    
+ *                    
  */
 /** was: cleanProjEditOptions from TrackMyTime7
  * This function takes a string with ;, converts to array of strings and removes empty elements (like if ; is at the end.)
@@ -126,16 +126,16 @@ export function getNumberArrayFromString( input : string, delim: string, removeE
  *    8b      88      88~~~~~ 88~~~88 88 V8o88      88~~~~~ 88  88  88 88~~~      88       88         88~~~~~ 88      88~~~~~ 88  88  88 88~~~~~ 88 V8o88    88      `Y8b. 
  *    Y8b  d8 88booo. 88.     88   88 88  V888      88.     88  88  88 88         88       88         88.     88booo. 88.     88  88  88 88.     88  V888    88    db   8D 
  *     `Y88P' Y88888P Y88888P YP   YP VP   V8P      Y88888P YP  YP  YP 88         YP       YP         Y88888P Y88888P Y88888P YP  YP  YP Y88888P VP   V8P    YP    `8888Y' 
- *                                                                                                                                                                         
- *                                                                                                                                                                         
+ *                                                          
+ *                                                          
  *    d88888b d8888b.  .d88b.  .88b  d88.      .d8888. d888888b d8888b. d888888b d8b   db  d888b                                                                           
  *    88'     88  `8D .8P  Y8. 88'YbdP`88      88'  YP `~~88~~' 88  `8D   `88'   888o  88 88' Y8b                                                                          
  *    88ooo   88oobY' 88    88 88  88  88      `8bo.      88    88oobY'    88    88V8o 88 88                                                                               
  *    88~~~   88`8b   88    88 88  88  88        `Y8b.    88    88`8b      88    88 V8o88 88  ooo                                                                          
  *    88      88 `88. `8b  d8' 88  88  88      db   8D    88    88 `88.   .88.   88  V888 88. ~8~                                                                          
  *    YP      88   YD  `Y88P'  YP  YP  YP      `8888Y'    YP    88   YD Y888888P VP   V8P  Y888P                                                                           
- *                                                                                                                                                                         
- *                                                                                                                                                                         
+ *                                                          
+ *                                                          
  */
 
 /** was originally copied from cleanProjEditOptions from TrackMyTime7

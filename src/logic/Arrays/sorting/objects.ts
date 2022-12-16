@@ -108,7 +108,7 @@ export function sortObjectArrayByChildNumberKey( arr: any[], order: ISeriesSort,
  *      `Y8b. 88    88 88`8b      88         88`8b   88~~~~~    88      `Y8b.      88~~~b.    88         88    88    88    88~~~88 88~~~~~ 88`8b        88`8b   88~~~~~    88    
  *    db   8D `8b  d8' 88 `88.    88         88 `88. 88.        88    db   8D      88   8D    88         `8b  d8'    88    88   88 88.     88 `88.      88 `88. 88.        88    
  *    `8888Y'  `Y88P'  88   YD    YP         YP   YD Y88888P    YP    `8888Y'      Y8888P'    YP          `Y88P'     YP    YP   YP Y88888P 88   YD      YP   YD Y88888P    YP    
- *                                                                                                                                                                               
+ *                                                                
  *  2020-12-14
  *  This function caused errors in TrackMyTime which was based on @yo 1.9.1 but works in Drilldown and ActionNews @yo 1.11.0 
  * 

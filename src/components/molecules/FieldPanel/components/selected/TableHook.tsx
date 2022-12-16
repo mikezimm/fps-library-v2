@@ -13,7 +13,7 @@ import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 
 // import styles from '../PropPaneCols.module.scss';
 
-import { IMinField } from "../IPropPaneColsProps";
+import { IMinField } from "../IFieldPanelHookProps";
 import SelectedItemPanelHook from "../FieldPanel";
 import { getDirectionClicks, getKeeperClicks } from './functions';
 

@@ -125,16 +125,16 @@ export function compareFlatObjects( baselineObject: any, compareObject : any, fl
  *    88  ooo 88~~~~~    88         88         88      `Y8b.    88         88    88 88~~~                                      
  *    88. ~8~ 88.        88         88booo.   .88.   db   8D    88         `8b  d8' 88                                         
  *     Y888P  Y88888P    YP         Y88888P Y888888P `8888Y'    YP          `Y88P'  YP                                         
- *                                                                                                                             
- *                                                                                                                             
+ *              
+ *              
  *    db   dD d88888b db    db .d8888.      d888888b  .d88b.        .o88b.  .d88b.  .88b  d88. d8888b.  .d8b.  d8888b. d88888b 
  *    88 ,8P' 88'     `8b  d8' 88'  YP      `~~88~~' .8P  Y8.      d8P  Y8 .8P  Y8. 88'YbdP`88 88  `8D d8' `8b 88  `8D 88'     
  *    88,8P   88ooooo  `8bd8'  `8bo.           88    88    88      8P      88    88 88  88  88 88oodD' 88ooo88 88oobY' 88ooooo 
  *    88`8b   88~~~~~    88      `Y8b.         88    88    88      8b      88    88 88  88  88 88~~~   88~~~88 88`8b   88~~~~~ 
  *    88 `88. 88.        88    db   8D         88    `8b  d8'      Y8b  d8 `8b  d8' 88  88  88 88      88   88 88 `88. 88.     
  *    YP   YD Y88888P    YP    `8888Y'         YP     `Y88P'        `Y88P'  `Y88P'  YP  YP  YP 88      YP   YP 88   YD Y88888P 
- *                                                                                                                             
- *                                                                                                                             
+ *              
+ *              
  */
 
 /**

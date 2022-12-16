@@ -9,8 +9,8 @@ import { getHelpfullErrorV2, IHelpfullOutput } from '../../Errors/friendly';
  *       88    88 V8o88 88   88 88~~~~~  .dPYb.  88    88 88~~~        88~~~88 88 V8o88    88         8b      88~~~88   `Y8b. 88~~~~~ 
  *      .88.   88  V888 88  .8D 88.     .8P  Y8. `8b  d8' 88           88   88 88  V888    88         Y8b  d8 88   88 db   8D 88.     
  *    Y888888P VP   V8P Y8888D' Y88888P YP    YP  `Y88P'  YP           YP   YP VP   V8P    YP          `Y88P' YP   YP `8888Y' Y88888P 
- *                                                                                                                                    
- *                                                                                                                                    
+ *                     
+ *                     
  */
 
 /**
@@ -44,8 +44,8 @@ export function indexOfAnyCase( checkMe: string, inArray: string[], consoleLog: 
  *    88   88 88    88 88~~~~~   `Y8b.      88    88 88~~~b.     88  88~~~~~ 8b         88         88~~~~~  .dPYb.     88      `Y8b.    88            88    88 V8o88 88~~~88 88`8b   88`8b   88~~~88    88    
  *    88  .8D `8b  d8' 88.     db   8D      `8b  d8' 88   8D db. 88  88.     Y8b  d8    88         88.     .8P  Y8.   .88.   db   8D    88           .88.   88  V888 88   88 88 `88. 88 `88. 88   88    88    
  *    Y8888D'  `Y88P'  Y88888P `8888Y'       `Y88P'  Y8888P' Y8888P  Y88888P  `Y88P'    YP         Y88888P YP    YP Y888888P `8888Y'    YP         Y888888P VP   V8P YP   YP 88   YD 88   YD YP   YP    YP    
- *                                                                                                                                                                                                            
- *                                                                                                                                                                                                            
+ *                                                                                             
+ *                                                                                             
  */
 
 /**

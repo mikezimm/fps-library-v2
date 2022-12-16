@@ -15,7 +15,8 @@ import { getMainSelectedItems, } from './components/OnClickHelpers';
 import ViewBuilderHook from './components/views/Accordion';
 import { ISelectedInfo, updateSelectedInfo, } from './components/OnClickHelpers';
 
-import { IFieldPanelFetchState, IFieldPanelProps, IFieldPanelState, IMinField, IMinListProps, } from './components/IPropPaneColsProps';
+import { IFieldPanelFetchState, IFieldPanelState, IMinField, } from './components/IFieldPanelHookProps';
+import { IMinWPFieldPanelProps, IMinListProps } from "./components/IMinWPFieldPanelProps";
 
 import { MainPane } from './components/main/Pane';
 import { fetchErrorPanel, FetchPane } from './components/fetch/Pane';
@@ -25,7 +26,7 @@ import SelectedTableHook from './components/selected/TableHook';
 
 require('@mikezimm/fps-styles/dist/PropPaneCols.css');
 
-export default class FieldPanel extends React.Component< IFieldPanelProps, IFieldPanelState > {
+export default class FieldPanel extends React.Component< IMinWPFieldPanelProps, IFieldPanelState > {
 
   private _performance: ILoadPerformance = null;
 
@@ -62,7 +63,7 @@ export default class FieldPanel extends React.Component< IFieldPanelProps, IFiel
   *                                                                                                  
   */
 
-    public constructor( props: IFieldPanelProps ){
+    public constructor( props: IMinWPFieldPanelProps ){
     super(props);
 
     this._performance = createBasePerformanceInit( this.props.displayMode, false );
@@ -78,7 +79,7 @@ export default class FieldPanel extends React.Component< IFieldPanelProps, IFiel
       selected: [],
       listIdx: this.props.lists.length > 0 ? 0 : null,
       errMessage: '',
-      designMode: false,
+      showDesignMode: false,
       fullDesign: false,
       panelItem: null,
     };
@@ -87,7 +88,7 @@ export default class FieldPanel extends React.Component< IFieldPanelProps, IFiel
 
   }
 
-  public componentDidUpdate(prevProps: IFieldPanelProps) : boolean {
+  public componentDidUpdate(prevProps: IMinWPFieldPanelProps) : boolean {
 
     let refresh: boolean = false;
 
@@ -120,20 +121,20 @@ export default class FieldPanel extends React.Component< IFieldPanelProps, IFiel
 
   }
 
-  public render(): React.ReactElement<IFieldPanelProps> {
+  public render(): React.ReactElement<IMinWPFieldPanelProps> {
 
     const { lists, } = this.props;
-    const { status, designMode, errMessage, listIdx, panelItem, searchText } = this.state;
+    const { status, showDesignMode, errMessage, listIdx, panelItem, searchText } = this.state;
 
     const fetchPane : JSX.Element = FetchPane( { 
       onClickFetchFields: this._clickFetchFields.bind(this),
-      designMode: designMode,
+      designMode: showDesignMode,
       performance : this._performance,
       status: status,
     } );
 
     if ( this.state.errMessage ) {
-      const result : JSX.Element= fetchErrorPanel( fetchPane, errMessage, lists[ listIdx ].webURL, lists[ listIdx ].listTitle );
+      const result : JSX.Element= fetchErrorPanel( fetchPane, errMessage, lists[ listIdx ].webUrl, lists[ listIdx ].listTitle );
       return ( result );
 
     } else if ( lists.length === 0 ) {
@@ -188,7 +189,7 @@ export default class FieldPanel extends React.Component< IFieldPanelProps, IFiel
           } );
 
       let designPane: JSX.Element = null;
-      if ( designMode === true ) {
+      if ( showDesignMode === true ) {
         designPane = <div className={ 'design-pane' }>
             { DesignCommands }
             { DesignViews }
@@ -249,8 +250,8 @@ export default class FieldPanel extends React.Component< IFieldPanelProps, IFiel
   }
 
   private _toggleDesign ( ): void {
-    const designMode : boolean = this.state.designMode === true ? false : true;
-    this.setState({ designMode: designMode })
+    const showDesignMode : boolean = this.state.showDesignMode === true ? false : true;
+    this.setState({ showDesignMode: showDesignMode })
   }
 
 
@@ -300,9 +301,9 @@ export default class FieldPanel extends React.Component< IFieldPanelProps, IFiel
     const searchText: string = `${SearchValue}${ property ? property : ''}`;
 
     if ( !SearchValueLc ) {
-      this.setState({ filtered: filtered, searchText: searchText, searchProp: property, designMode: true });
+      this.setState({ filtered: filtered, searchText: searchText, searchProp: property, showDesignMode: true });
     } else {
-      this.setState({ filtered: filtered, searchText: searchText, searchProp: property, designMode: true });
+      this.setState({ filtered: filtered, searchText: searchText, searchProp: property, showDesignMode: true });
     }
   }
 

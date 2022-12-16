@@ -6,8 +6,8 @@
  *      `Y8b.    88    88`8b      88    88 V8o88 88  ooo    88    88~~~      88    88`8b   88~~~~~    88    `8b  d8' 88~~~88 88      88    88 88~~~~~ 
  *    db   8D    88    88 `88.   .88.   88  V888 88. ~8~   .88.   88         88    88 `88. 88.        88     `8bd8'  88   88 88booo. 88b  d88 88.     
  *    `8888Y'    YP    88   YD Y888888P VP   V8P  Y888P  Y888888P YP         YP    YP   YD Y88888P    YP       YP    YP   YP Y88888P ~Y8888P' Y88888P 
- *                                                                                                                                                    
- *                                                                                                                                                    
+ *                                     
+ *                                     
  */
 
 /**
@@ -25,14 +25,14 @@
  *    88  ooo 88~~~~~    88         88  88  88 88~~~88  .dPYb.       88~~~   88`8b   88    88 88~~~        88    88 88~~~        88`8b   88~~~~~    88    
  *    88. ~8~ 88.        88         88  88  88 88   88 .8P  Y8.      88      88 `88. `8b  d8' 88           `8b  d8' 88           88 `88. 88.        88    
  *     Y888P  Y88888P    YP         YP  YP  YP YP   YP YP    YP      88      88   YD  `Y88P'  88            `Y88P'  YP           YP   YD Y88888P    YP    
- *                                                                                                                                                        
+ *                                         
  *    d888888b d8b   db       .d88b.  d8888b.    d88b d88888b  .o88b. d888888b       .d8b.  d8888b. d8888b.  .d8b.  db    db 
  *      `88'   888o  88      .8P  Y8. 88  `8D    `8P' 88'     d8P  Y8 `~~88~~'      d8' `8b 88  `8D 88  `8D d8' `8b `8b  d8' 
  *       88    88V8o 88      88    88 88oooY'     88  88ooooo 8P         88         88ooo88 88oobY' 88oobY' 88ooo88  `8bd8'  
  *       88    88 V8o88      88    88 88~~~b.     88  88~~~~~ 8b         88         88~~~88 88`8b   88`8b   88~~~88    88    
  *      .88.   88  V888      `8b  d8' 88   8D db. 88  88.     Y8b  d8    88         88   88 88 `88. 88 `88. 88   88    88    
  *    Y888888P VP   V8P       `Y88P'  Y8888P' Y8888P  Y88888P  `Y88P'    YP         YP   YP 88   YD 88   YD YP   YP    YP    
- *                                                                                                                           
+ *            
  *      2021-02-14:  Copied from generic solution                                                                                                                          
  */
 
@@ -109,8 +109,8 @@ export interface ICompareResult {
  *    8b      88    88 88  88  88 88~~~   88~~~88 88`8b   88~~~~~ 88~~~88 88`8b   88`8b   88~~~88    88      `Y8b. 
  *    Y8b  d8 `8b  d8' 88  88  88 88      88   88 88 `88. 88.     88   88 88 `88. 88 `88. 88   88    88    db   8D 
  *     `Y88P'  `Y88P'  YP  YP  YP 88      YP   YP 88   YD Y88888P YP   YP 88   YD 88   YD YP   YP    YP    `8888Y' 
- *                                                                                                                 
- *                                                                                                                 
+ *  
+ *  
  * The original goal of this function, would be to remove objects from one array if it were in another array.
  * As an example, I have an array of items I want to add to a list (addItemsArray)
  * Then I run a process which creates another 'result' array of what things were actually added - minus any errors

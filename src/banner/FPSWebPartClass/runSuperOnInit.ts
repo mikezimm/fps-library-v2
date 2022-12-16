@@ -29,8 +29,8 @@ export function runFPSSuperOnInit( thisWPClass: IThisFPSWebPartClass, PreConfigu
    *    88    88 88 V8o88         88    88 V8o88    88       88         88~~~   88~~~88 88~~~88   `Y8b. 88~~~~~       .88'   
    *    `8b  d8' 88  V888        .88.   88  V888   .88.      88         88      88   88 88   88 db   8D 88.          j88.    
    *     `Y88P'  VP   V8P      Y888888P VP   V8P Y888888P    YP         88      YP   YP YP   YP `8888Y' Y88888P      888888D 
-   *                                                                                                                         
-   *                                                                                                                         
+   *          
+   *          
    */
 
     // DEFAULTS SECTION:  Performance   <<< ================================================================

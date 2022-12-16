@@ -18,6 +18,7 @@ import { createEasyIconsWPProps } from "../../components/atoms/EasyIcons/createE
 
 import { createKeySiteProps } from "../components/Gear/CreateKeySiteProps";
 import { IThisFPSWebPartClass } from "./IThisFPSWebPartClass";
+import { IMinWPFieldPanelProps } from "../../components/molecules/FieldPanel/components/IMinWPFieldPanelProps";
 
 
 export interface IMainWPBannerSetupX {
@@ -41,7 +42,23 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
   const { displayMode, _beAReader, _FPSUser, properties, _modifyBannerTitle, _forceBanner, _sitePresets, _allowPandoramic, } = setup.main;
   const { pageContext, _pageLayoutType } = setup.main.context;
 
+  // Field Panel specific properties
+  const { _FieldPanelDesignMode, _FieldPanelListProp, _FieldPanelWebProp, _allowFieldPanel } = setup.main;
+
   const renderAsReader = displayMode === DisplayMode.Read && _beAReader === true ? true : false;
+  const isSiteAdmin = renderAsReader !== true && _FPSUser.isSiteAdmin === true ? true : false;
+
+  /***
+ *    d888888b d8888b. d888888b  .o88b. db   dD .d8888. 
+ *    `~~88~~' 88  `8D   `88'   d8P  Y8 88 ,8P' 88'  YP 
+ *       88    88oobY'    88    8P      88,8P   `8bo.   
+ *       88    88`8b      88    8b      88`8b     `Y8b. 
+ *       88    88 `88.   .88.   Y8b  d8 88 `88. db   8D 
+ *       YP    88   YD Y888888P  `Y88P' YP   YD `8888Y' 
+ *                                                      
+ *                                                      
+ */
+
 
   let showTricks: any = false;
   setup.main._trickyEmailsAll.map( getsTricks => {
@@ -51,7 +68,21 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
     }
     } );
 
-  properties.showBannerGear = verifyAudienceVsUser( _FPSUser , showTricks, properties.homeParentGearAudience, null, renderAsReader );
+
+  /***
+ *    db   db d88888b db      d8888b.      d8888b.  .d8b.  d8b   db d88888b db      
+ *    88   88 88'     88      88  `8D      88  `8D d8' `8b 888o  88 88'     88      
+ *    88ooo88 88ooooo 88      88oodD'      88oodD' 88ooo88 88V8o 88 88ooooo 88      
+ *    88~~~88 88~~~~~ 88      88~~~        88~~~   88~~~88 88 V8o88 88~~~~~ 88      
+ *    88   88 88.     88booo. 88           88      88   88 88  V888 88.     88booo. 
+ *    YP   YP Y88888P Y88888P 88           88      YP   YP VP   V8P Y88888P Y88888P 
+ *                                                                                  
+ *                                                                                  
+ */
+
+  const showRepoLinks = renderAsReader === true || properties.showRepoLinks === false ? false : true;
+  //Always show full panel if you are SCA
+  const showFullPanel = isSiteAdmin === true ? true : verifyAudienceVsUser( _FPSUser, showTricks, properties.fullPanelAudience , SPPermission.editListItems, renderAsReader );
 
   let errMessage = '';
   let validDocsContacts = ''; //This may no longer be needed if links below are commented out.
@@ -67,21 +98,32 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
     }
   }
 
-
   const replacePanelWarning = `Anyone with lower permissions than '${properties.fullPanelAudience}' will ONLY see this content in panel`;
 
 
-  //  Updated for SPA to get Title which is also the window.name property  https://github.com/mikezimm/drilldown7/issues/243
-  const bannerTitle = _modifyBannerTitle === true && properties.bannerTitle && properties.bannerTitle.length > 0 ? properties.bannerTitle : 
-      _pageLayoutType === 'SingleWebPartAppPageLayout' ? document.title : setup.main._repoLink.desc;
+  let infoElement = 'More Information';
+  if ( properties.infoElementChoice === 'Text' ) {
+    infoElement = properties.infoElementText;
 
-  const bannerStyle: ICurleyBraceCheck = getReactCSSFromString( 'bannerStyle', properties.bannerStyle, baseBannerStyles );
-  const bannerCmdStyle: ICurleyBraceCheck = getReactCSSFromString( 'bannerCmdStyle', properties.bannerCmdStyle, baseBannerCmdStyles );
+  } else if ( properties.infoElementChoice ) {
+    infoElement = properties.infoElementChoice;
 
-  //Over-rides gear for certain users
-  const showRepoLinks = renderAsReader === true || properties.showRepoLinks === false ? false : true;
+  }
 
-  const isSiteAdmin = renderAsReader !== true && _FPSUser.isSiteAdmin === true ? true : false;
+/***
+ *    d8b   db d88888b  .d8b.  d8888b.      d88888b db      d88888b .88b  d88. d88888b d8b   db d888888b .d8888. 
+ *    888o  88 88'     d8' `8b 88  `8D      88'     88      88'     88'YbdP`88 88'     888o  88 `~~88~~' 88'  YP 
+ *    88V8o 88 88ooooo 88ooo88 88oobY'      88ooooo 88      88ooooo 88  88  88 88ooooo 88V8o 88    88    `8bo.   
+ *    88 V8o88 88~~~~~ 88~~~88 88`8b        88~~~~~ 88      88~~~~~ 88  88  88 88~~~~~ 88 V8o88    88      `Y8b. 
+ *    88  V888 88.     88   88 88 `88.      88.     88booo. 88.     88  88  88 88.     88  V888    88    db   8D 
+ *    VP   V8P Y88888P YP   YP 88   YD      Y88888P Y88888P Y88888P YP  YP  YP Y88888P VP   V8P    YP    `8888Y' 
+ *
+ *
+ */
+  //Always pass false for verifyAudienceVsUser 'beAUser' or it will hide the beAUser Icon.
+  const showBeAUserIcon = verifyAudienceVsUser( _FPSUser , showTricks, properties.beAUserAudience, SPPermission.addAndCustomizePages, false );
+
+  properties.showBannerGear = verifyAudienceVsUser( _FPSUser , showTricks, properties.homeParentGearAudience, null, renderAsReader );
 
   const hasCustomizePages = isSiteAdmin === true ? true :
       verifyAudienceVsUser( _FPSUser, showTricks, properties.homeParentGearAudience , SPPermission.addAndCustomizePages, renderAsReader );
@@ -96,8 +138,24 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
   const enableExpandoramic = _allowPandoramic === true || properties.enableExpandoramic === false ? false :
       verifyAudienceVsUser( _FPSUser, showTricks, properties.expandoAudience , null, renderAsReader );
 
-  //Always show full panel if you are SCA
-  const showFullPanel = isSiteAdmin === true ? true : verifyAudienceVsUser( _FPSUser, showTricks, properties.fullPanelAudience , SPPermission.editListItems, renderAsReader );
+
+/***
+ *    d888888b d888888b d888888b db      d88888b      .d8888. d888888b db    db db      d88888b .d8888. 
+ *    `~~88~~'   `88'   `~~88~~' 88      88'          88'  YP `~~88~~' `8b  d8' 88      88'     88'  YP 
+ *       88       88       88    88      88ooooo      `8bo.      88     `8bd8'  88      88ooooo `8bo.   
+ *       88       88       88    88      88~~~~~        `Y8b.    88       88    88      88~~~~~   `Y8b. 
+ *       88      .88.      88    88booo. 88.          db   8D    88       88    88booo. 88.     db   8D 
+ *       YP    Y888888P    YP    Y88888P Y88888P      `8888Y'    YP       YP    Y88888P Y88888P `8888Y' 
+ *                                                                                                      
+ *                                                                                                      
+ */
+
+  //  Updated for SPA to get Title which is also the window.name property  https://github.com/mikezimm/drilldown7/issues/243
+  const bannerTitle = _modifyBannerTitle === true && properties.bannerTitle && properties.bannerTitle.length > 0 ? properties.bannerTitle : 
+  _pageLayoutType === 'SingleWebPartAppPageLayout' ? document.title : setup.main._repoLink.desc;
+
+  const bannerStyle: ICurleyBraceCheck = getReactCSSFromString( 'bannerStyle', properties.bannerStyle, baseBannerStyles );
+  const bannerCmdStyle: ICurleyBraceCheck = getReactCSSFromString( 'bannerCmdStyle', properties.bannerCmdStyle, baseBannerCmdStyles );
 
   //Over-rides expand for certain users
 
@@ -115,22 +173,34 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
 
   const showBannerError = errMessage !== '' && errMessage !== null ? true : false; 
 
-  //Always pass false for verifyAudienceVsUser 'beAUser' or it will hide the beAUser Icon.
-  const showBeAUserIcon = verifyAudienceVsUser( _FPSUser , showTricks, properties.beAUserAudience, SPPermission.addAndCustomizePages, false );
 
-    // let showBeAUserIcon: boolean = false;
-    //  if ( ( properties.expandoAudience && properties.expandoAudience !== 'Everyone') 
-    //    || ( properties.homeParentGearAudience && properties.homeParentGearAudience !== 'Everyone' )  ) {
-    //   showBeAUserIcon = true;
-    //  }
-  
-    let infoElement = 'More Information';
-    if ( properties.infoElementChoice === 'Text' ) {
-      infoElement = properties.infoElementText;
+/***
+ *    d88888b d888888b d88888b db      d8888b.      d8888b.  .d8b.  d8b   db d88888b db      
+ *    88'       `88'   88'     88      88  `8D      88  `8D d8' `8b 888o  88 88'     88      
+ *    88ooo      88    88ooooo 88      88   88      88oodD' 88ooo88 88V8o 88 88ooooo 88      
+ *    88~~~      88    88~~~~~ 88      88   88      88~~~   88~~~88 88 V8o88 88~~~~~ 88      
+ *    88        .88.   88.     88booo. 88  .8D      88      88   88 88  V888 88.     88booo. 
+ *    YP      Y888888P Y88888P Y88888P Y8888D'      88      YP   YP VP   V8P Y88888P Y88888P 
+ *                                                                                           
+ *                                                                                           
+ */
 
-    } else if ( properties.infoElementChoice ) {
-      infoElement = properties.infoElementChoice;
+    const MinFPProps: any = setup.main.properties;
 
+    const saveCommands: any = _FieldPanelDesignMode === 'Disabled' ? null : setup.main._saveFieldPanelCommandsFunction;
+    const saveViews: any = _FieldPanelDesignMode === 'Disabled' ? null : setup.main._saveFieldPanelViewsFunction;
+
+    const fieldPanelProps: IMinWPFieldPanelProps = {
+      displayMode: displayMode,
+      lists: [{
+        webUrl: _FieldPanelWebProp ? MinFPProps[ _FieldPanelWebProp ] : '' ,
+        listTitle: _FieldPanelListProp ? MinFPProps[ _FieldPanelListProp ] : 'Documents' ,
+      }],
+      designMode: _FieldPanelDesignMode,
+      tryCommands: null,  //if function is passed down in React Component, parent web part could use this to temporarily replace the saved button commands.
+      saveCommands: saveCommands, // callback function to save current command
+      tryViews: null,     //if function is passed down in  React Component, parent web part could use this to temporarily replace the saved button commands.
+      saveViews: saveViews,    // callback function to save current command
     }
 
     const startTime = new Date();
@@ -145,12 +215,15 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
       sitePresets: _sitePresets,
       keySiteProps: createKeySiteProps( pageContext ),
 
+      fieldPanelProps: fieldPanelProps,
+
       fpsPinMenu: {
         defPinState: properties.defPinState ? properties.defPinState : 'disabled',
         forcePinState: properties.forcePinState ? properties.forcePinState : true,
         domElement: setup.main.context.domElement,
         pageLayout: properties.pageLayout,
       },
+
 
       refreshId: refreshId,
       FPSUser: _FPSUser,

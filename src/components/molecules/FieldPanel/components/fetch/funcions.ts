@@ -1,19 +1,20 @@
 
 import { IWeb, Web, } from "@pnp/sp/presets/all";
-import { IMinField, IMinListProps, IsEditable, IFieldPanelFetchState } from "../IPropPaneColsProps";
+import { IMinField, IsEditable, IFieldPanelFetchState } from "../IFieldPanelHookProps";
+import { IMinListProps } from "../IMinWPFieldPanelProps";
 import { getHelpfullErrorV2 } from '../../../../../logic/Errors/friendly';
 
   // export async function clickFetchFields(  list: IMinListProps, setState: any, updatePerformance: any ) : Promise<void> {
 export async function fetchFields(  list: IMinListProps ) : Promise<IFieldPanelFetchState> {
 
-  const { webURL, listTitle, } = list ;
+  const { webUrl, listTitle, } = list ;
   try {
 
-    if ( listTitle && webURL ) {
+    if ( listTitle && webUrl ) {
       let FilteredFields : IMinField[] =[];
-      //setlistFields( await allAvailableFields( webURL, listTitle, ) );
-      // const fetchWebURL = getFullUrlFromSlashSitesUrl( webURL );
-      const fetchWebURL = webURL ;
+      //setlistFields( await allAvailableFields( webUrl, listTitle, ) );
+      // const fetchWebURL = getFullUrlFromSlashSitesUrl( webUrl );
+      const fetchWebURL = webUrl ;
       const thisWebInstance : IWeb = Web(fetchWebURL);
       const allFields : IMinField[] = await thisWebInstance.lists.getByTitle(listTitle).fields.orderBy("Title", true)();
       FilteredFields = allFields.filter( field => field.Hidden !== true && field.Sealed !== true );

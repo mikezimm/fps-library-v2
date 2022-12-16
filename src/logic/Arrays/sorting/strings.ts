@@ -8,7 +8,7 @@
  *      `Y8b. 88    88 88`8b      88           `Y8b.    88    88`8b      88    88 V8o88 88  ooo      88~~~88 88`8b   88`8b   88~~~88    88    
  *    db   8D `8b  d8' 88 `88.    88         db   8D    88    88 `88.   .88.   88  V888 88. ~8~      88   88 88 `88. 88 `88. 88   88    88    
  *    `8888Y'  `Y88P'  88   YD    YP         `8888Y'    YP    88   YD Y888888P VP   V8P  Y888P       YP   YP 88   YD 88   YD YP   YP    YP    
- *                                                                                                                                            
+ *                             
  * 2020-12-14
  * sortStringArray was added to remove typescript errors in sortKeysByOtherKey
  * @param arr 

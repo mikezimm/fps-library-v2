@@ -12,6 +12,15 @@ npm install @mikezimm/fps-library-v2@1.0.34
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
+## 1.0.35 - 2022-Dec-15:  FieldPanel Update
+- Rename IFieldPanelProps to IMinWPFieldPanelProps
+- Subsitute webURL for webUrl for consistancy across library
+- Change components folder from PropPaneCols to FieldPanel which is really what it is
+- Add FPSBaseClass:  _allowFieldPanel, _FieldPanelDesignMode, _FieldPanelWebProp, _FieldPanelListProp
+- Add saveFields, saveViews functions to class
+- Add logic to FieldPanel info to fieldPanelProps, runWebPartRender WP Props to fieldPanelProps
+- Reorganize runWebPartRender logic to group similar functions ( Panel, Near, FieldPanel etc... )
+
 ## 1.0.34 - 2022-Dec-15
 - Updated styles references in PropPaneCols component
 - Bumped styles version to 1.0.3

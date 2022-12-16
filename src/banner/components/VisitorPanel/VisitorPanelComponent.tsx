@@ -12,8 +12,8 @@ import { IMinWPVisitorPanelInfo } from './Interfaces';
  *    `8b  d8'    88      `Y8b.    88       88    88    88 88`8b        88~~~   88~~~88 88 V8o88 88~~~~~ 88              88    88 V8o88 88~~~   88    88 
  *     `8bd8'    .88.   db   8D   .88.      88    `8b  d8' 88 `88.      88      88   88 88  V888 88.     88booo.        .88.   88  V888 88      `8b  d8' 
  *       YP    Y888888P `8888Y' Y888888P    YP     `Y88P'  88   YD      88      YP   YP VP   V8P Y88888P Y88888P      Y888888P VP   V8P YP       `Y88P'  
- *                                                                                                                                                       
- *                                                                                                                                                       
+ *                                        
+ *                                        
  */
 
 // export function visitorPanelInfo( wpProps: IMinWPVisitorPanelInfo, performance: ILoadPerformanceALVFM ) {

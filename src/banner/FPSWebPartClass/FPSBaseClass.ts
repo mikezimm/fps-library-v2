@@ -4,9 +4,11 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IFPSEnviro } from '../../common/interfaces/fps/IFPSEnviro';
 import { ISitePreConfigProps } from '../../common/PropPaneHelp/IPreConfig';
 import { IRepoLinks } from '../../components/atoms/Links/CreateLinks';
+import { IFieldPanelDesignMode } from '../../components/molecules/FieldPanel/components/IMinWPFieldPanelProps';
 import { ILoadPerformance, ILoadPerformanceOps } from '../../components/molecules/Performance/IPerformance';
 import { IFPSUser } from '../../logic/Users/IUserInterfaces';
 import { webpartInstance } from '../features/FPSDOM/FPSDocument';
+import { IFieldPanelMode } from './IThisFPSWebPartClass';
 
 /**
  * REQUIREMENT:  Update wepbart's tsconfig to target 'es6' or higher
@@ -58,6 +60,12 @@ export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TP
   protected _allowPandoramic: boolean = true;
   protected _allowSiteThemeChoice: boolean = false;
   protected _allowEasyPages: boolean = true;
+  protected _allowFieldPanel: IFieldPanelMode = 'Disabled' ;  // Be SURE TO Map ( via _FieldPanelWebProp, _FieldPanelListProp ) to field panel if not in Auto mode
+  
+  // Feature specific presets
+  protected _FieldPanelDesignMode: IFieldPanelDesignMode = 'Disabled';  // If Enabled, targets which web part for compatibility
+  protected _FieldPanelWebProp: 'webUrl' | string = 'webUrl';  // Other web part prop that will get mapped to the FieldPanelProps - in case it's different property name for retro compatibility
+  protected _FieldPanelListProp: 'listTitle' | string = 'listTitle';  // Other web part prop that will get mapped to the FieldPanelProps - in case it's different property name for retro compatibility
 
   //Set this to true if webpart has a search bar and you want the user to be able to turn it on or off
   protected _allowShowSearch: boolean = false;
@@ -108,4 +116,27 @@ export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TP
     }
   }
 
+  protected _saveFieldPanelViewsFunction( viewsProps: any ): void {
+    console.log('_saveFieldPanelViewsFunction:');
+    if (this._allowFieldPanel === 'Auto' && this._FieldPanelDesignMode !== 'Disabled' ) {
+      alert("FUTURE MESSAGE:  Your Views design was copied to the web part properties but you will need to SAVE THE PAGE");
+      //Eventually update web part props per the design
+      // Also remind user to save property pane and Publish the page
+      this.render();
+    } else {
+      alert(`_saveFieldPanelViewsFunction is DISABLED: _allowFieldPanel= ${ this._allowFieldPanel} _FieldPanelDesignMode = ${this._FieldPanelDesignMode}`);
+    }
+  }
+
+  protected _saveFieldPanelCommandsFunction( commands: any ): void {
+    console.log('_saveFieldPanelCommandsFunction:');
+    if (this._allowFieldPanel === 'Auto' && this._FieldPanelDesignMode !== 'Disabled' ) {
+      alert("FUTURE MESSAGE:  Your Views design was copied to the web part properties but you will need to SAVE THE PAGE");
+      //Eventually update web part props per the design
+      // Also remind user to save property pane and Publish the page
+      this.render();
+    } else {
+      alert(`_saveFieldPanelCommandsFunction is DISABLED: _allowFieldPanel= ${ this._allowFieldPanel} _FieldPanelDesignMode = ${this._FieldPanelDesignMode}`);
+    }
+  }
 }

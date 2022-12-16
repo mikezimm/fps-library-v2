@@ -14,7 +14,7 @@ import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 
 // import styles from '../PropPaneCols.module.scss';
 
-import { IMinField, IMinFieldCmds } from "../IPropPaneColsProps";
+import { IMinField, IMinFieldCmds } from "../IFieldPanelHookProps";
 
 import { AllUpdateActions,  } from './IAccordion'
 

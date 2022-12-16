@@ -7,7 +7,7 @@ import { ISeriesSort } from './Interfaces';
  *      `Y8b. 88    88 88`8b      88         88 V8o88 88    88 88  88  88 88~~~b. 88~~~~~ 88`8b        88~~~88 88`8b   88`8b   88~~~88    88    
  *    db   8D `8b  d8' 88 `88.    88         88  V888 88b  d88 88  88  88 88   8D 88.     88 `88.      88   88 88 `88. 88 `88. 88   88    88    
  *    `8888Y'  `Y88P'  88   YD    YP         VP   V8P ~Y8888P' YP  YP  YP Y8888P' Y88888P 88   YD      YP   YP 88   YD 88   YD YP   YP    YP    
- *                                                                                                                                              
+ *                               
  *     
  * 2020-12-14
  * sortNumberArray was added to remove typescript errors in sortKeysByOtherKey

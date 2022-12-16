@@ -9,8 +9,8 @@
  *    88  ooo 88~~~~~    88         8b      88~~~88 88    88    88    8b      88~~~~~      88`8b   88~~~~~    88    
  *    88. ~8~ 88.        88         Y8b  d8 88   88 `8b  d8'   .88.   Y8b  d8 88.          88 `88. 88.        88    
  *     Y888P  Y88888P    YP          `Y88P' YP   YP  `Y88P'  Y888888P  `Y88P' Y88888P      YP   YD Y88888P    YP    
- *                                                                                                                  
- *                                                                                                                  
+ *   
+ *   
  */
 /**
  * This is used specifically for making a key value from text that can be in a css ID or classname.
@@ -39,8 +39,8 @@
  *    88  ooo 88~~~~~    88         8b      88~~~88 88    88    88    8b      88~~~~~         88    88~~~~~  .dPYb.     88    
  *    88. ~8~ 88.        88         Y8b  d8 88   88 `8b  d8'   .88.   Y8b  d8 88.             88    88.     .8P  Y8.    88    
  *     Y888P  Y88888P    YP          `Y88P' YP   YP  `Y88P'  Y888888P  `Y88P' Y88888P         YP    Y88888P YP    YP    YP    
- *                                                                                                                            
- *                                                                                                                            
+ *             
+ *             
  */
 
 /**

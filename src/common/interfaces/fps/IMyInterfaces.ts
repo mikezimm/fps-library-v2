@@ -6,8 +6,8 @@
  *    88  88  88    88            88    88 V8o88    88    88~~~~~ 88`8b   88~~~   88~~~88 8b      88~~~~~   `Y8b. 
  *    88  88  88    88           .88.   88  V888    88    88.     88 `88. 88      88   88 Y8b  d8 88.     db   8D 
  *    YP  YP  YP    YP         Y888888P VP   V8P    YP    Y88888P 88   YD YP      YP   YP  `Y88P' Y88888P `8888Y' 
- *                                                                                                                
- *                                                                                                                
+ * 
+ * 
 
 import { IMyProgress, IMyFonts, IMyIcons } from '@mikezimm/npmfunctions/dist/ReusableInterfaces/IMyInterfaces';
 

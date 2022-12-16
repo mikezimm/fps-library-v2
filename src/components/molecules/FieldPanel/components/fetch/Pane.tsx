@@ -7,12 +7,12 @@ import { ILoadPerformance, IPerformanceOp } from '../../../../molecules/Performa
 
 import ReactJson from 'react-json-view';
 import { mainSiteLink } from '../main/Pane';
-import { IMinListProps } from '../IPropPaneColsProps';
+import { IMinListProps } from "../IMinWPFieldPanelProps";
 // import { fetchFields } from './FetchFuncion';
 
-export function fetchErrorPanel( fetchPane: JSX.Element, errMessage: string, webURL: string, listTitle: string ): JSX.Element {
+export function fetchErrorPanel( fetchPane: JSX.Element, errMessage: string, webUrl: string, listTitle: string ): JSX.Element {
 
-  const siteLink = mainSiteLink( webURL );
+  const siteLink = mainSiteLink( webUrl );
   const messages: string[] = errMessage.split('-- FULL ERROR MESSAGE:');
 
   return ( <div className={ 'prop-pane-cols' } >

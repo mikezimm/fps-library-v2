@@ -6,8 +6,8 @@
  *    88    88 88    88    88    8b      88`8b        8b      88    88 88  88  88 88  88  88 88~~~88 88 V8o88 88   88   `Y8b. 
  *    `8P  d8' 88b  d88   .88.   Y8b  d8 88 `88.      Y8b  d8 `8b  d8' 88  88  88 88  88  88 88   88 88  V888 88  .8D db   8D 
  *     `Y88'Y8 ~Y8888P' Y888888P  `Y88P' YP   YD       `Y88P'  `Y88P'  YP  YP  YP YP  YP  YP YP   YP VP   V8P Y8888D' `8888Y' 
- *                                                                                                                            
- *                                                                                                                            
+ *             
+ *             
 
 import { QuickCommandsTMT, IQuickCommands, IQuickButton, } 
     from '@mikezimm/npmfunctions/dist/QuickCommands/IQuickCommands';

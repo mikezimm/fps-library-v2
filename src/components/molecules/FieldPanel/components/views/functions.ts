@@ -3,7 +3,7 @@ import { IGrouping, IViewField } from "../../../../../common/interfaces/openSour
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { IFieldInfo, FieldTypes } from "@pnp/sp/presets/all";
 
-import { IMinField } from "../IPropPaneColsProps";
+import { IMinField } from "../IFieldPanelHookProps";
 
 /**
  * Best guess column widths based on keywords

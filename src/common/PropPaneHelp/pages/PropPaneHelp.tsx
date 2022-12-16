@@ -4,7 +4,7 @@ require('@mikezimm/fps-styles/dist/PropPanelHelp.css');
 
 import { Pivot, PivotLinkFormat, PivotLinkSize,} from 'office-ui-fabric-react/lib/Pivot';
 
-// import { IFieldPanelProps } from '../../../components/molecules/FieldPanel/IFieldPanelProps';
+// import { IMinWPFieldPanelProps } from '../../../components/molecules/FieldPanel/IMinWPFieldPanelProps';
 import { SitePresetsInfo } from './SitePresetsInfo';
 import { IWebpartBannerProps } from '../../../banner/mainReact/IWebpartBannerProps';
 import { VisitorHelp } from './Visitor';
