@@ -60,7 +60,7 @@ export async function onFPSPropPaneCHanged(  thisWPClass: IThisFPSWebPartClass, 
 
     if ( newValue === 'custom' || newValue === 'lock' ) {
       //Do nothing for these cases.
-      
+
     } else {
       //Reset main web part styles to defaults
 

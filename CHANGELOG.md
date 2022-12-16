@@ -5,12 +5,15 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.35
+npm install @mikezimm/fps-library-v2@1.0.36
 
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.36 - 2022-Dec-15:  FieldPanel Update
+- Add FPSFieldsPanelPropGroup to getAllDefaultFPSFeatureGroups
 
 ## 1.0.35 - 2022-Dec-15:  FieldPanel Update
 - Rename IFieldPanelProps to IMinWPFieldPanelProps

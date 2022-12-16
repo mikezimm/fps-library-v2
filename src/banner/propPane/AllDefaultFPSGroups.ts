@@ -1,4 +1,5 @@
 import { IPropertyPaneGroup } from "@microsoft/sp-property-pane";
+import { FPSFieldsPanelPropGroup } from "../../components/molecules/FieldPanel/PPCPropGroup";
 import { FPSEasyPagesGroup } from "../components/EasyPages/EasyPagesGroup";
 import { FPSBanner3VisHelpGroup } from "../components/VisitorPanel/FPSOptionsGroupVisHelp";
 import { FPSOptionsExpando } from "../features/Expando/ExpandoPropGroup";
@@ -21,6 +22,7 @@ export function getAllDefaultFPSFeatureGroups( thisWPClass: IThisFPSWebPartClass
 
   if ( thisWPClass._allowPinMe === true ) groups.push( FPSPinMePropsGroupX( thisWPClass ) );
   if ( thisWPClass._allowEasyPages ) groups.push( FPSEasyPagesGroup( thisWPClass ) );
+  if ( thisWPClass._allowFieldPanel === 'Manual' ) groups.push( FPSFieldsPanelPropGroup( thisWPClass ) );
   groups.push( FPSBanner3VisHelpGroup( thisWPClass ) );
   groups.push( FPSBanner4BasicGroup( thisWPClass ) );
   groups.push( FPSBanner3NavGroup() );
