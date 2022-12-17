@@ -7,6 +7,8 @@ export interface IMinListProps {
 
 }
 
+export const changesFieldPanel : string[] = [ 'lists', 'designMode', 'displayMode', 'tryCommands', 'saveCommands', 'tryViews', 'saveViews'  ]
+
 /**
  * IFieldPanelDesignMode:  
  *    Disabled means only show main column pain for finding column names
@@ -17,9 +19,9 @@ export type IFieldPanelDesignMode = 'Disabled' | 'Drilldown' | 'ListAPalooza' | 
 
 export interface IMinWPFieldPanelProps {
   displayMode: DisplayMode;
-  lists: IMinListProps[];
+  lists: IMinListProps[];  //Should not be exported
 
-  designMode: IFieldPanelDesignMode;
+  designMode: IFieldPanelDesignMode;  //Should not be exported
 
   tryCommands?: any; //if function is passed down, parent web part could use this to temporarily replace the saved button commands.
   saveCommands?: any; // callback function to save current command

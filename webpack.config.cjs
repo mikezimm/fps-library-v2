@@ -46,6 +46,7 @@ module.exports = ( env, argv ) => ({
   },
   externals: { // Read webpack documentation - do not want to bundle these into the package
     'react': 'React',
+    'react-json-view': 'ReactJson',
   },
   devServer: {
     compress: true,
