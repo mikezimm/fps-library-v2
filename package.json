@@ -1,6 +1,6 @@
 {
   "name": "@mikezimm/fps-library-v2",
-  "version": "1.0.36",
+  "version": "1.0.37",
   "description": "Library of reusable typescript/javascript functions, interfaces and constants",
   "license": "MIT",
   "main": "./lib/index.js",

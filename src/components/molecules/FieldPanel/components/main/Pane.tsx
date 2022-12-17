@@ -79,7 +79,7 @@ export function MainPane ( props: IMinWPFieldPanelProps, state: IFieldPanelState
       styles={ { root: { width: 160, float: 'right' } } }
     />;
 
-  const SelectFiltered = <Icon iconName={ 'SkypeCircleArrow' } title={ 'Select All these columns'} style={{ color: searchText ? '' : 'lightgray' }}
+  const SelectFiltered = props.designMode === 'Disabled' ? null : <Icon iconName={ 'SkypeCircleArrow' } title={ 'Select All these columns'} style={{ color: searchText ? '' : 'lightgray' }}
     data-fieldtype= '' onClick= { !fetched ? null : selectFiltered } className={ 'type-filter-icon' } />;
 
   const DateFilterIcon = <Icon iconName={ 'DateTime' } title={ 'Filter for DateTime columns'} style={{  }}

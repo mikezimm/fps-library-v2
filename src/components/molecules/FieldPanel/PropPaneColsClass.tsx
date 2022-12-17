@@ -50,6 +50,8 @@ export default class FieldPanel extends React.Component< IMinWPFieldPanelProps, 
         thisPart = updatePerformanceEnd( thisPart, true , count );
 
     }
+    const thisOPs: any = this._performance.ops;
+    thisOPs[ key] = thisPart;
   }
 
   /***
@@ -144,7 +146,7 @@ export default class FieldPanel extends React.Component< IMinWPFieldPanelProps, 
 
     } else {
 
-      const DesignCommands: JSX.Element = <CommandBuilderHook
+      const DesignCommands: JSX.Element = this.props.designMode === 'Disabled' ? null : <CommandBuilderHook
         selected={ this.state.selected }
         updateSelected= { this._updateSelected.bind( this ) }
         // onCmdFieldClick={ this._onCmdFieldClick }
@@ -158,7 +160,7 @@ export default class FieldPanel extends React.Component< IMinWPFieldPanelProps, 
       //     this._showFieldPanel.bind(this), this._toggleFullDesign.bind(this) ) ;
 
 
-      const DesignViews: JSX.Element = <ViewBuilderHook
+      const DesignViews: JSX.Element = this.props.designMode === 'Disabled' ? null : <ViewBuilderHook
         expanded={ this.state.fullDesign }
         onExpandRight={ this._toggleFullDesign.bind(this) }
         selected={ this.state.selected }
@@ -169,7 +171,7 @@ export default class FieldPanel extends React.Component< IMinWPFieldPanelProps, 
       // const SelectedTable: JSX.Element = buildSelectedFieldTable( this.state.selected, this._onKeeperClick,
       //     this._onDirectionClick, this._showFieldPanel.bind(this) );
 
-      const SelectedHook: JSX.Element = <SelectedTableHook 
+      const SelectedHook: JSX.Element = this.props.designMode === 'Disabled' ? null : <SelectedTableHook 
         updateSelected= { this._updateSelected.bind( this ) }
         // onDirectionClick={ this._onDirectionClick }
         // onKeeperClick={ this._onKeeperClick }
@@ -189,7 +191,7 @@ export default class FieldPanel extends React.Component< IMinWPFieldPanelProps, 
           } );
 
       let designPane: JSX.Element = null;
-      if ( showDesignMode === true ) {
+      if ( this.props.designMode !== 'Disabled' && showDesignMode === true ) {
         designPane = <div className={ 'design-pane' }>
             { DesignCommands }
             { DesignViews }
@@ -299,11 +301,11 @@ export default class FieldPanel extends React.Component< IMinWPFieldPanelProps, 
     });
 
     const searchText: string = `${SearchValue}${ property ? property : ''}`;
-
+    const showDesignMode: boolean = this.props.designMode !== 'Disabled' ? true : false;
     if ( !SearchValueLc ) {
-      this.setState({ filtered: filtered, searchText: searchText, searchProp: property, showDesignMode: true });
+      this.setState({ filtered: filtered, searchText: searchText, searchProp: property, showDesignMode: showDesignMode });
     } else {
-      this.setState({ filtered: filtered, searchText: searchText, searchProp: property, showDesignMode: true });
+      this.setState({ filtered: filtered, searchText: searchText, searchProp: property, showDesignMode: showDesignMode });
     }
   }
 

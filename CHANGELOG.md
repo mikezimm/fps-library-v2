@@ -5,12 +5,17 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.36
+npm install @mikezimm/fps-library-v2@1.0.37
 
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.37 - 2022-Dec-15:  FieldPanel Update
+- Update mainWebPartRenderBannerSetupX to properly bind saveViews and saveCommands function
+- Update class _saveFieldPanelCommandsFunction and _saveFieldPanelViewsFunction with better logic
+- Update PropPaneColsClass _updatePerformance to properly show performance
 
 ## 1.0.36 - 2022-Dec-15:  FieldPanel Update
 - Add FPSFieldsPanelPropGroup to getAllDefaultFPSFeatureGroups

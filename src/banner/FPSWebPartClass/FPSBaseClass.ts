@@ -118,7 +118,14 @@ export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TP
 
   protected _saveFieldPanelViewsFunction( viewsProps: any ): void {
     console.log('_saveFieldPanelViewsFunction:');
-    if (this._allowFieldPanel === 'Auto' && this._FieldPanelDesignMode !== 'Disabled' ) {
+
+    if (this._allowFieldPanel === 'Manual') {
+      alert(`Unable to save Views when _allowFieldPanel = ${this._allowFieldPanel} Mode`);
+    
+    } else if (this._FieldPanelDesignMode === 'Disabled') {
+      alert("Unable to save Views when _FieldPanelDesignMode === 'Disabled'");
+
+    } else if (this._allowFieldPanel === 'Auto') {
       alert("FUTURE MESSAGE:  Your Views design was copied to the web part properties but you will need to SAVE THE PAGE");
       //Eventually update web part props per the design
       // Also remind user to save property pane and Publish the page
@@ -130,8 +137,15 @@ export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TP
 
   protected _saveFieldPanelCommandsFunction( commands: any ): void {
     console.log('_saveFieldPanelCommandsFunction:');
-    if (this._allowFieldPanel === 'Auto' && this._FieldPanelDesignMode !== 'Disabled' ) {
-      alert("FUTURE MESSAGE:  Your Views design was copied to the web part properties but you will need to SAVE THE PAGE");
+
+    if (this._allowFieldPanel === 'Manual') {
+      alert(`Unable to save Commands when _allowFieldPanel = ${this._allowFieldPanel} Mode`);
+    
+    } else if (this._FieldPanelDesignMode === 'Disabled') {
+      alert("Unable to save Commands when _FieldPanelDesignMode === 'Disabled'");
+
+    } else if (this._allowFieldPanel === 'Auto') {
+      alert("FUTURE MESSAGE:  Your Commands design was copied to the web part properties but you will need to SAVE THE PAGE");
       //Eventually update web part props per the design
       // Also remind user to save property pane and Publish the page
       this.render();

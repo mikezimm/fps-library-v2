@@ -18,7 +18,7 @@ export function runFPSWebPartRender( thisWPClass: IThisFPSWebPartClass, strings:
    * If I deconstructed _performance, _sitePresets, _FPSUser, then in main web part it would not return the actual values back.
    */
 
-  const {displayMode, properties,  context, _wpInstanceID, domElement, _beAUserFunction } = thisWPClass;
+  const {displayMode, properties,  context, _wpInstanceID, domElement, _beAUserFunction, _saveFieldPanelCommandsFunction, _saveFieldPanelViewsFunction } = thisWPClass;
 
   /**
    * PERFORMANCE - START
