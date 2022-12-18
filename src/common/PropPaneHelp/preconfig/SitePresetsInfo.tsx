@@ -1,13 +1,12 @@
 import { PivotItem } from 'office-ui-fabric-react';
 import * as React from 'react';
-import { ISitePreConfigProps } from '../IPreConfig';
+import { ISitePreConfigProps } from './IPreConfig';
 
 /**
  * 2022-08-29:  Refactored return statement to fix compile warning.
 * @param sitePresets : ISitePreConfigProps
  * @returns
  */
-
 
 export function SitePresetsInfo(sitePresets: ISitePreConfigProps): JSX.Element | undefined {
 

@@ -2,9 +2,7 @@ import * as React from 'react';
 // import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 
 import { PivotItem, } from 'office-ui-fabric-react/lib/Pivot';
-import { CSSOverRideWarning } from './Warnings';
-
-require('@mikezimm/fps-styles/dist/PropPanelHelp.css');
+import { CSSOverRideWarning } from '../../atoms/Warnings';
 
 export const FPSBasicHelp = <PivotItem headerText={ 'FPS Basic' } > 
     <div className={ 'fps-pph-content' }>

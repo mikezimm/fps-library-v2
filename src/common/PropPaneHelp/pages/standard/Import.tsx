@@ -3,9 +3,7 @@ import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 
 import { PivotItem, } from 'office-ui-fabric-react/lib/Pivot';
 
-import { defaultBannerCommandStyles, } from "../../commandStyles/defaults";
-
-require('@mikezimm/fps-styles/dist/PropPanelHelp.css');
+import { defaultBannerCommandStyles, } from "../../../commandStyles/defaults";
 
 export const ImportHelp = <PivotItem headerText={ 'Import' } > 
     <div className={ 'fps-pph-content' }>

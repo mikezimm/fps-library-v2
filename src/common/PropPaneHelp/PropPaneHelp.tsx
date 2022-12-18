@@ -5,15 +5,15 @@ require('@mikezimm/fps-styles/dist/PropPanelHelp.css');
 import { Pivot, PivotLinkFormat, PivotLinkSize,} from 'office-ui-fabric-react/lib/Pivot';
 
 // import { IMinWPFieldPanelProps } from '../../../components/molecules/FieldPanel/IMinWPFieldPanelProps';
-import { SitePresetsInfo } from './SitePresetsInfo';
-import { IWebpartBannerProps } from '../../../banner/mainReact/IWebpartBannerProps';
-import { VisitorHelp } from './Visitor';
-import { BannerHelp } from './Banner';
-import { FPSBasicHelp } from './FPSBasic';
-import { FPSExpandHelp } from './FPSExpand';
-import { ImportHelp } from './Import';
-import { getEasyIconsHelp } from '../../../components/atoms/EasyIcons/eiHelp';
-import { EasyIconObjectDefault } from '../../../components/atoms/EasyIcons/eiTypes';
+import { SitePresetsInfo } from './preconfig/SitePresetsInfo';
+import { IWebpartBannerProps } from '../../banner/mainReact/IWebpartBannerProps';
+import { VisitorHelp } from './pages/standard/Visitor';
+import { BannerHelp } from './pages/standard/Banner';
+import { FPSBasicHelp } from './pages/standard/FPSBasic';
+import { FPSExpandHelp } from './pages/standard/FPSExpand';
+import { ImportHelp } from './pages/standard/Import';
+import { getEasyIconsHelp } from '../../components/atoms/EasyIcons/eiHelp';
+import { EasyIconObjectDefault } from '../../components/atoms/EasyIcons/eiTypes';
 
 export function getWebPartHelpElementX ( WebPartHelpPivots: JSX.Element[], bannerProps: IWebpartBannerProps, ) {
 

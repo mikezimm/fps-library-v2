@@ -1,7 +1,7 @@
 
 import { IPageLayoutType, ISupportedHost } from '../../common/interfaces/indexes/Layout';
-import { applyPresetCollectionDefaults } from '../../common/PropPaneHelp/ApplyPresets';
-import { IAllPreConfigSettings } from '../../common/PropPaneHelp/IPreConfig';
+import { applyPresetCollectionDefaults } from '../../common/PropPaneHelp/preconfig/ApplyPresets';
+import { IAllPreConfigSettings } from '../../common/PropPaneHelp/preconfig/IPreConfig';
 import { trickyEmails } from '../../components/atoms/Links/LinksRepos';
 import { createBasePerformanceInit, startPerformOp, updatePerformanceEnd } from '../../components/indexes';
 import { getFPSUser } from '../../logic/indexes';

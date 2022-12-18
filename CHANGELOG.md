@@ -12,6 +12,13 @@ npm install @mikezimm/fps-library-v2@1.0.38
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
+## 1.0.39 - 2022-Dec-16:  FieldPanel Update
+- Migrate Drilldown PropPaneHelp pages - src/common/PropPaneHelp/pages/listview
+- Restructured PropPaneHelp folder into subfolders
+- Migrate Drilldown String functions - src/logic/Strings/drillParse
+- Create folder for PreConfigProps / SiteCollectionPresets >> src/common/PropPaneHelp/preconfig
+
+
 ## 1.0.38 - 2022-Dec-16:  FieldPanel Update
 - add ...changesFieldPanel to exportIgnorePropsFPS
 - externalize react-json-view
@@ -44,8 +51,8 @@ NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 ## 1.0.32 - 2022-Dec-15
 - udpate IFPSEnviro.web.id and .site.id to check for complex id object
 - Add EasyPages updates in runOnPropChange from Pnpjs-v2 testing
-- Migrate src\zComponents\Accordion_ to components/molecules
-- Migrate src\zComponents\Arrows_ to components/molecules
+- Migrate src/zComponents/Accordion_ to components/molecules
+- Migrate src/zComponents/Arrows_ to components/molecules
 
 
 ## 1.0.31 - 2022-Dec-15

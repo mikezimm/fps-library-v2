@@ -1,11 +1,9 @@
 // import * as React from 'react';
 // import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 
-// This should be loaded locally in the project only once
-// require('./PropPanelHelp.css');
+// import { escape } from '@microsoft/sp-lodash-subset';
 
 // import { PivotItem, } from 'office-ui-fabric-react/lib/Pivot';
 
-// import { defaultBannerCommandStyles, } from "../HelpPanelOnNPM/onNpm/defaults";
-// import { ISitePreConfigProps, } from '../IPreConfig';
-// require('@mikezimm/fps-styles/dist/PropPanelHelp.css');
+// const padRight15: React.CSSProperties = { paddingRight: '15px' };
+// const padRight40: React.CSSProperties = { paddingRight: '40px' };

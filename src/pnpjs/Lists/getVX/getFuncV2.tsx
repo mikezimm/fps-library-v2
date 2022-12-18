@@ -15,6 +15,8 @@ export interface IFullColumnFunctionsReturn { all: string[], actual: string[], e
 /**
  * This function gets columns known to be Function columns in the Drilldown web part logic
  * 
+ * NOT VERIFIED/TESTED SAME AS getLinkColumnsV2 from Drilldown but with map instead of for.
+ * 
  * @param lookupColumns 
  * @param DoNotExpandColumnsIn 
  * @returns 

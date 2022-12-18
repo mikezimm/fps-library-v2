@@ -1,9 +1,7 @@
 import * as React from 'react';
 
 import { PivotItem, } from 'office-ui-fabric-react/lib/Pivot';
-import { CSSOverRideWarning } from './Warnings';
-
-require('@mikezimm/fps-styles/dist/PropPanelHelp.css');
+import { CSSOverRideWarning } from '../../atoms/Warnings';
 
 export const FPSExpandHelp = <PivotItem headerText={ 'FPS Expand' } > 
     <div className={ 'fps-pph-content' }>

@@ -1,5 +1,5 @@
-import { DefaultEasyPagesTabs, DefaultOverflowTab } from '../../banner/components/EasyPages/epTypes';
-import { EasyIconDefaultKeys } from '../../components/atoms/EasyIcons/eiTypes';
+import { DefaultEasyPagesTabs, DefaultOverflowTab } from '../../../banner/components/EasyPages/epTypes';
+import { EasyIconDefaultKeys } from '../../../components/atoms/EasyIcons/eiTypes';
 import { IPreConfigSettings, } from './IPreConfig';
 
 export const PresetFPSBanner : IPreConfigSettings = {

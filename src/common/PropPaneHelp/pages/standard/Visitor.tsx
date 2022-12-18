@@ -2,8 +2,6 @@ import * as React from 'react';
 
 import { PivotItem, } from 'office-ui-fabric-react/lib/Pivot';
 
-require('@mikezimm/fps-styles/dist/PropPanelHelp.css');
-
 export const VisitorHelp = <PivotItem headerText={ 'Visitor Help' } > 
     <div className={ 'fps-pph-content' }>
     <div className={ 'fps-pph-topic' }>Full Help Panel Audience</div>

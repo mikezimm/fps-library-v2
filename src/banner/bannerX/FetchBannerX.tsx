@@ -24,7 +24,7 @@ import { ISpecialMessage } from '../components/SpecialBanner/interface';
 // import { IFPSCorePinMeReactComponentProps } from '../mainReact/ReactComponentProps';
 import { IFPSCorePinMeReactComponentState } from '../mainReact/ReactComponentState';
 import { updateFarElementsPinMe } from './PinFunctions';
-import { getWebPartHelpElementX } from '../../common/PropPaneHelp/pages/PropPaneHelp';
+import { getWebPartHelpElementX } from '../../common/PropPaneHelp/PropPaneHelp';
 import { createSpecialElement } from '../components/SpecialBanner/component';
 import { Panel, PanelType } from 'office-ui-fabric-react';
 import { IKeySiteProps } from '../components/Gear/IKeySiteProps';

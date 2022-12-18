@@ -2,8 +2,6 @@ import * as React from 'react';
 
 import { PivotItem, } from 'office-ui-fabric-react/lib/Pivot';
 
-require('@mikezimm/fps-styles/dist/PropPanelHelp.css');
-
 export const SinglePageAppHelp = <PivotItem headerText={ 'Single Page Apps' } > 
     <div className={ 'fps-pph-content' }>
 

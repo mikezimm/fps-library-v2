@@ -3,8 +3,6 @@ import * as React from 'react';
 
 import { PivotItem, } from 'office-ui-fabric-react/lib/Pivot';
 
-require('@mikezimm/fps-styles/dist/PropPanelHelp.css');
-
 export const PinMeHelp = <PivotItem headerText={ 'Pin Me' } > 
     <div className={ 'fps-pph-content' }>
     <div className={ 'fps-pph-topic' }>Default Location</div>

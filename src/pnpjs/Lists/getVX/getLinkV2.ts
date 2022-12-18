@@ -3,6 +3,9 @@ import { DoNotExpandLinkColumns,  } from './IGetInterfaceV2';
 
 /**
  * This came from Drilldown and figures out which columns using / are actually intended to be link Function columns
+ * 
+ * VERIFIED SAME AS getLinkColumnsV2 from Drilldown but with map instead of for.
+ * 
  * @param lookupColumns 
  * @param DoNotExpandColumnsIn 
  * @returns 
