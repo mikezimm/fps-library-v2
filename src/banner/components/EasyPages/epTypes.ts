@@ -97,6 +97,7 @@ export const SitePagesSource : ISourceProps = {
   restFilter: "Id ne 'X' and ContentTypeId ne '0x012000F6C75276DBE501468CA3CC575AD8E159'",
   evalFilter: ``, // Sample:  item.Title ==='Home'
   defSearchButtons: [],  // [ 'Last30Days', 'Last90Days' ],
+  fetchCount: 200,
   orderBy: { //Including even though it does not seem to do anything
     prop: 'Title',
     order: 'asc',

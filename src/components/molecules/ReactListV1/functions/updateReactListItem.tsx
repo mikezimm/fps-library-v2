@@ -10,6 +10,9 @@
 //   CommandCancelRequired, CommandEmptyCommentMessage
 // } from '../../../fpsReferences';
 
+import { updateAnyItem } from '@mikezimm/fps-pnp2/lib/services/sp/update/item';
+import { IFPSItemUpdateResultObj, IMinUpdateProps } from '@mikezimm/fps-pnp2/lib/services/sp/update/item';
+
 import { getHelpfullError,  } from "../../../../logic/Errors/friendly";
 import { IUser, } from "../../../../logic/Users/IUserInterfaces";
 import { removeItemFromArrayAll } from "../../../../logic/Arrays/manipulation";
@@ -24,7 +27,6 @@ export const CaptchaRegex = /{{|captcha[\^]?|}}|=|\?/g;
 //MOVE TO IQuickCommands in npmFunctions
 export const CommandCaptchaTestFailed : string = 'Failed Captcha test.  Not saving';
 export const CommandCaptchaRequiredFailed : string = 'Failed Captcha test - item missing comparison.  Not saving';
-
 
 export async function updateReactListItem(webUrl: string, listName: string, Id: number, thisButtonObject: IQuickButton, sourceUserInfo: IUser, panelItem: IDrillItemInfo): Promise<string> {
   //lists.getById(listGUID).webs.orderBy("Title", true).get().then(function(result) {
@@ -246,23 +248,30 @@ export async function updateReactListItem(webUrl: string, listName: string, Id: 
     return `${CommandItemNotUpdatedMessage} - ${failureMessage.join('')}`;
   }
 
-  try {
-    console.log('newUpdateItemObj', newUpdateItemObj);
-    const thisListWeb = Web(webUrl);
-    let thisListObject = await thisListWeb.lists.getByTitle(listName);
-    await thisListObject.items.getById(Id).update(newUpdateItemObj).then((response) => {
-      if (thisButtonObject.alert) { alert('Success!\n' + thisButtonObject.alert); }
-      if (thisButtonObject.console) { console.log(thisButtonObject.console, response); }
+  console.log('newUpdateItemObj', newUpdateItemObj);
 
-    });
+  const updateProps: IMinUpdateProps = {
+    webUrl: webUrl,
+    listTitle: listName,
+    Id: Id,
+    itemUpdate: newUpdateItemObj,
+  }
 
-  } catch (e) {
-    errMessage = `${CommandUpdateFailedMessage} - ${getHelpfullError(e, true, true)}`;
+  const result: IFPSItemUpdateResultObj = await updateAnyItem( updateProps );
+
+  if ( result.status === 'Success' ) {
+    if (thisButtonObject.alert) { alert('Success!\n' + thisButtonObject.alert); }
+    if (thisButtonObject.console) { console.log(thisButtonObject.console, result ); }
+  } else if ( result.status === 'Failed' ) {
+    errMessage = `${CommandUpdateFailedMessage} - ${getHelpfullError( result.e, true, true)}`;
 
     if (thisButtonObject.alert) {
       alert(`${CommandUpdateFailedMessage}\n${thisButtonObject.alert}\n${errMessage}`);
     }
     console.log(`${CommandUpdateFailedMessage}\n${thisButtonObject.alert}\n${errMessage}`);
+
+  } else {
+    alert ( `updateReactListItem ~ 276 - result.status = ${ result.status }`);
   }
 
   return errMessage;

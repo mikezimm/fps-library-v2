@@ -15,6 +15,7 @@ export interface IMinSourceWPProps {
   listTitle: string;
   restFilter?: string;
   evalFilter?: string; //Format of eval( enter string value here )
+  fetchCount: number; // Min qty per fps-Pnp2 library is 200 by default.
   orderByProp?: string;
   orderByAsc?: boolean;
 

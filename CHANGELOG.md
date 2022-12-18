@@ -5,22 +5,24 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.38
+npm install @mikezimm/fps-library-v2@1.0.39
 
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
-## Part 2
+## 1.0.39 - 2022-Dec-18:  Drilldown Update part 2
 - move replaceHandleBars from src/logic/Strings/handleBars.ts to /handleBarsContext.ts to
+- add fetchCount to "@mikezimm/fps-pnp2": "^1.0.14" for fetching items.
+- update updateReactListItem.tsx code to use fps-Pnp2 library to get items
 
-## 1.0.39 - 2022-Dec-16:  Drilldown Update
+## 1.0.39 - 2022-Dec-17:  Drilldown Update
 - npm install @mikezimm/fps-pnp2@1.0.13 >> Has Drilldown fetch and update core function, wrapper function to be here.
 - Create ReactList View from Drilldown: src/components/molecules/ReactListV1
 - rename handleBars functions
 
-## 1.0.39 - 2022-Dec-16:  Drilldown Update
+## 1.0.39 - 2022-Dec-17:  Drilldown Update
 - Migrate Drilldown PropPaneHelp pages - src/common/PropPaneHelp/pages/listview
 - Restructured PropPaneHelp folder into subfolders
 - Migrate Drilldown String functions - src/logic/Strings/drillParse
