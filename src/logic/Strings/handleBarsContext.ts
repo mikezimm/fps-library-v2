@@ -30,6 +30,8 @@ export const HandleBarReplacements : IHandleBarReplacements = {
  * @param context 
  * @returns 
  */
+
+
 export function replaceHandleBars( str: string , context: WebPartContextCopy_15_2 ): string {
 
     if ( !str ) { return '' ; } else {

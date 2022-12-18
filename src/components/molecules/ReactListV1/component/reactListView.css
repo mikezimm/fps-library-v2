@@ -1,0 +1,65 @@
+
+.default-font-size *[data-automationid="ColumnsHeaderColumn"] {
+  font-size: inherit;
+}
+
+.default-font-size *[data-automationid="DetailsRowCell"] {
+  font-size: inherit;
+}
+
+
+.large-font-size *[data-automationid="ColumnsHeaderColumn"] {
+  font-size: large;
+}
+
+.large-font-size *[data-automationid="DetailsRowCell"] {
+  font-size: large;
+}
+
+.larger-font-size *[data-automationid="ColumnsHeaderColumn"] {
+  font-size: larger;
+}
+
+.larger-font-size *[data-automationid="DetailsRowCell"] {
+  font-size: larger;
+}
+
+.blueBarLeft {
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 35%;
+  text-overflow: ellipsis;
+}
+
+/* =>> address:  https://github.com/mikezimm/drilldown7/issues/270
+https://csspoo.com/fade-out-overflow-text */
+.list-view-rt {
+  overflow: hidden;
+  position: relative;
+}
+
+/* =>> address:  https://github.com/mikezimm/drilldown7/issues/270
+https://csspoo.com/fade-out-overflow-text */
+.list-view-rt:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3rem;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+}
+
+.list-view-rt.rth1 { max-height: 2.6em; }
+.list-view-rt:after { height: 30%; max-height: 3em;  }
+
+.list-view-rt.rth2 { max-height: 10em; }
+.list-view-rt:after { height: 15%; }
+
+.list-view-rt.rth3 { max-height: 30em; }
+.list-view-rt:after { height: 15%; }
+
+.list-view-rt.rth4 { max-height: null }
+.list-view-rt:after { height: null }

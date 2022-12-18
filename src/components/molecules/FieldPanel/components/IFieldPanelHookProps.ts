@@ -1,4 +1,6 @@
-import { IFieldInfo, } from "@pnp/sp/presets/all";
+// import { IFieldInfo, } from "@pnp/sp/presets/all";
+
+import { IFieldInfo } from "../../../../common/interfaces/openSource/pnpsp/@2.14.0/IFieldInfo";
 
 export type IValidTemplate = 100 | 101;
 

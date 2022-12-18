@@ -27,7 +27,7 @@ export { makeid, isGuid, getGuidsFromString, };
 
 
 // ./handleBars
-import { replaceHandleBars, HandleBarReplacements } from '../Strings/handleBars';
+import { replaceHandleBars, HandleBarReplacements } from '../Strings/handleBarsContext';
 
 export { replaceHandleBars, HandleBarReplacements, };
 

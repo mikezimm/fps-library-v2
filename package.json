@@ -56,8 +56,9 @@
   ],
   "dependencies": {
     "@microsoft/sp-property-pane": "^1.15.2",
-    "@mikezimm/fps-pnp2": "^1.0.12",
+    "@mikezimm/fps-pnp2": "^1.0.13",
     "@mikezimm/fps-styles": "^1.0.4",
+    "@pnp/spfx-controls-react": "3.12.0",
     "@pnp/spfx-property-controls": "^3.6.0",
     "office-ui-fabric-react": "^7.199.1",
     "react": "16.13.1",

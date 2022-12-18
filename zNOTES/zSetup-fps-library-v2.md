@@ -13,3 +13,5 @@ npm install office-ui-fabric-react@7.199.1
 npm install @microsoft/sp-property-pane@1.15.2
 
 npm uninstall @mikezimm/fps-js
+
+npm install @pnp/spfx-controls-react --save --save-exact - ~ 3.7.2 is version from 1.15.2 Drilldown
