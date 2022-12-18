@@ -1,5 +1,8 @@
 /**
  * This was originally used in Pivot Tiles ...
+ * 
+ * VERIFIED SAME AS getKeysLikeV2 from Drilldown.
+ * 
  * getKeysLike function takes an object like "props"
  *      looks for specific keys that begin with a string like 'col'
  *      and returns those keys back in an array.

@@ -12,11 +12,12 @@ npm install @mikezimm/fps-library-v2@1.0.38
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
-## 1.0.39 - 2022-Dec-16:  FieldPanel Update
+## 1.0.39 - 2022-Dec-16:  Drilldown Update
 - Migrate Drilldown PropPaneHelp pages - src/common/PropPaneHelp/pages/listview
 - Restructured PropPaneHelp folder into subfolders
 - Migrate Drilldown String functions - src/logic/Strings/drillParse
 - Create folder for PreConfigProps / SiteCollectionPresets >> src/common/PropPaneHelp/preconfig
+- Migrate buildConfirmDialog and buildConfirmDialogBig from Drilldown to src/components/atoms/Elements
 
 
 ## 1.0.38 - 2022-Dec-16:  FieldPanel Update

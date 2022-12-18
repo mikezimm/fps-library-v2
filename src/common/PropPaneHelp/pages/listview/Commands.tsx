@@ -11,7 +11,7 @@ const padRight40: React.CSSProperties = { paddingRight: '40px' };
 
 import { IWebpartBannerProps } from '../../../../banner/mainReact/IWebpartBannerProps';
 
-export function getWebPartHelpElement ( bannerProps: IWebpartBannerProps, ) {
+export function getHelpCommands ( bannerProps: IWebpartBannerProps, ) : JSX.Element {
 
   const WebPartHelpElement = <PivotItem  headerText={ 'Commands' } >
         <div className={ 'fps-pph-content' }>
@@ -130,7 +130,7 @@ export function getWebPartHelpElement ( bannerProps: IWebpartBannerProps, ) {
           </div>
 
 
-          { PleaseSeeWiki( bannerProps.gitHubRepo ) }
+          { PleaseSeeWiki( bannerProps ) }
         </div>
       </PivotItem>
   ;

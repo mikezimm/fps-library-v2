@@ -9,8 +9,7 @@ const padRight15: React.CSSProperties = { paddingRight: '15px' };
 const UserColumnRestPropertiesSPO : string[] = [ 'Title', 'Name', 'EMail', 'FirstName', 'UserName', 'ID', 'SipAddress', 'Office', 'Modified', 'Created', ];
 const UserColumnRestPropertiesSPONOTWORK : string[] = [ 'MobilePhone', 'Department', 'JobTitle', 'WorkPhone', 'ImnName', 'NameWithPicture', 'NameWithPictureAndDetails', 'ContentTypeDisp', ];
 
-
-export function getWebPartHelpElement ( ) {
+export function getHelpUsers ( ) : JSX.Element {
 
   const WebPartHelpElement = <PivotItem  headerText={ 'Users' } >
     <div className={ 'fps-pph-content' }>

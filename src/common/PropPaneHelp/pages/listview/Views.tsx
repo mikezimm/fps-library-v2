@@ -1,11 +1,7 @@
 import * as React from 'react';
-import { escape } from '@microsoft/sp-lodash-subset';
-import ReactJson from "react-json-view";
 
 import { PivotItem, } from 'office-ui-fabric-react/lib/Pivot';
 import { Icon, } from 'office-ui-fabric-react/lib/Icon';
-
-
 
 const SampleViewJSON : any = [
   // https://github.com/mikezimm/drilldown7/issues/161
@@ -43,7 +39,7 @@ import { PleaseSeeWiki } from '../../atoms/SeeWiki';
 import { LinkFindInternalName } from '../../atoms/InternalNames';
 import { putObjectIntoJSON } from '../../../../components/atoms/Elements/putObjectIntoJSON';
 
-export function getWebPartHelpElement ( bannerProps: IWebpartBannerProps, ) {
+export function getHelpViews ( bannerProps: IWebpartBannerProps ) : JSX.Element {
 
   const WebPartHelpElement = <PivotItem  headerText={ 'Views' } >
     <div className={ 'fps-pph-content' }>
@@ -109,7 +105,7 @@ export function getWebPartHelpElement ( bannerProps: IWebpartBannerProps, ) {
           </ul>
         </div>
       </div>
-      { PleaseSeeWiki( bannerProps.gitHubRepo ) }
+      { PleaseSeeWiki( bannerProps ) }
       
       <div className={ 'fps-pph-topic' }>RichText max-hights</div>
       <div>This setting lets you adjust the height of multi-line-text fields.</div>

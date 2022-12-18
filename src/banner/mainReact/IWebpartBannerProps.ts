@@ -16,7 +16,7 @@ import { IEasyPagesSourceProps } from '../components/EasyPages/componentPage';
 import { IEasyPagesExtraProps } from '../components/EasyPages/componentSources';
 import { IEasyIcons } from '../../components/atoms/EasyIcons/eiTypes';
 import { IFPSPinMenu } from '../features/PinMe/Interfaces';
-import { ISitePreConfigProps } from '../../common/PropPaneHelp/IPreConfig';
+import { ISitePreConfigProps } from '../../common/PropPaneHelp/preconfig/IPreConfig';
 import { IMinPandoramicProps } from '../features/Expando/Interfaces';
 import { IMinWPFieldPanelProps } from '../../components/molecules/FieldPanel/components/IMinWPFieldPanelProps';
 
@@ -37,7 +37,7 @@ export interface IBannerPages {
 
 
 export interface IWebpartBannerProps {
-
+	gitHubRepo: IRepoLinks; // replace with IRepoLinks from npmFunctions v0.1.0.3
 	bannerWidth: number;
 
 	contentPages: IBannerPages;
@@ -94,7 +94,7 @@ export interface IWebpartBannerProps {
 
 	forceNarrowStyles?: boolean; //If true (like when web part is pinned or in vertical section, force Gear settings to narrow mode )
 	showBannerGear: boolean; //Show gear to SiteAdmins and SiteOwners (as determined by page context.)
-	gitHubRepo: IRepoLinks; // replace with IRepoLinks from npmFunctions v0.1.0.3
+
 
 	//2022-02-17:  Added these for expandoramic mode
 	domElement: HTMLElement; 

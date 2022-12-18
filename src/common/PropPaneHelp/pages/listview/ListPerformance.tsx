@@ -5,7 +5,7 @@ import { PivotItem, } from 'office-ui-fabric-react/lib/Pivot';
 
 const LinkFindInternalName = <a href="https://tomriha.com/what-is-sharepoint-column-internal-name-and-where-to-find-it/" target="_blank">Finding Internal Name of a column</a>;
 
-export function getWebPartHelpElement ( ) {
+export function getHelpListPerformance ( ) : JSX.Element {
 
   const WebPartHelpElement = <PivotItem headerText={ 'Performance' } > 
         <div className={ 'fps-pph-content' }>

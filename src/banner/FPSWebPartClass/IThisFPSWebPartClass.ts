@@ -2,7 +2,7 @@
 import { DisplayMode } from '@microsoft/sp-core-library';
 import { IFPSEnviro } from '../../common/interfaces/fps/IFPSEnviro';
 import { WebPartContextCopy_15_2 } from '../../common/interfaces/indexes';
-import { ISitePreConfigProps } from '../../common/PropPaneHelp/IPreConfig';
+import { ISitePreConfigProps } from '../../common/PropPaneHelp/preconfig/IPreConfig';
 import { IRepoLinks } from '../../components/atoms/Links/CreateLinks';
 import { IFieldPanelDesignMode } from '../../components/molecules/FieldPanel/components/IMinWPFieldPanelProps';
 import { ILoadPerformance, ILoadPerformanceOps } from '../../components/molecules/Performance/IPerformance';

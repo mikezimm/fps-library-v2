@@ -9,7 +9,7 @@ import { getHelpfullErrorV2 } from '../../../logic/Errors/friendly';
 import { indexOfAnyCase } from '../../../logic/Arrays/searching/objectfind';
 import { exportNotAvailMess } from './ExportFunctions';
 
-import { JSON_Edit_Link } from '../../propPane/ReusableLinks';
+import { JSON_Edit_Link } from '../../../common/PropPaneHelp/atoms/JSONEdit';
 import { IMinBannerUtilityProps } from '../../interfaces/MinWP/IMinBannerUtilityProps';
 
 // import { JSON_Edit_Link } from './zReusablePropPane_';

@@ -7,7 +7,7 @@ import { RefinerRulesStrs, RefinerRulesInts, RefinerRulesNums, RefinerRulesTime,
 
 const padRight15: React.CSSProperties = { paddingRight: '15px' };
 
-export function getWebPartHelpElement ( ) {
+export function getHelpRefinerRules ( ) : JSX.Element {
 
   const WebPartHelpElement = <PivotItem headerText={ 'Refiner Rules' } > 
   <div className={ 'fps-pph-content' }>

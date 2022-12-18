@@ -9,7 +9,7 @@ import { DoNotExpandLinkColumns, DoNotExpandTrimB4, DoNotExpandTrimAfter, DoNotE
 
 const padRight40: React.CSSProperties = { paddingRight: '40px' };
 
-export function getWebPartHelpElement ( ) {
+export function getHelpStringFunctions ( ) : JSX.Element {
 
   const WebPartHelpElement = <PivotItem headerText={ 'String Functions' } > 
   <div className={ 'fps-pph-content' }>

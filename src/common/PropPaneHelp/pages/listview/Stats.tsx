@@ -10,7 +10,7 @@ import { IWebpartBannerProps } from '../../../../banner/mainReact/IWebpartBanner
 import { SampleCharts } from './samples/SampleCharts';
 import { PleaseSeeWiki } from '../../atoms/SeeWiki';
 
-export function getWebPartHelpElement ( bannerProps: IWebpartBannerProps, ) {
+export function getHelpStats ( bannerProps: IWebpartBannerProps, ) : JSX.Element {
 
   const WebPartHelpElement = <PivotItem  headerText={ 'Stats' } >
     <div className={ 'fps-pph-content' }>
@@ -53,7 +53,7 @@ export function getWebPartHelpElement ( bannerProps: IWebpartBannerProps, ) {
           </ul>
         </div>
       </div>
-      { PleaseSeeWiki( bannerProps.gitHubRepo ) }
+      { PleaseSeeWiki( bannerProps ) }
     </div>
   </PivotItem>
   ;

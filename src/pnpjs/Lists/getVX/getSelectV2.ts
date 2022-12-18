@@ -4,7 +4,7 @@ import { DoNotExpandColumns, } from './IGetInterfaceV2';
 /**
    * getSelectColumns function will take an array of column names (string format)
    * 
-   * VERIFIED SAME AS getSelectColumnsV2 from Drilldown but with map instead of fore.
+   * VERIFIED SAME AS getSelectColumnsV2 from Drilldown but with map instead of for.
    * 
    *    and return an array of the columns that need to be added to the select variable in getItems
    *    It pushes the entire expanded name like:  Created/ID

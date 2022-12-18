@@ -9,11 +9,9 @@ import {
     PropertyPaneSlider
   } from '@microsoft/sp-property-pane';
 
-import { IFPSBasicToggleSetting, } from '../../../common/interfaces/fps/IFPSBasicToggleSetting';
+import { JSON_Edit_Link } from '../../../common/PropPaneHelp/atoms/JSONEdit';
 
-import { JSON_Edit_Link } from '../../propPane/ReusableLinks';
-
-import { EveryoneAudienceChoices, IEveryoneAudience } from '../../propPane/Audiences/Interfaces' 
+import { EveryoneAudienceChoices, } from '../../propPane/Audiences/Interfaces' 
 import { IThisFPSWebPartClass } from '../../FPSWebPartClass/IThisFPSWebPartClass';
   /**
    * This is the second version which is more simple (toggles and sliders)

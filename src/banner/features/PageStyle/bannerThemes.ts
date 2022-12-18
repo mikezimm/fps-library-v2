@@ -1,5 +1,5 @@
 import { createBannerStyleStr } from "../../../common/commandStyles/defaults";
-import { IConfigurationProp } from "../../../common/PropPaneHelp/IPreConfig";
+import { IConfigurationProp } from "../../../common/PropPaneHelp/preconfig/IPreConfig";
 import { doesObjectExistInArray } from "../../../logic/indexes/ArrayFindObjects";
 import { IMinBannerThemeProps } from "../../interfaces/Theme/Interfaces";
 import { IPinMeState } from "../PinMe/Interfaces";
