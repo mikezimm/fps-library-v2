@@ -1,4 +1,4 @@
-import { IHelpfullOutput, IHelpfullInput } from '../../logic/indexes/HelpfullErrors';
+import { IHelpfullOutput, IHelpfullInput } from '../../logic/Errors/friendly';
 import { getUrlVars, getCurrentPageLink } from '../../logic/Links/UrlFunctions';
 import { saveThisLogItem } from '@mikezimm/fps-pnp2/lib/services/sp/logging/saveThisLogItem';
 

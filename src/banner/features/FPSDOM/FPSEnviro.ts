@@ -1,7 +1,7 @@
 
 import { IFPSEnviro } from "../../../common/interfaces/fps/IFPSEnviro"
 import { IFPSWindow } from "../../../common/interfaces/fps/Window";
-import { checkDeepProperty } from "../../../logic/indexes";
+import { checkDeepProperty } from "../../../logic/Objects/deep";
 import { IThisFPSWebPartClass } from "../../FPSWebPartClass/IThisFPSWebPartClass"
 import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
 

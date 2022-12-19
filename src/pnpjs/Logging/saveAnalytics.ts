@@ -2,9 +2,10 @@ import { IZLoadAnalytics, ILink, IZFullAnalytics, IZSentAnalytics } from './inte
 
 import { roundRatio, } from '../../logic/Math/rounding';
 import { getSizeLabel } from '../../logic/Math/labels';
-import { ILoadPerformance } from '../../components/indexes';
+import { ILoadPerformance } from '../../components/molecules/Performance/IPerformance';
 import { IMinPerformance, IPerformanceOp, LoadPerformanceOps } from '../../components/molecules/Performance/IPerformance';
-import { getCurrentPageLink, getSiteCollectionUrlFromLink, getUrlVars, getWebUrlFromLink } from '../../logic/indexes';
+import { getCurrentPageLink, getUrlVars, getWebUrlFromLink } from '../../logic/Links/UrlFunctions';
+import { getSiteCollectionUrlFromLink, } from '../../logic/Strings/urlServices';
 
 import { saveThisLogItem } from '@mikezimm/fps-pnp2/lib/services/sp/logging/saveThisLogItem';
 

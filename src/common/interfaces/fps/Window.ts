@@ -1,5 +1,5 @@
 import { IFPSWindowProps } from "../../../banner/features/FPSDOM/Interfaces";
-import { IFPSUser } from "../../../logic/indexes"
+import { IFPSUser } from "../../../logic/Users/IUserInterfaces"
 import { IFPSEnviro } from "./IFPSEnviro";
 
 export interface IFPSWindow {

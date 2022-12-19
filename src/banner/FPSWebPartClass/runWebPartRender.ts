@@ -1,5 +1,5 @@
 
-import { startPerformOp, updatePerformanceEnd } from '../../components/indexes';
+import { startPerformOp, updatePerformanceEnd } from '../../components/molecules/Performance/functions';
 import { buildExportPropsX } from '../features/ImportExport/BuildExportPropsX';
 
 import { renderCustomStyles } from '../features/PageStyle/renderCustStyles';

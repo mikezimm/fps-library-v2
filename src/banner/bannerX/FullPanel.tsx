@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 import WebPartLinks from "../components/WebPartLinks/WebPartLinks";
-import { createPerformanceTableVisitor } from '../../components/indexes';
+import { createPerformanceTableVisitor } from '../../components/molecules/Performance/tables';
 import { IWebpartBannerProps } from '../mainReact/IWebpartBannerProps';
 import ReactJson from 'react-json-view';
 import { MessageBar, MessageBarType, PanelType, Pivot, PivotItem, PivotLinkFormat, PivotLinkSize } from 'office-ui-fabric-react';

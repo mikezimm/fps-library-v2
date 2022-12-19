@@ -5,12 +5,17 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.39
+npm install @mikezimm/fps-library-v2@1.0.40
 
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.40 - 2022-Dec-18:  Drilldown Update part 3
+- created src\pnpjs\CommandItems\updateItem.ts to update command items (the actual part that just saves using fps-pnpv2)
+- standardized return status signatures to IFPSResultStatus
+- cleaned up '\index*' references to be more specific
 
 ## 1.0.39 - 2022-Dec-18:  Drilldown Update part 2
 - move replaceHandleBars from src/logic/Strings/handleBars.ts to /handleBarsContext.ts to

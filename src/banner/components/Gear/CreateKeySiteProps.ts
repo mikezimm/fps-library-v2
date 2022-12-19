@@ -1,5 +1,5 @@
-import { PageContextCopy_15_2 } from "../../../common/interfaces/indexes";
-import { checkDeepProperty } from "../../../logic/indexes";
+import { PageContextCopy_15_2 } from "../../../common/interfaces/indexes/WebPartContext@152";
+import { checkDeepProperty } from "../../../logic/Objects/deep";
 import { IKeySiteProps } from "./IKeySiteProps";
 
 export function createKeySiteProps( pageContext: PageContextCopy_15_2 ) : IKeySiteProps {

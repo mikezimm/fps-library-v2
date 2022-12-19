@@ -9,7 +9,7 @@ import { IPageLayoutType } from '../../common/interfaces/indexes/Layout';
 import { ILoadPerformance } from '../../components/indexes/Performance';
 import { IRepoLinks } from '../../components/atoms/Links/CreateLinks';
 import { IWebpartHistory } from '../features/WebPartHistory/Interface';
-import { IFPSUser } from '../../logic/indexes/Users';
+import { IFPSUser } from '../../logic/Users/IUserInterfaces';
 import { IKeySiteProps } from '../components/Gear/IKeySiteProps';
 import { WebPartContextCopy_15_2 } from '../../common/interfaces/indexes/WebPartContext@152';
 import { IEasyPagesSourceProps } from '../components/EasyPages/componentPage';

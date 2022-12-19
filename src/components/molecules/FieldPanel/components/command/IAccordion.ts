@@ -8,7 +8,7 @@
 // // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // import { Toggle, } from 'office-ui-fabric-react/lib/Toggle';
 
-import { IQuickButton, IQuickCommands, IQuickField } from "../../../../indexes";
+import { IQuickButton, IQuickCommands, IQuickField } from "../../../../interfaces/QuickCommands/IQuickCommands";
 
 // import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 

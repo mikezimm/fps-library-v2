@@ -3,10 +3,10 @@ import {
   PropertyPaneToggle, PropertyPaneSlider,
   PropertyPaneLabel
 } from '@microsoft/sp-property-pane';
-import { IFPSBasicToggleSetting } from '../../common/interfaces/fps/IFPSBasicToggleSetting';
-import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
-import { IFPSWindow } from '../../common/interfaces/fps/Window';
-import { IPageLayoutType } from '../../common/interfaces/indexes/Layout';
+// import { IFPSBasicToggleSetting } from '../../common/interfaces/fps/IFPSBasicToggleSetting';
+// import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
+// import { IFPSWindow } from '../../common/interfaces/fps/Window';
+// import { IPageLayoutType } from '../../common/interfaces/indexes/Layout';
 import { IThisFPSWebPartClass } from '../FPSWebPartClass/IThisFPSWebPartClass';
 
 /**

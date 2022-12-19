@@ -1,5 +1,7 @@
 
-import { IHelpfullOutput } from '../../../logic/indexes/HelpfullErrors';
+import { IFPSResultStatus } from '@mikezimm/fps-pnp2/lib/services/sp/IFPSResultStatus';
+
+import { IHelpfullOutput } from '../../../logic/Errors/friendly';
 import { IUser } from '../../../logic/Users/IUserInterfaces';
 
 /***
@@ -16,5 +18,5 @@ import { IUser } from '../../../logic/Users/IUserInterfaces';
 export interface ISiteUsersInfo {
   users: IUser[];
   errorInfo: IHelpfullOutput;
-  status: 'success' | 'error' | 'none';
+  status: IFPSResultStatus;
 }

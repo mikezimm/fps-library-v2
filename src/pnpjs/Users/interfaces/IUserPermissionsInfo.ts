@@ -1,4 +1,6 @@
 
+import { IFPSResultStatus } from '@mikezimm/fps-pnp2/lib/services/sp/IFPSResultStatus';
+
 import { IBasePermissions } from '../../../common/interfaces/openSource/pnpsp/@2.14.0/securityTypes';
 import { IHelpfullOutput } from '../../../logic/Errors/friendly';
 
@@ -16,5 +18,5 @@ import { IHelpfullOutput } from '../../../logic/Errors/friendly';
 export interface IUserPermissionsInfo {
   basePerms: IBasePermissions;
   errorInfo: IHelpfullOutput;
-  status: 'success' | 'error' | 'none';
+  status: IFPSResultStatus;
 }

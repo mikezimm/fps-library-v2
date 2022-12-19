@@ -3,8 +3,8 @@ import { IPageLayoutType, ISupportedHost } from '../../common/interfaces/indexes
 import { applyPresetCollectionDefaults } from '../../common/PropPaneHelp/preconfig/ApplyPresets';
 import { IAllPreConfigSettings } from '../../common/PropPaneHelp/preconfig/IPreConfig';
 import { trickyEmails } from '../../components/atoms/Links/LinksRepos';
-import { createBasePerformanceInit, startPerformOp, updatePerformanceEnd } from '../../components/indexes';
-import { getFPSUser } from '../../logic/indexes';
+import { createBasePerformanceInit, startPerformOp, updatePerformanceEnd } from '../../components/molecules/Performance/functions';
+import { getFPSUser } from '../../logic/Users/FPSUser';
 import { expandoOnInit } from '../features/Expando/oninit';
 import { createFPSEnviroOnWindow } from '../features/FPSDOM/FPSEnviro';
 import { updateBannerThemeStyles } from '../features/PageStyle/bannerThemes';

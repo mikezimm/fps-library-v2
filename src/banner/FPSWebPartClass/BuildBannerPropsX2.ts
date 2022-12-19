@@ -5,7 +5,7 @@ import { baseBannerCmdStyles, baseBannerStyles } from "../../common/commandStyle
 import { DisplayMode, } from "../../common/interfaces/@msft/1.15.2/displayMode";
 import { createPerformanceTableVisitor, } from "../../components/indexes/Performance";
 
-import {  verifyAudienceVsUser } from "../../logic/indexes/Users";
+import { verifyAudienceVsUser } from "../../logic/Users/CheckPermissions";
 import { getReactCSSFromString, ICurleyBraceCheck } from "../../logic/Strings/reactCSS";
 import { ISpecialMessage } from "../components/SpecialBanner/interface";
 import { visitorPanelInfo } from "../components/VisitorPanel/VisitorPanelComponent";

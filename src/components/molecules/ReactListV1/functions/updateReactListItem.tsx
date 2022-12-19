@@ -1,17 +1,4 @@
-// import { Web } from "@pnp/sp/presets/all";
-// import { IUser } from '@mikezimm/npmfunctions/dist/Services/Users/IUserInterfaces';
-// import { IQuickButton } from '@mikezimm/npmfunctions/dist/QuickCommands/IQuickCommands';
-// import { getHelpfullError } from '@mikezimm/npmfunctions/dist/Services/Logging/ErrorHandler';
-// import { removeItemFromArrayAll } from '@mikezimm/npmfunctions/dist/Services/Arrays/manipulation';
-// import { IDrillItemInfo } from '@mikezimm/npmfunctions/dist/WebPartInterfaces/DrillDown/IDrillItem';
-// import { getInitials } from "../../../../services/parse";
-// import {
-//   CommandItemNotUpdatedMessage, CommandUpdateFailedMessage, CommandEnterCommentString,
-//   CommandCancelRequired, CommandEmptyCommentMessage
-// } from '../../../fpsReferences';
 
-import { updateAnyItem } from '@mikezimm/fps-pnp2/lib/services/sp/update/item';
-import { IFPSItemUpdateResultObj, IMinUpdateProps } from '@mikezimm/fps-pnp2/lib/services/sp/update/item';
 
 import { getHelpfullError,  } from "../../../../logic/Errors/friendly";
 import { IUser, } from "../../../../logic/Users/IUserInterfaces";
@@ -19,6 +6,7 @@ import { removeItemFromArrayAll } from "../../../../logic/Arrays/manipulation";
 import { IDrillItemInfo } from "../../../interfaces/Drilldown/IDrillItem";
 import { CommandCancelRequired, CommandEmptyCommentMessage, CommandEnterCommentString, CommandItemNotUpdatedMessage, CommandUpdateFailedMessage, IQuickButton } from "../../../interfaces/QuickCommands/IQuickCommands";
 import { getInitials } from "../../../../logic/Strings/drillParse/getWords";
+import { IUpdateCommandItemProps, IUpdateCommandItemReturn, updateCommandItems } from "../../../../pnpjs/CommandItems/updateItem";
 // import { getInitials } from "office-ui-fabric-react";
 
 // EVENTUALLY MOVE THIS TO npmFunctions
@@ -250,30 +238,17 @@ export async function updateReactListItem(webUrl: string, listName: string, Id: 
 
   console.log('newUpdateItemObj', newUpdateItemObj);
 
-  const updateProps: IMinUpdateProps = {
+  const updateProps: IUpdateCommandItemProps = {
     webUrl: webUrl,
     listTitle: listName,
     Id: Id,
     itemUpdate: newUpdateItemObj,
+    alertMe: thisButtonObject.alert,
+    consoleLog: thisButtonObject.console,
   }
 
-  const result: IFPSItemUpdateResultObj = await updateAnyItem( updateProps );
+  const result: IUpdateCommandItemReturn = await updateCommandItems( updateProps );
 
-  if ( result.status === 'Success' ) {
-    if (thisButtonObject.alert) { alert('Success!\n' + thisButtonObject.alert); }
-    if (thisButtonObject.console) { console.log(thisButtonObject.console, result ); }
-  } else if ( result.status === 'Failed' ) {
-    errMessage = `${CommandUpdateFailedMessage} - ${getHelpfullError( result.e, true, true)}`;
-
-    if (thisButtonObject.alert) {
-      alert(`${CommandUpdateFailedMessage}\n${thisButtonObject.alert}\n${errMessage}`);
-    }
-    console.log(`${CommandUpdateFailedMessage}\n${thisButtonObject.alert}\n${errMessage}`);
-
-  } else {
-    alert ( `updateReactListItem ~ 276 - result.status = ${ result.status }`);
-  }
-
-  return errMessage;
+  return result.errorInfo.friendly;
 
 }

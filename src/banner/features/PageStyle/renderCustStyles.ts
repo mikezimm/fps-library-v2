@@ -1,4 +1,4 @@
-import { DisplayMode } from "../../../common/interfaces/indexes";
+import { DisplayMode } from "../../../common/interfaces/@msft/1.15.2/displayMode";
 import { applyHeadingCSS, IMinHeadingStyleProps } from "../../../logic/indexes/DOMHeadings";
 import { IMinWPBannerProps } from "../../interfaces/MinWP/IMinWPBannerProps";
 import { minimizeHeader } from "./minimzeHeader";
