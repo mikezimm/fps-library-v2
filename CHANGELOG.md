@@ -5,14 +5,20 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.41
+npm install @mikezimm/fps-library-v2@1.0.44
 
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
-## 1.0.41 - 2022-Dec-18:  Drilldown Update part 3
+## 1.0.44 - 2022-Dec-18:  Drilldown Update part 5
+- remove duplicate src\common\Audiences folder from here.... go to banner/propPane/Audiences instead
+
+## 1.0.43 - 2022-Dec-18:  Drilldown Update part 5
+- add siteServerRelativeUrl to IFPSEnviro - in order to easily tell if a url is on the current site collection
+
+## 1.0.41 - 2022-Dec-18:  Drilldown Update part 4
 - delete ILink and replace with ISimpleLink which is same but with optional target
 - migrate zPivots from npmFunctions to src\common\interfaces\fps\IzPivots
 - migrate IListInterfaces to src\common\interfaces\fps\Picked\IListInterfaces.ts

@@ -12,6 +12,7 @@ export interface IFPSEnviro {
   siteUrl: string;
   webUrl: string;
   webServerRelativeUrl: string;
+  siteServerRelativeUrl: string; // Site collection relative Url like:  /sites/collection
   SiteID: string;
   WebID: string;
   SiteTitle: string; // Web Title
