@@ -70,9 +70,7 @@ import { autoDetailsList } from '../atoms/detailsList';
 import { findParentElementPropLikeThis } from '../../../../logic/DOM/Search/domSearch';
 import { updateReactListItem } from '../functions/updateReactListItem';
 import { doesObjectExistInArray } from '../../../../logic/Arrays/searching/objectfind';
-require('./reactListView.css');
-
-
+require('@mikezimm/fps-styles/dist/reactListView.css');
 
 
 

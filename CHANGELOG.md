@@ -14,6 +14,7 @@ NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
 ## 1.0.44 - 2022-Dec-18:  Drilldown Update part 5
 - remove duplicate src\common\Audiences folder from here.... go to banner/propPane/Audiences instead
+- fix reactListView css import to point to fps-sytles
 
 ## 1.0.43 - 2022-Dec-18:  Drilldown Update part 5
 - add siteServerRelativeUrl to IFPSEnviro - in order to easily tell if a url is on the current site collection
