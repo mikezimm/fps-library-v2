@@ -1,4 +1,4 @@
-import { IZLoadAnalytics, ILink, IZFullAnalytics, IZSentAnalytics } from './interfaces';
+import { IZFullAnalytics, IZSentAnalytics } from './interfaces';
 
 import { roundRatio, } from '../../logic/Math/rounding';
 import { getSizeLabel } from '../../logic/Math/labels';

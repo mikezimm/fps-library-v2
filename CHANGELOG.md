@@ -5,12 +5,18 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.40
+npm install @mikezimm/fps-library-v2@1.0.41
 
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.41 - 2022-Dec-18:  Drilldown Update part 3
+- delete ILink and replace with ISimpleLink which is same but with optional target
+- migrate zPivots from npmFunctions to src\common\interfaces\fps\IzPivots
+- migrate IListInterfaces to src\common\interfaces\fps\Picked\IListInterfaces.ts
+-       Move to separate files in case needed that way
 
 ## 1.0.40 - 2022-Dec-18:  Drilldown Update part 3
 - created src\pnpjs\CommandItems\updateItem.ts to update command items (the actual part that just saves using fps-pnpv2)

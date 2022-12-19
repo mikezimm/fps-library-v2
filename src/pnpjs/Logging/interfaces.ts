@@ -2,6 +2,8 @@
  * This standard was started with eXTreme Storage webpart
  */
 
+import { ISimpleLink } from "../../logic/indexes";
+
 /**
  * IZLoadAnalytics can be created when the webpart loads the data so it's easy to pass
  */
@@ -60,11 +62,6 @@ export interface IZSentAnalytics {
 
 }
 
-export interface ILink {
-  Description: string;
-  Url: string;
-}
-
 /**
  * This contains properties automatically added based on the current url
  */
@@ -77,8 +74,8 @@ export interface IZFullAnalytics extends IZSentAnalytics {
   PageURL: string;  //Url of page person is on
   getParams?: string;  //Parameters from url
 
-  PageLink?: ILink;  // Saved as link column.  Displayed as Page Name
-  SiteLink?: ILink;  //Saved as link column.  Displayed as full Url
+  PageLink?: ISimpleLink;  // Saved as link column.  Displayed as Page Name
+  SiteLink?: ISimpleLink;  //Saved as link column.  Displayed as full Url
   language?: string;
 
   //These props were buried in loadProperties but get moved up to main object for saving.
@@ -88,8 +85,8 @@ export interface IZFullAnalytics extends IZSentAnalytics {
   ListID: string;  //Current list ID for easy filtering in large list
   ListTitle: string;
 
-  TargetSite?: ILink;  //Saved as link column.  Displayed as Relative Url
-  TargetList?: ILink;  //Saved as link column.  Displayed as Relative Url
+  TargetSite?: ISimpleLink;  //Saved as link column.  Displayed as Relative Url
+  TargetList?: ISimpleLink;  //Saved as link column.  Displayed as Relative Url
 
   memory: string;
   browser: string;
