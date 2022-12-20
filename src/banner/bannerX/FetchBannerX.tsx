@@ -306,8 +306,9 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
  *  
  */
       } else if ( showPanel === true ) {
+        // Added contentPages to params for https://github.com/mikezimm/fps-library-v2/issues/9
         panelContent = getFullPanel( this.props.bannerProps, this.state.selectedKey, 
-          this.state.panelType, this._selectedIndex.bind(this), this._panelWidth.bind(this) );
+          this.state.panelType, this._selectedIndex.bind(this), this._panelWidth.bind(this), this.props.contentPages );
       }
 
 

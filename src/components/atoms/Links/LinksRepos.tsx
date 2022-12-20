@@ -50,6 +50,10 @@ export const gitRepoCoreFPS115Small: IRepoLinks = createRepoLinks( baseMyRepos +
 export const gitRepoPnpjsV2Small: IRepoLinks = createRepoLinks( baseMyRepos + 'Pnpjs-v2-Upgrade-sample','_blank', 'Pnpjs-v2-Upgrade-sample', 'small' );
 export const gitRepoListAPaLoozaSmall: IRepoLinks = createRepoLinks( baseMyRepos + 'ListAPaLooza','_blank', 'List-A-Pa-Looza', 'small' );
 
+export const gitRepoFpsLibraryV2: IRepoLinks = createRepoLinks( baseMyRepos + 'fps-library-v2','_blank', 'fps-library-v2', 'small' );
+export const gitRepoFpsStyles: IRepoLinks = createRepoLinks( baseMyRepos + 'fps-styles','_blank', 'fps-styles', 'small' );
+export const gitRepoFpsPnp2: IRepoLinks = createRepoLinks( baseMyRepos + 'fps-pnp2','_blank', 'fps-pnp2', 'small' );
+
 /**
  * Track My Time links
  */

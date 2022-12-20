@@ -4,6 +4,7 @@ import * as React from 'react';
 import * as links from '../../../components/atoms/Links/AllLinks';
 
 import { Stack, IStackTokens } from 'office-ui-fabric-react';
+import { gitRepoFpsLibraryV2, gitRepoFpsPnp2, gitRepoFpsStyles } from '../../../components/atoms/Links/LinksRepos';
 
 export interface IWebPartLinksProps {
     parentListURL: string; //Get from list item
@@ -119,6 +120,13 @@ public constructor(props:IWebPartLinksProps){
                 { this.props.repoObject &&  this.props.showRepoLinks === true? this.props.repoObject.repo : null }
                 { this.props.repoObject &&  this.props.showRepoLinks === true? this.props.repoObject.issues : null }
                 { this.props.repoObject &&  this.props.showRepoLinks === true? this.props.repoObject.wiki : null }
+
+            </Stack>
+            <Stack horizontal={true} wrap={true} horizontalAlign={"stretch"} tokens={stackTokensBody}>
+                { this.props.repoObject &&  this.props.showRepoLinks === true ? <div style={{paddingLeft: doChildList === true ? '30px' : '' }} title='Updates in these libraries also impact this webpart.'><b>Related Libraries</b></div> : null }
+                { this.props.repoObject &&  this.props.showRepoLinks === true? gitRepoFpsLibraryV2.issues : null }
+                { this.props.repoObject &&  this.props.showRepoLinks === true? gitRepoFpsPnp2.issues : null }
+                { this.props.repoObject &&  this.props.showRepoLinks === true? gitRepoFpsStyles.issues : null }
 
             </Stack>
         </div>;

@@ -12,6 +12,10 @@ npm install @mikezimm/fps-library-v2@1.0.52
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
+## 1.0.53 - 2022-Dec-19:  library repoLinks in About Panel
+- update:  add libraries to LinksRepos and incorporate new libs into WebPartLinks https://github.com/mikezimm/fps-library-v2/issues/21
+- fix:     Fix FetchBannerX and FullPanel to show all contentPages:  https://github.com/mikezimm/fps-library-v2/issues/9
+
 ## 1.0.52 - 2022-Dec-19:  reactList && commands columns
 - fix:  updateReactListItem and reactListView https://github.com/mikezimm/fps-library-v2/issues/20
 - updated PropPaneGroups to not show PinMe or FPSBasics in certain conditions like SPA:   https://github.com/mikezimm/fps-library-v2/issues/7

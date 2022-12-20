@@ -35,6 +35,20 @@
     "maintained node versions",
     "not dead"
   ],
+  "files": [
+    "/lib"
+  ],
+  "dependencies": {
+    "@microsoft/sp-property-pane": "^1.15.2",
+    "@mikezimm/fps-pnp2": "^1.0.17",
+    "@mikezimm/fps-styles": "^1.0.8",
+    "@pnp/spfx-controls-react": "3.12.0",
+    "@pnp/spfx-property-controls": "^3.6.0",
+    "office-ui-fabric-react": "^7.199.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-json-view": "^1.21.3"
+  },
   "devDependencies": {
     "@types/node": "14.17.6",
     "@types/react": "16.9.51",
@@ -50,19 +64,6 @@
     "webpack-bundle-analyzer": "^4.6.1",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.0"
-  },
-  "files": [
-    "/lib"
-  ],
-  "dependencies": {
-    "@microsoft/sp-property-pane": "^1.15.2",
-    "@mikezimm/fps-pnp2": "^1.0.17",
-    "@mikezimm/fps-styles": "^1.0.8",
-    "@pnp/spfx-controls-react": "3.12.0",
-    "@pnp/spfx-property-controls": "^3.6.0",
-    "office-ui-fabric-react": "^7.199.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-json-view": "^1.21.3"
   }
+
 }

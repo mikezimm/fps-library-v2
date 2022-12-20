@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import WebPartLinks from "../components/WebPartLinks/WebPartLinks";
 import { createPerformanceTableVisitor } from '../../components/molecules/Performance/tables';
-import { IWebpartBannerProps } from '../mainReact/IWebpartBannerProps';
+import { IBannerPages, IWebpartBannerProps } from '../mainReact/IWebpartBannerProps';
 import ReactJson from 'react-json-view';
 import { MessageBar, MessageBarType, PanelType, Pivot, PivotItem, PivotLinkFormat, PivotLinkSize } from 'office-ui-fabric-react';
 import SinglePage from '../components/SingleHelpPage/SinglePage';
@@ -30,9 +30,10 @@ const HB = 'Health';  //Templates
 export const pivotHeadingX = HX;
 export const pivotHeading0 = H0;
 
-export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: string, panelType: PanelType, _selectedIndex: any, _panelWidth: any ) : JSX.Element {
+// Added contentPages to params for https://github.com/mikezimm/fps-library-v2/issues/9
+export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: string, panelType: PanelType, _selectedIndex: any, _panelWidth: any, contentPages: IBannerPages ) : JSX.Element {
 
-    const { gitHubRepo, showRepoLinks, replacePanelWarning, replacePanelHTML, contentPages, exportProps, webpartHistory } = bannerProps;
+    const { gitHubRepo, showRepoLinks, replacePanelWarning, replacePanelHTML,  exportProps, webpartHistory } = bannerProps;
 
     const webPartLinks =  <WebPartLinks 
       parentListURL = { '' } //Get from list item
