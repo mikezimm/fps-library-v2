@@ -14,7 +14,7 @@ NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
 ## 1.0.54 - 2022-Dec-19:  library repoLinks in About Panel
 - tweak library issues links to 'legacy' so shows as 'fps-styles issues' instead of just 'issues'
-- "@mikezimm/fps-styles": "^1.0.9"
+- "@mikezimm/fps-styles": "^1.0.9" -> https://github.com/mikezimm/fps-library-v2/issues/13
 
 ## 1.0.53 - 2022-Dec-19:  library repoLinks in About Panel
 - update:  add libraries to LinksRepos and incorporate new libs into WebPartLinks https://github.com/mikezimm/fps-library-v2/issues/21
