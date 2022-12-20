@@ -1,5 +1,5 @@
 import * as React from "react";
-import { check4SiteTheme } from "../../common/commandStyles/defaults";
+import { check4SiteTheme } from "../../common/commandStyles/ISiteThemeChoices";
 
 export interface ICurleyBraceCheck {
   errMessage: string;

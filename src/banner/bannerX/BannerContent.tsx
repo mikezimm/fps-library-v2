@@ -10,9 +10,11 @@ import { makeYellowStyles } from '../../common/commandStyles/makeYellow';
 import { makeInfoElement } from './InfoElement';
 import { IPinMeState } from '../features/PinMe/Interfaces';
 import { bannerSettingsContent } from '../components/Gear/bannerGearFunctions';
+import { ISiteThemes } from '../../common/commandStyles/ISiteThemeChoices';
+import { getThemeClass } from '../../common/commandStyles/ISiteThemeChoices';
 
 
-export function mainBannerContent( bannerProps: IWebpartBannerProps, forceNarrowStyles: boolean, siteThemeClass: string,
+export function mainBannerContent( bannerProps: IWebpartBannerProps, forceNarrowStyles: boolean, siteThemes: ISiteThemes,
     nearBannerElementsArray: JSX.Element[], farBannerElementsArray: JSX.Element[],
     showSettings: boolean, showPropsHelp: boolean, _openPanel: any, _togglePropsHelp: any, ) {
 
@@ -100,7 +102,7 @@ export function mainBannerContent( bannerProps: IWebpartBannerProps, forceNarrow
   if ( hasNearOrFar === false ) { bannerStyle.cursor = 'pointer' ; }
 
   //Added if choice uses site theme
-  const barThemeClass = bannerProps.useSiteTheme === true ? siteThemeClass : null;
+  const barThemeClass = bannerProps.useSiteTheme === true ? getThemeClass( bannerProps.themeChoice, siteThemes  ) : null;
   const classNames = [ 'container', bannerProps.hoverEffect === true ? 'opacity' : null, barThemeClass, 'flex-container' ].join( ' ' ); 
 
   //  On clicks need to be defined like this and only put on specific elements in certain cases.

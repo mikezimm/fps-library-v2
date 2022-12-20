@@ -35,7 +35,7 @@ import { getForceNarrow } from './Near/CheckNarrow';
 import { updateNearElements } from './Near/updateNearElements';
 import { IMinPandoramicProps } from '../features/Expando/Interfaces';
 import { setExpandoRamicMode } from '../features/Expando/functions';
-
+import { ISiteThemes } from '../../common/commandStyles/ISiteThemeChoices';
 import EasyPagesHook from '../components/EasyPages/componentSources';
 // import { IMinWPFieldPanelProps } from '../../components/molecules/FieldPanel/IMinWPFieldPanelProps';
 
@@ -62,7 +62,7 @@ export interface IFetchBannerXProps {
     bannerProps:    IWebpartBannerProps;
     parentState:    IFPSCorePinMeReactComponentState;
 
-    siteThemeClass: string; // Pass in the theme from the main react css styles.fpsBannerThemeDark / fpsBannerThemeLight
+    siteThemes: ISiteThemes; // Pass in the theme from the main react css styles.fpsBannerThemeDark / fpsBannerThemeLight
 
     appendTitle?: string | JSX.Element; //Can be used to add text to the bannerTitle.  aka when filtering in component, show filter test
     WebPartHelpPivots: JSX.Element[]; // Changed to accept web part specific pivot items insead of entire page.
@@ -272,7 +272,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
        *         
        */
 
-      const bannerContent = mainBannerContent( bannerProps, forceNarrowStyles, this.props.siteThemeClass,
+      const bannerContent = mainBannerContent( bannerProps, forceNarrowStyles, this.props.siteThemes,
         nearBannerElementsArray, farBannerElementsArray,
         showSettings, showPropsHelp, this._openPanel.bind( this ) ,this._togglePropsHelp.bind( this ) );
 

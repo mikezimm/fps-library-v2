@@ -10,7 +10,7 @@ export async function getSiteAdmins(webUrl: string, supressError: boolean): Prom
 
   const result: ISiteUsersInfo = createISiteUsersInfoObject( webUrl, resultInfo, 'getSiteAdmins ~ 7' );
 
-  if ( check4Gulp() === true ) { console.log( `fps-library-v2 COMPLETE: getSiteAdmins ~53`, result ) };
+  if ( check4Gulp() === true ) { console.log( `fps-library-v2 COMPLETE: getSiteAdmins ~13`, result ) };
 
   if (supressError !== true && result.errorInfo ) { alert( result.errorInfo.friendly ); }
 

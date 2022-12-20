@@ -151,16 +151,6 @@ export const bannerThemeChoices: IPropertyPaneDropdownOption[] = <IPropertyPaneD
 
 ];
 
-export const bannerThemeChoicesWSiteTheme: IPropertyPaneDropdownOption[] = <IPropertyPaneDropdownOption[]>[
-  ...bannerThemeChoices,
-  {   index: 13,   key: 'siteDark', text: "Site Theme - Dark bar, white text"  },
-  {   index: 14,   key: 'siteLight', text: "Site Theme - Dark text, white bar"  },
-
-];
-
-export function check4SiteTheme( choice: string ) : boolean {
-  return choice.toLowerCase().indexOf( 'site' ) > -1 ? true : false;
-}
 
 export const bannerInfoEleChoices: IPropertyPaneDropdownOption[] = <IPropertyPaneDropdownOption[]>[
   {   index: 0,   key: 'Text', text: "More Information"  },

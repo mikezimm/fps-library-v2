@@ -8,6 +8,7 @@ import { IViewFieldDD } from '../interfaces/IViewFieldDD';
 
 export interface IReactListItemsProps extends IPageArrowsParentProps {
   title?: string;
+  themeClass: string;
   descending?: boolean;
   maxChars?: number;
   items: IDrillItemInfo[];

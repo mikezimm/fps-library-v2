@@ -28,8 +28,8 @@ export function createIEnsureUserInfo(webUrl: string, resultInfo: IEnsureUserRes
   const errorInput: IHelpfullInput = { e: resultInfo.e, alertMe: alertMe, consoleLog: consoleLog, traceString: traceString, logErrors: logErrors };
 
   const result: IEnsureUserInfo = {
-    user: createIUserFromUser(resultInfo.user as any, webUrl, null) as any,
-    errorInfo: resultInfo.e ? convertHelpfullError(errorInput) : null as any,
+    user: createIUserFromUser(resultInfo.user as any, webUrl, null),
+    errorInfo: resultInfo.e ? convertHelpfullError(errorInput) : null,
     errorInput: errorInput,
     status: resultInfo.status,
   };

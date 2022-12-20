@@ -13,6 +13,9 @@ export function saveErrorToLog(errorInfo: IHelpfullOutput, errorInput: IHelpfull
   //Return if you are not supposed to log an error
   if ( errorInput.logErrors !== true ) { return ; }
 
+  // https://github.com/mikezimm/fps-library-v2/issues/15
+  if ( !errorInfo ) { return ; }
+
   const muteConsole = true;
   const { traceString, e, alertMe, consoleLog, logErrors } = errorInput;
 

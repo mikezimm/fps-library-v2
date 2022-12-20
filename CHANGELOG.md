@@ -5,12 +5,31 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.47
+npm install @mikezimm/fps-library-v2@1.0.51
 
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.51 - 2022-Dec-19:  reactList && commands issues
+- https://github.com/mikezimm/fps-library-v2/issues/11 - fix reactListView to return element if no items
+- https://github.com/mikezimm/fps-library-v2/issues/14 - fix Drilldown Commands
+- https://github.com/mikezimm/fps-library-v2/issues/15
+- https://github.com/mikezimm/fps-library-v2/issues/16
+
+## 1.0.50 - 2022-Dec-19:  reactList
+- npm install @mikezimm/fps-styles@1.0.8
+- https://github.com/mikezimm/fps-library-v2/issues/11
+
+## 1.0.49 - 2022-Dec-19:  reactList
+- add bar styles back in via @mikezimm/fps-styles@1.0.6 and passing in barTheme class same as FetchBannerX
+
+## 1.0.49 - 2022-Dec-19:  expando
+- fix const enableExpandoramic in BuildBannerPropsX2 to correctly show pando button
+
+## 1.0.48 - 2022-Dec-19:  site theme
+- updated FetchBannerX to accept siteThemes object to better insure that a web part matches options available in that library version
 
 ## 1.0.47 - 2022-Dec-19:  site theme
 - add following props to BannerProps and IFPSEnviro
@@ -41,7 +60,7 @@ NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
 ## 1.0.40 - 2022-Dec-18:  Drilldown Update part 3
 - created src\pnpjs\CommandItems\updateItem.ts to update command items (the actual part that just saves using fps-pnpv2)
-- standardized return status signatures to IFPSResultStatus
+- standardized return status signatures to IFPSResultStatus https://github.com/mikezimm/fps-library-v2/issues/10
 - cleaned up '\index*' references to be more specific
 
 ## 1.0.39 - 2022-Dec-18:  Drilldown Update part 2

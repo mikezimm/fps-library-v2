@@ -5,7 +5,8 @@ import {
     PropertyPaneToggle,
   } from '@microsoft/sp-property-pane';
 
-import { bannerThemeChoices, bannerThemeChoicesWSiteTheme } from '../../common/commandStyles/defaults';
+import { bannerThemeChoices } from '../../common/commandStyles/defaults';
+import { bannerThemeChoicesWSiteTheme } from "../../common/commandStyles/ISiteThemeChoices";
 import { IThisFPSWebPartClass } from '../FPSWebPartClass/IThisFPSWebPartClass';
 
 /**

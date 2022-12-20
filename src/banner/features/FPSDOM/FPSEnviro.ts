@@ -4,7 +4,7 @@ import { IFPSWindow } from "../../../common/interfaces/fps/Window";
 import { checkDeepProperty } from "../../../logic/Objects/deep";
 import { IThisFPSWebPartClass } from "../../FPSWebPartClass/IThisFPSWebPartClass"
 import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
-import { check4SiteTheme } from "../../../common/commandStyles/defaults";
+import { check4SiteTheme } from "../../../common/commandStyles/ISiteThemeChoices";
 
 export function createFPSEnviroOnWindow ( thisWPClass: IThisFPSWebPartClass ) {
 

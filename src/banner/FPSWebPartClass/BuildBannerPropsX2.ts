@@ -1,7 +1,8 @@
 
 // import { DisplayMode } from "@microsoft/sp-core-library";
 
-import { baseBannerCmdStyles, baseBannerStyles, check4SiteTheme } from "../../common/commandStyles/defaults";
+import { baseBannerCmdStyles, baseBannerStyles } from "../../common/commandStyles/defaults";
+import { check4SiteTheme } from "../../common/commandStyles/ISiteThemeChoices";
 import { DisplayMode, } from "../../common/interfaces/@msft/1.15.2/displayMode";
 import { createPerformanceTableVisitor, } from "../../components/indexes/Performance";
 
@@ -135,7 +136,7 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
 
   const showExport = isSiteAdmin === true ? true : properties.showExport === true && hasCustomizePages !== true ? false : true; 
 
-  const enableExpandoramic = _allowPandoramic === true || properties.enableExpandoramic === false ? false :
+  const enableExpandoramic = _allowPandoramic === false || properties.enableExpandoramic === false ? false :
       verifyAudienceVsUser( _FPSUser, showTricks, properties.expandoAudience , null, renderAsReader );
 
 

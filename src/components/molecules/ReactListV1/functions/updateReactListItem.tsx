@@ -249,6 +249,8 @@ export async function updateReactListItem(webUrl: string, listName: string, Id: 
 
   const result: IUpdateCommandItemReturn = await updateCommandItems( updateProps );
 
-  return result.errorInfo.friendly;
+  //  https://github.com/mikezimm/fps-library-v2/issues/14
+  //  https://github.com/mikezimm/fps-library-v2/issues/16
+  return result.errorInfo ? result.errorInfo.friendly : '';
 
 }

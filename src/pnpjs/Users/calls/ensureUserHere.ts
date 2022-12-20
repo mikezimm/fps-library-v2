@@ -20,7 +20,7 @@ export async function ensureUserHere( loginName: string | undefined, webUrl: str
 
   if ( result.errorInfo ) {
 
-    if ( supressSaveConflict === true && ( result.errorInfo.friendly.indexOf('Save Conflict') > -1
+    if ( supressSaveConflict === true && ( result.errorInfo.friendly?.indexOf('Save Conflict') > -1
         || result.errorInfo.returnMess.indexOf('Save Conflict') > -1 ) ) {
         //Do nothting
 

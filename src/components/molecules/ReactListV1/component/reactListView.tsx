@@ -151,9 +151,11 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
                         //build all the buttons ( subject to individual button checks )
                     } else { buildAllButtonsTest = false; }
                 } catch (e) {
+                    buildAllButtonsTest = false;
                     let errMessage = getHelpfullError(e, false, false);
                     console.log(`ERROR:  createPanelButtons: quickCommands.showWhenEvalTrue !!!`, quickCommands.showWhenEvalTrue);
                     console.log(`ERROR:  createPanelButtons: quickCommands.showWhenEvalTrue Error Details`, errMessage);
+
                     alert(`createPanelButtons: quickCommands.showWhenEvalTrue error !!! Check the console for details:   ${quickCommands.showWhenEvalTrue}`);
                 }
 
@@ -664,7 +666,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
             if ( !listLink ) maxBlueBarLeft += 15;
 
             if ( barText !== null ) {
-                webTitle =<div  style={{ display: 'flex', justifyContent: 'space-between', }} className={ [`info-heading`, `inner-shadow` ].join(' ') }>
+                webTitle =<div  style={{ display: 'flex', justifyContent: 'space-between', }} className={ [`info-heading`, `inner-shadow`, `fps-list-header-bar`, this.props.themeClass ].join(' ') }>
                   {/* https://github.com/mikezimm/drilldown7/issues/249 */}
                   <span className={ `blue-bar-left` } style={{ maxWidth: `${maxBlueBarLeft}%`}} title={ this.props.blueBarTitleText }>( { this.props.items.length }  ) { barText }</span>
                    { pageArrows }
