@@ -35,8 +35,14 @@ export function getFuncColumns(lookupColumns : string[], DoNotExpandColumnsIn: s
     let leftSide = splitCol.length === 3 ? splitCol[0] + '/' + splitCol[1]: splitCol[0] ;
     let rightSide = splitCol[ splitCol.length -1 ];
 
-    if ( rightSide && DoNotExpandFuncColumnsLC.indexOf( rightSide.toLowerCase() ) > -1 ) {
-      //Then do nothing since this column is a 'faux expanded column' used in Drilldown for Func Columns
+    /**
+     * Added extra if ( or ) to check for Object. columns
+     *    https://github.com/mikezimm/fps-library-v2/issues/12
+     */
+    if ( ( rightSide && DoNotExpandFuncColumnsLC.indexOf( rightSide.toLowerCase() ) > -1 ) ||
+        ( rightSide.toLowerCase().indexOf( 'object.' ) > -1 ) ) {
+
+      //Then do add if it's not there already
       if ( allFuncColumns.indexOf( column ) < 0 ) { 
         allFuncColumns.push( column );
 

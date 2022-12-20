@@ -20,6 +20,10 @@ export function getExpandColumns(lookupColumns : string[] , DoNotExpandColumnsIn
       if ( nextPart && DoNotExpandColumnsLC.indexOf( nextPart.toLowerCase() ) > -1 ) {
         //Then do nothing since this column is a 'faux expanded column' used in Drilldown for Link Columns
 
+      // Added this for:  https://github.com/mikezimm/fps-library-v2/issues/12
+      } else if( nextPart.toLowerCase().indexOf(`object.`) > -1 ) {
+        //Then also do not expand because this is the special Object case.
+
       } else if(baseExpandColumns.indexOf(baseColumn) < 0) {
         baseExpandColumns.push(baseColumn);
 
@@ -27,5 +31,8 @@ export function getExpandColumns(lookupColumns : string[] , DoNotExpandColumnsIn
     }
   });
 
-  return baseExpandColumns;
+  // Adding this to remove duplicates:
+  const finalColumns = baseExpandColumns.filter((element, index) => { return baseExpandColumns.indexOf(element) === index; });
+
+  return finalColumns;
 }

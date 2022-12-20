@@ -12,11 +12,16 @@ npm install @mikezimm/fps-library-v2@1.0.51
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
+## 1.0.51 - 2022-Dec-19:  reactList && commands columns
+- https://github.com/mikezimm/fps-library-v2/issues/12 - updated getSelectV2, getExpandV2, getFuncV2
+- https://github.com/mikezimm/fps-library-v2/issues/19 - updated getSelectV2, getExpandV2, getFuncV2
+
 ## 1.0.51 - 2022-Dec-19:  reactList && commands issues
 - https://github.com/mikezimm/fps-library-v2/issues/11 - fix reactListView to return element if no items
 - https://github.com/mikezimm/fps-library-v2/issues/14 - fix Drilldown Commands
 - https://github.com/mikezimm/fps-library-v2/issues/15
 - https://github.com/mikezimm/fps-library-v2/issues/16
+
 
 ## 1.0.50 - 2022-Dec-19:  reactList
 - npm install @mikezimm/fps-styles@1.0.8

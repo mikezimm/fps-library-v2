@@ -29,6 +29,13 @@ export const DoNotExpandTrimTimes : ITrimTimes[] = [ 'YYYY-MM-DD-HH:mm', 'YYYY-M
 
 export type ITrimSpecial = 'FirstLetter' | 'FirstLetterAsCap' | 'FirstNumber' | 'Initials' | 'InitialsAsCaps' | 'InitialsD' | 'InitialsAsCapsD' | 'FirstInFirst' | 'FirstInLast'  | 'FirstInFirstAsCap' | 'FirstInLastAsCap' | 'FirstAcronym' | 'SecondAcronym' | 'Object.';
 
+/**
+ * NOTE ON DoNotExpandTrimSpecial
+ * 
+ * Due to:  https://github.com/mikezimm/fps-library-v2/issues/12
+ * Any special operations like 'Object.' need to also be tested/managed in getExpand, getFunc and getSelect functions.
+ * 
+ */
 export const DoNotExpandTrimSpecial : ITrimSpecial[] = [  'FirstLetter', 'FirstLetterAsCap', 'FirstNumber', 'Initials', 'InitialsAsCaps', 'InitialsD', 'InitialsAsCapsD', 'FirstInFirst', 'FirstInLast', 'FirstInFirstAsCap', 'FirstInLastAsCap', 'FirstAcronym', 'SecondAcronym', 'Object.', ];
 
 export type ITrimFunctions = ITrimB4 | ITrimAfter | ITrimWords | ITrimTimes | ITrimSpecial ;

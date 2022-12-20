@@ -59,11 +59,46 @@ import { DoNotExpandColumns, } from './IGetInterfaceV2';
       }
     });
 
+    /**
+     * Added for https://github.com/mikezimm/fps-library-v2/issues/12
+     * From drilldown to clean the select columns list
+     */
+
+    const cleanSelectCols: string[] = [];
+    baseSelectColumns.map( column => { 
+      let cleanColumn: string = `${column}`;
+      if ( column.indexOf('/') > -1 ) {
+        DoNotExpandColumns.map( doNotExp => {
+          //https://reactgo.com/javascript-variable-regex/
+          const removeStr = `/${doNotExp}`;
+          const regex =  new RegExp(removeStr,'gi'); // eslint-disable-line @rushstack/security/no-unsafe-regexp
+          /**
+           * Added this if then because when I just replace Object. from a select that has more 'dots' afterwords
+           *    This was a real case of a select column:  "performance/Object.ops.analyze1.c"
+           *    Without this loop, it returned the clean column as "performanceops.analyze1.c"
+           *    In reality, the column to 'select' would just be "performance"
+           * 
+           */
+          if ( doNotExp.toLowerCase() === 'object.' ) {
+            const cleanSplit = cleanColumn.split(regex); // it works  
+            cleanColumn = cleanSplit[0];
+          } else {
+            cleanColumn = cleanColumn.replace(regex,''); // it works  
+          }
+        });
+      }
+      cleanSelectCols.push( cleanColumn ); // it works  
+    });
+
+    // Adding this to remove duplicates:
+    const finalColumns = cleanSelectCols.filter((element, index) => { return cleanSelectCols.indexOf(element) === index; });
+
+
     // NOT Needed since it is taken care of in prepSourceColumns on all arrays now.
     // const noDupsColumns: string[] = [];
     // baseSelectColumns.map( column => {
     //   if ( noDupsColumns.indexOf( column ) === -1 ) noDupsColumns.push( column );
     // });
 
-    return baseSelectColumns;
+    return finalColumns;
   }
