@@ -14,7 +14,7 @@ export interface IRepoLinks {
     desc: string;
 }
 
-export function createRepoLinks(href: string, target: string, linkDesc: string, style: 'legacy' | 'smaller' | 'small' = 'legacy' ){
+export function createRepoLinks(href: string, target: string, linkDesc: string, style: 'legacy' | 'smaller' | 'small' = 'legacy', ){
 
     let gitHubLinkDesc = `${ linkDesc } on Github`;
     let gitHubIssuesLinkDesc = `${ style === 'legacy' ? linkDesc : '' } Issues`;
@@ -23,7 +23,7 @@ export function createRepoLinks(href: string, target: string, linkDesc: string, 
 
     let repoLinks : IRepoLinks = {
         repo: createLink( href, target, gitHubLinkDesc ),
-        issues: createLink( href + '/issues', target, gitHubIssuesLinkDesc ),
+        issues: createLink( href + '/issues', target, gitHubIssuesLinkDesc  ),
         wiki: createLink( href + '/wiki', target, gitHubWikiLinkDesc ),
         projects: createLink( href + '/projects', target, gitHubProjLinkDesc ),
         href: href,
