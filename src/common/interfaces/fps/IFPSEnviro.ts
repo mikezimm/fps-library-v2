@@ -22,6 +22,9 @@ export interface IFPSEnviro {
   pageName: string;
   onHomePage: boolean;
   SiteLogoUrl: string; // pageContext.web.logoUrl;
+  
+  themeChoice: string;
+  useSiteTheme: boolean;
 
   trickyEmailsAll: string[];
   language: number;

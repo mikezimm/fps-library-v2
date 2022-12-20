@@ -331,7 +331,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
     constructor(props: IReactListItemsProps) {
         super(props);
         console.log( 'listView PROPS: ', this.props, );
-        let parentListFieldTitles = this.props.parentListFieldTitles !== undefined && this.props.parentListFieldTitles !== null ? JSON.parse(this.props.parentListFieldTitles) : '';
+        const parentListFieldTitles = this.props.parentListFieldTitles ? JSON.parse( this.props.parentListFieldTitles ) : '';
  //       console.log( 'parentListFieldTitles', parentListFieldTitles );
 
         let viewFields : IViewFieldDD[] = [];
@@ -351,7 +351,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
         this.state = {
           fontSize: this._ListViewFontSizes[0] ,  //=>> address:  https://github.com/mikezimm/drilldown7/issues/169
           maxChars: this.props.maxChars ? this.props.maxChars : 50,
-          parentListFieldTitles:parentListFieldTitles,
+          parentListFieldTitles: parentListFieldTitles,
           viewFields: viewFields,
           groupByFields:  groupByFields,
           showPanel: false,
@@ -449,7 +449,15 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
         let showRichHeightButton: any = false;
 
         //2022-02-01:  Updated this from drilldown7
-        if ( this.props.items !== null && this.props.items.length > 0 ) {
+        if (this.props.items === null || this.props.items.length === 0) {
+
+             return (
+                <div className={'' }>
+                    List View has NO Items to show
+                </div>
+                );
+
+        } else {
 
             let attachments = this.state.panelAttachments.length > 0 ? this.state.panelAttachments : null ;
 
@@ -751,7 +759,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
     private _updateStateOnPropsChange( pushViewFieldsToState : boolean ): void {
 
         let viewFields : IViewFieldDD[] = [];
-        let parentListFieldTitles = this.props.parentListFieldTitles !== undefined && this.props.parentListFieldTitles !== null ? JSON.parse(this.props.parentListFieldTitles) : '';
+        let parentListFieldTitles = this.props.parentListFieldTitles ? JSON.parse(this.props.parentListFieldTitles) : '';
 
         if ( this.props.viewFields.length > 0 ) { 
             viewFields = this.handleExpandedFieldInfoToIViewFields( this.props.viewFields );

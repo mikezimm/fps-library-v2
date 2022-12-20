@@ -12,7 +12,7 @@ import { IPinMeState } from '../features/PinMe/Interfaces';
 import { bannerSettingsContent } from '../components/Gear/bannerGearFunctions';
 
 
-export function mainBannerContent( bannerProps: IWebpartBannerProps, forceNarrowStyles: boolean,
+export function mainBannerContent( bannerProps: IWebpartBannerProps, forceNarrowStyles: boolean, siteThemeClass: string,
     nearBannerElementsArray: JSX.Element[], farBannerElementsArray: JSX.Element[],
     showSettings: boolean, showPropsHelp: boolean, _openPanel: any, _togglePropsHelp: any, ) {
 
@@ -91,19 +91,20 @@ export function mainBannerContent( bannerProps: IWebpartBannerProps, forceNarrow
   const hasNearOrFar = hasNear === true || hasFar === true ? true : false;
 
   let bannerStyle: React.CSSProperties = {};
-  if ( bannerProps.bannerReactCSS ) { bannerStyle = bannerProps.bannerReactCSS ; } 
-  else if ( bannerProps.styleString ) { bannerStyle = createStyleFromString( bannerProps.styleString, { background: 'green' }, 'bannerStyle in banner/component.tsx ~ 81' ); }
+  if ( bannerProps.bannerReactCSS ) { bannerStyle = bannerProps.bannerReactCSS ; }
+  else if ( bannerProps.styleString ) { bannerStyle = createStyleFromString( bannerProps.styleString, { background: 'green' }, bannerProps.themeChoice, 'bannerStyle in banner/component.tsx ~ 81' ); }
 
   if ( !bannerStyle.height ) { bannerStyle.height = '35px' ; }
   if ( !bannerStyle.paddingLeft ) { bannerStyle.paddingLeft = '20px' ; }
   if ( !bannerStyle.paddingRight ) { bannerStyle.paddingRight = '20px' ; }
   if ( hasNearOrFar === false ) { bannerStyle.cursor = 'pointer' ; }
 
-  const classNames = [ 'container', bannerProps.hoverEffect === true ? 'opacity' : null, 'flex-container' ].join( ' ' ); 
+  //Added if choice uses site theme
+  const barThemeClass = bannerProps.useSiteTheme === true ? siteThemeClass : null;
+  const classNames = [ 'container', bannerProps.hoverEffect === true ? 'opacity' : null, barThemeClass, 'flex-container' ].join( ' ' ); 
 
   //  On clicks need to be defined like this and only put on specific elements in certain cases.
   //  OR ELSE they will all get fired messing up panel open
-
 
   const bannerOnClick = hasNearOrFar !== true ? _openPanel : undefined;
   const titleInfoOnClick = hasNearOrFar === true ? _openPanel : undefined;

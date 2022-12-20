@@ -1,7 +1,7 @@
 
 // import { DisplayMode } from "@microsoft/sp-core-library";
 
-import { baseBannerCmdStyles, baseBannerStyles } from "../../common/commandStyles/defaults";
+import { baseBannerCmdStyles, baseBannerStyles, check4SiteTheme } from "../../common/commandStyles/defaults";
 import { DisplayMode, } from "../../common/interfaces/@msft/1.15.2/displayMode";
 import { createPerformanceTableVisitor, } from "../../components/indexes/Performance";
 
@@ -154,14 +154,16 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
   const bannerTitle = _modifyBannerTitle === true && properties.bannerTitle && properties.bannerTitle.length > 0 ? properties.bannerTitle : 
   _pageLayoutType === 'SingleWebPartAppPageLayout' ? document.title : setup.main._repoLink.desc;
 
-  const bannerStyle: ICurleyBraceCheck = getReactCSSFromString( 'bannerStyle', properties.bannerStyle, baseBannerStyles );
-  const bannerCmdStyle: ICurleyBraceCheck = getReactCSSFromString( 'bannerCmdStyle', properties.bannerCmdStyle, baseBannerCmdStyles );
+  //Added useSiteTheme for SiteTheme in Banner
+  const useSiteTheme: boolean = check4SiteTheme( properties.bannerStyleChoice )
+  const bannerStyle: ICurleyBraceCheck = getReactCSSFromString( 'bannerStyle', properties.bannerStyle, baseBannerStyles, useSiteTheme );
+  const bannerCmdStyle: ICurleyBraceCheck = getReactCSSFromString( 'bannerCmdStyle', properties.bannerCmdStyle, baseBannerCmdStyles, useSiteTheme );
 
   //Over-rides expand for certain users
 
   //  Changed expandoStyle from buildExpandoStyle function based on https://github.com/mikezimm/CoreFPS114/issues/6
   //  let expandobuildExpandoStyle = buildExpandoStyle( errMessage, properties, bbs.errorObjArray, bbs.expandoErrorObj );
-  const expandoStyleObject = getReactCSSFromString( 'expandoStyle', properties.expandoStyle, {}  );
+  const expandoStyleObject = getReactCSSFromString( 'expandoStyle', properties.expandoStyle, {}, false  );
 
   const styleErrors : string[] = [];
   if ( bannerStyle.errMessage ) { styleErrors.push( bannerStyle.errMessage ) ; }
@@ -288,6 +290,8 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
       title: showBannerError === true ? errMessage : bannerTitle ,
       bannerReactCSS: showBannerError === true ?  { background: "yellow", color: "red", } : bannerStyle.parsed ,
       bannerCmdReactCSS: bannerCmdStyle.parsed ,
+      themeChoice: properties.bannerStyleChoice,
+      useSiteTheme: useSiteTheme,
 
       gitHubRepo: setup.main._repoLink,
       farElements: [],

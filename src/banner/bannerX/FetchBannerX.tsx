@@ -62,6 +62,8 @@ export interface IFetchBannerXProps {
     bannerProps:    IWebpartBannerProps;
     parentState:    IFPSCorePinMeReactComponentState;
 
+    siteThemeClass: string; // Pass in the theme from the main react css styles.fpsBannerThemeDark / fpsBannerThemeLight
+
     appendTitle?: string | JSX.Element; //Can be used to add text to the bannerTitle.  aka when filtering in component, show filter test
     WebPartHelpPivots: JSX.Element[]; // Changed to accept web part specific pivot items insead of entire page.
     SpecialMessage?: ISpecialMessage;
@@ -270,7 +272,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
        *         
        */
 
-      const bannerContent = mainBannerContent( bannerProps, forceNarrowStyles, 
+      const bannerContent = mainBannerContent( bannerProps, forceNarrowStyles, this.props.siteThemeClass,
         nearBannerElementsArray, farBannerElementsArray,
         showSettings, showPropsHelp, this._openPanel.bind( this ) ,this._togglePropsHelp.bind( this ) );
 

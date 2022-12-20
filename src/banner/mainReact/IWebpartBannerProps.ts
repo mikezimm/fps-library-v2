@@ -77,6 +77,10 @@ export interface IWebpartBannerProps {
 
 	bannerReactCSS?: React.CSSProperties;
 	bannerCmdReactCSS?: React.CSSProperties;
+
+  themeChoice: string; // From Prop Pane Theme, to be used to over-ride theme for Site Theme
+  useSiteTheme: boolean;
+
 	earyAccess?: boolean; //Auto add early access warning in panel
 
 	showRepoLinks: boolean;

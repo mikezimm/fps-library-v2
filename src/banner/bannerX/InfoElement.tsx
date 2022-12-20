@@ -2,9 +2,9 @@ import { Icon } from 'office-ui-fabric-react';
 import * as React from 'react';
 import { DisplayMode } from '../../common/interfaces/@msft/1.15.2/displayMode';
 
-import { createStyleFromString } from '../../logic/Strings/reactCSS';
+// import { createStyleFromString } from '../../logic/Strings/reactCSS';
 
-import * as links from '../../components/atoms/Links/LinksRepos';
+// import * as links from '../../components/atoms/Links/LinksRepos';
 import { IWebpartBannerProps } from '../mainReact/IWebpartBannerProps';
 import { makeYellowStyles } from '../../common/commandStyles/makeYellow';
 import { IRepoLinks } from '../../components/atoms/Links/CreateLinks';

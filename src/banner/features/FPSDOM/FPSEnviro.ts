@@ -4,6 +4,7 @@ import { IFPSWindow } from "../../../common/interfaces/fps/Window";
 import { checkDeepProperty } from "../../../logic/Objects/deep";
 import { IThisFPSWebPartClass } from "../../FPSWebPartClass/IThisFPSWebPartClass"
 import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
+import { check4SiteTheme } from "../../../common/commandStyles/defaults";
 
 export function createFPSEnviroOnWindow ( thisWPClass: IThisFPSWebPartClass ) {
 
@@ -29,6 +30,9 @@ export function createFPSEnviroOnWindow ( thisWPClass: IThisFPSWebPartClass ) {
     pageName: pageName,
     onHomePage: legacyPageContext.isWebWelcomePage === true ? true : false,
     SiteLogoUrl: pageContext.web.logoUrl,  // pageContext.web.logoUrl;
+
+    themeChoice: thisWPClass.properties.bannerStyleChoice,
+    useSiteTheme: check4SiteTheme( thisWPClass.properties.bannerStyleChoice ),
 
     trickyEmailsAll: thisWPClass._trickyEmailsAll,
     language: pageContext.web.language,

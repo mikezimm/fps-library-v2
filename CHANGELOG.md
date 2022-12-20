@@ -5,12 +5,26 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.44
+npm install @mikezimm/fps-library-v2@1.0.47
 
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.47 - 2022-Dec-19:  site theme
+- add following props to BannerProps and IFPSEnviro
+  themeChoice: string;
+  useSiteTheme: boolean;
+- add logic in banner to over-ride banner styling with class provided in main react component
+- update createStyleFromString to accept ignoreColors flag to ignore colors from styling
+
+## 1.0.46 - 2022-Dec-19:  reactListView part 2
+- fix let parentListFieldTitles = ... error when this is '' - can't JSON.parse it.
+
+## 1.0.45 - 2022-Dec-19:  reactListView part 1
+- add items.length check to reactListView
+
 
 ## 1.0.44 - 2022-Dec-18:  Drilldown Update part 5
 - remove duplicate src\common\Audiences folder from here.... go to banner/propPane/Audiences instead

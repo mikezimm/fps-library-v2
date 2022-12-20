@@ -1,4 +1,5 @@
 import * as React from "react";
+import { check4SiteTheme } from "../../common/commandStyles/defaults";
 
 export interface ICurleyBraceCheck {
   errMessage: string;
@@ -12,7 +13,7 @@ export interface ICurleyBraceCheck {
  * @param value 
  */
 
-export function getReactCSSFromString( key: string, value: string | undefined, fallback: React.CSSProperties,  ) : ICurleyBraceCheck {
+export function getReactCSSFromString( key: string, value: string | undefined, fallback: React.CSSProperties, ignoreColors: boolean ) : ICurleyBraceCheck {
 
   let result: ICurleyBraceCheck = {
     errMessage: '',
@@ -30,6 +31,9 @@ export function getReactCSSFromString( key: string, value: string | undefined, f
         if ( value.indexOf('{') !== 0 ) { value = '{' + value ;}
         if ( value.lastIndexOf('}') !== value.length -1 ) { value += '}' ;}
         result.parsed = JSON.parse( value );
+        if ( ignoreColors === true && result.parsed.color ) result.parsed.color = 'useSiteTheme';
+        if ( ignoreColors === true && result.parsed.background ) result.parsed.background = 'useSiteTheme';
+        if ( ignoreColors === true && result.parsed.backgroundColor ) result.parsed.backgroundColor = 'useSiteTheme';
       }
     } catch(e){
       // errMessage = getHelpfullErrorV2( e, true, true, null ); //'BoxTilesWebpart.ts ~ boxStyles.' + key
@@ -50,7 +54,7 @@ export function getReactCSSFromString( key: string, value: string | undefined, f
  * @param fallback 
  */
 
-export function createStyleFromString( styleString: string, fallback: React.CSSProperties, traceString: string, ) {
+export function createStyleFromString( styleString: string, fallback: React.CSSProperties, themeChoice: string, traceString: string, ) {
   let thisStyle: React.CSSProperties = {};
 
   if ( !styleString || styleString === null || styleString === undefined ) {
@@ -75,6 +79,12 @@ export function createStyleFromString( styleString: string, fallback: React.CSSP
 
   try {
       thisStyle = JSON.parse( styleString );
+
+      // Added if style choice is based on the site theme
+      if ( check4SiteTheme( themeChoice ) === true  ) thisStyle.color = null;
+      if ( check4SiteTheme( themeChoice ) === true ) thisStyle.background = null;
+      if ( check4SiteTheme( themeChoice ) === true ) thisStyle.backgroundColor = null;
+
 
   } catch(e) {
     console.log('Unable to understand this style string:', styleString + '' );  //doing + '' so that if you pause in console but later modify, it does not change

@@ -20,8 +20,9 @@ export function createEasyPagesSourceWPProps( epSrcWPProps: ICreateEasyPagesSour
 
     pinState: epSrcWPProps.defPinState,
 
-    styles: getReactCSSFromString( 'EasyPageStyles', epSrcWPProps.EasyPageStyles, {} ).parsed,
-    containerStyles: getReactCSSFromString( 'EasyPageContainerStyles', epSrcWPProps.EasyPageContainerStyles, {} ).parsed,
+    // added null so not to over-ride any color choices for easy pages
+    styles: getReactCSSFromString( 'EasyPageStyles', epSrcWPProps.EasyPageStyles, {} , null ).parsed,
+    containerStyles: getReactCSSFromString( 'EasyPageContainerStyles', epSrcWPProps.EasyPageContainerStyles, {} , null ).parsed,
   }
 
   return easyPagesSourceProps;
