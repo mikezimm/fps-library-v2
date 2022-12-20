@@ -904,7 +904,13 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
         let result = await updateReactListItem( this.props.webURL, this.props.listName, parseInt(itemId), thisButtonObject, this.props.sourceUserInfo, this.state.panelItem );
 
         //If success (result is error message and null by default )
-        if ( result === null && this.props.quickCommands.onUpdateReload === true ) {
+        // if ( result === null && this.props.quickCommands.onUpdateReload === true ) {
+
+        /**
+         * Updated this logic based on returning resultInfo not null for errors:
+         * https://github.com/mikezimm/fps-library-v2/issues/20
+         */
+        if ( this.props.quickCommands.successBanner > 0 && result.status === 'Success') {
 
             let updates = Object.keys(thisButtonObject.updateItem).map( k => {
                 return k;
@@ -916,8 +922,10 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
 
             this.props.quickCommands.refreshCallback( bannerMessage, false );
 
-        } else if ( result !== null ) {
-            this.props.quickCommands.refreshCallback( result, true );
+        //https://github.com/mikezimm/fps-library-v2/issues/20
+        } else if ( result ) {
+            this.props.quickCommands.refreshCallback( result.errorInfo.friendly, true );
+            
         }
     }
     /**

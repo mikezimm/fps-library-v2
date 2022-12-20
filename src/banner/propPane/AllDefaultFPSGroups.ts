@@ -20,14 +20,19 @@ export function getAllDefaultFPSFeatureGroups( thisWPClass: IThisFPSWebPartClass
 
   const groups: IPropertyPaneGroup[] = [];
 
-  if ( thisWPClass._allowPinMe === true ) groups.push( FPSPinMePropsGroupX( thisWPClass ) );
+  // Added this check for https://github.com/mikezimm/fps-library-v2/issues/7
+  if ( thisWPClass._allowPinMe === true && thisWPClass._isSPA !== true ) groups.push( FPSPinMePropsGroupX( thisWPClass ) );
+
   if ( thisWPClass._allowEasyPages ) groups.push( FPSEasyPagesGroup( thisWPClass ) );
   if ( thisWPClass._allowFieldPanel === 'Manual' ) groups.push( FPSFieldsPanelPropGroup( thisWPClass ) );
   groups.push( FPSBanner3VisHelpGroup( thisWPClass ) );
   groups.push( FPSBanner4BasicGroup( thisWPClass ) );
   groups.push( FPSBanner3NavGroup() );
   groups.push( FPSBanner3ThemeGroup( thisWPClass ) );
+
+    // Added this check for https://github.com/mikezimm/fps-library-v2/issues/7
   if ( thisWPClass._isSPA !== true ) groups.push( FPSOptionsGroupBasic( thisWPClass ) );
+  
   if ( thisWPClass._allowPandoramic ) groups.push( FPSOptionsExpando( thisWPClass ) );
   groups.push( FPSImportPropsGroup );
   

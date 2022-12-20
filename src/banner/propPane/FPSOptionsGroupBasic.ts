@@ -25,11 +25,14 @@ export function FPSOptionsGroupBasic( thisWPClass: IThisFPSWebPartClass ) {
 
 
   let fields: any[] = [];
+
+  // Added this check for https://github.com/mikezimm/fps-library-v2/issues/7
   if ( thisWPClass._isSPA === true ) {
     fields.push(
       PropertyPaneLabel('nothing', {
         text: 'This set of options is NOT available in SPA Format'
       }));
+
   } else {
     if (thisWPClass._allowShowSearch === true) {
       fields.push(
@@ -43,7 +46,7 @@ export function FPSOptionsGroupBasic( thisWPClass: IThisFPSWebPartClass ) {
           label: 'Hide quick launch - may be seen briefly', offText: 'Ignore', onText: 'Hidden',
         }));
     }
-  
+
     if (thisWPClass._allowPageHeaderHide === true) {
       fields.push(
         PropertyPaneToggle('pageHeaderHide', {

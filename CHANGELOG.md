@@ -5,12 +5,17 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.51
+npm install @mikezimm/fps-library-v2@1.0.52
 
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.52 - 2022-Dec-19:  reactList && commands columns
+- fix:  updateReactListItem and reactListView https://github.com/mikezimm/fps-library-v2/issues/20
+- updated PropPaneGroups to not show PinMe or FPSBasics in certain conditions like SPA:   https://github.com/mikezimm/fps-library-v2/issues/7
+- fix:  Fix about tab not showing in panel:  https://github.com/mikezimm/fps-library-v2/issues/9
 
 ## 1.0.51 - 2022-Dec-19:  reactList && commands columns
 - https://github.com/mikezimm/fps-library-v2/issues/12 - updated getSelectV2, getExpandV2, getFuncV2

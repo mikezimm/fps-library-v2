@@ -16,7 +16,7 @@ export const CaptchaRegex = /{{|captcha[\^]?|}}|=|\?/g;
 export const CommandCaptchaTestFailed : string = 'Failed Captcha test.  Not saving';
 export const CommandCaptchaRequiredFailed : string = 'Failed Captcha test - item missing comparison.  Not saving';
 
-export async function updateReactListItem(webUrl: string, listName: string, Id: number, thisButtonObject: IQuickButton, sourceUserInfo: IUser, panelItem: IDrillItemInfo): Promise<string> {
+export async function updateReactListItem(webUrl: string, listName: string, Id: number, thisButtonObject: IQuickButton, sourceUserInfo: IUser, panelItem: IDrillItemInfo): Promise<IUpdateCommandItemReturn> {
   //lists.getById(listGUID).webs.orderBy("Title", true).get().then(function(result) {
   //let allItems : IDrillItemInfo[] = await sp.web.webs.get();
 
@@ -25,8 +25,6 @@ export async function updateReactListItem(webUrl: string, listName: string, Id: 
 
   // let results : any[] = [];
 
-
-  let errMessage = null;
 
   let failedRequiredUpdate: any = false;
   let failedCaptchaTest: any = false;
@@ -223,17 +221,18 @@ export async function updateReactListItem(webUrl: string, listName: string, Id: 
     } // END This key value is string
   });
 
+  let errMessage: string = '';
   if (failedRequiredUpdate === true) {
-    return `${CommandCancelRequired} - ${failureMessage.join('')}`;
+    errMessage = `${CommandCancelRequired} - ${failureMessage.join('')}`;
 
   } else if (failedCaptchaTest === true) {
-    return `${CommandCaptchaTestFailed} - ${failureMessage.join('')}`;
+    errMessage = `${CommandCaptchaTestFailed} - ${failureMessage.join('')}`;
 
   } else if (failedCaptchaRequired === true) {
-    return `${CommandCaptchaRequiredFailed} - ${failureMessage.join('')}`;
+    errMessage = `${CommandCaptchaRequiredFailed} - ${failureMessage.join('')}`;
 
   } else if (Object.keys(newUpdateItemObj).length === 0) {
-    return `${CommandItemNotUpdatedMessage} - ${failureMessage.join('')}`;
+    errMessage = `${CommandItemNotUpdatedMessage} - ${failureMessage.join('')}`;
   }
 
   console.log('newUpdateItemObj', newUpdateItemObj);
@@ -247,10 +246,27 @@ export async function updateReactListItem(webUrl: string, listName: string, Id: 
     consoleLog: thisButtonObject.console,
   }
 
-  const result: IUpdateCommandItemReturn = await updateCommandItems( updateProps );
+  let result: IUpdateCommandItemReturn = null;
+  if ( errMessage ) {
+    result = {
+      response: null,
+      errorInfo: {
+        returnMess: errMessage,
+        friendly: errMessage,
+        result: errMessage,
+        errObj: errMessage,
+      },
+      errorInput: null,// Used for logging
+      status: 'RuleBreak',
+    }
+
+  } else {
+    result = await updateCommandItems( updateProps );
+  }
+
 
   //  https://github.com/mikezimm/fps-library-v2/issues/14
   //  https://github.com/mikezimm/fps-library-v2/issues/16
-  return result.errorInfo ? result.errorInfo.friendly : '';
+  return result;
 
 }

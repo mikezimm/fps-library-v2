@@ -179,20 +179,24 @@ export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: s
           onLinkClick={ _selectedIndex }
       > 
         {/* changed null to undefined :  https://github.com/mikezimm/ALVFinMan/issues/171 */}
-        { replacePanelHTML == '' ? undefined : <PivotItem headerText={HX} ariaLabel={HX} title={HX} itemKey={HX} itemIcon={ 'SunQuestionMark' }/> }
+        { replacePanelHTML == ''                ? undefined : <PivotItem headerText={HX} ariaLabel={HX} title={HX} itemKey={HX} itemIcon={ 'SunQuestionMark' }/> }
 
-        { contentPages.whyContent === undefined ?  undefined : <PivotItem headerText={H0} ariaLabel={H0} title={H0} itemKey={H0} itemIcon={ 'QandA' }/> }
+        {/* 2022-12-20:  Updated all these to be !contentPages to resulve this issue:
+              https://github.com/mikezimm/fps-library-v2/issues/9
+        */}
 
-        { contentPages.gettingStartedContent === undefined ?  undefined : <PivotItem headerText={H1} ariaLabel={H1} title={H1} itemKey={H1} itemIcon={ undefined }/> }
-        { contentPages.basicsContent				 === undefined ?  undefined : <PivotItem headerText={H2} ariaLabel={H2} title={H2} itemKey={H2} itemIcon={ undefined }/> }
-        { contentPages.advancedContent			 === undefined ?  undefined : <PivotItem headerText={H3} ariaLabel={H3} title={H3} itemKey={H3} itemIcon={ undefined }/> }
-        { contentPages.futureContent		 === undefined ?  undefined : <PivotItem headerText={H4} ariaLabel={H4} title={H4} itemKey={H4} itemIcon={ 'RenewalFuture' }/> }
-        { contentPages.errorsContent 				 === undefined ?  undefined : <PivotItem headerText={H6} ariaLabel={H6} title={H6} itemKey={H6} itemIcon={ 'Warning12' }/> }
+        { !contentPages.whyContent              ?  undefined : <PivotItem headerText={H0} ariaLabel={H0} title={H0} itemKey={H0} itemIcon={ 'QandA' }/> }
+
+        { !contentPages.gettingStartedContent   ?  undefined : <PivotItem headerText={H1} ariaLabel={H1} title={H1} itemKey={H1} itemIcon={ undefined }/> }
+        { !contentPages.basicsContent				    ?  undefined : <PivotItem headerText={H2} ariaLabel={H2} title={H2} itemKey={H2} itemIcon={ undefined }/> }
+        { !contentPages.advancedContent			    ?  undefined : <PivotItem headerText={H3} ariaLabel={H3} title={H3} itemKey={H3} itemIcon={ undefined }/> }
+        { !contentPages.futureContent		        ?  undefined : <PivotItem headerText={H4} ariaLabel={H4} title={H4} itemKey={H4} itemIcon={ 'RenewalFuture' }/> }
+        { !contentPages.errorsContent 				  ?  undefined : <PivotItem headerText={H6} ariaLabel={H6} title={H6} itemKey={H6} itemIcon={ 'Warning12' }/> }
 
         {/* Dev tab was here */}
 
-        { bannerProps.showTricks !== true || contentPages.tricksTable === undefined ?  undefined : <PivotItem headerText={ undefined } ariaLabel={H7} title={H7} itemKey={H7} itemIcon={ 'AutoEnhanceOn' }/> }
-        { contentPages.aboutTable 				 === undefined ?  undefined : <PivotItem headerText={ undefined } ariaLabel={H8} title={H8} itemKey={H8} itemIcon={ 'Info' }/> }
+        { !bannerProps.showTricks !== true || !contentPages.tricksTable ?  undefined : <PivotItem headerText={ undefined } ariaLabel={H7} title={H7} itemKey={H7} itemIcon={ 'AutoEnhanceOn' }/> }
+        { !contentPages.aboutTable ? undefined : <PivotItem headerText={ undefined } ariaLabel={H8} title={H8} itemKey={H8} itemIcon={ 'Info' }/> }
         { showExport !== true ? null : <PivotItem headerText={ undefined } ariaLabel={H9} title={H9} itemKey={H9} itemIcon={ 'Export' }/> }
         { showHistory !== true ? null : <PivotItem headerText={ undefined } ariaLabel={HA} title={HA} itemKey={HA} itemIcon={ 'FullHistory' }/> }
         { showMedical !== true ? null : <PivotItem headerText={ undefined } ariaLabel={HB} title={HB} itemKey={HB} itemIcon={ 'Medical' }/> }

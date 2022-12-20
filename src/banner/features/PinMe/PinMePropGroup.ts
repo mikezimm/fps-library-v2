@@ -18,11 +18,14 @@ export const PinMeLocations = [
 export function FPSPinMePropsGroupX( thisWPClass: IThisFPSWebPartClass ) : IPropertyPaneGroup {
 
   let fields: any[] = [];
+
+  // Added this check for https://github.com/mikezimm/fps-library-v2/issues/7
   if ( thisWPClass._isSPA === true ) {
     fields.push(
       PropertyPaneLabel('nothing', {
         text: 'This set of options is NOT available in SPA Format'
       }));
+
   } else {
     fields = [
       PropertyPaneDropdown('defPinState', <IPropertyPaneDropdownProps>{
