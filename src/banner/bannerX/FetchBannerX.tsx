@@ -73,8 +73,8 @@ export interface IFetchBannerXProps {
     nearBannerElementsArray: Element[];
     farBannerElementsArray: Element[];
 
-    updatePinState: any; // Only needed when web part manages pinMeState
-    pinState: IPinMeState; // Only needed when web part manages pinMeState
+    updatePinState?: any; // Only needed when web part manages pinMeState
+    pinState?: IPinMeState; // Only needed when web part manages pinMeState
 
     refreshId?: string;
     replacePanelHTML?: JSX.Element;//Intended for help info and can include performance if added in onInit, but do not add in onInit if you plan to update in React Component
@@ -89,7 +89,7 @@ export interface IFetchBannerXState {
   showPanel: boolean;
 	showSettings: boolean;
 	selectedKey: string;
-	
+
 	showPropsHelp: boolean;
 
 	panelType: PanelType;
@@ -98,10 +98,14 @@ export interface IFetchBannerXState {
 	// renderCount: number;
   showEasyPages: boolean;
 
+  pinState: IPinMeState;
+
 }
 
 export default class FetchBanner extends React.Component<IFetchBannerXProps, IFetchBannerXState> {
 
+  private _pinMeState: IPinMeState;
+  private _updatePinState: any;
 
   private _webPartHelpElement = getWebPartHelpElementX( this.props.WebPartHelpPivots, this.props.bannerProps, );
 
@@ -158,6 +162,15 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
     super(props);
     if ( consoleFunctions === true ) console.log('FetchBannerElement ~ constructor');
     const expandoProps : IMinPandoramicProps= this.props.bannerProps.expandoProps;
+
+    /**
+     * Establish local variables for managing pin state depending on what is passed in.
+     *   This is because there is an option for the main webpart to manage pinMeState by passing in it's own update function and value.
+     *   By default, it is managed all by FPS Banner based on the settings from the property pane.
+     */
+    this._pinMeState = this.props.pinState ? this.props.pinState : this.props.bannerProps.fpsPinMenu.defPinState;
+    this._updatePinState = this.props.updatePinState ? this.props.updatePinState : this._updatePinStateHere.bind(this);
+
     this.state = {
       showPanel: false,
       // keySiteProps: keySiteProps,
@@ -168,6 +181,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
       // renderCount: 0,
       showPropsHelp: false,
       showEasyPages: false,
+      pinState: this.props.pinState,
     };
 
   }
@@ -255,9 +269,9 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
 
 
       const forceNarrowStyles = getForceNarrow( this.props.pinState, this.props.updatePinState );
-      
+
       const farBannerElementsArray = updateFarElementsPinMe({ farBannerElementsArray: this.buildFarBannerElements(),
-        displayMode: displayMode, fpsPinMenu: fpsPinMenu, pinState: this.props.pinState, updatePinState: this.props.updatePinState, pimMeCmdStyles: this.pimMeCmdStyles });
+        displayMode: displayMode, fpsPinMenu: fpsPinMenu, pinState: this._pinMeState, updatePinState: this._updatePinState, pimMeCmdStyles: this.pimMeCmdStyles });
 
       const nearBannerElementsArray = updateNearElements( this.nearBannerElements, this.props.bannerProps, this.showSettings.bind(this), this._toggleExpando.bind(this), this._toggleEasyLinks.bind(this) );
 
@@ -494,6 +508,12 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
 		// }
 
 	}
+
+  private _updatePinStateHere( newValue: IPinMeState ) {
+    this._pinMeState = newValue;
+    this.setState({ pinState: newValue, });
+ }
+
 
   private showSettings() {  this.setState({ showSettings: !this.state.showSettings }); }
 
