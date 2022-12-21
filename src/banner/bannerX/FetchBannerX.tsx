@@ -138,7 +138,10 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
   }
 
   private buildFarBannerElements() {
-    const farElements: any[] = this.props.farBannerElementsArray ? this.props.farBannerElementsArray : [];
+    const farElements: any[] = [];
+    if ( this.props.farBannerElementsArray && this.props.farBannerElementsArray.length > 0 ) {
+      this.props.farBannerElementsArray.map( ele => farElements.push ( ele ) );
+    }
     if ( this.props.bannerProps.showTricks === true ) {
       farElements.push( null );
     }

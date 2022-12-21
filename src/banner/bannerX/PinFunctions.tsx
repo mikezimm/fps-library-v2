@@ -38,7 +38,7 @@ export function updateFarElementsPinMe( updateProps: IUpdateFarPinMe ): JSX.Elem
 
     } else if ( pinState === 'pinMini' ) {
       farBannerElementsArray.push( <Icon  title={ 'Expand' } iconName='DoubleChevronDown' 
-        onClick={ () => setPinArrowFunction(fpsPinMenu, updatePinState, 'pinMini', displayMode) } style={ pimMeCmdStyles  }/> );
+        onClick={ () => setPinArrowFunction(fpsPinMenu, updatePinState, 'pinFull', displayMode) } style={ pimMeCmdStyles  }/> );
 
       if ( fpsPinMenu.forcePinState !== true ) farBannerElementsArray.push( PinDefault );
     }

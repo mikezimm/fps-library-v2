@@ -5,12 +5,16 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.56
+npm install @mikezimm/fps-library-v2@1.0.57
 
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.57 - 2022-Dec-19:  FieldPanelMin
+- fix updateFarElementsPinMe fix onClick for when state = pinMini... was pinMini now pinFull so it does actually toggle.
+- fps-styles@1.0.10 - 2022-Dec-20: add to overflow-x: hidden; pinMeMini
 
 ## 1.0.56 - 2022-Dec-19:  FieldPanelMin
 - create FieldPanelMin (minimal field panel page)
