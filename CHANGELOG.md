@@ -5,12 +5,15 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.55
+npm install @mikezimm/fps-library-v2@1.0.56
 
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.56 - 2022-Dec-19:  FieldPanelMin
+- create FieldPanelMin (minimal field panel page)
 
 ## 1.0.55 - 2022-Dec-19:  add PinMe icon and state
 - update FetchBannerX to have local variable this._pinMeState and this._updatePinState - either from local or passed in from parent component.
