@@ -27,4 +27,5 @@ export interface IMinWPFieldPanelProps {
   saveCommands?: any; // callback function to save current command
   tryViews?: any; //if function is passed down, parent web part could use this to temporarily replace the saved button commands.
   saveViews?: any; // callback function to save current command
+  // enable: boolean; // Set in BuildBannerPropsX2 and depends on this._allowFieldPanel and if there is a web url and list title provided.  Will need to update this in react render if I add an input box in a web part
 }

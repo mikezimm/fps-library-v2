@@ -193,6 +193,9 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
     const saveCommands: any = _FieldPanelDesignMode === 'Disabled' ? null : setup.main._saveFieldPanelCommandsFunction.bind( setup.main );
     const saveViews: any = _FieldPanelDesignMode === 'Disabled' ? null : setup.main._saveFieldPanelViewsFunction.bind( setup.main );
 
+    const FieldPanelWebUrl: string = _FieldPanelWebProp && MinFPProps[ _FieldPanelWebProp ] ? MinFPProps[ _FieldPanelWebProp ] : pageContext.web.absoluteUrl;
+    const FieldPanelListTitle: string = _FieldPanelListProp ? MinFPProps[ _FieldPanelListProp ] : 'Documents' ;
+
     const fieldPanelProps: IMinWPFieldPanelProps = {
       displayMode: displayMode,
       lists: [{
@@ -204,6 +207,7 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
       saveCommands: saveCommands, // callback function to save current command
       tryViews: null,     //if function is passed down in  React Component, parent web part could use this to temporarily replace the saved button commands.
       saveViews: saveViews,    // callback function to save current command
+      // enable: this._allowFieldPanel === true && FieldPanelWebUrl && FieldPanelListTitle ? true : false,
     }
 
     const startTime = new Date();
