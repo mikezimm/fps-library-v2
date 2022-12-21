@@ -15,6 +15,7 @@ NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 ## 1.0.55 - 2022-Dec-19:  add PinMe icon and state
 - update FetchBannerX to have local variable this._pinMeState and this._updatePinState - either from local or passed in from parent component.
 - update updateFarElementsPinMe to have new logic
+- resolves https://github.com/mikezimm/fps-library-v2/issues/23
 
 ## 1.0.54 - 2022-Dec-19:  library repoLinks in About Panel
 - tweak library issues links to 'legacy' so shows as 'fps-styles issues' instead of just 'issues'
