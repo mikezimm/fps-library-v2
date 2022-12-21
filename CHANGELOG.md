@@ -5,12 +5,16 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.58
+npm install @mikezimm/fps-library-v2@1.0.59
 
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.59 - 2022-Dec-19:  PinMe behaviour and EasyPages pando style
+- add forceSPAStyle to FetchBannerX.tsx and EasyPagesHooks props :  https://github.com/mikezimm/fps-library-v2/issues/24
+- add WebPartLinks padding-top on fps-library row
 
 ## 1.0.58 - 2022-Dec-19:  FieldPanelMin
 - fix FetchBannerX - changed this.props.pinMeState to this._pinMeState, save for pin function.

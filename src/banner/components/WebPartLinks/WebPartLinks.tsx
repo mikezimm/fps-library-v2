@@ -122,7 +122,7 @@ public constructor(props:IWebPartLinksProps){
                 { this.props.repoObject &&  this.props.showRepoLinks === true? this.props.repoObject.wiki : null }
 
             </Stack>
-            <Stack horizontal={true} wrap={true} horizontalAlign={"stretch"} tokens={stackTokensBody}>
+            <Stack horizontal={true} wrap={true} horizontalAlign={"stretch"} tokens={stackTokensBody} style={{ paddingTop: '10px' }}>
                 { this.props.repoObject &&  this.props.showRepoLinks === true ? <div style={{paddingLeft: doChildList === true ? '30px' : '' }} title='Updates in these libraries also impact this webpart.'><b>Related Libraries</b></div> : null }
                 { this.props.repoObject &&  this.props.showRepoLinks === true? gitRepoFpsLibraryV2.issues : null }
                 { this.props.repoObject &&  this.props.showRepoLinks === true? gitRepoFpsPnp2.issues : null }

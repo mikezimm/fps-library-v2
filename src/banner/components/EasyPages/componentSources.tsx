@@ -39,6 +39,7 @@ export interface IEasyPagesHookProps {
   easyPagesSourceProps: IEasyPagesSourceProps;  // General props which apply to all Sources/Pages
   easyPagesExtraProps: IEasyPagesExtraProps;  // General props which are used on the SourcesPage but not component page
   EasyIconsObject: IEasyIcons;
+  forceSPAStyle: boolean; // For when expando mode is set in banner, changes to 100% width to solve https://github.com/mikezimm/fps-library-v2/issues/24
 }
 
 /***
@@ -147,7 +148,7 @@ const EasyPagesHook: React.FC<IEasyPagesHookProps> = ( props ) => {
   if ( expandedState === true ) classNames.push ( 'expand' );
 
   // Rebuilt logic for:  https://github.com/mikezimm/drilldown7/issues/263 , https://github.com/mikezimm/Pnpjs-v2-Upgrade-sample/issues/72
-  if ( props.easyPagesSourceProps.pageLayout === 'SharePointFullPage' || props.easyPagesSourceProps.pageLayout === 'SingleWebPartAppPageLayout' ) {
+  if ( props.forceSPAStyle === true || props.easyPagesSourceProps.pageLayout === 'SharePointFullPage' || props.easyPagesSourceProps.pageLayout === 'SingleWebPartAppPageLayout' ) {
 
     if ( repo.href.toLowerCase().indexOf('drilldown') > -1 ) {
       classNames.push( 'ep-drilldown-spa' ) ;

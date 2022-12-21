@@ -174,6 +174,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
     const _pinMeState: IPinMeState = this.props.pinState ? this.props.pinState : this.props.bannerProps.fpsPinMenu.defPinState;
     this._updatePinState = this.props.updatePinState ? this.props.updatePinState : this._updatePinStateHere.bind(this);
     this._pinMeState = _pinMeState;
+    this.pimMeCmdStyles = this.makeLargerCmdStyles();
     this.state = {
       showPanel: false,
       // keySiteProps: keySiteProps,
@@ -395,6 +396,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
       easyPagesExtraProps={ { ...bannerProps.easyPagesExtraProps, ...{ easyPagesExpanded: showEasyPages, easyPagesToggleExpanded: this._toggleEasyLinks.bind(this) } } }
       easyPagesSourceProps= { bannerProps.easyPagesSourceProps }
       EasyIconsObject= { bannerProps.EasyIconsObject }
+      forceSPAStyle = { this.state.expandoramicMode === true ? true : false }  //  << ==  https://github.com/mikezimm/fps-library-v2/issues/24
     />;
 
 
