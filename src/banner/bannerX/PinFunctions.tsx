@@ -32,15 +32,19 @@ export function updateFarElementsPinMe( updateProps: IUpdateFarPinMe ): JSX.Elem
         onClick={ () => setPinArrowFunction( fpsPinMenu, updatePinState, 'pinFull', displayMode ) } style={ pimMeCmdStyles }/> );
 
     } else if ( pinState === 'pinFull' ) {
-      farBannerElementsArray.push( <Icon  title={ 'Minimize' } iconName='CollapseMenu' 
-        onClick={ () => setPinArrowFunction(fpsPinMenu, updatePinState, 'pinMini', displayMode) } style={ pimMeCmdStyles  }/> );
       if ( fpsPinMenu.forcePinState !== true ) farBannerElementsArray.push( PinDefault );
 
+      farBannerElementsArray.push( <Icon  title={ 'Minimize' } iconName='CollapseMenu' 
+        onClick={ () => setPinArrowFunction(fpsPinMenu, updatePinState, 'pinMini', displayMode) } style={ pimMeCmdStyles  }/> );
+
+
     } else if ( pinState === 'pinMini' ) {
+      if ( fpsPinMenu.forcePinState !== true ) farBannerElementsArray.push( PinDefault );
+
       farBannerElementsArray.push( <Icon  title={ 'Expand' } iconName='DoubleChevronDown' 
         onClick={ () => setPinArrowFunction(fpsPinMenu, updatePinState, 'pinFull', displayMode) } style={ pimMeCmdStyles  }/> );
 
-      if ( fpsPinMenu.forcePinState !== true ) farBannerElementsArray.push( PinDefault );
+
     }
   }
 

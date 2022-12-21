@@ -12,6 +12,9 @@ npm install @mikezimm/fps-library-v2@1.0.57
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
+## 1.0.58 - 2022-Dec-19:  FieldPanelMin
+- fix FetchBannerX - changed this.props.pinMeState to this._pinMeState, save for pin function.
+
 ## 1.0.57 - 2022-Dec-19:  FieldPanelMin
 - fix updateFarElementsPinMe fix onClick for when state = pinMini... was pinMini now pinFull so it does actually toggle.
 - fps-styles@1.0.10 - 2022-Dec-20: add to overflow-x: hidden; pinMeMini

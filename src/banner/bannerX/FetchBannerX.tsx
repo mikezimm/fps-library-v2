@@ -171,9 +171,9 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
      *   This is because there is an option for the main webpart to manage pinMeState by passing in it's own update function and value.
      *   By default, it is managed all by FPS Banner based on the settings from the property pane.
      */
-    this._pinMeState = this.props.pinState ? this.props.pinState : this.props.bannerProps.fpsPinMenu.defPinState;
+    const _pinMeState: IPinMeState = this.props.pinState ? this.props.pinState : this.props.bannerProps.fpsPinMenu.defPinState;
     this._updatePinState = this.props.updatePinState ? this.props.updatePinState : this._updatePinStateHere.bind(this);
-
+    this._pinMeState = _pinMeState;
     this.state = {
       showPanel: false,
       // keySiteProps: keySiteProps,
@@ -184,7 +184,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
       // renderCount: 0,
       showPropsHelp: false,
       showEasyPages: false,
-      pinState: this.props.pinState,
+      pinState: _pinMeState,
     };
 
   }
@@ -194,7 +194,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
     this.pimMeCmdStyles = this.makeLargerCmdStyles();
     //Copied from FPSPageInfo.tsx componentDidMount
     const { displayMode, fpsPinMenu } = this.props.bannerProps;
-    const tempPinState: IPinMeState = displayMode === DisplayMode.Edit ? 'normal' : this.props.pinState;
+    const tempPinState: IPinMeState = displayMode === DisplayMode.Edit ? 'normal' : this._pinMeState;
     FPSPinMe( fpsPinMenu.domElement, tempPinState, null,  false, true, null as any, fpsPinMenu.pageLayout, displayMode );
 
   }
@@ -271,7 +271,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
       const { showPanel, showSettings, showEasyPages, showPropsHelp } = this.state;
 
 
-      const forceNarrowStyles = getForceNarrow( this.props.pinState, this.props.updatePinState );
+      const forceNarrowStyles = getForceNarrow( this._pinMeState, this._updatePinState );
 
       const farBannerElementsArray = updateFarElementsPinMe({ farBannerElementsArray: this.buildFarBannerElements(),
         displayMode: displayMode, fpsPinMenu: fpsPinMenu, pinState: this._pinMeState, updatePinState: this._updatePinState, pimMeCmdStyles: this.pimMeCmdStyles });

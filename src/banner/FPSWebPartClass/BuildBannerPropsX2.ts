@@ -233,7 +233,7 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
 
       fpsPinMenu: {
         defPinState: properties.defPinState ? properties.defPinState : 'disabled',
-        forcePinState: properties.forcePinState ? properties.forcePinState : true,
+        forcePinState: properties.forcePinState !== true ? false : true,
         domElement: setup.main.context.domElement,
         pageLayout: properties.pageLayout,
       },
