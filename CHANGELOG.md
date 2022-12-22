@@ -5,14 +5,24 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.59
+npm install @mikezimm/fps-library-v2@1.0.64
 
-
+"Error making HttpClient request in queryable [400]  ::> {"odata.error":{"code":"-1, Microsoft.SharePoint.Client.InvalidClientQueryException","message":{"lang":"en-US","value":"An unexpected 'StartObject' node was found when reading from the JSON reader. A 'PrimitiveValue' node was expected."}}}"
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
-## 1.0.60 - 2022-Dec-19:  fix getListProps
+## 1.0.64 - 2022-Dec-19: analytics
+- update saveAnalytics: use saveThisLogItemAsync
+
+## 1.0.63 - 2022-Dec-19: analytics
+- update saveAnalytics: alert & console.log error to show friendly error when gulping
+
+## 1.0.61 - 2022-Dec-19:  fix bannerEleClasses
+- reactListView.tsx:  const bannerEleClasses = ['quickCommandFooterStyles', commandResult ? 'quickCommandShow' : 'quickCommandHide' ];
+- reactListView.tsx:  added footerElement from Drilldown for quickCommand results.
+
+## 1.0.60 - 2022-Dec-19:  fix getListProps, fix quickCommands, bring result footer to list component
 - fixed createIUserFromUser:  User.Id was getting changed from string to number causing any QuickCommand logic using === to fail on Id check.
 - rebuild reactListView.tsx:  createPanelButtons to createPanelButtonsV2 - uses arrow function to pass back Item and Command.  No more parsing the element id stuff!
 - npm install @mikezimm/fps-styles@1.0.10

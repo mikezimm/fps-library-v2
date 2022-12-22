@@ -8,6 +8,10 @@ import { getCurrentPageLink, getUrlVars, getWebUrlFromLink } from '../../logic/L
 import { getSiteCollectionUrlFromLink, } from '../../logic/Strings/urlServices';
 
 import { saveThisLogItem } from '@mikezimm/fps-pnp2/lib/services/sp/logging/saveThisLogItem';
+import { saveThisLogItemAsync } from '@mikezimm/fps-pnp2/lib/services/sp/logging/saveThisLogItemAsync';
+
+import { getHelpfullError } from '../../logic/indexes';
+import { check4Gulp } from '@mikezimm/fps-pnp2';
 
 export function getMinPerformanceString( performanceObj: ILoadPerformance, capMS: number = 7000, capValue: any = 'paused?' ) : string {
 
@@ -271,7 +275,15 @@ export async function saveAnalytics2 ( analyticsWeb: string, analyticsList: stri
 
   // finalSaveObject.device = JSON.stringify( device );
 
-  saveThisLogItem( analyticsWeb, analyticsList, finalSaveObject, muteConsole );
+  const result = await saveThisLogItemAsync( analyticsWeb, analyticsList, finalSaveObject, muteConsole );
+
+  if ( typeof result === 'object' ) {
+    const err = getHelpfullError( result , false, false, true );
+    if ( check4Gulp() === true ) { 
+      console.log( `fps-library-v2 ERROR: saveAnalytics2 ~ 280`, err );
+      alert ( `saveThisLogItemError\n\n${err.friendly}`);
+     };
+  }
 
 }
 

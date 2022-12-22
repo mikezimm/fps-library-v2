@@ -694,17 +694,31 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
               /**
                * Brought this in directly from Drilldown web part
                */
-              let createBanner = quickCommands !== null && quickCommands.successBanner > 0 ? true : false; //CommandItemNotUpdatedMessage
-              const bannerEleClasses = [ 'quickCommandFooterStyles', commandResult ? 'quickCommandHide' : 'quickCommandShow' ];
+              const createFooter = quickCommands.successBanner > 0 ? true : false; //CommandItemNotUpdatedMessage
+              const footerEleClasses = ['quickCommandFooterStyles', commandResult ? 'quickCommandShow' : 'quickCommandHide' ];
 
-              if ( commandResult.status === 'Success' ) {  }
-              else if ( commandResult.status === 'Unknown' ) { bannerEleClasses.push( 'quickCommandWarn' ); }
-              else { bannerEleClasses.push( 'quickCommandError' ); }
+              if ( !commandResult ) { 
+                //Do nothing if no result
+               } else if (commandResult.status === 'Success') { 
 
-              let bannerMessageEle = createBanner === false ? null : <div className={ bannerEleClasses.join(' ') }>
-                  { commandResult.statusElement ? commandResult.statusElement : commandResult.errorInfo.returnMess }
+               } else if (commandResult.status === 'Unknown') {
+                  footerEleClasses.push('quickCommandWarn');
+
+              } else {
+                  footerEleClasses.push('quickCommandError');
+              }
+
+              const footerInfo = !commandResult ? '' : 
+              commandResult.statusElement ? commandResult.statusElement : 
+              commandResult.errorInfo ? commandResult.errorInfo.returnMess : '' 
+
+              /**
+               * NOTE:  You ALWAYS need a footer element if it's active, even if there is nothing to show.
+               * If not, then you do not get the smooth transitions when it is visible.
+               */
+              const footerElement = createFooter === false ? null : <div className={ footerEleClasses.join(' ') }>
+                  { footerInfo }
               </div>;
-
 
               /*stylesL.reactListView*/
               return (
@@ -721,7 +735,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
                       { fullPanel }
                       { attachPanel }
                       { dialog }
-                      { bannerMessageEle }
+                      { footerElement }
                       { listView }
                     </div>
                 </div>
