@@ -693,8 +693,9 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
 
               /**
                * Brought this in directly from Drilldown web part
+               * added quickCommands && due to testing on spfx-v2-tester
                */
-              const createFooter = quickCommands.successBanner > 0 ? true : false; //CommandItemNotUpdatedMessage
+              const createFooter = quickCommands && quickCommands.successBanner > 0 ? true : false; //CommandItemNotUpdatedMessage
               const footerEleClasses = ['quickCommandFooterStyles', commandResult ? 'quickCommandShow' : 'quickCommandHide' ];
 
               if ( !commandResult ) { 
