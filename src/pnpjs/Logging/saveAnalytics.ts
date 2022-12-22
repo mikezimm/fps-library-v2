@@ -7,7 +7,7 @@ import { IMinPerformance, IPerformanceOp, LoadPerformanceOps } from '../../compo
 import { getCurrentPageLink, getUrlVars, getWebUrlFromLink } from '../../logic/Links/UrlFunctions';
 import { getSiteCollectionUrlFromLink, } from '../../logic/Strings/urlServices';
 
-import { saveThisLogItem } from '@mikezimm/fps-pnp2/lib/services/sp/logging/saveThisLogItem';
+// import { saveThisLogItem } from '@mikezimm/fps-pnp2/lib/services/sp/logging/saveThisLogItem';
 import { saveThisLogItemAsync } from '@mikezimm/fps-pnp2/lib/services/sp/logging/saveThisLogItemAsync';
 
 import { getHelpfullError } from '../../logic/indexes';

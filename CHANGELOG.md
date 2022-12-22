@@ -5,15 +5,14 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.64
+npm install @mikezimm/fps-library-v2@1.0.66
 
-"Error making HttpClient request in queryable [400]  ::> {"odata.error":{"code":"-1, Microsoft.SharePoint.Client.InvalidClientQueryException","message":{"lang":"en-US","value":"An unexpected 'StartObject' node was found when reading from the JSON reader. A 'PrimitiveValue' node was expected."}}}"
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
-## 1.0.64 - 2022-Dec-19: analytics
-- update saveAnalytics: use saveThisLogItemAsync
+## 1.0.66 - 2022-Dec-19: analytics
+- update saveAnalytics: use saveThisLogItemAsync with await, add RuleBreak to IFPSResultStatus again
 
 ## 1.0.63 - 2022-Dec-19: analytics
 - update saveAnalytics: alert & console.log error to show friendly error when gulping
