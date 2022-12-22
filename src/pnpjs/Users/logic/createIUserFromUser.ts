@@ -39,7 +39,12 @@ export function createIUserFromUser( user: ISiteUserInfo | null, webUrl: string,
   let imageUrl: string = ''; //Found this in getSiteAdmins response. 
   if ( data && data[`Picture` as 'Email' ]?.['Url' as any ] ) imageUrl = data[`Picture` as 'Email' ]?.['Url' as any ]; // Added all the 'as'  so that it passes linting
 
-  const Id:    string = ForceId ? ForceId : data ? `${data.Id}` : 'Not valid User ID';
+/**
+ * Changed this from : string to : any because data.Id was a number and was getting forced to a string.
+ * This was causing the default logic in the eval create buttons to fail because the Id value of a user on an item is a number.
+ * I remeber adding this recently for some reason (likely typing was telling me to do it)
+ */
+  const Id:    any = ForceId ? ForceId : data ? data.Id : 'Not valid User ID';
   const IsSiteAdmin: boolean = data ? data.IsSiteAdmin : false;
 
   const PrincipalType: number | null = data ? data.PrincipalType : null;

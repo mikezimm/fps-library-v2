@@ -5,6 +5,7 @@ import { IQuickButton } from '../../../interfaces/QuickCommands/IQuickCommands';
 import { IDrillItemInfo } from '../../../interfaces/Drilldown/IDrillItem';
 import { IMinPageArrowsState, } from '../../Arrows/PageArrows';
 import { IViewFieldDD } from '../interfaces/IViewFieldDD';
+import { IUpdateCommandItemReturn } from '../../../../pnpjs/CommandItems/updateItem';
 
 export interface IReactListItemsState extends IMinPageArrowsState {
   maxChars?: number;
@@ -28,5 +29,8 @@ export interface IReactListItemsState extends IMinPageArrowsState {
 
   myDialog?: IMyBigDialogProps;
   pickedCommand?: IQuickButton; //Index of command and ID of panel item
+
+  commandResult: IUpdateCommandItemReturn;  // Result of command function
+  commandError: boolean;  // command function had error or not
 
 }

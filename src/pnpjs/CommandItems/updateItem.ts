@@ -29,6 +29,7 @@ export interface IUpdateCommandItemReturn {
   errorInfo: IHelpfullOutput;
   errorInput?: IHelpfullInput; // Used for logging
   status: IFPSResultStatus;
+  statusElement?: JSX.Element;  // Optional used if you want to pass back a specific JSX.Element instead of a text warning
 }
 
 export async function updateCommandItems( commandItem: IUpdateCommandItemProps, ) : Promise<IUpdateCommandItemReturn>  {

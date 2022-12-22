@@ -12,6 +12,16 @@ npm install @mikezimm/fps-library-v2@1.0.59
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
+## 1.0.60 - 2022-Dec-19:  fix getListProps
+- fixed createIUserFromUser:  User.Id was getting changed from string to number causing any QuickCommand logic using === to fail on Id check.
+- rebuild reactListView.tsx:  createPanelButtons to createPanelButtonsV2 - uses arrow function to pass back Item and Command.  No more parsing the element id stuff!
+- npm install @mikezimm/fps-styles@1.0.10
+- add quickCommand Result Footer direclty in reactListView (instead of passing all that back to parent - aka Drilldown )
+
+## 1.0.59 - 2022-Dec-19:  fix getListProps
+- npm install @mikezimm/fps-pnp2@1.0.18
+- test reactListView createPanelButtonsV2 - arrow function
+
 ## 1.0.59 - 2022-Dec-19:  PinMe behaviour and EasyPages pando style
 - add forceSPAStyle to FetchBannerX.tsx and EasyPagesHooks props :  https://github.com/mikezimm/fps-library-v2/issues/24
 - add WebPartLinks padding-top on fps-library row
