@@ -9,6 +9,13 @@ npm install @mikezimm/fps-library-v2@1.0.66
 
 # Changelog
 
+
+# FOR COMMANDS DEBUGGING:  - add way to eval each part of each button and show what results are
+const newStr = x.replaceAll('(','~=').replaceAll(')','~=').replaceAll('||','~=').replaceAll('&&','~=').split('~=');
+const testEvals = [];
+newStr.map( s => { if ( s.trim().length > 0 ) testEvals.push(s.trim()) })
+
+
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
 ## 1.0.66 - 2022-Dec-19: analytics
