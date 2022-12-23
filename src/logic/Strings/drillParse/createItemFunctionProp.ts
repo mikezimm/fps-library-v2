@@ -10,6 +10,7 @@ import { trimB4 } from "./trimB4";
 import { getDetailValueType } from '../../Types/typeServices';
 import { replaceHTMLEntities } from '../html';
 import { checkDeepProperty } from '../../Objects/deep';
+import { getLetterBuckets } from './getLetterBuckets';
 
 /***
  *     .o88b. d8888b. d88888b  .d8b.  d888888b d88888b      d888888b d888888b d88888b .88b  d88.
@@ -30,7 +31,7 @@ import { checkDeepProperty } from '../../Objects/deep';
  *
  */
 
-export function createItemFunctionProp(staticColumn: string, item: any, defaultValue: string | 'originalValue') {
+export function createItemFunctionProp( staticColumn: string, item: any, defaultValue: string | 'originalValue') {
 
   const DoNotExpandTrimB4LC = convertArrayToLC(DoNotExpandTrimB4);
   const DoNotExpandTrimAfterLC = convertArrayToLC(DoNotExpandTrimAfter);
@@ -243,6 +244,16 @@ export function createItemFunctionProp(staticColumn: string, item: any, defaultV
       } else if (rightSideLC === 'InitialsAsCapsD'.toLowerCase()) {
         singleItemValue = getInitials(trimmedItem, true, true);
 
+      } else if (rightSideLC === 'FirstWordLastL'.toLowerCase()) {
+        // https://github.com/mikezimm/drilldown7/issues/286
+        const firstWord: string = GetFirstWord(trimmedItem, false, false, true);
+        const lastLetter: string = GetLastWord(trimmedItem, false, true, true);
+        singleItemValue = `${firstWord} ${lastLetter}`.trim();
+
+      } else if (rightSideLC === 'FirstInFirst5Buckets'.toLowerCase() || rightSideLC === 'FirstInLast5Buckets'.toLowerCase() ) { 
+        // https://github.com/mikezimm/drilldown7/issues/140
+        singleItemValue = getLetterBuckets(trimmedItem, rightSideLC as any );
+
       } else if (rightSideLC === 'FirstNumber'.toLowerCase()) {
         let firstNumber = trimmedItem.match(/(\d+)/);
         singleItemValue = firstNumber ? firstNumber[0] : '';
@@ -296,3 +307,4 @@ export function createItemFunctionProp(staticColumn: string, item: any, defaultV
   return { item: item, isMultiSelect: isMultiSelect };
 
 }
+

@@ -5,11 +5,19 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.68
+npm install @mikezimm/fps-library-v2@1.0.69
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.69 - 2022-Dec-23: Drilldown String Functions, Special Functions
+- add getLetterBucket5 for https://github.com/mikezimm/drilldown7/issues/140
+- add string Functions:  FirstInFirst5Buckets, FirstInLast5Buckets for https://github.com/mikezimm/drilldown7/issues/286
+- add following for https://github.com/mikezimm/drilldown7/issues/294
+- add Special Fields/Props:  IDoNotFetchSpecial = 'ModDateFirstName' | 'ModDateLastName' | 'ModDateInitials' | 'ModDateFirstL' ;
+- add Special Fields/Props:  IDoNotFetchSpecial = 'CreateDateFirstName' | 'CreateDateLastName' | 'CreateDateInitials'  | 'CreateDateFirstL';
+- add function getSpecialColumns:  src\pnpjs\Lists\getVX\getSpecialV2.ts 
 
 ## 1.0.68 - 2022-Dec-23: getPreConfig and PivotOptions
 - add src\common\Pivots\PivotOptions.ts from Drilldown, should be used with PivotStyle choices (like in PivotTiles)

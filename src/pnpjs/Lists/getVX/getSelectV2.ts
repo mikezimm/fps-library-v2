@@ -1,5 +1,5 @@
 
-import { DoNotExpandColumns, } from './IGetInterfaceV2';
+import { DoNotExpandColumns, DoNotFetchSpecial, DoNotFetchSpecialLC, } from './IGetInterfaceV2';
 
 /**
    * getSelectColumns function will take an array of column names (string format)
@@ -16,7 +16,7 @@ import { DoNotExpandColumns, } from './IGetInterfaceV2';
    * @param lookupColumns 
    */
 
-  export function getSelectColumns(lookupColumns : string[], DoNotExpandColumnsIn: string[] = DoNotExpandColumns ) : string[] {
+  export function getSelectColumns( lookupColumns : string[], DoNotExpandColumnsIn: string[] = DoNotExpandColumns ) : string[] {
 
     let baseSelectColumns: string[]  = [];
     let DoNotExpandColumnsLC = DoNotExpandColumnsIn.map( item => { return item.toLowerCase(); } ) ;
@@ -24,7 +24,9 @@ import { DoNotExpandColumns, } from './IGetInterfaceV2';
 
     lookupColumns.map( ( column: string ) => {
       // Only look at columns with / in the name
-      if (column && column.indexOf("/") > -1 ) {
+      if ( DoNotFetchSpecialLC.indexOf( column.toLowerCase() ) > - 1 ) {
+        // Do NOT select this
+      } else if (column && column.indexOf("/") > -1 ) {
         let isLookup = column.indexOf("/");
         if(isLookup) {
           let splitCol = column.split("/");
