@@ -3,8 +3,8 @@ import * as React from 'react';
 import { ILoadPerformance, ILoadPerformanceOps, IPerformanceOp, } from "../Performance/IPerformance";
 import { startPerformOp, updatePerformanceEnd, createBasePerformanceInit, } from "../Performance/functions";
 
-import "@pnp/sp/webs";
-import "@pnp/sp/clientside-pages/web";
+// import "@pnp/sp/webs";
+// import "@pnp/sp/clientside-pages/web";
 
 import { getMainSelectedItems, } from './components/OnClickHelpers';
 

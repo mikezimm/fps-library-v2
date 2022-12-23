@@ -1,12 +1,7 @@
 import * as React from 'react';
 
-import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
-
 import { ILoadPerformance, ILoadPerformanceOps, IPerformanceOp, } from "../../../components/molecules/Performance/IPerformance";
 import { startPerformOp, updatePerformanceEnd, createBasePerformanceInit, } from "../../../components/molecules/Performance/functions";
-
-import "@pnp/sp/webs";
-import "@pnp/sp/clientside-pages/web";
 
 import { updateSelectedCommands } from './components/command/Accordion';
 import CommandBuilderHook from './components/command/Accordion';
