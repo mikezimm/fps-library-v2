@@ -5,65 +5,69 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.67
+npm install @mikezimm/fps-library-v2@1.0.68
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
-## 1.0.67 - 2022-Dec-19: reactListView
+## 1.0.68 - 2022-Dec-23: getPreConfig and PivotOptions
+- add src\common\Pivots\PivotOptions.ts from Drilldown, should be used with PivotStyle choices (like in PivotTiles)
+- add src\pnpjs\PreConfigItems\getPreConfig.ts from Drilldown which gets preconfig settings from PreConfigSite
+
+## 1.0.67 - 2022-Dec-23: reactListView
 - bring richTextHeight from Drilldown directly into reactListView
 - move fetchAttachments function into separate functions under pnpjs folder
 - fix some imports that were to general pulling in more than neccessary
 
-## 1.0.66 - 2022-Dec-19: analytics
+## 1.0.66 - 2022-Dec-22: analytics
 - update saveAnalytics: use saveThisLogItemAsync with await, add RuleBreak to IFPSResultStatus again
 
-## 1.0.63 - 2022-Dec-19: analytics
+## 1.0.63 - 2022-Dec-22: analytics
 - update saveAnalytics: alert & console.log error to show friendly error when gulping
 
-## 1.0.61 - 2022-Dec-19:  fix bannerEleClasses
+## 1.0.61 - 2022-Dec-22:  fix bannerEleClasses
 - reactListView.tsx:  const bannerEleClasses = ['quickCommandFooterStyles', commandResult ? 'quickCommandShow' : 'quickCommandHide' ];
 - reactListView.tsx:  added footerElement from Drilldown for quickCommand results.
 
-## 1.0.60 - 2022-Dec-19:  fix getListProps, fix quickCommands, bring result footer to list component
+## 1.0.60 - 2022-Dec-22:  fix getListProps, fix quickCommands, bring result footer to list component
 - fixed createIUserFromUser:  User.Id was getting changed from string to number causing any QuickCommand logic using === to fail on Id check.
 - rebuild reactListView.tsx:  createPanelButtons to createPanelButtonsV2 - uses arrow function to pass back Item and Command.  No more parsing the element id stuff!
 - npm install @mikezimm/fps-styles@1.0.10
 - add quickCommand Result Footer direclty in reactListView (instead of passing all that back to parent - aka Drilldown )
 
-## 1.0.59 - 2022-Dec-19:  fix getListProps
+## 1.0.59 - 2022-Dec-21:  fix getListProps
 - npm install @mikezimm/fps-pnp2@1.0.18
 - test reactListView createPanelButtonsV2 - arrow function
 
-## 1.0.59 - 2022-Dec-19:  PinMe behaviour and EasyPages pando style
+## 1.0.59 - 2022-Dec-21:  PinMe behaviour and EasyPages pando style
 - add forceSPAStyle to FetchBannerX.tsx and EasyPagesHooks props :  https://github.com/mikezimm/fps-library-v2/issues/24
 - add WebPartLinks padding-top on fps-library row
 
-## 1.0.58 - 2022-Dec-19:  FieldPanelMin
+## 1.0.58 - 2022-Dec-21:  FieldPanelMin
 - fix FetchBannerX - changed this.props.pinMeState to this._pinMeState, save for pin function.
 
-## 1.0.57 - 2022-Dec-19:  FieldPanelMin
+## 1.0.57 - 2022-Dec-21:  FieldPanelMin
 - fix updateFarElementsPinMe fix onClick for when state = pinMini... was pinMini now pinFull so it does actually toggle.
 - fps-styles@1.0.10 - 2022-Dec-20: add to overflow-x: hidden; pinMeMini
 
-## 1.0.56 - 2022-Dec-19:  FieldPanelMin
+## 1.0.56 - 2022-Dec-21:  FieldPanelMin
 - create FieldPanelMin (minimal field panel page)
 
-## 1.0.55 - 2022-Dec-19:  add PinMe icon and state
+## 1.0.55 - 2022-Dec-21:  add PinMe icon and state
 - update FetchBannerX to have local variable this._pinMeState and this._updatePinState - either from local or passed in from parent component.
 - update updateFarElementsPinMe to have new logic
 - resolves https://github.com/mikezimm/fps-library-v2/issues/23
 
-## 1.0.54 - 2022-Dec-19:  library repoLinks in About Panel
+## 1.0.54 - 2022-Dec-21:  library repoLinks in About Panel
 - tweak library issues links to 'legacy' so shows as 'fps-styles issues' instead of just 'issues'
 - "@mikezimm/fps-styles": "^1.0.9" -> https://github.com/mikezimm/fps-library-v2/issues/13
 
-## 1.0.53 - 2022-Dec-19:  library repoLinks in About Panel
+## 1.0.53 - 2022-Dec-21:  library repoLinks in About Panel
 - update:  add libraries to LinksRepos and incorporate new libs into WebPartLinks https://github.com/mikezimm/fps-library-v2/issues/21
 - fix:     Fix FetchBannerX and FullPanel to show all contentPages:  https://github.com/mikezimm/fps-library-v2/issues/9
 
-## 1.0.52 - 2022-Dec-19:  reactList && commands columns
+## 1.0.52 - 2022-Dec-21:  reactList && commands columns
 - fix:  updateReactListItem and reactListView https://github.com/mikezimm/fps-library-v2/issues/20
 - updated PropPaneGroups to not show PinMe or FPSBasics in certain conditions like SPA:   https://github.com/mikezimm/fps-library-v2/issues/7
 - fix:  Fix about tab not showing in panel:  https://github.com/mikezimm/fps-library-v2/issues/9
