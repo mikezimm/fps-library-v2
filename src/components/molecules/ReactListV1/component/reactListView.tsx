@@ -1,68 +1,29 @@
 
 import * as React from 'react';
-import { Icon, IIconProps  } from 'office-ui-fabric-react/lib/Icon';
-// import { Icon, IIconProps } from 'office-ui-fabric-react';
-
-import { Web,  } from "@pnp/sp/presets/all";
-import { Link,  } from 'office-ui-fabric-react';
+import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 
 import { Pivot, PivotItem,} from 'office-ui-fabric-react/lib/Pivot';
 
 import ReactJson from "react-json-view";
 
-// import { IUser } from '../../fpsReferences';
-// import { IQuickButton, IQuickCommands } from '@mikezimm/npmfunctions/dist/QuickCommands/IQuickCommands';
-
-// import { IDrillItemInfo } from '../../fpsReferences';
-
-// import { autoDetailsList } from '../../../../services/hoverCardService';
-
-// import { doesObjectExistInArray } from '../../fpsReferences';
-
-// import { findParentElementPropLikeThis } from '@mikezimm/npmfunctions/dist/Elements/functions';
-
-// import { getHelpfullError } from '../../fpsReferences';
-
-// import { buildConfirmDialogBig, IMyBigDialogProps } from '@mikezimm/npmfunctions/dist/Elements/dialogBox'; 
-
-// import stylesL from '../ListView/listView.module.scss';
+import { getMaxRichHeightNum } from '../functions/richHeight';
 
 import { ListView, SelectionMode, IGrouping, } from "@pnp/spfx-controls-react/lib/ListView";
-// import { IGroup } from 'office-ui-fabric-react/lib/components/DetailsList';
 
-// import { mergeStyles } from 'office-ui-fabric-react/lib/Styling';
-import { Stack, IStackTokens } from 'office-ui-fabric-react';
 import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { PrimaryButton, DefaultButton } from 'office-ui-fabric-react/lib/Button';
 
 
-// import { Dialog, DialogType, DialogFooter, IDialogProps } 	from 'office-ui-fabric-react/lib/Dialog';
-// import { Button, ButtonType, } 			from 'office-ui-fabric-react/lib/Button';
-// import { Label } 			from 'office-ui-fabric-react/lib/Label';
-
-// import { updateReactListItem } from './listFunctions';
-
-// import { IContentsToggles, makeToggles } from '../fields/toggleFieldBuilder';
-
-// import styles from '../Contents/listView.module.scss';
-// import stylesRLV from './reactListView.module.scss';
-// import stylesInfo from './InfoPane.module.scss';
-
 import PageArrows from '../../Arrows/PageArrows';
-// import { IView } from '@pnp/sp/views';
 
-// import { defaultBannerCommandStyles } from '../../fpsReferences'
-// import { IViewFieldDD } from './IViewFieldDD';
 import { IReactListItemsProps } from './IReactListItemsProps';
 import { IReactListItemsState } from './IReactListItemsState';
-import { NoCommandsInfo } from '../atoms/noCommandsInfo';
+
 import { replaceHandleBarsValues } from '../../../../logic/Strings/handleBarsSub';
 import { IDrillItemInfo } from '../../../interfaces/Drilldown/IDrillItem';
-import { getHelpfullError } from '../../../../logic/Errors/friendly';
-import { IQuickCommandsDesign } from '../../FieldPanel/components/command/IAccordion';
-import { IUser } from '../../../../pnpjs';
+
 import { IQuickButton } from '../../../interfaces/QuickCommands/IQuickCommands';
-import { defaultBannerCommandStyles } from '../../../../common/commandStyles/defaults';
+
 import { IViewFieldDD } from '../interfaces/IViewFieldDD';
 import { buildConfirmDialogBig, IMyBigDialogProps } from '../../../atoms/Elements/confirmDialogBig';
 import { IContentsToggles, makeToggles } from '../atoms/toggleFieldBuilder';
@@ -71,20 +32,14 @@ import { findParentElementPropLikeThis } from '../../../../logic/DOM/Search/domS
 import { updateReactListItem } from '../functions/updateReactListItem';
 import { doesObjectExistInArray } from '../../../../logic/Arrays/searching/objectfind';
 
-// import { createPanelButtonsV1 } from '../atoms/createPanelButtonsV1';
 import { createPanelButtonsV2 } from '../atoms/createPanelButtonsV2';
+import { createPanelAttachmentElements } from '../../../../pnpjs/Attachments/fetchAttachments';
 
 require('@mikezimm/fps-styles/dist/reactListView.css');
-
-
 
 export default class ReactListItems extends React.Component<IReactListItemsProps, IReactListItemsState> {
 
   private _componentWidth: number = null;
-
-    private createAttachPanel () : any {
-        return null;
-    }
 
     /**
      * createPanelAttachments is identical on ActionNews and Drilldown7 except panelItem interface
@@ -92,206 +47,18 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
      * @param panelItem 
      */
 
-    private async createPanelAttachments( thisId: any, panelItem: IDrillItemInfo ): Promise<void>{
+    private async _createPanelAttachments( thisId: any, panelItem: IDrillItemInfo ): Promise<void>{
 
-        const thisListWeb = Web(this.props.webURL);
-        const thisListObject = thisListWeb.lists.getByTitle( this.props.listName );
-        let allItems : any[] = [];
-        let errMessage = null;
-        const attachments: any[] = [];
-
-        if ( panelItem.Attachments && panelItem.Attachments === true ) {
-
-            try {
-                allItems = await thisListObject.items.getById( thisId ).attachmentFiles();
-    
-                if ( allItems.length > 0 ) {
-                    attachments.push( <h2>({ allItems.length}) Attachments</h2> );
-                    attachments.push( <div style={{ paddingBottom: "10px"}}><b>CTRL-Click</b> to open in new window</div> );
-                    allItems.map( a => {
-                        let attachmentItem = <div><Link target= { "_blank" } href= { a.ServerRelativeUrl }> { a.FileName }</Link></div>;
-                            attachments.push( attachmentItem );
-        
-                    });
-                }
-            } catch (e) {
-                errMessage = getHelpfullError(e, true, true); // eslint-disable-line @typescript-eslint/no-unused-vars
-            }
-        }
-
-        this.setState({ 
-            panelAttachments: attachments,
-            lastAttachId: thisId,
-        });
+      const attachments = await createPanelAttachmentElements( this.props.webURL, this.props.listName, panelItem );
+      this.setState({ 
+        panelAttachments: attachments,
+        lastAttachId: thisId,
+      });
 
     }
 
     private delim = '|||';
 
-    // /**
-    //  * 
-    //  * @param quickCommands 
-    //  * @param item 
-    //  * @param sourceUserInfo  //This is just passed in in order to allow for user targeted b.showWhenEvalTrue checks
-    //  */
-    // private createPanelButtons ( quickCommands: IQuickCommandsDesign, item: IDrillItemInfo , sourceUserInfo: IUser ) {
-
-    //     let allButtonRows : any[] = [];
-
-    //     //Adjusted per:  https://github.com/mikezimm/drilldown7/issues/211
-    //     if ( !quickCommands || !quickCommands.buttons || quickCommands.buttons.length === 0 ) { 
-    //         return NoCommandsInfo;
-
-    //     } else {
-
-    //         let buildAllButtonsTest = true;
-    //         if ( quickCommands.showWhenEvalTrue && quickCommands.showWhenEvalTrue.length > 0 ) {
-
-    //             //2022-01-18:  Added Try catch when testing and found my typed in quick command had error.
-    //             try {
-    //                 buildAllButtonsTest = eval( quickCommands.showWhenEvalTrue );
-                
-    //                 if ( buildAllButtonsTest === true ) {
-    //                     //build all the buttons ( subject to individual button checks )
-    //                 } else { buildAllButtonsTest = false; }
-    //             } catch (e) {
-    //                 buildAllButtonsTest = false;
-    //                 let errMessage = getHelpfullError(e, false, false);
-    //                 console.log(`ERROR:  createPanelButtons: quickCommands.showWhenEvalTrue !!!`, quickCommands.showWhenEvalTrue);
-    //                 console.log(`ERROR:  createPanelButtons: quickCommands.showWhenEvalTrue Error Details`, errMessage);
-
-    //                 alert(`createPanelButtons: quickCommands.showWhenEvalTrue error !!! Check the console for details:   ${quickCommands.showWhenEvalTrue}`);
-    //             }
-
-    //         }
-
-    //         if ( buildAllButtonsTest === true ) {
-    //             quickCommands.buttons.map( (buttonRow, r) => {
-
-    //                 if ( buttonRow && buttonRow.length > 0 ) {
-    //                   let rowResult : any = null;
-    //                   const buttons : any[] = [];
-    
-    //                     buttonRow.map( (b: IQuickButton,i: number) => {
-    
-    //                         let buildThisButton = true;
-    
-    //                         /**
-    //                          * showWhenEvalTrue must be run in the context of this section of code to be valid.
-    //                          */
-    
-    //                         if ( b.showWhenEvalTrue && b.showWhenEvalTrue.length > 0 ) {
-
-    //                             //2022-01-18:  Added Try catch when testing and found my typed in quick command had error.
-    //                             try {
-    //                               const buildButtonTest = eval( b.showWhenEvalTrue );
-    //                                 if ( buildButtonTest === true ) {
-    //                                     //build all the buttons
-    //                                 } else { buildThisButton = false; }
-    //                             } catch (e) {
-    //                               const errMessage = getHelpfullError(e, false, false);
-    //                                 console.log(`createPanelButtons: b[${i}].showWhenEvalTrue error !!!`, b.showWhenEvalTrue);
-    //                                 console.log(`createPanelButtons: b[${i}].showWhenEvalTrue Error Details`, errMessage);
-
-    //                                 alert(`createPanelButtons: quickCommands.showWhenEvalTrue error !!! Check the console for details:   ${quickCommands.showWhenEvalTrue}`);
-    //                             }
-
-    //                         }
-
-    //                         if ( buildThisButton === true ) {
-
-    //                           const buttonStyles: React.CSSProperties = b.styleButton ? b.styleButton as React.CSSProperties :  { minWidth: buttonRow.length === 1 ? '350px' : '', padding: '25px', marginBottom: '10px', fontSize: 'larger' };
-
-    //                           //Tried adding 
-    //                           // const IconElement = b.icon ? <Icon iconName= { 'Emoji2' } style={ defaultBannerCommandStyles }/> : undefined;
-    //                           const buttonID = ['ButtonID', r, i , item.Id].join(this.delim);
-    //                           const buttonTitle = b.label;
-    //                           // const iconName: string = b.icon;
-    //                           const buttonIcon : IIconProps = { iconName: b.icon, style: defaultBannerCommandStyles }
-    //                           const thisButton = b.primary === true ?
-
-    //                            //Tried adding  iconName into Primary Button, does not work,
-    //                            //Tried adding IconElement into icon Props, can't see it.
-    //                            //Tried adding Icon Element into the div next to Primary button and could see it.
-    //                            //
-    //                                 <div id={ buttonID } title={ buttonTitle } >
-    //                                   <PrimaryButton style= { buttonStyles } iconProps= { buttonIcon } text={b.label} onClick={this._panelButtonClicked.bind(this)} disabled={b.disabled} checked={b.checked} /></div>:
-
-    //                                   <div id={ buttonID } title={ buttonTitle } >
-    //                                     <DefaultButton style= { buttonStyles } iconProps= { buttonIcon } text={b.label} onClick={this._panelButtonClicked.bind(this)} disabled={b.disabled} checked={b.checked} /></div>;
-
-    //                             buttons.push( thisButton );
-    //                         }
-    
-    //                     }); //END buttonRow.map( (b,i) => {
-    
-    //                     const stackQuickCommands: IStackTokens = { childrenGap: 10 };
-    //                     rowResult = <Stack horizontal={ true } tokens={stackQuickCommands}>
-    //                         {buttons}
-
-    //                     </Stack>;
-    
-    //                     const styleRows: any = {paddingBottom: 10};
-    //                     if ( quickCommands.styleRow ) {
-    //                         try {
-    //                             Object.keys(quickCommands.styleRow).map( k => {
-    //                                 styleRows[k] = quickCommands.styleRow[k];
-    //                             });
-    //                         } catch (e) {
-    //                             alert( `quickCommands.styleRow is not valid JSON... please fix: ${quickCommands.styleRow}` );
-    //                         }
-    //                     }
-    //                     allButtonRows.push( <div style={ styleRows }> { rowResult } </div> );
-
-    
-    //                 } //END   if ( buttonRow && buttonRow.length > 0 ) {
-    
-    //             }); //END  quickCommands.buttons.map( (buttonRow, r) => {
-    //             allButtonRows.push( <Icon iconName= { 'Emoji2' } style={ { fontSize: '24px', } }/> );
-                
-    //         } //END   if ( buildAllButtonsTest === true ) {
-
-
-    //     }
-
-    //     return allButtonRows;
-
-    // }
-
-    private covertFieldInfoToIViewFields( parentListFieldTitles: [] , fieldsToShow: string[] ) {
-
-        /**
-         * This is the export format required:
-            export const  initials : IViewField = {
-            name: "userInitials",
-            displayName: "User",
-            isResizable: true,
-            sorting: true,
-            minWidth: 10,
-            maxWidth: 30
-        };
-         */
-        let viewFields : IViewFieldDD[] = [];
-        
-        if ( fieldsToShow.length === 0 ) { //Do all in order of fieldInfo
-            if ( parentListFieldTitles.length > 0 ) { //Do all in order of fieldInfo
-                parentListFieldTitles.map( f => {
-                    viewFields.push({
-                        name: f[0],
-                        displayName: f[1],
-                        isResizable: true,
-                        sorting: true,
-                        minWidth: 50,
-                        maxWidth: 100
-                    });
-                });
-            }
-        }
-
-        console.log('covertFieldInfoToIViewFields - viewFields', viewFields);
-        return viewFields;
-
-    }
 
     private handleExpandedFieldInfoToIViewFields( viewFields?: IViewFieldDD[] ) {
         //Before this line was added, I think it was mutating props causing double render
@@ -337,14 +104,10 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
     constructor(props: IReactListItemsProps) {
         super(props);
         console.log( 'listView PROPS: ', this.props, );
-        const parentListFieldTitles = this.props.parentListFieldTitles ? JSON.parse( this.props.parentListFieldTitles ) : '';
- //       console.log( 'parentListFieldTitles', parentListFieldTitles );
 
         let viewFields : IViewFieldDD[] = [];
         if ( this.props.viewFields.length > 0 ) { 
             viewFields = this.handleExpandedFieldInfoToIViewFields( this.props.viewFields );
-        } else { 
-            viewFields = this.covertFieldInfoToIViewFields( parentListFieldTitles , [] );
         }
 
         let groupByFields : IGrouping[] = [];
@@ -354,10 +117,11 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
             groupByFields.map( gF => {  gF.name = gF.name.replace(/\//g,'') ;  });
         }
 
+        const richHeightNum = getMaxRichHeightNum( this.props.autoRichHeight, this.props.richHeights[0], this.props.items );
+
         this.state = {
           fontSize: this._ListViewFontSizes[0] ,  //=>> address:  https://github.com/mikezimm/drilldown7/issues/169
           maxChars: this.props.maxChars ? this.props.maxChars : 50,
-          parentListFieldTitles: parentListFieldTitles,
           viewFields: viewFields,
           groupByFields:  groupByFields,
           showPanel: false,
@@ -371,7 +135,8 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
           myDialog: this.createBlankDialog(),
           pickedCommand: null,
           panelWidth: PanelType.medium,
-
+          richHeightNum: richHeightNum,
+          richHeightStr: `${richHeightNum}em`,
           firstVisible: 0,
           lastVisible: this.props.itemsPerPage - 1,
 
@@ -421,7 +186,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
             });
         }
 
-        if ( prevProps.richHeight !== this.props.richHeight ) { 
+        if ( prevProps.richHeights.join('') !== this.props.richHeights.join('') ) { 
           updateViewFields = true;
           redraw = true;
         }
@@ -430,7 +195,6 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
         //   this._setMaxRichHeight( this.props.autoRichHeight, this.props.richHeight, this.props.items ); 
         //   redraw = true; }
         if ( prevProps.parentListURL !== this.props.parentListURL ) { redraw = true; }
-        if ( prevProps.richHeight !== this.props.richHeight ) { redraw = true; }
 
 
         /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -598,7 +362,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
                 showRichHeightButton = true;
                 const fieldStyles = [ `list-view-rt` ];
                 // fieldStyles.push( this._RichTextRowHeight[ this.state.richHeight ] );
-                field.render =  ( item: { [x: string]: any; }, index: any ) => { return <div style={{ maxHeight: this.props.richHeight }} className={ fieldStyles.join(' ') } dangerouslySetInnerHTML={{__html: item[ field.name ]}} /> }
+                field.render =  ( item: { [x: string]: any; }, index: any ) => { return <div style={{ maxHeight: this.state.richHeightStr }} className={ fieldStyles.join(' ') } dangerouslySetInnerHTML={{__html: item[ field.name ]}} /> }
                 // field.render =  ( item, index ) => { this._renderRich( item, field.name ) }
 
               } else if ( field.linkSubstitute || field.textSubstitute ) {
@@ -637,7 +401,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
 
             //=>> address:  https://github.com/mikezimm/drilldown7/issues/270
             const changeRichHeight = showRichHeightButton !== true ? null : 
-                <div title={ `Change row height from ${this.props.richHeight}`} onClick={ this.props.updateRichHeightProps } 
+                <div title={ `Change row height from ${this.state.richHeightStr}`} onClick={ this._updateRichHeightState.bind(this) } 
                   style={{ fontSize: 'larger' , fontWeight: 'bolder', width: '25px', textAlign: 'center', cursor: 'pointer' }}>
                   <Icon iconName= 'CollapseMenu'/></div>;
 
@@ -742,15 +506,6 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
                 </div>
                 );
               }
-            // } else {
-
-            // <div className={ styles.container }></div>
-            //  return (
-            //     <div className={ styles.logListView }>
-            //         { thisLog }
-            //     </div>
-            //     );
-            // } 
 
         } //if ( this.props.items != null && this.props.items.length > 0 ) {    
     } // Render
@@ -768,6 +523,15 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
  *                                                                                                          
  */
 
+    private _updateRichHeightState(): void {
+
+      const oldValue = this.state.richHeightNum;
+      const oldIdx = this.props.richHeights.indexOf( oldValue );
+      const nextIdx = oldIdx === this.props.richHeights.length -1 ? 0 : oldIdx + 1;
+      const richHeightNum = this.props.richHeights[ nextIdx ];
+
+      this.setState({ richHeightNum: richHeightNum, richHeightStr: `${richHeightNum}em` });
+    }
 
 
     private _onGoToList = () : void => {
@@ -802,12 +566,9 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
     private _updateStateOnPropsChange( pushViewFieldsToState : boolean ): void {
 
         let viewFields : IViewFieldDD[] = [];
-        let parentListFieldTitles = this.props.parentListFieldTitles ? JSON.parse(this.props.parentListFieldTitles) : '';
 
         if ( this.props.viewFields.length > 0 ) { 
             viewFields = this.handleExpandedFieldInfoToIViewFields( this.props.viewFields );
-        } else { 
-            viewFields = this.covertFieldInfoToIViewFields( parentListFieldTitles , [] );
         }
    
         let groupByFields : IGrouping[] = [];
@@ -835,29 +596,6 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
  *                                                                                                       
  *                                                                                                       
  */
-
- //private async ensureTrackTimeList(myListName: string, myListDesc: string, ProjectOrTime: string): Promise<boolean> {
-     
-    // private async _panelButtonClicked ( item: any ): Promise<void> {
-
-    //     let e: any = event;
-    //     let thisID = findParentElementPropLikeThis(e.target, 'id', 'ButtonID', 5, 'begins');
-
-    //     if ( !thisID ) { 
-
-    //         alert('Whoops! Can not find ID of _panelButtonClicked!');
-    //         return null;
-
-    //     } else {
-
-    //       try {
-    //         await this.startThisQuickUpdate( thisID );
-    //       } catch (ev) {
-    //         console.log('_panelButtonClicked error:', ev );
-    //       }
-    //     }
-    // }
-
 
     private async _panelButtonClickedv2 ( b: any, item: any ): Promise<void> {
 
@@ -955,60 +693,6 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
 
   }
 
-    // private async startThisQuickUpdate ( thisID: string ): Promise<void>{
-
-    //     const buttonID = thisID.split(this.delim);
-    //     //let buttonID = ['ButtonID', r, i , item.Id].join(this.delim);
-    //     const buttonRow: any = buttonID[1];
-    //     const buttonIndex: any = buttonID[2];
-    //     const itemId = buttonID[3];
-    //     const thisButtonObject : IQuickButton = this.props.quickCommands.buttons[ buttonRow ][ buttonIndex ];
-
-    //     if ( !thisButtonObject ) {
-    //         alert('_panelButtonClicked - can not find thisButtonObject - ' + thisID );
-    //     } else {
-
-    //         if ( thisButtonObject.updateItem ) {
-    //             let readyToUpdate = true;
-    //             if ( !this.props.webURL ) { alert('Missing listWebUrl for quickCommands') ; readyToUpdate = false ; }
-    //             if ( !this.props.listName ) { alert('Missing listName for quickCommands') ; readyToUpdate = false ; }
-
-    //             if ( readyToUpdate === true ) {
-    //                 //Attempt to update item:
-    //                 if ( thisButtonObject.confirm && thisButtonObject.confirm.length > 0 ) { 
-
-    //                     let myDialog: IMyBigDialogProps = this.createBlankDialog();
-    //                     myDialog.title = "Are you sure you want to make this update?";
-    //                     myDialog.dialogMessage = thisButtonObject.confirm + '';
-    //                     myDialog.confirmButton = thisButtonObject.label + '';
-    //                     myDialog.showDialog = true;
-    //                     myDialog.maxWidth = 600;
-
-    //                     this.setState({
-    //                         pickedCommand: thisButtonObject,
-    //                         myDialog: myDialog as IMyBigDialogProps,
-    //                     });
-
-    //                 } else {
-    //                     await this.completeThisQuickUpdate ( itemId, thisButtonObject );
-
-    //                 }
-
-
-
-    //             } else {
-    //                 //Don't update item:
-    //             }
-    //         }
-
-    //         if ( thisButtonObject.panelMessage ) {
-    //             this.setState({
-    //                 panelMessage: thisButtonObject.panelMessage,
-    //             });
-    //         }
-    //     }
-
-    // }
 
     private async completeThisQuickUpdate( itemId: string, thisButtonObject : IQuickButton ): Promise<void> {
 
@@ -1102,22 +786,22 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
             if (clickedAttachIcon === true || item.length > 0 ) {
                 let thisID = clickedAttachIcon === true ? findParentElementPropLikeThis(e.target, 'id', 'ButtonID', 5, 'begins') : item[0].Id;
                 thisID = typeof thisID === 'string' ? thisID.replace('ButtonID','') : thisID;
-    
+
                 let panelItem  : IDrillItemInfo = this._getItemFromId(this.props.items, 'Id', thisID );
                 let lastPanelId = this.state.panelId;
-                
+
                 let clickedAttach = false;
                 if ( e.srcElement.dataset && e.srcElement.dataset.iconName === 'Attach' ) {
                     clickedAttach = true;
                 }
-    
-                await this.createPanelAttachments(thisID, panelItem );
-    
+
+                await this._createPanelAttachments(thisID, panelItem );
+
                 let canShowAPanel = thisID === null || thisID === undefined || panelItem === null ? false : true;
                 let showFullPanel = canShowAPanel === true && clickedAttach !== true ? true : false;
                 // 2020-10-13:  The last check in this row just didn't seem right... was && this.props.includeListLink === true ? true : false; 
                 let showAttachPanel = canShowAPanel === true && clickedAttach === true && this.props.includeAttach === true ? true : false; 
-    
+
                 this.setState({ 
                     showPanel: showFullPanel,
                     showAttach: showAttachPanel , 
@@ -1126,9 +810,9 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
                     panelItem: panelItem,
                     lastPanelId: lastPanelId,
                     panelAttachments: this.state.lastAttachId === thisID ? this.state.panelAttachments : [],
-    
+
                 });
-    
+
             }
 
         } 

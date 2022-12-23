@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 
-import { createPerformanceTableVisitor } from '../../components/indexes';
+import { createPerformanceTableVisitor } from '../../components/molecules/Performance/tables';
 import { IWebpartBannerProps } from '../mainReact/IWebpartBannerProps';
 
 export function getMinPanel( bannerProps: IWebpartBannerProps ) : JSX.Element {

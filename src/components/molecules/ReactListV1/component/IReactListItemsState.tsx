@@ -9,7 +9,7 @@ import { IUpdateCommandItemReturn } from '../../../../pnpjs/CommandItems/updateI
 
 export interface IReactListItemsState extends IMinPageArrowsState {
   maxChars?: number;
-  parentListFieldTitles: any;
+  // parentListFieldTitles: any;  2022-12-22:  Does not seem to be used anywhere
   viewFields: IViewFieldDD[];
   groupByFields?: IGrouping[];
 
@@ -19,6 +19,9 @@ export interface IReactListItemsState extends IMinPageArrowsState {
   clickedAttach: boolean; //if you clicked the attached icon (vs selected row), it only will show the attachments in the panel for cleaner implimentation
 
   fontSize: any; //=>> address:  https://github.com/mikezimm/drilldown7/issues/169
+
+  richHeightStr: string; //=>> state is string to allow for px or em.... maxHeight: 55em ; address:  https://github.com/mikezimm/drilldown7/issues/270
+  richHeightNum: number; //=>> state is string to allow for px or em.... maxHeight: 55em ; address:  https://github.com/mikezimm/drilldown7/issues/270
 
   panelId: number;
   lastPanelId: number;

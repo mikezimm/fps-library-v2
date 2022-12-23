@@ -7,6 +7,28 @@ const resolveAppPath = relativePath => path.resolve(appDirectory, relativePath);
 
 // module.exports = { // This was the simple version... hard coding the mode
 
+/**
+ * 
+ * This is the ruleset from JT
+ * 
+ * [10:29 AM] JT (Guest)
+    import stylesheet from './style.css' assert {​​ type: 'css' }​​;
+
+    can also go to es2019 in web part tsconfig.
+
+{
+      test: /\.css|.sass$/,
+      exclude: /node_modules/,
+      use: [
+        { loader: "style-loader" },
+        { loader: "css-loader" },
+        { loader: "sass-loader" }]
+    },
+ */
+
+
+
+
 module.exports = ( env, argv ) => ({
   mode: 'development', // switch to production when you package for production - impacts final size of package you import
   target: 'web',

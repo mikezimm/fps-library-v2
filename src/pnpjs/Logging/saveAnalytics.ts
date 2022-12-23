@@ -10,7 +10,7 @@ import { getSiteCollectionUrlFromLink, } from '../../logic/Strings/urlServices';
 // import { saveThisLogItem } from '@mikezimm/fps-pnp2/lib/services/sp/logging/saveThisLogItem';
 import { saveThisLogItemAsync } from '@mikezimm/fps-pnp2/lib/services/sp/logging/saveThisLogItemAsync';
 
-import { getHelpfullError } from '../../logic/indexes';
+import { getHelpfullError } from '../../logic/Errors/friendly';
 import { check4Gulp } from '@mikezimm/fps-pnp2';
 
 export function getMinPerformanceString( performanceObj: ILoadPerformance, capMS: number = 7000, capValue: any = 'paused?' ) : string {

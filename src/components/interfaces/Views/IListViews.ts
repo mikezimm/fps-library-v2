@@ -10,6 +10,11 @@ import { IQuickCommands } from '../QuickCommands/IQuickCommands';
 
 export type ICustViewDefKeys = 'includeDetails' | 'includeAttach' | 'includeListLink' | 'createItemLink';
 
+/**
+ * This mirrors the 3 groups in property pane.
+ * Although it adds the 4 keys in ICustViewDefKeys.
+ * Currently the keys would the the same on all 3 views
+ */
 export interface ICustViewDef {
   minWidth: number;
   viewFields: IViewField[];
@@ -19,14 +24,14 @@ export interface ICustViewDef {
   includeListLink: boolean;
   createItemLink: boolean;
 }
-  
+
 export interface IListViewDD {
 
-  parentListFieldTitles: string;
+  // parentListFieldTitles: string;  2022-12-22:  Does not seem to be used anywhere
   webURL :string;
   parentListURL : string;
   listName : string;
-  togOtherListview: boolean;
+  // togOtherListview: boolean;  2022-12-22:  Does not seem to be used anywhere
 
   viewDefs: ICustViewDef[];
   viewFields: IViewField[];
@@ -35,7 +40,7 @@ export interface IListViewDD {
   quickCommands?: IQuickCommands;
 
   items : any[];
-  breadCrumb: string[];
+  // breadCrumb: string[];  2022-12-22:  Does not seem to be used anywhere
 
   contextUserInfo: IUser;  //For site you are on ( aka current page context )
   sourceUserInfo: IUser;   //For site where the list is stored

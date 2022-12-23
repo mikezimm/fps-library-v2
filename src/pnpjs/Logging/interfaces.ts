@@ -2,7 +2,7 @@
  * This standard was started with eXTreme Storage webpart
  */
 
-import { ISimpleLink } from "../../logic/indexes";
+import { ISimpleLink } from "../../logic/Links/Interfaces";
 
 /**
  * IZLoadAnalytics can be created when the webpart loads the data so it's easy to pass

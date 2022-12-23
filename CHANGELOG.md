@@ -18,6 +18,11 @@ newStr.map( s => { if ( s.trim().length > 0 ) testEvals.push(s.trim()) })
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
+## 1.0.67 - 2022-Dec-19: reactListView
+- bring richTextHeight from Drilldown directly into reactListView
+- move fetchAttachments function into separate functions under pnpjs folder
+- fix some imports that were to general pulling in more than neccessary
+
 ## 1.0.66 - 2022-Dec-19: analytics
 - update saveAnalytics: use saveThisLogItemAsync with await, add RuleBreak to IFPSResultStatus again
 

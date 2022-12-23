@@ -13,7 +13,10 @@ export interface IReactListItemsProps extends IPageArrowsParentProps {
   maxChars?: number;
   items: IDrillItemInfo[];
   richColumns: string[];
-  richHeight: string; //=>> maxHeight: 55em ; address:  https://github.com/mikezimm/drilldown7/issues/270
+
+  richHeights: number[];  //=>> maxHeight: 55em ; address:  https://github.com/mikezimm/drilldown7/issues/270
+  autoRichHeight: string;  //=>> maxQty;maxHeight ; address:  https://github.com/mikezimm/drilldown7/issues/271
+
   updateRichHeightProps: any;
 
   resetArrows?: string; //unique Id used to reset arrows to starting position
@@ -32,7 +35,7 @@ export interface IReactListItemsProps extends IPageArrowsParentProps {
   showIDs?: boolean;
   showDesc?: boolean;
 
-  parentListFieldTitles?: string;
+  // parentListFieldTitles?: string;  2022-12-22:  Does not seem to be used anywhere
   viewFields?: IViewFieldDD[];
 
   groupByFields?: IGrouping[];
