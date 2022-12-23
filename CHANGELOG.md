@@ -11,6 +11,9 @@ npm install @mikezimm/fps-library-v2@1.0.69
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
+## 1.0.70 - 2022-Dec-23: Drilldown String Functions Prop Pane Help
+- update StringFunctions prop pane help page to list DoNotExpandTrimSpecial columns
+
 ## 1.0.69 - 2022-Dec-23: Drilldown String Functions, Special Functions
 - add getLetterBucket5 for https://github.com/mikezimm/drilldown7/issues/140
 - add string Functions:  FirstInFirst5Buckets, FirstInLast5Buckets for https://github.com/mikezimm/drilldown7/issues/286
