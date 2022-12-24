@@ -22,7 +22,7 @@ export interface IReactListItemsProps extends IPageArrowsParentProps {
   resetArrows?: string; //unique Id used to reset arrows to starting position
 
   webUrl: string; //Used for attachments
-  listName: string; //Used for attachments
+  listTitle: string; //Used for attachments
   listUrl: string;
   isLibrary: boolean;
 

@@ -33,7 +33,7 @@ export interface IQuickCommands {
   onUpdateAlsoCallback?: boolean; // If there is an update on button, then do callback
   callBack?: any;
   listWebUrl?: string;
-  listName?: string;
+  listTitle?: string;
 
   //Added from ActionNews
   onUpdateReload?: boolean; // If there is an update on button, then do callback... reload webpart data

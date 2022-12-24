@@ -16,7 +16,7 @@ export const CaptchaRegex = /{{|captcha[\^]?|}}|=|\?/g;
 export const CommandCaptchaTestFailed : string = 'Failed Captcha test.  Not saving';
 export const CommandCaptchaRequiredFailed : string = 'Failed Captcha test - item missing comparison.  Not saving';
 
-export async function updateReactListItem(webUrl: string, listName: string, Id: number, thisButtonObject: IQuickButton, sourceUserInfo: IUser, panelItem: IDrillItemInfo): Promise<IUpdateCommandItemReturn> {
+export async function updateReactListItem(webUrl: string, listTitle: string, Id: number, thisButtonObject: IQuickButton, sourceUserInfo: IUser, panelItem: IDrillItemInfo): Promise<IUpdateCommandItemReturn> {
   //lists.getById(listGUID).webs.orderBy("Title", true).get().then(function(result) {
   //let allItems : IDrillItemInfo[] = await sp.web.webs.get();
 
@@ -239,7 +239,7 @@ export async function updateReactListItem(webUrl: string, listName: string, Id: 
 
   const updateProps: IUpdateCommandItemProps = {
     webUrl: webUrl,
-    listTitle: listName,
+    listTitle: listTitle,
     Id: Id,
     itemUpdate: newUpdateItemObj,
     alertMe: thisButtonObject.alert,
