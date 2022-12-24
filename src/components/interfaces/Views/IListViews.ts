@@ -29,7 +29,7 @@ export interface IListViewDD {
 
   // parentListFieldTitles: string;  2022-12-22:  Does not seem to be used anywhere
   webURL :string;
-  parentListURL : string;
+  listUrl : string;
   listName : string;
   // togOtherListview: boolean;  2022-12-22:  Does not seem to be used anywhere
 

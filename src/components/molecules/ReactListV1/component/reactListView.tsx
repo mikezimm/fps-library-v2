@@ -194,7 +194,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
         // if ( prevProps.items.length !== this.props.items.length ) { 
         //   this._setMaxRichHeight( this.props.autoRichHeight, this.props.richHeight, this.props.items ); 
         //   redraw = true; }
-        if ( prevProps.parentListURL !== this.props.parentListURL ) { redraw = true; }
+        if ( prevProps.listUrl !== this.props.listUrl ) { redraw = true; }
 
 
         /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -536,7 +536,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
 
     private _onGoToList = () : void => {
 
-        if ( !this.props.parentListURL || this.props.parentListURL === null || this.props.parentListURL === undefined || this.props.parentListURL.length === 0 ) {
+        if ( !this.props.listUrl || this.props.listUrl === null || this.props.listUrl === undefined || this.props.listUrl.length === 0 ) {
             return; // Do nothing
         }
         let e: any = event;
@@ -546,17 +546,17 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
         
         console.log('AltClick, ShfitClick, CtrlClick:', isAltClick, isShfitClick, isCtrlClick );
 
-        window.open( `${this.props.parentListURL}?Source=${window.location.pathname}`, "_blank");
+        window.open( `${this.props.listUrl}?Source=${window.location.pathname}`, "_blank");
 
     }
 
     private _CreateNewItem = () : void => {
 
       if ( this.props.isLibrary === true ) {
-        window.open( `${this.props.parentListURL}`, "_blank");
+        window.open( `${this.props.listUrl}`, "_blank");
 
       } else {
-        window.open( `${this.props.parentListURL}/NewForm.aspx?Source=${window.location.pathname}&${window.location.search}`, "_blank");
+        window.open( `${this.props.listUrl}/NewForm.aspx?Source=${window.location.pathname}&${window.location.search}`, "_blank");
 
       }
 

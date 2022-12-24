@@ -23,7 +23,7 @@ export interface IReactListItemsProps extends IPageArrowsParentProps {
 
   webURL: string; //Used for attachments
   listName: string; //Used for attachments
-  parentListURL: string;
+  listUrl: string;
   isLibrary: boolean;
 
   contextUserInfo: IUser; //For site you are on ( aka current page context )

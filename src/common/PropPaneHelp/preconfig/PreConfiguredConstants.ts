@@ -40,8 +40,8 @@ export const PresetFPSBanner : IPreConfigSettings = {
 
         showBanner : true,
 
-        EasyPagesEnable: false, //Disabled by default on Drilldown until can test in prod
-        EasyPagesAudience: 'Everyone',
+        EasyPagesEnable: true, //Disabled by default on Drilldown until can test in prod
+        EasyPagesAudience: 'Page Editors',
         EasyPageTabsC:  DefaultEasyPagesTabs.join(' ; '), // Added spaces for readability
         EasyPageTabsP:  DefaultEasyPagesTabs.join(' ; '), // Added spaces for readability
         EasyPageTabsA:  DefaultEasyPagesTabs.join(' ; '), // Added spaces for readability
