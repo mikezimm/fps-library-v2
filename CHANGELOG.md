@@ -5,14 +5,15 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.72
+npm install @mikezimm/fps-library-v2@1.0.74
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
-## 1.0.73 - 2022-Dec-23: Fix Endless imports
+## 1.0.74 - 2022-Dec-23: orderByBoolean
 - fix orderByBoolean in getSourceItems
+- add audience targetting on EasyPages 1.0.74 just enabled the prop pane field
 
 ## 1.0.72 - 2022-Dec-23: Fix Endless imports
 - fix endless @pnp/sp imports:  https://github.com/mikezimm/fps-library-v2/issues/34

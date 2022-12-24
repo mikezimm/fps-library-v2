@@ -227,8 +227,8 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
     const bannerProps: IWebpartBannerProps = {
 
       webpartHistory: properties.webpartHistory,
-      easyPagesSourceProps: createEasyPagesSourceWPProps( properties, setup.main.context, setup.main._repoLink ),
-      easyPagesExtraProps: createEasyPagesExtraWPProps( properties, showTricks ),
+      easyPagesSourceProps: createEasyPagesSourceWPProps( setup.main ),
+      easyPagesExtraProps: createEasyPagesExtraWPProps( setup.main, showTricks, renderAsReader ),
       EasyIconsObject: createEasyIconsWPProps( properties ),
       sitePresets: _sitePresets,
       keySiteProps: createKeySiteProps( pageContext ),

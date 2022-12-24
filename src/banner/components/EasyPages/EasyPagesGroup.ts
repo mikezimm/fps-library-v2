@@ -61,7 +61,7 @@ if ( thisWPClass._allowEasyPages !== true ) {
   }));
   
   // groupFields.push( createAudienceGroup( 'EasyPagesAudience', 'Min audience to see EasyPages', 'Everyone', !EasyPagesEnable ) );
-  groupFields.push( createAudienceGroup( 'EasyPagesAudience', 'Min audience to see EasyPages', 'Everyone', true ) );
+  groupFields.push( createAudienceGroup( 'EasyPagesAudience', 'Min audience to see EasyPages', 'Everyone', false ) );
   
   groupFields.push(
     PropertyPaneTextField('EasyPageOverflowTab', {
