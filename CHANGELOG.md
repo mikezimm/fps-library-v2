@@ -5,11 +5,21 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.70
+npm install @mikezimm/fps-library-v2@1.0.72
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.72 - 2022-Dec-23: Fix Endless imports
+- fix endless @pnp/sp imports:  https://github.com/mikezimm/fps-library-v2/issues/34
+- found in:  src/components/molecules/FieldPanel/components/fetch/funcions.ts
+
+
+## 1.0.71 - 2022-Dec-23: Help and ...
+- change StringFunctions help page to show DoNotFetchSpecial not DoNotFetchSpecialLC
+- alternate easyPages and Settings, not both at the same time https://github.com/mikezimm/fps-library-v2/issues/32
+- add 'last ditch' friendly message in src/logic/Errors/friendly.ts
 
 ## 1.0.70 - 2022-Dec-23: Drilldown String Functions Prop Pane Help
 - update StringFunctions prop pane help page to list DoNotExpandTrimSpecial columns
@@ -23,11 +33,11 @@ NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 - add following for https://github.com/mikezimm/drilldown7/issues/294
 - add Special Fields/Props:  IDoNotFetchSpecial = 'ModDateFirstName' | 'ModDateLastName' | 'ModDateInitials' | 'ModDateFirstL' ;
 - add Special Fields/Props:  IDoNotFetchSpecial = 'CreateDateFirstName' | 'CreateDateLastName' | 'CreateDateInitials'  | 'CreateDateFirstL';
-- add function getSpecialColumns:  src\pnpjs\Lists\getVX\getSpecialV2.ts 
+- add function getSpecialColumns:  src/pnpjs/Lists/getVX/getSpecialV2.ts 
 
 ## 1.0.68 - 2022-Dec-23: getPreConfig and PivotOptions
-- add src\common\Pivots\PivotOptions.ts from Drilldown, should be used with PivotStyle choices (like in PivotTiles)
-- add src\pnpjs\PreConfigItems\getPreConfig.ts from Drilldown which gets preconfig settings from PreConfigSite
+- add src/common/Pivots/PivotOptions.ts from Drilldown, should be used with PivotStyle choices (like in PivotTiles)
+- add src/pnpjs/PreConfigItems/getPreConfig.ts from Drilldown which gets preconfig settings from PreConfigSite
 
 ## 1.0.67 - 2022-Dec-23: reactListView
 - bring richTextHeight from Drilldown directly into reactListView
@@ -125,7 +135,7 @@ NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
 
 ## 1.0.44 - 2022-Dec-18:  Drilldown Update part 5
-- remove duplicate src\common\Audiences folder from here.... go to banner/propPane/Audiences instead
+- remove duplicate src/common/Audiences folder from here.... go to banner/propPane/Audiences instead
 - fix reactListView css import to point to fps-sytles
 
 ## 1.0.43 - 2022-Dec-18:  Drilldown Update part 5
@@ -133,14 +143,14 @@ NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
 ## 1.0.41 - 2022-Dec-18:  Drilldown Update part 4
 - delete ILink and replace with ISimpleLink which is same but with optional target
-- migrate zPivots from npmFunctions to src\common\interfaces\fps\IzPivots
-- migrate IListInterfaces to src\common\interfaces\fps\Picked\IListInterfaces.ts
+- migrate zPivots from npmFunctions to src/common/interfaces/fps/IzPivots
+- migrate IListInterfaces to src/common/interfaces/fps/Picked/IListInterfaces.ts
 -       Move to separate files in case needed that way
 
 ## 1.0.40 - 2022-Dec-18:  Drilldown Update part 3
-- created src\pnpjs\CommandItems\updateItem.ts to update command items (the actual part that just saves using fps-pnpv2)
+- created src/pnpjs/CommandItems/updateItem.ts to update command items (the actual part that just saves using fps-pnpv2)
 - standardized return status signatures to IFPSResultStatus https://github.com/mikezimm/fps-library-v2/issues/10
-- cleaned up '\index*' references to be more specific
+- cleaned up '/index*' references to be more specific
 
 ## 1.0.39 - 2022-Dec-18:  Drilldown Update part 2
 - move replaceHandleBars from src/logic/Strings/handleBars.ts to /handleBarsContext.ts to

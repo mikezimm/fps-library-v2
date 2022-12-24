@@ -487,7 +487,12 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
   }
 
   private _toggleEasyLinks( ): void {
-    this.setState({ showEasyPages: !this.state.showEasyPages });
+    const newSetting = !this.state.showEasyPages;
+    this.setState({ 
+      showEasyPages: newSetting,
+      // https://github.com/mikezimm/fps-library-v2/issues/32
+      showSettings: newSetting === true ? false : this.state.showSettings,
+     });
   }
 
 
@@ -520,7 +525,13 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
  }
 
 
-  private showSettings() {  this.setState({ showSettings: !this.state.showSettings }); }
+  private showSettings() {
+    const newSetting = !this.state.showSettings;
+    this.setState({
+      showSettings: newSetting,
+      // https://github.com/mikezimm/fps-library-v2/issues/32
+      showEasyPages: newSetting === true ? false : this.state.showSettings, });
+   }
 
 	private _closePanel ( )  {
     this.setState({ showPanel: false,});

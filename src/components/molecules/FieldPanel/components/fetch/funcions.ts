@@ -1,12 +1,10 @@
 
-import { IWeb, Web, } from "@pnp/sp/presets/all";
-
-
 import { IMinField, IsEditable, IFieldPanelFetchState } from "../IFieldPanelHookProps";
 import { IMinListProps } from "../IMinWPFieldPanelProps";
 import { getHelpfullErrorV2 } from '../../../../../logic/Errors/friendly';
+import { getListFields } from "../../../../../pnpjs/Fields/getFields";
+import { IMinFetchListProps } from "@mikezimm/fps-pnp2/lib/services/sp/fetch/lists/fetchListProps";
 
-  // export async function clickFetchFields(  list: IMinListProps, setState: any, updatePerformance: any ) : Promise<void> {
 export async function fetchFields(  list: IMinListProps ) : Promise<IFieldPanelFetchState> {
 
   const { webUrl, listTitle, } = list ;
@@ -14,12 +12,20 @@ export async function fetchFields(  list: IMinListProps ) : Promise<IFieldPanelF
 
     if ( listTitle && webUrl ) {
       let FilteredFields : IMinField[] =[];
-      //setlistFields( await allAvailableFields( webUrl, listTitle, ) );
-      // const fetchWebURL = getFullUrlFromSlashSitesUrl( webUrl );
-      const fetchWebURL = webUrl ;
-      const thisWebInstance : IWeb = Web(fetchWebURL);
-      const allFields : IMinField[] = await thisWebInstance.lists.getByTitle(listTitle).fields.orderBy("Title", true)();
-      FilteredFields = allFields.filter( field => field.Hidden !== true && field.Sealed !== true );
+ 
+      const fetchProps: IMinFetchListProps = {
+        webUrl: webUrl,
+        listTitle: listTitle,
+    }
+      const fieldsInfo = await getListFields( fetchProps, false, true );
+
+      if ( fieldsInfo.errorInfo ) {
+        const FieldPanelState = DefaultPanelState;
+        FieldPanelState.errMessage = fieldsInfo.errorInfo.friendly;
+        return FieldPanelState;
+      }
+
+      FilteredFields = fieldsInfo.items.filter( field => field.Hidden !== true && field.Sealed !== true );
 
       const DefaultSelected: string[] = [ 'ID', 'Editor', 'Modified', 'Title', 'FileLeafRef' ];
       const PreSelectedFields: IMinField[] = [];
@@ -95,18 +101,22 @@ export async function fetchFields(  list: IMinListProps ) : Promise<IFieldPanelF
 
   } catch (e) {
 
-    const FieldPanelState: IFieldPanelFetchState = {
-      listFields: [],
-      filtered: [],
-      selected: [],
-      status: 'Did not fetch columns!',
-      fetched: false,
-      searchText: '',
-      searchProp: '',
-      errMessage: getHelpfullErrorV2( e, false, true, `FetchFunction ~ 101`, ).returnMess,
-    };
+    const FieldPanelState: IFieldPanelFetchState = DefaultPanelState;
+
+    FieldPanelState.errMessage = getHelpfullErrorV2( e, false, true, `FetchFunction ~ 101`, ).returnMess;
 
     return FieldPanelState;
   }
 
 }
+
+const DefaultPanelState: IFieldPanelFetchState = {
+  listFields: [],
+  filtered: [],
+  selected: [],
+  status: 'Did not fetch columns!',
+  fetched: false,
+  searchText: '',
+  searchProp: '',
+  errMessage: 'Nothing fetched',
+};

@@ -183,6 +183,15 @@ export function convertHelpfullError( inputs: IHelpfullInput ) : IHelpfullOutput
     }
   }
 
+  // Last ditch effort to get the error message:  https://github.com/mikezimm/fps-library-v2/issues/33
+  if ( friendlyMessage === null && typeof result === 'string' && result.indexOf(`"value":"`) > 0 ) { //Then it didn't find 404 or Failed to Fetch
+    if ( errObj['odata.error'] ) {
+      friendlyMessage = errObj != null ? errObj['odata.error']['message']['value'] : e.message != null ? e.message : e;
+    } else if ( errObj['message'] ) {
+      friendlyMessage = errObj != null ? errObj['message']['value'] : e.message != null ? e.message : e;
+    }
+  }
+
   let returnMess = friendlyMessage === null ? result : 'Ohh Snap!\n' + friendlyMessage + ' \n-- FULL ERROR MESSAGE: \n' + result ;
 
   if ( consoleLog === true ) { 
