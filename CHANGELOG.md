@@ -11,6 +11,9 @@ npm install @mikezimm/fps-library-v2@1.0.72
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
+## 1.0.73 - 2022-Dec-23: Fix Endless imports
+- fix orderByBoolean in getSourceItems
+
 ## 1.0.72 - 2022-Dec-23: Fix Endless imports
 - fix endless @pnp/sp imports:  https://github.com/mikezimm/fps-library-v2/issues/34
 - found in:  src/components/molecules/FieldPanel/components/fetch/funcions.ts

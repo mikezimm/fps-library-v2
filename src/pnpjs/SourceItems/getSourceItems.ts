@@ -33,7 +33,7 @@ export async function getSourceItems( sourceProps: ISourceProps, alertMe: boolea
   };
 
   const FetchProps: IMinFetchProps = { ...sourceProps, ...{
-      orderBy: orderBy,
+      orderByBoolean: orderBy,
       alertMe: alertMe,
       fetchCount: sourceProps.fetchCount,
       consoleLog: consoleLog,
