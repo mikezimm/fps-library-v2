@@ -3,12 +3,8 @@ import * as React from 'react';
 
 import { ILoadPerformance, IPerformanceOp } from '../../../../molecules/Performance/IPerformance';
 
-// import styles from '../PropPaneCols.module.scss';
-
 import ReactJson from 'react-json-view';
 import { mainSiteLink } from '../main/Pane';
-import { IMinListProps } from "../IMinWPFieldPanelProps";
-// import { fetchFields } from './FetchFuncion';
 
 export function fetchErrorPanel( fetchPane: JSX.Element, errMessage: string, webUrl: string, listTitle: string ): JSX.Element {
 

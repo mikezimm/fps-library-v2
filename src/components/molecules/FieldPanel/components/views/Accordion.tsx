@@ -1,18 +1,10 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// import { getHighlightedText , } from '@mikezimm/fps-library-v2/lib/components/atoms/Elements/HighlightedText';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { IGrouping, IViewField } from "../../../../../common/interfaces/openSource/spfxControlsReact/@3.7.2/IViewField";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { IFieldInfo, FieldTypes } from "@pnp/sp/presets/all";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Toggle, } from 'office-ui-fabric-react/lib/Toggle';
+import { IViewField } from "../../../../../common/interfaces/openSource/spfxControlsReact/@3.7.2/IViewField";
+
 
 import { Icon, } from 'office-ui-fabric-react/lib/Icon';
-
-// import styles from '../PropPaneCols.module.scss';
 
 import { IMinField } from "../IFieldPanelHookProps";
 import { createThisViewField } from './functions';

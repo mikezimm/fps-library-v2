@@ -1,7 +1,6 @@
 import { IItemsErrorObj, IMinFetchProps } from "@mikezimm/fps-pnp2/lib/services/sp/fetch/items/Interface";
-import { fetchAnyItems } from "@mikezimm/fps-pnp2/lib/services/sp/fetch/items/functions";
+import { fetchAnyItems } from "@mikezimm/fps-pnp2/lib/services/sp/fetch/items/fetch";
 import { checkItemsResults } from "../Common/CheckItemsResults";
-
 
 const PreConfigSiteUrl: string = `${window.location.origin}/sites/PreConfigProps`
 

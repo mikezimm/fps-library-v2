@@ -1,17 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// import { getHighlightedText , } from '@mikezimm/fps-library-v2/lib/components/atoms/Elements/HighlightedText';
-// // eslint-disable-next-line @typescript-eslint/no-unused-vars
-// import { IGrouping, IViewField } from "@pnp/spfx-controls-react/lib/ListView";
-// // eslint-disable-next-line @typescript-eslint/no-unused-vars
-// import { IFieldInfo, FieldTypes } from "@pnp/sp/presets/all";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Toggle, } from 'office-ui-fabric-react/lib/Toggle';
 
 import { Icon, } from 'office-ui-fabric-react/lib/Icon';
-
-// import styles from '../PropPaneCols.module.scss';
 
 import { IMinField } from "../IFieldPanelHookProps";
 import SelectedItemPanelHook from "../FieldPanel";

@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { IGrouping, IViewField } from "../../../../../common/interfaces/openSource/spfxControlsReact/@3.7.2/IViewField";
+import { IViewField } from "../../../../../common/interfaces/openSource/spfxControlsReact/@3.7.2/IViewField";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { IFieldInfo, FieldTypes } from "@pnp/sp/presets/all";
+import { FieldTypes } from "@pnp/sp/fields/types";
 
 import { IMinField } from "../IFieldPanelHookProps";
 

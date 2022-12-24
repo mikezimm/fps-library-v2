@@ -1,15 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
-import ReactJson from 'react-json-view';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 import { getHighlightedText , } from '../../../../../components/atoms/Elements/HighlightedText';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// import { IGrouping, IViewField } from "@pnp/spfx-controls-react/lib/ListView";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { IFieldInfo, FieldTypes, Field } from "@pnp/sp/presets/all";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Toggle, } from 'office-ui-fabric-react/lib/Toggle';
 
 import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 

@@ -1,8 +1,6 @@
 
-import { IFPSResultStatus } from '@mikezimm/fps-pnp2/lib/services/sp/IFPSResultStatus';
-
 import { IBasePermissions } from '../../../common/interfaces/openSource/pnpsp/@2.14.0/securityTypes';
-import { IHelpfullOutput } from '../../../logic/Errors/friendly';
+import { IFpsErrorObject } from '../../Common/IFpsErrorObject';
 
 /***
 *     d888b  d88888b d888888b      db    db .d8888. d88888b d8888b.      d8888b. d88888b d8888b. .88b  d88. d888888b .d8888. .d8888. d888888b  .d88b.  d8b   db .d8888.
@@ -15,8 +13,6 @@ import { IHelpfullOutput } from '../../../logic/Errors/friendly';
 *        Updated function from https://github.com/pnp/pnpjs/issues/1480#issuecomment-745203843
 */
 
-export interface IUserPermissionsInfo {
+export interface IUserPermissionsInfo extends IFpsErrorObject {
   basePerms: IBasePermissions;
-  errorInfo: IHelpfullOutput;
-  status: IFPSResultStatus;
 }

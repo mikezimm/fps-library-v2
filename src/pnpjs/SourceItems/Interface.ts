@@ -1,5 +1,6 @@
-import { IHelpfullOutput, IHelpfullInput } from '../../logic/Errors/friendly';
-import { IMinSourceFetchProps, ISeriesSortObject } from "@mikezimm/fps-pnp2/lib/services/sp/fetch/items/fetchSourceItems";
+import { IHelpfullOutput, } from '../../logic/Errors/friendly';
+import { ISeriesSortObject } from '../../logic/indexes/ArraySortingNumbers';
+import { IMinSourceFetchProps } from './getSourceItems';
 
 export interface IItemsError {
   items: any[];

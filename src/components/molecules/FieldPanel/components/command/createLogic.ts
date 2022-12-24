@@ -1,33 +1,13 @@
-import * as React from 'react';
-import { useState, useEffect } from 'react';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { IQuickButton } from '../../../../interfaces/QuickCommands/IQuickCommands';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// import { IGrouping, IViewField } from "@pnp/spfx-controls-react/lib/ListView";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { IFieldInfo, FieldTypes } from "@pnp/sp/presets/all";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Toggle, } from 'office-ui-fabric-react/lib/Toggle';
 
-import { Icon, } from 'office-ui-fabric-react/lib/Icon';
-
-// import styles from '../PropPaneCols.module.scss';
-
-import { IMinField, IMinFieldCmds } from "../IFieldPanelHookProps";
+import { IMinField, } from "../IFieldPanelHookProps";
 
 import { AllUpdateActions,  } from './IAccordion'
 
-import { IAllActionTypes, IChoiceActionTypes, IYesNoActionTypes, IUserActionTypes,   } from './IAccordion'
-import { IDateActionTypes, ITextActionTypes, INoteActionTypes  } from './IAccordion'
+import { IAllActionTypes,  } from './IAccordion'
+
 import { IIconTableRow, IQuickCommandsDesign, IButtonSummary  } from './IAccordion'
-
-
-import { AllActions, ChoiceActions, YesNoActions, UserActions,   } from './IAccordion'
-import { DateActions, TextActions, NoteActions  } from './IAccordion'
-import { createFieldTableRows } from './tableRows';
-
-
 
 const ChoicePerButton : IQuickButton = {
   strPrev: "",

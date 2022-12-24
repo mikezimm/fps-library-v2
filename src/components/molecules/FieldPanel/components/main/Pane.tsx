@@ -1,22 +1,14 @@
 
 import * as React from 'react';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// import { IGrouping, IViewField } from "@pnp/spfx-controls-react/lib/ListView";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// import { IFieldInfo, FieldTypes } from "@pnp/sp/presets/all";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Toggle, } from 'office-ui-fabric-react/lib/Toggle';
 import {  SearchBox, ISearchBoxStyles, } from 'office-ui-fabric-react/lib/SearchBox';
 
 import { Icon, } from 'office-ui-fabric-react/lib/Icon';
 
-// import styles from '../PropPaneCols.module.scss';
-
 import { IFieldPanelState, IsEditable } from '../IFieldPanelHookProps';
 import { IMinWPFieldPanelProps } from "../IMinWPFieldPanelProps";
 
-// import { buildMainFieldTable } from './MainFieldTable';
 import MainFieldTableHook  from './FieldTable';
 
 export function mainSiteLink( webUrl: string ): JSX.Element {

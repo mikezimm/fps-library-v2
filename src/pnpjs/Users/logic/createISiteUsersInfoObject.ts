@@ -19,6 +19,7 @@ export function createISiteUsersInfoObject(webUrl: string, resultInfo: ISiteUser
     users: resultInfo.users as IUser[],
     errorInfo: resultInfo.e ? convertHelpfullError(errorInput) : null as any,
     status: resultInfo.status,
+    e: resultInfo.e,
   };
 
   saveErrorToLog( result.errorInfo, errorInput as IHelpfullInput );

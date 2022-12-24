@@ -256,6 +256,7 @@ export async function updateReactListItem(webUrl: string, listName: string, Id: 
         result: errMessage,
         errObj: errMessage,
       },
+      e: null,
       errorInput: null,// Used for logging
       status: 'RuleBreak',
     }

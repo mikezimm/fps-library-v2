@@ -1,45 +1,28 @@
-import { check4Gulp } from "@mikezimm/fps-pnp2";
-import { IFPSResultStatus } from "@mikezimm/fps-pnp2/lib/services/sp/IFPSResultStatus";
+import { check4Gulp, } from "@mikezimm/fps-pnp2";
 import { convertHelpfullError, IHelpfullInput, IHelpfullOutput } from "../../logic/Errors/friendly";
 import { saveErrorToLog } from "../Logging";
+import { IFpsErrorObject } from "./IFpsErrorObject";
 
-export interface IStandardItemsReturn {
+export interface IFpsItemsReturn extends IFpsErrorObject {
   items: any[];
-  errorInfo: IHelpfullOutput;
-  errorInput: IHelpfullInput; // Used for logging
-  status: IFPSResultStatus;
 }
 
-export interface IStandardItemsInput {
-  items: any[];
-  status: IFPSResultStatus;
-  e: any;
-}
-
-export function checkItemsResults ( itemsInput: IStandardItemsInput, traceString: string, alertMe: boolean , consoleLog: boolean ) : IStandardItemsReturn {
-
-  const result: IStandardItemsReturn = {
-    items: itemsInput.items,
-    errorInfo: null,
-    errorInput: null, // Used for logging
-    status: itemsInput.status,
-  }
-
+export function checkItemsResults ( itemsInput: IFpsItemsReturn, traceString: string, alertMe: boolean , consoleLog: boolean ) : IFpsItemsReturn {
   //Clean up the raw error and return a human readable result
 
   if ( itemsInput.e ) {
-    const errorInput: IHelpfullInput = { e: itemsInput.e, alertMe:alertMe , consoleLog: consoleLog , traceString: traceString ? traceString : 'processItemsResults ~ 31' , logErrors: true };
-    result.errorInput = errorInput;
+    const errorInput: IHelpfullInput = { e: itemsInput.e, alertMe:alertMe , consoleLog: consoleLog , traceString: traceString ? traceString : 'fps-library-v2: checkItemsResults ~ 15' , logErrors: true };
+    itemsInput.errorInput = errorInput;
 
     const errorInfo: IHelpfullOutput = convertHelpfullError( errorInput );
-    result.errorInfo = errorInfo;
+    itemsInput.errorInfo = errorInfo;
 
-    saveErrorToLog( result.errorInfo, errorInput );
+    saveErrorToLog( itemsInput.errorInfo, errorInput );
 
   }
 
-  if ( check4Gulp() === true ) { console.log( `fps-library-v2 COMPLETED: processItemsResults ~ 41`, result ) };
+  if ( check4Gulp() === true ) { console.log( `fps-library-v2 COMPLETED: checkItemsResults ~ 25`, itemsInput ) };
 
-  return result;
+  return itemsInput;
 
 }

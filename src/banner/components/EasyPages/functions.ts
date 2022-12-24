@@ -12,9 +12,8 @@ import { ILoadPerformance, } from '../../../components/molecules/Performance/IPe
 
 import { EasyIconLocation, EasyIconObjectDefault, IEasyIcons,  } from "../../../components/atoms/EasyIcons/eiTypes";
 import { getEasyIcon } from "../../../components/atoms/EasyIcons/getEasyIcon";
-import { IHelpfullOutput } from "../../../logic/Errors/friendly";
 import { getSourceItems, IItemsError, ISourceProps } from "../../../pnpjs/SourceItems/index";
-import { DisplayMode } from "../../../common/interfaces/indexes/DisplayMode";
+import { IFpsItemsReturn } from "../../../pnpjs/Common/CheckItemsResults";
 
 /**
  * This filters first by a meta string and then by text search string
@@ -95,7 +94,7 @@ export async function getPagesContent( sourceProps: ISourceProps, EasyIconObject
   const performance: ILoadPerformance = createBasePerformanceInit( 1, false );
   performance.ops.fetch1 = startPerformOp( 'fetch1 - getPages', null );
 
-  const fetchResults: IItemsError = await getSourceItems( sourceProps, false, true );
+  const fetchResults: IFpsItemsReturn = await getSourceItems( sourceProps, false, true );
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, prefer-const
   let { items, errorInfo, } = fetchResults;

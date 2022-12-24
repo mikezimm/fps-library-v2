@@ -1,8 +1,6 @@
 
-import { IFPSResultStatus } from '@mikezimm/fps-pnp2/lib/services/sp/IFPSResultStatus';
-
-import { IHelpfullOutput } from '../../../logic/Errors/friendly';
 import { IUser } from '../../../logic/Users/IUserInterfaces';
+import { IFpsErrorObject } from '../../Common/IFpsErrorObject';
 
 /***
 *     d888b  d88888b d888888b      .d8888. d888888b d888888b d88888b       .d8b.  d8888b. .88b  d88. d888888b d8b   db .d8888.
@@ -15,8 +13,6 @@ import { IUser } from '../../../logic/Users/IUserInterfaces';
 *
 */
 
-export interface ISiteUsersInfo {
+export interface ISiteUsersInfo extends IFpsErrorObject {
   users: IUser[];
-  errorInfo: IHelpfullOutput;
-  status: IFPSResultStatus;
 }

@@ -1,10 +1,19 @@
 
-import { IHelpfullOutput, IHelpfullInput, convertHelpfullError } from '../../logic/Errors/friendly';
+import { fetchAnyItems } from "@mikezimm/fps-pnp2/lib/services/sp/fetch/items/fetch";
+import { IOrderByBoolean, IMinFetchProps } from "@mikezimm/fps-pnp2/lib/services/sp/fetch/items/Interface";
+import { ISourceProps } from './Interface';
+import { checkItemsResults, IFpsItemsReturn } from '../Common/CheckItemsResults';
+import { ISeriesSortObject } from "../../logic/indexes/ArraySortingNumbers";
 
-import { fetchSourceItems } from "@mikezimm/fps-pnp2/lib/services/sp/fetch/items/fetchSourceItems";
-import { IItemsError, ISourceProps } from './Interface';
-import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
-import { saveErrorToLog } from '../Logging/saveErrorToLog';
+export interface IMinSourceFetchProps {
+  webUrl: string;
+  listTitle: string;
+  selectThese?: string[];
+  expandThese?: string[];
+  restFilter?: string;
+  fetchCount: number; // Default is 200 if no value is provided
+  orderBy?: ISeriesSortObject;
+}
 
 /**
  * getSourceItems calls the Pnp function to get the results which returns the raw error.
@@ -15,25 +24,25 @@ import { saveErrorToLog } from '../Logging/saveErrorToLog';
  * @param consoleLog 
  * @returns 
  */
-export async function getSourceItems( sourceProps: ISourceProps, alertMe: boolean | undefined, consoleLog: boolean | undefined,) : Promise<IItemsError>  {
+export async function getSourceItems( sourceProps: ISourceProps, alertMe: boolean | undefined, consoleLog: boolean | undefined,) : Promise<IFpsItemsReturn>  {
 
-  const initialResult = await fetchSourceItems( sourceProps, alertMe, consoleLog );
-
-  const result: IItemsError = {
-    items: initialResult.items,
-    errorInfo: null as any,
+  //This converts ISeriesSortObject which has string order to IOrderByBoolean for fetch requirements
+  const orderBy: IOrderByBoolean = !sourceProps.orderBy ? null as any : {
+    prop: sourceProps.orderBy.prop,
+    asc: sourceProps.orderBy.asc ? sourceProps.orderBy.asc : sourceProps.orderBy.order === 'dec' ? false : true,
   };
 
-  //Clean up the raw error and return a human readable result
-  if ( initialResult.e ) {
-    const errorInput: IHelpfullInput = { e: initialResult.e, alertMe:alertMe , consoleLog: consoleLog , traceString: 'getSourceItems ~ 18' , logErrors:true };
-    const errorInfo: IHelpfullOutput = convertHelpfullError( errorInput );
-    result.errorInfo = errorInfo;
-
-    saveErrorToLog( result.errorInfo, errorInput );
+  const FetchProps: IMinFetchProps = { ...sourceProps, ...{
+      orderBy: orderBy,
+      alertMe: alertMe,
+      fetchCount: sourceProps.fetchCount,
+      consoleLog: consoleLog,
+    }
   }
 
-  if ( check4Gulp() === true ) { console.log( `fps-library-v2 COMPLETED: getSourceItems ~ 33`, result ) };
+  const initialResult = await fetchAnyItems( FetchProps );
+
+  const result : IFpsItemsReturn = checkItemsResults( initialResult, `fps-library-v2: getSourceItems ~ 19`, alertMe, consoleLog );
 
   return result;
 

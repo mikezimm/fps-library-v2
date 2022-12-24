@@ -32,6 +32,7 @@ export function createIEnsureUserInfo(webUrl: string, resultInfo: IEnsureUserRes
     errorInfo: resultInfo.e ? convertHelpfullError(errorInput) : null,
     errorInput: errorInput,
     status: resultInfo.status,
+    e: resultInfo.e,
   };
 
   saveErrorToLog( result.errorInfo, result.errorInput as IHelpfullInput );

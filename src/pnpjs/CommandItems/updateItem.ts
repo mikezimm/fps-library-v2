@@ -1,13 +1,12 @@
 
-import { IHelpfullOutput, IHelpfullInput, convertHelpfullError, getHelpfullError } from '../../logic/Errors/friendly';
+import { convertHelpfullError, } from '../../logic/Errors/friendly';
 
 import { updateAnyItem } from '@mikezimm/fps-pnp2/lib/services/sp/update/item';
 import { IFPSItemUpdateResultObj, IMinUpdateProps } from '@mikezimm/fps-pnp2/lib/services/sp/update/item';
-import { IItemsError, ISourceProps } from '../SourceItems/Interface';
-import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
 import { saveErrorToLog } from '../Logging/saveErrorToLog';
 import { CommandUpdateFailedMessage } from '../../components/interfaces/QuickCommands/IQuickCommands';
 import { IFPSResultStatus } from '@mikezimm/fps-pnp2/lib/services/sp/IFPSResultStatus';
+import { IFpsErrorObject } from '../Common/IFpsErrorObject';
 
 /**
  * getSourceItems calls the Pnp function to get the results which returns the raw error.
@@ -24,11 +23,8 @@ export interface IUpdateCommandItemProps extends IMinUpdateProps {
   consoleLog: string;
 }
 
-export interface IUpdateCommandItemReturn {
+export interface IUpdateCommandItemReturn extends IFpsErrorObject {
   response: any;
-  errorInfo: IHelpfullOutput;
-  errorInput?: IHelpfullInput; // Used for logging
-  status: IFPSResultStatus;
   statusElement?: JSX.Element;  // Optional used if you want to pass back a specific JSX.Element instead of a text warning
 }
 
@@ -40,6 +36,7 @@ export async function updateCommandItems( commandItem: IUpdateCommandItemProps, 
     response: initialResult.response,
     errorInfo: null,
     status: initialResult.status,
+    e: initialResult.e,
   }
 
   if ( initialResult.status === 'Success' ) {
@@ -48,7 +45,7 @@ export async function updateCommandItems( commandItem: IUpdateCommandItemProps, 
 
   } else if ( initialResult.status === 'Error' ) {
 
-    finalResult.errorInput = { e: initialResult.e, alertMe:false , consoleLog: false , traceString: 'updateCommandItems ~ 36' , logErrors:false };
+    finalResult.errorInput = { e: initialResult.e, alertMe:false , consoleLog: false , traceString: 'fps-library-v2: updateCommandItems ~ 36' , logErrors:false };
     finalResult.errorInfo = convertHelpfullError( finalResult.errorInput );
 
     saveErrorToLog( finalResult.errorInfo, finalResult.errorInput );

@@ -5,7 +5,7 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.69
+npm install @mikezimm/fps-library-v2@1.0.70
 
 # Changelog
 
@@ -13,6 +13,9 @@ NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
 ## 1.0.70 - 2022-Dec-23: Drilldown String Functions Prop Pane Help
 - update StringFunctions prop pane help page to list DoNotExpandTrimSpecial columns
+- update all pnpjs getters with more standardized interfaces
+- moved getSourceItems to use one from this library and call fetchAnyItems
+- standardize the error info building and result interfaces
 
 ## 1.0.69 - 2022-Dec-23: Drilldown String Functions, Special Functions
 - add getLetterBucket5 for https://github.com/mikezimm/drilldown7/issues/140

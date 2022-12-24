@@ -1,17 +1,11 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// import { IGrouping, IViewField } from "@pnp/spfx-controls-react/lib/ListView";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { IFieldInfo, FieldTypes } from "@pnp/sp/presets/all";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Toggle, } from 'office-ui-fabric-react/lib/Toggle';
+import { FieldTypes } from "@pnp/sp/fields/types";
+
 import { TextField, } from 'office-ui-fabric-react/lib/TextField';
 
 import { Icon, } from 'office-ui-fabric-react/lib/Icon';
-
-// import styles from '../PropPaneCols.module.scss';
 
 import { IMinField, IMinFieldCmds } from "../IFieldPanelHookProps";
 import Accordion from '../../../Accordion/Accordion';
@@ -19,12 +13,9 @@ import SelectedItemPanelHook from "../FieldPanel";
 import SampleDesignHook from "./SampleDesign";
 
 import ReactJson from 'react-json-view';
-// import { filter } from 'lodash';
-// import { IActionProps } from '@pnp/spfx-controls-react';
 
 import { ChoiceFieldActionIcons, IButtonSummary, UserFieldActionIcons, YesNoFieldActionIcons,   } from './IAccordion'
 import { DateFieldActionIcons, TextFieldActionIcons, NoteFieldActionIcons,  } from './IAccordion'
-// import { AllUpdateActions,  } from './IAccordion'
 
 import { IAllActionTypes, IChoiceActionTypes, IYesNoActionTypes, IUserActionTypes,   } from './IAccordion'
 import { IDateActionTypes, IQuickCommandsDesign,  } from './IAccordion'

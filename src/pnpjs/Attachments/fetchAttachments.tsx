@@ -1,21 +1,17 @@
 
 import * as React from 'react';
 import { Link,  } from 'office-ui-fabric-react/lib/Link';
-import { fetchItemAttachments, IMinItemFetchProps, IFPSItemAttachmentsReturn} from '@mikezimm/fps-pnp2/lib/services/sp/fetch/items/attachments';
-import { IFPSResultStatus } from '@mikezimm/fps-pnp2/lib/services/sp/IFPSResultStatus';
-import { IHelpfullInput, IHelpfullOutput } from '../../logic/Errors/friendly';
-import { checkItemsResults } from '../Common/CheckItemsResults';
+import { fetchItemAttachments, IMinItemFetchProps, IAttachmentsErrorObj} from '@mikezimm/fps-pnp2/lib/services/sp/fetch/items/attachments';
+import { checkItemsResults, } from '../Common/CheckItemsResults';
+import { IFpsErrorObject } from '../Common/IFpsErrorObject';
 
+export type IPnpAttachInfo = any;
 
-export interface IAttachmentsReturn {
-    items: any[];
-    errorInfo: IHelpfullOutput;
-    errorInput?: IHelpfullInput; // Used for logging
-    status: IFPSResultStatus;
+export interface IFpsAttachmentsReturn extends IFpsErrorObject {
+    items: IPnpAttachInfo[];
 }
 
-
-export async function fetchItemAttachmentsPnp ( webUrl: string, listTitle: string, Id: number, alertMe:boolean , consoleLog: boolean ) {
+export async function fetchFpsItemAttachments ( webUrl: string, listTitle: string, Id: number, alertMe:boolean , consoleLog: boolean ): Promise<IFpsAttachmentsReturn> {
 
   const fetchProps: IMinItemFetchProps = {
     webUrl: webUrl,
@@ -24,9 +20,9 @@ export async function fetchItemAttachmentsPnp ( webUrl: string, listTitle: strin
     context: null, //Not needed until Pnpjs v3
   }
 
-  const initialResult: IFPSItemAttachmentsReturn = await fetchItemAttachments( fetchProps );
+  const initialResult: IAttachmentsErrorObj = await fetchItemAttachments( fetchProps );
 
-  const result = checkItemsResults( initialResult, ``, alertMe, consoleLog );
+  const result: IFpsAttachmentsReturn = checkItemsResults( initialResult, `fps-library-v2: fetchItemAttachmentsPnp ~ 24`, alertMe, consoleLog );
 
   return result;
 
@@ -43,7 +39,7 @@ export async function createPanelAttachmentElements( webUrl: string, listTitle: 
 
   if ( item.Attachments && item.Attachments === true ) {
 
-    const fetchAttachments = await fetchItemAttachmentsPnp( webUrl, listTitle, item.Id, false, true );
+    const fetchAttachments = await fetchFpsItemAttachments( webUrl, listTitle, item.Id, false, true );
 
     if ( fetchAttachments.items.length > 0 ) {
       attachments.push( <h2>({ fetchAttachments.items.length}) Attachments</h2> );
