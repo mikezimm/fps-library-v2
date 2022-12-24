@@ -5,16 +5,17 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.75
+npm install @mikezimm/fps-library-v2@1.0.76
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
-## 1.0.75 - 2022-Dec-23: orderByBoolean
+## 1.0.76 - 2022-Dec-23: easyPagesAudience, parentListURL
 - easyPagesAudience default Audience:  Page Editors:  
 - https://github.com/mikezimm/fps-library-v2/issues/35
-- standardize propertyNames in library: parentListURL >> listUrl  https://github.com/mikezimm/fps-library-v2/issues/36
+- standardize propertyNames in library: https://github.com/mikezimm/fps-library-v2/issues/36
+- parentListURL >> listUrl , webURL >> webUrl
 
 ## 1.0.74 - 2022-Dec-23: orderByBoolean
 - fix orderByBoolean in getSourceItems

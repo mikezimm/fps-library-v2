@@ -49,7 +49,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
 
     private async _createPanelAttachments( thisId: any, panelItem: IDrillItemInfo ): Promise<void>{
 
-      const attachments = await createPanelAttachmentElements( this.props.webURL, this.props.listName, panelItem );
+      const attachments = await createPanelAttachmentElements( this.props.webUrl, this.props.listName, panelItem );
       this.setState({ 
         panelAttachments: attachments,
         lastAttachId: thisId,
@@ -653,7 +653,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
 
           if ( thisButtonObject.updateItem ) {
               let readyToUpdate = true;
-              if ( !this.props.webURL ) { alert('Missing listWebUrl for quickCommands') ; readyToUpdate = false ; }
+              if ( !this.props.webUrl ) { alert('Missing listWebUrl for quickCommands') ; readyToUpdate = false ; }
               if ( !this.props.listName ) { alert('Missing listName for quickCommands') ; readyToUpdate = false ; }
 
               if ( readyToUpdate === true ) {
@@ -696,7 +696,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
 
     private async completeThisQuickUpdate( itemId: string, thisButtonObject : IQuickButton ): Promise<void> {
 
-        const result = await updateReactListItem( this.props.webURL, this.props.listName, parseInt(itemId), thisButtonObject, this.props.sourceUserInfo, this.state.panelItem );
+        const result = await updateReactListItem( this.props.webUrl, this.props.listName, parseInt(itemId), thisButtonObject, this.props.sourceUserInfo, this.state.panelItem );
         //If success (result is error message and null by default )
         // if ( result === null && this.props.quickCommands.onUpdateReload === true ) {
 
