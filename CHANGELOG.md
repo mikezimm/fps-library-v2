@@ -12,6 +12,9 @@ npm install @mikezimm/fps-library-v2@1.0.77
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
 ## 1.0.77 - 2022-Dec-23: easyPagesAudience, parentListURL
+- update friendly error message for to many lookup columns in query:  https://github.com/mikezimm/drilldown7/issues/204
+
+## 1.0.77 - 2022-Dec-23: easyPagesAudience, parentListURL
 - easyPagesAudience default Audience:  Page Editors:  
 - https://github.com/mikezimm/fps-library-v2/issues/35
 - standardize propertyNames in library: https://github.com/mikezimm/fps-library-v2/issues/36

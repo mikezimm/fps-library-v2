@@ -175,6 +175,12 @@ export function convertHelpfullError( inputs: IHelpfullInput ) : IHelpfullOutput
     friendlyMessage += 'List or Library: ' + result.split('\'')[1] + ' does not exist on site!  Maybe try List Name or List Title instead?';
   }
 
+  // Found in Drilldown when trying to fetch data from a list.
+  if (result.indexOf('query cannot be completed because the number of lookup columns it contains exceeds the lookup column threshold') > -1 ) {
+    if ( friendlyMessage != null ) { friendlyMessage += ' AND '; } else { friendlyMessage = ''; }
+    friendlyMessage += 'We can only fetch 10 Lookup type columns (Lookup and People columns).  Make sure you only add up to 8 between refiners, views and commands!';
+  }
+
   if ( friendlyMessage === null ) {
     if ( result.indexOf( 'Error making HttpClient request in queryable [404]' ) > -1 ) {
       friendlyMessage = 'Check your site or list URL to make sure it is valid. Error [404]';
