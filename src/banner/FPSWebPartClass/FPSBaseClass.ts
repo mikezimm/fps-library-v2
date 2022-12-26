@@ -58,7 +58,7 @@ export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TP
   protected _allowBeAUser: boolean = true;
   protected _allowFeedback: boolean = true;
   protected _allowPandoramic: boolean = true;
-  protected _allowSiteThemeChoice: boolean = false;
+  protected _allowSiteThemeChoice: boolean = true;
   protected _allowEasyPages: boolean = true;
   protected _allowFieldPanel: IFieldPanelMode = 'Disabled' ;  // Be SURE TO Map ( via _FieldPanelWebProp, _FieldPanelListProp ) to field panel if not in Auto mode
   

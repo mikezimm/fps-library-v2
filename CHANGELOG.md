@@ -5,14 +5,16 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.77
+npm install @mikezimm/fps-library-v2@1.0.78
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
-## 1.0.77 - 2022-Dec-23: easyPagesAudience, parentListURL
+## 1.0.78 - 2022-Dec-23: friendly error, Theme, ListView
 - update friendly error message for to many lookup columns in query:  https://github.com/mikezimm/drilldown7/issues/204
+- set default Theme to allow Site Theme:  _allowSiteThemeChoice: boolean = true;
+- add iconFieldName to ReactListView if isLibrary
 
 ## 1.0.77 - 2022-Dec-23: easyPagesAudience, parentListURL
 - easyPagesAudience default Audience:  Page Editors:  
