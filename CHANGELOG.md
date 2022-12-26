@@ -5,11 +5,14 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.78
+npm install @mikezimm/fps-library-v2@1.0.79
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.79 - 2022-Dec-23: fetch attacments pnpv2 update
+update fetch attachments from issue:  https://github.com/mikezimm/drilldown7/issues/302
 
 ## 1.0.78 - 2022-Dec-23: friendly error, Theme, ListView
 - update friendly error message for to many lookup columns in query:  https://github.com/mikezimm/drilldown7/issues/204
