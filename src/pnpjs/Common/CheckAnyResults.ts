@@ -1,4 +1,4 @@
-import { check4Gulp } from "@mikezimm/fps-pnp2";
+import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
 import { convertHelpfullError, IHelpfullInput, IHelpfullOutput } from "../../logic/Errors/friendly";
 import { saveErrorToLog } from "../Logging";
 import { IFpsErrorObject } from "./IFpsErrorObject";

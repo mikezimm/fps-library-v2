@@ -15,6 +15,7 @@
    * @param consoleResult //Console log result element
    * 
    */
+  import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
 
   export function findParentElementLikeThis( e: any, prop: string, value: string, maxHops: number, search: 'begins' | 'ends' | 'contains' | 'exact', alertError: boolean = true, consoleResult: boolean = true ) {
 
@@ -80,7 +81,7 @@
 
     }
     if ( consoleResult === true ) {
-      console.log('findParentElementPropLikeThis: found, prop, value, foundHops, maxHops, search', found, prop, value, foundHops, maxHops, search );
+      if ( check4Gulp() === true ) console.log('findParentElementPropLikeThis: found, prop, value, foundHops, maxHops, search', found, prop, value, foundHops, maxHops, search );
     }
 
   return result;

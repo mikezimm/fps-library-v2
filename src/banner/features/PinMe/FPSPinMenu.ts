@@ -93,7 +93,7 @@ export function FPSPinMe ( domElement: HTMLElement, pinState : IPinMeState, cont
 
     let classList = thisControlZome.classList;
 
-    console.log('FPSPinMe thisControlZome, thisCanvasSection = ', thisControlZome, thisCanvasSection );
+    // console.log('FPSPinMe thisControlZome, thisCanvasSection = ', thisControlZome, thisCanvasSection );
     if ( thisControlZome && thisCanvasSection ) {
 
       if ( foundElement === true && pinState === 'disabled' ) {

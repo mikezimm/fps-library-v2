@@ -60,7 +60,7 @@ public constructor(props:ISinglePageProps){
     public render(): React.ReactElement<ISinglePageProps> {
 
         if ( this.props.allLoaded && this.props.showInfo ) {
-            console.log('SinglePage.tsx', this.props, this.state);
+            // console.log('SinglePage.tsx', this.props, this.state);
 
             if ( !this.props.content ) {
               console.log('infoPages.tsx return null');

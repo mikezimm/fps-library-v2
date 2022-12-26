@@ -10,6 +10,7 @@
  *                   
  *                   
  */
+import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
 import { changeEasyIcons } from '../../../components/atoms/EasyIcons/eiTypes';
 import { changeEasyPages } from '../../components/EasyPages/epTypes';
 import { changeCustomHelp } from '../../components/VisitorPanel/Interfaces';
@@ -73,7 +74,9 @@ export function buildExportPropsX( usage: 'Panel' | 'Analytics', wpProps : IMinW
   const exportIgnoreProps : string[] = [ ...exportIgnorePropsFPS, ...importBlockPropsWP  ];
   const exportObject = createExportObject( exportStructure, wpProps, exportIgnoreProps, false );
 
-  console.log('Exportable Props:', exportObject );
+  //  https://github.com/mikezimm/fps-library-v2/issues/39
+  if ( check4Gulp() === true && usage === 'Panel' ) console.log('Exportable Props:', exportObject );
+  
   return exportObject;
 
 }

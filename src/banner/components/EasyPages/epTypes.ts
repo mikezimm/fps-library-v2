@@ -142,7 +142,7 @@ export function createNewSitePagesSource( source: ISourceName, webUrl: string | 
   if ( showTricks === true && NewSource.meta1.indexOf( EasyPagesDevTab ) < 0 ) NewSource.meta1.push( EasyPagesDevTab );
   NewSource.EasyPageOverflowTab = EasyPageOverflowTab ? EasyPageOverflowTab : DefaultOverflowTab;
 
-  console.log( `epTypes createNewSitePagesSource ${source}`, JSON.parse(JSON.stringify(NewSource)) );
+  // console.log( `epTypes createNewSitePagesSource ${source}`, JSON.parse(JSON.stringify(NewSource)) );
   return NewSource;
 
 }

@@ -27,7 +27,6 @@ import { updateFarElementsPinMe } from './PinFunctions';
 import { getWebPartHelpElementX } from '../../common/PropPaneHelp/PropPaneHelp';
 import { createSpecialElement } from '../components/SpecialBanner/component';
 import { Panel, PanelType } from 'office-ui-fabric-react';
-import { IKeySiteProps } from '../components/Gear/IKeySiteProps';
 import { getMinPanel } from './MinPanel';
 import { getFullPanel, pivotHeading0, pivotHeadingX } from './FullPanel';
 import { mainBannerContent } from './BannerContent';
@@ -37,6 +36,7 @@ import { IMinPandoramicProps } from '../features/Expando/Interfaces';
 import { setExpandoRamicMode } from '../features/Expando/functions';
 import { ISiteThemes } from '../../common/commandStyles/ISiteThemeChoices';
 import EasyPagesHook from '../components/EasyPages/componentSources';
+import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
 // import { IMinWPFieldPanelProps } from '../../components/molecules/FieldPanel/IMinWPFieldPanelProps';
 
 require('@mikezimm/fps-styles/dist/banner.css');
@@ -163,7 +163,8 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
 
   public constructor(props:IFetchBannerXProps){
     super(props);
-    if ( consoleFunctions === true ) console.log('FetchBannerElement ~ constructor');
+    //  https://github.com/mikezimm/fps-library-v2/issues/39
+    // if ( check4Gulp() === true ) console.log('FetchBannerElement ~ constructor');
     const expandoProps : IMinPandoramicProps= this.props.bannerProps.expandoProps;
 
     /**
@@ -191,7 +192,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
   }
 
   public componentDidMount() {
-    if ( consoleFunctions === true ) console.log('FetchBannerElement ~ componentDidMount');
+    // if ( check4Gulp() === true ) console.log('FetchBannerElement ~ componentDidMount');
     this.pimMeCmdStyles = this.makeLargerCmdStyles();
     //Copied from FPSPageInfo.tsx componentDidMount
     const { displayMode, fpsPinMenu } = this.props.bannerProps;
@@ -212,7 +213,8 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
    */
 
   public componentDidUpdate(prevProps: IFetchBannerXProps){
-    if ( consoleFunctions === true ) console.log('FetchBannerElement ~ componentDidUpdate');
+    if ( check4Gulp() === true ) console.log('FetchBannerElement ~ componentDidUpdate: Props and State', this.props, this.state);
+
     const { displayMode, fpsPinMenu, } = this.props.bannerProps;
     const pinStatus: IPinStatus = getDefaultFPSPinState ( prevProps.bannerProps.fpsPinMenu, fpsPinMenu, displayMode );
 
@@ -259,7 +261,7 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
 
 
   public render(): React.ReactElement<IFetchBannerXProps> {
-    if ( consoleFunctions === true ) console.log('FetchBannerElement ~ render');
+    // if ( check4Gulp() === true ) console.log('FetchBannerElement ~ render' );
 
     if ( this.props.bannerProps.showBanner !== true ) {
 			return ( <div></div> );

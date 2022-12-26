@@ -765,8 +765,8 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
     private async _onShowPanel (item: any) {
   
         let e: any = event;
-        console.log('_onShowPanel: e',e);
-        console.log('_onShowPanel item clicked:',item);
+        // console.log('_onShowPanel: e',e);
+        // console.log('_onShowPanel item clicked:',item);
 
         let isLink = e && e.srcElement && e.srcElement.href && e.srcElement.href.length > 0 ? true : false;
 
@@ -827,7 +827,7 @@ export default class ReactListItems extends React.Component<IReactListItemsProps
         let showIndex: any | false = doesObjectExistInArray(this.props.items, key, val, false);
         if (showIndex !== false ) {
             panelItem = this.props.items[showIndex];
-            console.log('showPanelPropsItem', panelItem );
+            // console.log('showPanelPropsItem', panelItem );
         }
         return panelItem;
 

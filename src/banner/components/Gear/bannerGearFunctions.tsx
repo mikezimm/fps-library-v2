@@ -128,8 +128,9 @@ export function bannerSettingsContent( bannerProps: IWebpartBannerProps, forceNa
   if ( bannerCommandStyles && bannerCommandStyles.background ) { bannerCommandStyles.background = 'transparent'; }
   if ( bannerCommandStyles && bannerCommandStyles.backgroundColor ) { bannerCommandStyles.backgroundColor = 'transparent'; }
 
-  let addAndCustomizePages = pageContext.web.permissions.hasPermission( SPPermission.addAndCustomizePages );
-  console.log('Current user can addAndCustomizePages', addAndCustomizePages );
+  // Commenting out since it only seems to add to console.  https://github.com/mikezimm/fps-library-v2/issues/39
+  // let addAndCustomizePages = pageContext.web.permissions.hasPermission( SPPermission.addAndCustomizePages );
+  // console.log('Current user can addAndCustomizePages', addAndCustomizePages );
 
   let showAdmin = legacyPageContext.isSiteAdmin === true ? true : false;
   let siteUrl = pageContext.site.absoluteUrl;

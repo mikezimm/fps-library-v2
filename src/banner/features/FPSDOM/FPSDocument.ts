@@ -128,11 +128,13 @@ export function createFPSWindowProps() {
       toolBar: initializeMinimalStyle( defToolBarTitle, defWpInstanceID, 'display', null ),
     };
     thisWindow.FPSOptions = fpsWindowProps;
+    // https://github.com/mikezimm/fps-library-v2/issues/39
+    console.log('winFPS createWinProps', didThis, thisWindow.FPSOptions );
 
   } else {
 
   }
-  console.log('winFPS createWinProps', didThis, thisWindow.FPSOptions );
+  
   return thisWindow.FPSOptions;
 
 }

@@ -12,6 +12,7 @@ import { IPinMeState } from '../features/PinMe/Interfaces';
 import { bannerSettingsContent } from '../components/Gear/bannerGearFunctions';
 import { ISiteThemes } from '../../common/commandStyles/ISiteThemeChoices';
 import { getThemeClass } from '../../common/commandStyles/ISiteThemeChoices';
+import { check4Gulp } from '@mikezimm/fps-pnp2/lib/services/sp/CheckGulping';
 
 
 export function mainBannerContent( bannerProps: IWebpartBannerProps, forceNarrowStyles: boolean, siteThemes: ISiteThemes,
@@ -171,7 +172,7 @@ export function mainBannerContent( bannerProps: IWebpartBannerProps, forceNarrow
 
 
   let showSettingStyle = showSettingsAsPivot === true ? 'show-settings show-settings-pivot' : 'show-settings show-settings-flex';
-  console.log('showSettingStyle ~ 326', showSettingStyle );
+  // if ( check4Gulp() === true ) console.log('showSettingStyle ~ 326', showSettingStyle );
 
   let bannerContent = 
   <div>
