@@ -42,9 +42,11 @@ export function FPSPinMePropsGroupX( thisWPClass: IThisFPSWebPartClass ) : IProp
     ]
   }
 
+  const expandGroup: boolean = thisWPClass._repoLink.desc && thisWPClass._repoLink.desc.toLowerCase().indexOf( 'pageinfo' ) > -1 ? true : false;
   const returnGroup = {
     groupName: "Pin Me",
-    groupFields: fields 
+    groupFields: fields ,
+    isCollapsed: expandGroup ,
   }
 
   return returnGroup;
