@@ -4,7 +4,8 @@ import { saveErrorToLog } from "../Logging";
 import { IFpsErrorObject } from "./IFpsErrorObject";
 
 export interface IFpsItemsReturn extends IFpsErrorObject {
-  items: any[];
+  items?: any[];
+  item?: any;
 }
 
 export function checkItemsResults ( itemsInput: IFpsItemsReturn, traceString: string, alertMe: boolean , consoleLog: boolean ) : IFpsItemsReturn {

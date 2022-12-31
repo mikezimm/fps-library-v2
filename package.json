@@ -40,7 +40,7 @@
   ],
   "dependencies": {
     "@microsoft/sp-property-pane": "^1.15.2",
-    "@mikezimm/fps-pnp2": "^1.0.25",
+    "@mikezimm/fps-pnp2": "^1.0.27",
     "@mikezimm/fps-styles": "^1.0.11",
     "@pnp/spfx-controls-react": "3.12.0",
     "@pnp/spfx-property-controls": "^3.6.0",
