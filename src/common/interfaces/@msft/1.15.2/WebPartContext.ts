@@ -48,6 +48,7 @@ export class PageContextCopy_15_2 {
         readonly absoluteUrl: string;
         readonly id: any; //Normally this is string or number but is actually Guid here
         readonly isNoScriptEnabled: boolean;
+        readonly serverRequestPath: string; // Added from ALVFinMan
     };
     cultureInfo: {
         /**

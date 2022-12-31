@@ -9,7 +9,7 @@ import { IFPSResultStatus } from '@mikezimm/fps-pnp2/lib/services/sp/IFPSResultS
 import { IFpsErrorObject } from '../Common/IFpsErrorObject';
 
 /**
- * getSourceItems calls the Pnp function to get the results which returns the raw error.
+ * updateCommandItems calls the Pnp function to get the results which returns the raw error.
  * This function then will convert the error into the helpful error and return the standard IItemsError object.
  * 
  * @param sourceProps 

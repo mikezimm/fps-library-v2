@@ -4,6 +4,7 @@ import { IOrderByBoolean, IMinFetchProps } from "@mikezimm/fps-pnp2/lib/services
 import { ISourceProps } from './Interface';
 import { checkItemsResults, IFpsItemsReturn } from '../Common/CheckItemsResults';
 import { ISeriesSortObject } from "../../logic/indexes/ArraySortingNumbers";
+import { getExpandColumns } from "../Lists/getVX/getExpandV2";
 
 export interface IMinSourceFetchProps {
   webUrl: string;
@@ -31,6 +32,10 @@ export async function getSourceItems( sourceProps: ISourceProps, alertMe: boolea
     prop: sourceProps.orderBy.prop,
     asc: sourceProps.orderBy.asc ? sourceProps.orderBy.asc : sourceProps.orderBy.order === 'dec' ? false : true,
   };
+
+  if ( !sourceProps.expandThese || sourceProps.expandThese.length === 0 ) {
+    sourceProps.expandThese = getExpandColumns( sourceProps.columns, [] );
+  }
 
   const FetchProps: IMinFetchProps = { ...sourceProps, ...{
       orderByBoolean: orderBy,

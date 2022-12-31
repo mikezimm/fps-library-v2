@@ -16,6 +16,7 @@ NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 - fix a couple check4Gulp imports that pull in pnp2
 - update PinMeGroup to only auto-expand on PageInfo for now
 - add getNextIndex function from FadeCarousel component to src\logic\Arrays\searching\getNextIndex.ts
+- update getSourceItems to automatically create expandColumns from selectColumns if it is empty - ALVFinMan
 
 ## 1.0.79 - 2022-Dec-23: fetch attacments pnpv2 update
 update fetch attachments from issue:  https://github.com/mikezimm/drilldown7/issues/302
