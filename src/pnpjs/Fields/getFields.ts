@@ -16,7 +16,7 @@ export async function getListFields( minFetchListProps: IMinFetchListProps, aler
 
   const itemsInput: IItemsErrorObj = await fetchFields( minFetchListProps );
 
-  const result : IFpsFieldsReturn = checkItemsResults( itemsInput, `fps-library-v2:  getListFields ~ 19`, alertMe, consoleLog );
+  const result : IFpsFieldsReturn = checkItemsResults( itemsInput, `fps-library-v2:  getListFields ~ 19`, alertMe, consoleLog ) as any;  // added as any to fix compile error due to adding item as optional to IFPSItemsReturn
 
   return result;
 

@@ -22,7 +22,7 @@ export async function fetchFpsItemAttachments ( webUrl: string, listTitle: strin
 
   const initialResult: IAttachmentsErrorObj = await fetchItemAttachments( fetchProps );
 
-  const result: IFpsAttachmentsReturn = checkItemsResults( initialResult, `fps-library-v2: fetchItemAttachmentsPnp ~ 24`, alertMe, consoleLog );
+  const result: IFpsAttachmentsReturn = checkItemsResults( initialResult, `fps-library-v2: fetchItemAttachmentsPnp ~ 24`, alertMe, consoleLog ) as any;  // added as any to fix compile error due to adding item as optional to IFPSItemsReturn
 
   return result;
 

@@ -16,7 +16,7 @@ export async function getListViews( minFetchListProps: IMinFetchListProps, alert
 
   const itemsInput: IItemsErrorObj = await fetchViews( minFetchListProps );
 
-  const result : IFpsViewsReturn = checkItemsResults( itemsInput, `fps-library-v2: getListViews ~ 19`, alertMe, consoleLog );
+  const result : IFpsViewsReturn = checkItemsResults( itemsInput, `fps-library-v2: getListViews ~ 19`, alertMe, consoleLog ) as any;  // added as any to fix compile error due to adding item as optional to IFPSItemsReturn
 
   return result;
 
