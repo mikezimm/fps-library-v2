@@ -5,18 +5,19 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.79
+npm install @mikezimm/fps-library-v2@1.0.80
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
-## 1.0.80 - 2022-Dec-23: clean up console.logs
+## 1.0.80 - 2022-Dec-31: clean up console.logs, ALVFinMan fetches
 - remove unneccessary console.logs
 - fix a couple check4Gulp imports that pull in pnp2
 - update PinMeGroup to only auto-expand on PageInfo for now
 - add getNextIndex function from FadeCarousel component to src\logic\Arrays\searching\getNextIndex.ts
 - update getSourceItems to automatically create expandColumns from selectColumns if it is empty - ALVFinMan
+- add fetchFpsPageAsXML and fetchFpsItemAsXML to fetch Modern Page content
 
 ## 1.0.79 - 2022-Dec-23: fetch attacments pnpv2 update
 update fetch attachments from issue:  https://github.com/mikezimm/drilldown7/issues/302

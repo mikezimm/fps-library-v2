@@ -5,7 +5,7 @@ import { IFpsErrorObject } from "./IFpsErrorObject";
 
 export interface IFpsItemsReturn extends IFpsErrorObject {
   items?: any[];
-  item?: any;
+  item?: any; // Added this so I could return
 }
 
 export function checkItemsResults ( itemsInput: IFpsItemsReturn, traceString: string, alertMe: boolean , consoleLog: boolean ) : IFpsItemsReturn {

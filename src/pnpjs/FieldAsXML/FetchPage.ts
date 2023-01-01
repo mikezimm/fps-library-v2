@@ -1,11 +1,16 @@
+
 import { ISimpleLink } from '../../logic/Links/Interfaces';
-import { IFpsFieldAsXMLReturn, fetchFpsItemAsXML } from './FetchFieldAsXML';
+import { IFpsFieldAsXMLReturn, fetchFpsItemAsXML } from './FetchItem';
 
 export interface IFpsPageAsXML extends Partial<any> {
   CanvasContent1?: string;
   LayoutsWebpartsContent?: string;
   BannerImageUrl?: ISimpleLink;
   WikiField?: any;
+  Title: string;
+  Description: string;
+  FileRef: string;
+  FileLeafRef: string;
 }
 
 export interface IFpsPageAsXMLReturn extends IFpsFieldAsXMLReturn {

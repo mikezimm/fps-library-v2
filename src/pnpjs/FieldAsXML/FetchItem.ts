@@ -1,6 +1,4 @@
 
-import * as React from 'react';
-
 import { fetchItemAsHTML, IMinFetchItemAsXMLProps} from '@mikezimm/fps-pnp2/lib/services/sp/fetch/items/fieldAsHTML';
 import { checkItemsResults, } from '../Common/CheckItemsResults';
 import { IFpsErrorObject } from '../Common/IFpsErrorObject';
