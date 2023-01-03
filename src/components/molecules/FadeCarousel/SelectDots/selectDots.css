@@ -1,0 +1,48 @@
+
+.fpsDotsContainer {
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+}
+
+.fadeInDots {
+
+  font-size: 20px;
+  color: black;
+
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: center;
+
+  /* -webkit-transition: opacity 0.5s;
+  transition:all 0.7s ease; */
+}
+
+.fadeInDots i {
+  margin: 0px 5px;
+  padding: 5px;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s;
+  transition:all 0.3s ease;
+}
+
+.fpsSelectDot {
+  opacity: 1;
+}
+
+.fpsUnSelectDot {
+  opacity: .3;
+}
+
+.fpsUnSelectDot:hover {
+  opacity: .6;
+}
+
+
+.dotLabel {
+  color: black;
+  grid-column: 1 / 4;
+  grid-row: 3 / 3;
+  cursor: default;
+}

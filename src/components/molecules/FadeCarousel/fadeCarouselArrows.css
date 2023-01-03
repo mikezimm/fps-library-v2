@@ -1,0 +1,43 @@
+
+.fpsFadeArrow {
+  opacity: .2;
+  background: lightgray;
+  /* Added transition to ease up opacity */
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  z-index: 1;
+
+  height: 125px;
+  cursor: pointer;
+}
+
+.fpsFadeArrow:hover {
+  opacity: .7 !important;
+  background: lightgray;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.container:hover .fpsFadeArrow {
+  opacity: .4;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.fpsFadeArrow i {
+  font-size: 48px;
+  padding: 38px 0px;
+  font-weight: bolder;
+  color: black;
+
+}
+
+.fpsFadeArrowL {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+
+.fpsFadeArrowR {
+  grid-column: 3 / 3;
+  grid-row: 1 / 1;
+}
