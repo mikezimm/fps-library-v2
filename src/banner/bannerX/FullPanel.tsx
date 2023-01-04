@@ -12,7 +12,7 @@ import { getHistoryContent } from '../features/WebPartHistory/HistoryContent';
 import { IFPSWindow } from '../../common/interfaces/fps/Window';
 
 
-const HX = '';  //2022-01-31: Added Pivot Tiles
+const HX = 'OOTBHelpPanel';  //2022-01-31: Added Pivot Tiles
 
 const H0 = 'Why';  //2022-01-31: Added Pivot Tiles
 const H1 = 'Getting started';  //Templates
@@ -180,7 +180,7 @@ export function getFullPanel (  bannerProps: IWebpartBannerProps, selectedKey: s
           onLinkClick={ _selectedIndex }
       > 
         {/* changed null to undefined :  https://github.com/mikezimm/ALVFinMan/issues/171 */}
-        { replacePanelHTML == ''                ? undefined : <PivotItem headerText={HX} ariaLabel={HX} title={HX} itemKey={HX} itemIcon={ 'SunQuestionMark' }/> }
+        { replacePanelHTML == ''                ? undefined : <PivotItem headerText={undefined} ariaLabel={HX} title={HX} itemKey={HX} itemIcon={ 'SunQuestionMark' }/> }
 
         {/* 2022-12-20:  Updated all these to be !contentPages to resulve this issue:
               https://github.com/mikezimm/fps-library-v2/issues/9

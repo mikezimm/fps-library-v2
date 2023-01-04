@@ -11,6 +11,9 @@ npm install @mikezimm/fps-library-v2@1.0.81
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
+## 1.0.82 - 2023-Jan-03: ALVFinMan components
+- fix Banner Panel default tab to be OOTBHelpPanel
+
 ## 1.0.81 - 2023-Jan-03: ALVFinMan components
 - added makeBubbleElementFromBubbles, IMinTeachBubble to src/components/atoms/TeachBubble
 - refactored bubbles to include content element

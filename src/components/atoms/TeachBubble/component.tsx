@@ -11,7 +11,7 @@ export function makeBubbleElementFromBubbles( teachBubble: number, TeachBubbleAr
   const theBubble: IMinTeachBubble = TeachBubbleArray[ teachBubble ];
   const nextBubble: number = teachBubble === TeachBubbleArray.length -1 ? 0 : teachBubble + 1;
   const prevBubble: number = teachBubble === 0 ? TeachBubbleArray.length -1 : teachBubble - 1;
-  console.log( `HomeTeachingBubbles:` , teachBubble , nextBubble, prevBubble );
+  // console.log( `HomeTeachingBubbles:` , teachBubble , nextBubble, prevBubble );
   const Bubble: JSX.Element = <div>
       <TeachingBubble
         target={ theBubble.target }

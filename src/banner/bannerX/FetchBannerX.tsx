@@ -179,7 +179,8 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
     this.state = {
       showPanel: false,
       // keySiteProps: keySiteProps,
-      selectedKey: this.props.replacePanelHTML ? pivotHeadingX : pivotHeading0,    //2022-01-31: Added Pivot Tiles
+      // selectedKey: this.props.replacePanelHTML ? pivotHeadingX : pivotHeading0,    //2022-01-31: Added Pivot Tiles
+      selectedKey: pivotHeadingX,    //2023-01-03:  Set default to Help Panel
       panelType: PanelType.medium,
       showSettings: false,
       expandoramicMode: expandoProps.enableExpandoramic === true && expandoProps.expandoDefault === true ? true : false ,
@@ -532,7 +533,8 @@ export default class FetchBanner extends React.Component<IFetchBannerXProps, IFe
     this.setState({
       showSettings: newSetting,
       // https://github.com/mikezimm/fps-library-v2/issues/32
-      showEasyPages: newSetting === true ? false : this.state.showSettings, });
+      showEasyPages: newSetting === true ? false : this.state.showEasyPages, });
+      // showEasyPages: newSetting === true ? false : this.state.showSettings, });
    }
 
 	private _closePanel ( )  {
