@@ -3,7 +3,7 @@ import * as React from 'react';
 import { convertIssuesMarkdownStringToSpan } from '../../../components/atoms/Elements/markdown';
 import { IRepoLinks } from '../../../components/atoms/Links/CreateLinks';
 
-export function createAboutRow(date: string, version: string, focus: any, repoLinks: IRepoLinks | null) {
+export function createAboutRow(date: string, version: string, focus: any, repoLinks: IRepoLinks | null) : JSX.Element[] {
 
   let fullFocus = convertIssuesMarkdownStringToSpan(focus, repoLinks);
 
@@ -13,3 +13,4 @@ export function createAboutRow(date: string, version: string, focus: any, repoLi
 
   return tds;
 }
+

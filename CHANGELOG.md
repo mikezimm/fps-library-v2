@@ -5,14 +5,15 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.81
+npm install @mikezimm/fps-library-v2@1.0.82
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
-## 1.0.82 - 2023-Jan-03: ALVFinMan components
+## 1.0.82 - 2023-Jan-04: Banner updates
 - fix Banner Panel default tab to be OOTBHelpPanel
+- add createWhyRow for the Whyme page
 
 ## 1.0.81 - 2023-Jan-03: ALVFinMan components
 - added makeBubbleElementFromBubbles, IMinTeachBubble to src/components/atoms/TeachBubble
