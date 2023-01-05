@@ -5,11 +5,15 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.82
+npm install @mikezimm/fps-library-v2@1.0.83
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.83 - 2023-Jan-04: SecureScript IFPSWindow
+- add to IFPSWindow: _spPageContextInfo?: LegacyPageContextCopy_15_2;
+- add to IFPSWindow: _pageContextInfo?: PageContextCopy_15_2;
 
 ## 1.0.82 - 2023-Jan-04: Banner updates
 - fix Banner Panel default tab to be OOTBHelpPanel
