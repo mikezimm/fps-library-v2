@@ -20,6 +20,7 @@ import { createEasyIconsWPProps } from "../../components/atoms/EasyIcons/createE
 import { createKeySiteProps } from "../components/Gear/CreateKeySiteProps";
 import { IThisFPSWebPartClass } from "./IThisFPSWebPartClass";
 import { IMinWPFieldPanelProps } from "../../components/molecules/FieldPanel/components/IMinWPFieldPanelProps";
+import { check4Tricks } from "./functions/showTricks";
 
 
 export interface IMainWPBannerSetupX {
@@ -60,15 +61,16 @@ export function mainWebPartRenderBannerSetupX( setup: IMainWPBannerSetupX ) : IW
  *                                                      
  */
 
-
-  let showTricks: any = false;
-  setup.main._trickyEmailsAll.map( getsTricks => {
-    if ( pageContext.user && pageContext.user.loginName && pageContext.user.loginName.toLowerCase().indexOf( getsTricks ) > -1 ) { 
-      showTricks = true ;
-      properties.showRepoLinks = true; //Always show these users repo links
-    }
-    } );
-
+  //
+  // let showTricks: any = false;
+  // setup.main._trickyEmailsAll.map( getsTricks => {
+  //   if ( pageContext.user && pageContext.user.loginName && pageContext.user.loginName.toLowerCase().indexOf( getsTricks ) > -1 ) { 
+  //     showTricks = true ;
+  //     properties.showRepoLinks = true; //Always show these users repo links
+  //   }
+  //   } );
+  const showTricks: boolean = check4Tricks( setup.main._trickyEmailsAll, pageContext.user );
+  properties.showRepoLinks = showTricks;
 
   /***
  *    db   db d88888b db      d8888b.      d8888b.  .d8b.  d8b   db d88888b db      

@@ -11,6 +11,15 @@ npm install @mikezimm/fps-library-v2@1.0.83
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
+## 1.0.84 - 2023-Jan-05: SecureScript define PageContext subclasses
+- create check4Tricks to standardize checking for showTricks in here and in web part
+- added to PageContextCopy_15_2 for better typing ability
+    list: PageContextCopy_15_2_List;
+    user: PageContextCopy_15_2_User;
+    web: PageContextCopy_15_2_Web;
+    site: PageContextCopy_15_2_Site;
+    cultureInfo: PageContextCopy_15_2_CulturInfo;
+
 ## 1.0.83 - 2023-Jan-04: SecureScript IFPSWindow
 - add to IFPSWindow: _spPageContextInfo?: LegacyPageContextCopy_15_2;
 - add to IFPSWindow: _pageContextInfo?: PageContextCopy_15_2;

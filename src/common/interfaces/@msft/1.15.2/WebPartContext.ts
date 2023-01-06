@@ -13,44 +13,40 @@ export class LegacyPageContextCopy_15_2 {
     isArchived: boolean;
     webTime24: boolean;
 }
-export class PageContextCopy_15_2 {
-    listItem: {
-        readonly id: number;
-    };
-    list: {
-        readonly title: string;
-        readonly id: any; //Normally this is string or number but is actually Guid here
-        readonly serverRelativeUrl: string;
-    };
-    user: {
-        readonly displayName: string;
-        readonly loginName: string;
-        readonly email: string;
-        readonly preferUserTimeZone: boolean;
-        Name?: string;
-        LoginName?: string;
-        imageUrl?: string;
-        PrincipalType?: number | undefined;
-        isExternalGuestUser: boolean;
-    };
-    web: {
-        readonly title: string;
-        readonly description: string;
-        readonly serverRelativeUrl: string;
-        readonly id: any; //Normally this is string or number but is actually Guid here
-        readonly absoluteUrl: string;
-        readonly language: number;
-        readonly languageName: string;
-        readonly logoUrl: string;
-        permissions: any;
-    };
-    site: {
-        readonly absoluteUrl: string;
-        readonly id: any; //Normally this is string or number but is actually Guid here
-        readonly isNoScriptEnabled: boolean;
-        readonly serverRequestPath: string; // Added from ALVFinMan
-    };
-    cultureInfo: {
+
+export class PageContextCopy_15_2_User {
+  readonly displayName: string;
+  readonly loginName: string;
+  readonly email: string;
+  readonly preferUserTimeZone: boolean;
+  Name?: string;
+  LoginName?: string;
+  imageUrl?: string;
+  PrincipalType?: number | undefined;
+  isExternalGuestUser: boolean;
+}
+
+
+export class PageContextCopy_15_2_Web {
+  readonly title: string;
+  readonly description: string;
+  readonly serverRelativeUrl: string;
+  readonly id: any; //Normally this is string or number but is actually Guid here
+  readonly absoluteUrl: string;
+  readonly language: number;
+  readonly languageName: string;
+  readonly logoUrl: string;
+  permissions: any;
+}
+
+export class PageContextCopy_15_2_Site {
+  readonly absoluteUrl: string;
+  readonly id: any; //Normally this is string or number but is actually Guid here
+  readonly isNoScriptEnabled: boolean;
+  readonly serverRequestPath: string; // Added from ALVFinMan
+}
+
+export class PageContextCopy_15_2_CulturInfo {
         /**
          * This string determines the language default format for dates, times, numbers, currency values,
          * the sorting order of text, casing conventions, and string comparisons.
@@ -74,7 +70,23 @@ export class PageContextCopy_15_2 {
         * information to translate the word "hello" to "hola".
         */
         readonly currentUICultureName: string;
+}
+
+export class PageContextCopy_15_2_List {
+  readonly title: string;
+  readonly id: any; //Normally this is string or number but is actually Guid here
+  readonly serverRelativeUrl: string;
+}
+
+export class PageContextCopy_15_2 {
+    listItem: {
+        readonly id: number;
     };
+    list: PageContextCopy_15_2_List;
+    user: PageContextCopy_15_2_User;
+    web: PageContextCopy_15_2_Web;
+    site: PageContextCopy_15_2_Site;
+    cultureInfo: PageContextCopy_15_2_CulturInfo;
     legacyPageContext: LegacyPageContextCopy_15_2;
 }
 
