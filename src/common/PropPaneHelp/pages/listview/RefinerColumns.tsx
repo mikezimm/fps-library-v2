@@ -33,7 +33,7 @@ export function getHelpRefinerColumns ( ) : JSX.Element {
     </div>
   </PivotItem>
   ;
- 
+
   return WebPartHelpElement;
 
 }

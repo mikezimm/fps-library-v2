@@ -5,11 +5,18 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.84
+npm install @mikezimm/fps-library-v2@1.0.85
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.86 - 2023-Jan-05: Drilldown HelpPanel updates
+- update PinMeGroup to not expand:  https://github.com/mikezimm/drilldown7/issues/304
+
+
+## 1.0.85 - 2023-Jan-05: Drilldown HelpPanel updates
+- update propPaneHelp escaped strings that look funny in page:  https://github.com/mikezimm/drilldown7/issues/289
 
 ## 1.0.84 - 2023-Jan-05: SecureScript define PageContext subclasses
 - create check4Tricks to standardize checking for showTricks in here and in web part

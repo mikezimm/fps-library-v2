@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { escape } from '@microsoft/sp-lodash-subset';
 
 import { PivotItem, } from 'office-ui-fabric-react/lib/Pivot';
 import { IRefinerRulesStrs, IRefinerRulesInts, IRefinerRulesNums, IRefinerRulesTime, IRefinerRulesUser, IRefinerRulesEXPE, IRefinerRulesNone } from '../../../../components/interfaces/Refiners/IRefiners';
