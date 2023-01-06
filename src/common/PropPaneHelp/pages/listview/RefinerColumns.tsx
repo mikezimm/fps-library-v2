@@ -9,7 +9,7 @@ export function getHelpRefinerColumns ( ) : JSX.Element {
 
   const WebPartHelpElement = <PivotItem headerText={ 'Refiner Columns' } > 
     <div className={ 'fps-pph-content' }>
-      <div className={ 'fps-pph-topic' }>{escape(`Setting the Refiner 'Column Value'`)}</div>
+      <div className={ 'fps-pph-topic' }>{`Setting the Refiner 'Column Value'`}</div>
       <div><mark><b>NOTE:</b></mark> ColumnNames in this webpart <b>MUST BE Internal Column names</b>.</div>
       <div><b>Internal Column names</b> ARE NOT the Column Titles you see. { LinkFindInternalName }</div>
       <div className={ 'fps-pph-topic' }>Simple column types (Text, Date, Number, Single/Multi Select Choice)</div>
@@ -19,7 +19,7 @@ export function getHelpRefinerColumns ( ) : JSX.Element {
       {/* <div>User columns (Single/Multi) on the main list (can not be part of lookup column)</div> */}
 
       <div className={ 'fps-pph-topic' }>{escape(`User columns (Single/Multi) on the main list (can not be part of lookup column)`)}</div>
-      <div><b>UserColumnName/Title</b>{escape(` - /Title shows the person's Name`)}</div>
+      <div><b>UserColumnName/Title</b>{` - /Title shows the person's Name`}</div>
       <div>See the Users tab in this page for more information on using User columns</div>
 
       <div className={ 'fps-pph-topic' }>Lookup columns (Single/Multi) - that are brought in under the LookupColumn</div>
@@ -27,7 +27,7 @@ export function getHelpRefinerColumns ( ) : JSX.Element {
       <div><b>LookupColumnName/OtherField</b> - /OtherField is the InternalColumnName of the lookup column from the other list</div>
 
       <div className={ 'fps-pph-topic' } style={{ textDecoration: 'underline'}}>Example with real column names</div> 
-      <div style={{ paddingTop: '8px'}}>{escape(`Say you have a lookup column like 'CustomerPlant' which has a Title column (Plant name) and Country column (where it is located)`)}</div>
+      <div style={{ paddingTop: '8px'}}>{`Say you have a lookup column like 'CustomerPlant' which has a Title column (Plant name) and Country column (where it is located)`}</div>
       <div>To show Customer Plant Title, use <b>CustomerPlant/Title</b></div>
       <div>To show Customer Plant Country, use <b>CustomerPlant/Country</b></div>
     </div>

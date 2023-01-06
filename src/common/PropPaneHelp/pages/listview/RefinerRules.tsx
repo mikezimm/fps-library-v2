@@ -13,8 +13,8 @@ export function getHelpRefinerRules ( ) : JSX.Element {
   <div className={ 'fps-pph-content' }>
       <div className={ 'fps-pph-topic' }>Rules are like calculated columns without the work - Only applies to refiners.</div>
       <div><b>Example:</b>  If you have a date column, actual dates or times are not good refiners because they typically will have to many values to choose from.<br/>
-      {escape(`However if you apply a rule like 'groupByYears', it will bucket all your items into years based on the values in the column.`)}<br/></div>
-      <div><b>NOTE:</b>{escape(`  The web part only shows refiners based on the items it intially reads in. So in the case of 'groupByYears', `)}<b>you will not see a year if there are no items for that year</b>.</div>
+      {`However if you apply a rule like 'groupByYears', it will bucket all your items into years based on the values in the column.`}<br/></div>
+      <div><b>NOTE:</b>{`  The web part only shows refiners based on the items it intially reads in. So in the case of 'groupByYears', `}<b>you will not see a year if there are no items for that year</b>.</div>
       <div><b>parseBy...</b> will take a string column and create Refiners by splitting the string by commas and semi-colons.</div>
       <div><b>groupBy...</b> will take number or date column values and group them into larger buckets.</div>
       <div>Generally speaking, only select one per refiner.</div>

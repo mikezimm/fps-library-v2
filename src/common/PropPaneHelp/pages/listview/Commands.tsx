@@ -70,7 +70,7 @@ export function getHelpCommands ( bannerProps: IWebpartBannerProps, ) : JSX.Elem
                 <li>For simplicity, this portion just shows the updateItem object: fields that are updated.</li>
                 <div style={{height: '15px' }}/>
                 <li><mark>NOTE: </mark> <b>Quotes</b> are required per the example. <br/>All column names are <b>Case Sensitive</b>!</li>
-                  <li>Use the <b>{escape(`"{{append rich stamp required}}"`)}</b> syntax to prompt user for Comments or Text
+                  <li>Use the <b>{`"{{append rich stamp required}}"`}</b> syntax to prompt user for Comments or Text
                     <ul>
                       <li>Can include any or all of the above keywords inside the curley braces</li>
                       <li>use <b>append</b> to add new text to the top of an existing multi-line text field</li>

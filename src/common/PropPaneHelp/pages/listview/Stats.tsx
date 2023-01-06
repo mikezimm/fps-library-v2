@@ -37,15 +37,15 @@ export function getHelpStats ( bannerProps: IWebpartBannerProps, ) : JSX.Element
               <li><b>primaryField:</b> InternalColumnName</li>
               <li><b>title:</b> Title above the chart</li>
               <li><b>stat:</b> What math operation you want to do on the primaryField</li>
-              <div>{escape(`Available stats: 'sum' , 'avg' , 'max' , 'min' , 'count', 'daysAgo' , 'monthsAgo' , 'eval'`)}</div>
+              <div>{`Available stats: 'sum' , 'avg' , 'max' , 'min' , 'count', 'daysAgo' , 'monthsAgo' , 'eval'`}</div>
 
               <li><b>chartTypes:</b> Differnt types of charts you toggle through when you click on the chart bars.</li>
-              <div>{escape(`Available types: 'pareto-asc' | 'pareto-dec' | 'pareto-labels' | 'stacked-column-labels' | 'stacked-column-dec' | 'stacked-column-asc' | 'kpi-tiles'`)}</div>
+              <div>{`Available types: 'pareto-asc' | 'pareto-dec' | 'pareto-labels' | 'stacked-column-labels' | 'stacked-column-dec' | 'stacked-column-asc' | 'kpi-tiles'`}</div>
               <div>The best advice for the types is just try some and see what they do {`:)`}</div>
             </ul>
             <div className={ 'fps-pph-topic' }>The example shown here will:</div>
             <ol>
-              <li>{escape(`get the field called 'Id'`)}</li>
+              <li>{`get the field called 'Id'`}</li>
               <li>get a count of the items (broken down by your refiner categories)</li>
               <li>first show a pareto chart decending by the count (highest total count per refiner on top)</li>
               <li>If you click on a bar in the chart, it will toggle between a pareto chart and a stacked Horizontal bar chart</li>
