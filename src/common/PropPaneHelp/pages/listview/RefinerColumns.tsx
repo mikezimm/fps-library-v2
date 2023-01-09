@@ -18,7 +18,7 @@ export function getHelpRefinerColumns ( ) : JSX.Element {
 
       {/* <div>User columns (Single/Multi) on the main list (can not be part of lookup column)</div> */}
 
-      <div className={ 'fps-pph-topic' }>{escape(`User columns (Single/Multi) on the main list (can not be part of lookup column)`)}</div>
+      <div className={ 'fps-pph-topic' }>{`User columns (Single/Multi) on the main list (can not be part of lookup column)`}</div>
       <div><b>UserColumnName/Title</b>{` - /Title shows the person's Name`}</div>
       <div>See the Users tab in this page for more information on using User columns</div>
 

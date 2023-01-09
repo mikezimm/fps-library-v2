@@ -51,8 +51,8 @@ export function getHelpStringFunctions ( ) : JSX.Element {
       <div>Words ending in Capital D - includes digits so InitalsD includes all Initials AND numbers</div>
       <div>Special Labels { DoNotFetchSpecial.join(', ' ) }</div>
       <div>Special Labels are Created and Modified Date-User labels like:  2022-02-07: BK</div>
-      <div>{escape(`at this time, 'TrimB42ndDot', 'FirstAcronym', 'SecondAcronym' are not implimented :( `)}</div>
-      <div>{escape(`Object. : If string column is parsable JSON:  ColumnName/Object.propKey to get the value for propKey in Text column called 'ColumnName'`)}</div>
+      <div>{`at this time, 'TrimB42ndDot', 'FirstAcronym', 'SecondAcronym' are not implimented :( `}</div>
+      <div>{`Object. : If string column is parsable JSON:  ColumnName/Object.propKey to get the value for propKey in Text column called 'ColumnName'`}</div>
 
     </div>
   </PivotItem> ;

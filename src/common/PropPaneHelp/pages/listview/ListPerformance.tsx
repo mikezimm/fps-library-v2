@@ -9,17 +9,17 @@ export function getHelpListPerformance ( ) : JSX.Element {
 
   const WebPartHelpElement = <PivotItem headerText={ 'Performance' } > 
         <div className={ 'fps-pph-content' }>
-          {/* <div className={ 'fps-pph-topic' }>{escape(`Performance settings`)}</div> */}
+          {/* <div className={ 'fps-pph-topic' }>{`Performance settings`}</div> */}
 
           {/* <div>User columns (Single/Multi) on the main list (can not be part of lookup column)</div> */}
 
-          <div className={ 'fps-pph-topic' }>{escape(`Performance settings`)} on this page require advanced Javascript knowledge</div>
-          <div>{escape(`Please contact your SharePoint team for assistance :)`)}</div>
+          <div className={ 'fps-pph-topic' }>{`Performance settings`} on this page require advanced Javascript knowledge</div>
+          <div>{`Please contact your SharePoint team for assistance :)`}</div>
 
           <div className={ 'fps-pph-topic' }>Rest filter to load only specific items</div>
           <div>Rest filters are applied when the web part fetches the information.</div>
           <div>Pre-filtering the data with a rest filter will improve loading times and reduce data on mobile.</div>
-          <div>In rest filters, <b>{escape(`everything is case sensitive`)}</b> and requires using { LinkFindInternalName }</div>
+          <div>In rest filters, <b>{`everything is case sensitive`}</b> and requires using { LinkFindInternalName }</div>
           <ul>
             <li>{`Status eq '4. Completed'  --- Only retrieve items where Status column equals '4. Completed'`}</li>
             <li>Approver eq [Me]  --- Only retrieve items where Approver column equals currently logged in user</li>

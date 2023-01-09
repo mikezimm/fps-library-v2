@@ -5,11 +5,14 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.86
+npm install @mikezimm/fps-library-v2@1.0.87
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.87 - 2023-Jan-05: Drilldown Prop Pane Help escape fixes
+- numerous places:  replaced escape() with string literals.
 
 ## 1.0.86 - 2023-Jan-05: Drilldown Various updates
 - update PinMeGroup to not expand:  https://github.com/mikezimm/drilldown7/issues/304
