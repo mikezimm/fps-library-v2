@@ -100,5 +100,6 @@ export class WebPartContextCopy_15_2 {
     domElement: any;
     propertyPane: propertyPaneCopy_15_2;
     _pageLayoutType: IPageLayoutType;
+    spHttpClient?: any; // Added for SecureScript when using spHttpClient/SPHttpClient for fetching prop pane values
 }
 //# sourceMappingURL=WebPartContext.d.ts.map
