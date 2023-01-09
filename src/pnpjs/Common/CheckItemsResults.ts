@@ -1,4 +1,5 @@
 import { check4Gulp, } from "@mikezimm/fps-pnp2";
+import { IFPSResultStatus, FPSResultCommonErrors } from "@mikezimm/fps-pnp2/lib/services/sp/IFPSResultStatus";
 import { convertHelpfullError, IHelpfullInput, IHelpfullOutput } from "../../logic/Errors/friendly";
 import { saveErrorToLog } from "../Logging";
 import { IFpsErrorObject } from "./IFpsErrorObject";
@@ -11,7 +12,15 @@ export interface IFpsItemsReturn extends IFpsErrorObject {
 export function checkItemsResults ( itemsInput: IFpsItemsReturn, traceString: string, alertMe: boolean , consoleLog: boolean ) : IFpsItemsReturn {
   //Clean up the raw error and return a human readable result
 
-  if ( itemsInput.e ) {
+  if ( FPSResultCommonErrors.indexOf( itemsInput.e ) > -1 ) {
+    itemsInput.errorInfo = {
+      errObj: itemsInput.e,
+      friendly: itemsInput.e,
+      result: itemsInput.e,
+      returnMess: itemsInput.e,
+    }
+
+  } else if ( itemsInput.e ) {
     const errorInput: IHelpfullInput = { e: itemsInput.e, alertMe:alertMe , consoleLog: consoleLog , traceString: traceString ? traceString : 'fps-library-v2: checkItemsResults ~ 15' , logErrors: true };
     itemsInput.errorInput = errorInput;
 
