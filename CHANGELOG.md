@@ -5,7 +5,7 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.89
+npm install @mikezimm/fps-library-v2@1.0.90
 
 # Changelog
 
@@ -13,6 +13,7 @@ NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
 ## 1.0.90 - 2023-Jan-05: Drilldown Prop Pane Help supportedContacts
 - added console.log whenever onFPSPropPaneClosed automatically updates supportContacts
+- updated onFPSPropPaneClosed to put correct email, name and imageUrl in the prop pane props
 
 ## 1.0.89 - 2023-Jan-05: Drilldown Prop Pane Help supportedContacts
 - https://github.com/mikezimm/SecureScript7/issues/98

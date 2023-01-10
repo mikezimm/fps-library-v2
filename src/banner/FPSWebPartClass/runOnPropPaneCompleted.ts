@@ -12,9 +12,9 @@ export function onFPSPropPaneClosed(  thisWPClass: IThisFPSWebPartClass, ) : Pro
       {
         fullName: thisWPClass._FPSUser.Title ,
         id: thisWPClass._FPSUser.id,
-        email: thisWPClass._FPSUser.Email,
-        login: thisWPClass._FPSUser.Email,
-        imageUrl: thisWPClass._FPSUser.imageUrl,
+        email: thisWPClass._FPSUser.email, // Verified _FPSUser.email was valid as of 2023-01-09 - SPFx v1.15.2
+        login: thisWPClass._FPSUser.name, // Verified _FPSUser.name was valid as of 2023-01-09 - SPFx v1.15.2
+        imageUrl: thisWPClass.context.pageContext.user.imageUrl,  // Verified context.pageContext.user.imageUrl was valid as of 2023-01-09 - SPFx v1.15.2
       }
     ];
     console.log('FPS-onFPSPropPaneClosed... We ADDED you to supportContacts because it can not be left empty:', thisWPClass.properties.supportContacts);
