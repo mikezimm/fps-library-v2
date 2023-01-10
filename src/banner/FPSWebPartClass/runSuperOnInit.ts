@@ -56,7 +56,6 @@ export function runFPSSuperOnInit( thisWPClass: IThisFPSWebPartClass, PreConfigu
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     thisWPClass._FPSUser = getFPSUser( context as any, thisWPClass._trickyEmailsAll, _trickyApp, SPPermission ) ;
 
-
     console.log( 'FPSUser: ', thisWPClass._FPSUser );
 
     expandoOnInit( properties, context.domElement, displayMode );

@@ -9,6 +9,7 @@ import { ILoadPerformance, ILoadPerformanceOps } from '../../components/molecule
 import { IFPSUser } from '../../logic/Users/IUserInterfaces';
 import { webpartInstance } from '../features/FPSDOM/FPSDocument';
 import { IFieldPanelMode } from './IThisFPSWebPartClass';
+import { onFPSPropPaneClosed } from './runOnPropPaneCompleted';
 
 /**
  * REQUIREMENT:  Update wepbart's tsconfig to target 'es6' or higher
@@ -152,5 +153,11 @@ export abstract class FPSBaseClass<TProperties> extends BaseClientSideWebPart<TP
     } else {
       alert(`_saveFieldPanelCommandsFunction is DISABLED: _allowFieldPanel= ${ this._allowFieldPanel} _FieldPanelDesignMode = ${this._FieldPanelDesignMode}`);
     }
+  }
+
+  //This was added in order to solve this issue:   Auto add currnet person to Support Conacts if props are closed and field is empty
+  // https://github.com/mikezimm/SecureScript7/issues/98
+  protected onPropertyPaneConfigurationComplete(): void {
+    onFPSPropPaneClosed( this as any );
   }
 }

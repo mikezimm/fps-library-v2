@@ -5,11 +5,16 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-library-v2@1.0.87
+npm install @mikezimm/fps-library-v2@1.0.89
 
 # Changelog
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
+
+## 1.0.89 - 2023-Jan-05: Drilldown Prop Pane Help supportedContacts
+- add onPropertyPaneConfigurationComplete to Class
+- create onFPSPropPaneClosed which could be called at any time from web part
+
 
 ## 1.0.87 - 2023-Jan-05: Drilldown Prop Pane Help escape fixes
 - numerous places:  replaced escape() with string literals.
