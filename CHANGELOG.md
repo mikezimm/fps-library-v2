@@ -15,6 +15,7 @@ NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 - added console.log whenever onFPSPropPaneClosed automatically updates supportContacts
 
 ## 1.0.89 - 2023-Jan-05: Drilldown Prop Pane Help supportedContacts
+- https://github.com/mikezimm/SecureScript7/issues/98
 - add onPropertyPaneConfigurationComplete to Class
 - create onFPSPropPaneClosed which could be called at any time from web part
 
