@@ -9,9 +9,10 @@ export type IReturnErrorType = 'Actual' | 'FullError' | 'ShortError' | 'EmptyStr
  * @param obj - parent object you want to check
  * @param keys - key array to check (parent.check.this keys are ['check','this'] )
  * @param errReturnType - what to do when there is an error
+ * @param consoleLog - true is default due to being used before.  Set to false to not show in console if it is not neccessary.
  */
 
-export function checkDeepProperty( obj: any, keys: string[] , errReturnType: IReturnErrorType ) : any {
+export function checkDeepProperty( obj: any, keys: string[] , errReturnType: IReturnErrorType, consoleLog: boolean = true ) : any {
 
   if ( !keys || keys.length === 0 ) { return obj; }
   else {
@@ -35,7 +36,7 @@ export function checkDeepProperty( obj: any, keys: string[] , errReturnType: IRe
           else if ( errReturnType === 'EmptyString' ) { returnValue = '' ; }
           else if ( errReturnType === 'FullError' ) { returnValue = `${lastTestedKey} = undef` ; }
           else if ( errReturnType === 'ShortError' ) { returnValue = `...${key} = undef` ; }
-          console.log('Object Error: ~ 106: ', `${lastTestedKey} = undef` );
+          if ( consoleLog === true ) console.log('Object Error: checkDeepProperty ~ 39: ', `${lastTestedKey} = undef` );
 
         } else if ( subObject === null ) {
           isUndefined = true;
@@ -44,7 +45,7 @@ export function checkDeepProperty( obj: any, keys: string[] , errReturnType: IRe
           else if ( errReturnType === 'EmptyString' ) { returnValue = '' ; }
           else if ( errReturnType === 'FullError' ) { returnValue = `${lastTestedKey} = undef` ; }
           else if ( errReturnType === 'ShortError' ) { returnValue = `...${key} = undef` ; }
-          console.log('Object Error: ~ 106: ', `${lastTestedKey} = null` );
+          if ( consoleLog === true ) console.log('Object Error: checkDeepProperty ~ 48: ', `${lastTestedKey} = null` );
 
         } else {
 

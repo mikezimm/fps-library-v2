@@ -276,7 +276,7 @@ export function createItemFunctionProp( staticColumn: string, item: any, default
             trimmedItem = replaceHTMLEntities(trimmedItem);
           }
           let obj = JSON.parse(trimmedItem);
-          singleItemValue = checkDeepProperty(obj, objKeys, 'Actual');
+          singleItemValue = checkDeepProperty(obj, objKeys, 'Actual', false );
 
         } catch (e) {
           // singleItemValue = `${}`;

@@ -15,6 +15,7 @@ NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 - updated importBlockPropsFPS:  added 'supportContacts', 'documentationLinkDesc', 'documentationLinkUrl',
 -    so that if you export/import, it updates the SupportContact to current user and makes them update docs info.
 - updated download error due to unmanaged device to friendly errors:  https://github.com/mikezimm/SecureScript7/issues/67
+- updated checkDeepProperty to allow suppressing console on errors.  https://github.com/mikezimm/drilldown7/issues/316
 
 ## 1.0.90 - 2023-Jan-10: Drilldown Prop Pane Help supportedContacts
 - added console.log whenever onFPSPropPaneClosed automatically updates supportContacts
