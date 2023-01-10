@@ -11,6 +11,9 @@ npm install @mikezimm/fps-library-v2@1.0.89
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
+## 1.0.90 - 2023-Jan-05: Drilldown Prop Pane Help supportedContacts
+- added console.log whenever onFPSPropPaneClosed automatically updates supportContacts
+
 ## 1.0.89 - 2023-Jan-05: Drilldown Prop Pane Help supportedContacts
 - add onPropertyPaneConfigurationComplete to Class
 - create onFPSPropPaneClosed which could be called at any time from web part

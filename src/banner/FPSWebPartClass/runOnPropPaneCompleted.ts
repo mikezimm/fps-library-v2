@@ -17,6 +17,7 @@ export function onFPSPropPaneClosed(  thisWPClass: IThisFPSWebPartClass, ) : Pro
         imageUrl: thisWPClass._FPSUser.imageUrl,
       }
     ];
+    console.log('FPS-onFPSPropPaneClosed... We ADDED you to supportContacts because it can not be left empty:', thisWPClass.properties.supportContacts);
   }
 
 }
