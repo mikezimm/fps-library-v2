@@ -11,24 +11,25 @@ npm install @mikezimm/fps-library-v2@1.0.90
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
-## 1.0.91 - 2023-Jan-05: Drilldown Prop Pane Help supportedContacts
+## 1.0.91 - 2023-Jan-10: SecureScript supportedContacts
 - updated importBlockPropsFPS:  added 'supportContacts', 'documentationLinkDesc', 'documentationLinkUrl',
 -    so that if you export/import, it updates the SupportContact to current user and makes them update docs info.
+- updated download error due to unmanaged device to friendly errors:  https://github.com/mikezimm/SecureScript7/issues/67
 
-## 1.0.90 - 2023-Jan-05: Drilldown Prop Pane Help supportedContacts
+## 1.0.90 - 2023-Jan-10: Drilldown Prop Pane Help supportedContacts
 - added console.log whenever onFPSPropPaneClosed automatically updates supportContacts
 - updated onFPSPropPaneClosed to put correct email, name and imageUrl in the prop pane props
 
-## 1.0.89 - 2023-Jan-05: Drilldown Prop Pane Help supportedContacts
+## 1.0.89 - 2023-Jan-10: Drilldown Prop Pane Help supportedContacts
 - https://github.com/mikezimm/SecureScript7/issues/98
 - add onPropertyPaneConfigurationComplete to Class
 - create onFPSPropPaneClosed which could be called at any time from web part
 
 
-## 1.0.87 - 2023-Jan-05: Drilldown Prop Pane Help escape fixes
+## 1.0.87 - 2023-Jan-10: Drilldown Prop Pane Help escape fixes
 - numerous places:  replaced escape() with string literals.
 
-## 1.0.86 - 2023-Jan-05: Drilldown Various updates
+## 1.0.86 - 2023-Jan-07: Drilldown Various updates
 - update PinMeGroup to not expand:  https://github.com/mikezimm/drilldown7/issues/304
 - add spHttpClient?: any; to WebPartContextCopy_15_2 for typing in SecureScript7 for prop pane calls
 - update npm install @mikezimm/fps-styles@1.0.13 for drilldown styles

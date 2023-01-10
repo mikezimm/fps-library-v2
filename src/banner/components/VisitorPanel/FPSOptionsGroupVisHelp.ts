@@ -18,7 +18,7 @@ import { IMinCustomHelpProps, } from './Interfaces';
     /**
      * FPSBanner3VisHelpGroup - Builds FPS Banner Visitor Help Group:
      * fullPanelAudience, panelMessageDescription1, panelMessageSupport,
-     * panelMessageDocumentation, documentationLinkUrl, documentationLinkDesc,
+     * panelMessageDocumentation, documentationLinkUrl, supportContacts, documentationLinkDesc,
      * panelMessageIfYouStill, supportContacts
      * 
   */

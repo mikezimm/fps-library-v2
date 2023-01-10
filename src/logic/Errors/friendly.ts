@@ -103,6 +103,11 @@ export function convertHelpfullError( inputs: IHelpfullInput ) : IHelpfullOutput
 
   if (result.indexOf('Access denied') > -1 ) { friendlyMessage = 'Double check your access to this resource.'; }
   if (result.indexOf('Failed to fetch') > -1 ) { friendlyMessage = 'This can happen if the web url is not valid.'; }
+
+  // Due to organizational policies:  Added for https://github.com/mikezimm/SecureScript7/issues/67
+  if (result.indexOf('Due to organizational policies') > -1 && result.indexOf('download these resources from this device."') > -1 ) 
+    { friendlyMessage = 'Tenant Policy prevents downloads to an unmanaged device.'; }
+
   if (result.indexOf('A null value was detected in the items of a collection property value') > -1 ) { friendlyMessage= 'This can happen if you are saving a null value where an array is expected... Maybe try saving an empty array instead :).'; }
 
   if (result.indexOf(`An unexpected 'StartObject' node was found when reading from the JSON reader. A 'PrimitiveValue' node was expected.`) > -1 ) { 
