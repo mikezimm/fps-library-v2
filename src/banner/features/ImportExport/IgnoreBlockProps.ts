@@ -6,5 +6,5 @@ export const exportIgnorePropsFPS : string[] = [ 'analyticsList', 'analyticsWeb'
 //Common props to block import
 export const importBlockPropsFPS : string[] = [ 'scenario', 'analyticsList', 'analyticsWeb', 'lastPropDetailChange', 'showBanner' , 
   'showTricks', 'showRepoLinks', 'showExport', 'fpsImportProps', 'fullPanelAudience', 
-  'documentationIsValid', 'requireDocumentation', 'requireContacts', 
+  'documentationIsValid', 'requireDocumentation', 'requireContacts', 'supportContacts', 'documentationLinkDesc', 'documentationLinkUrl',
   'currentWeb', 'loadPerformance', 'webpartHistory', 'pageLayout' ];

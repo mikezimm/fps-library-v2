@@ -11,6 +11,10 @@ npm install @mikezimm/fps-library-v2@1.0.90
 
 NOTE:  TURN BACK ON STRICT NULL CHECKS - turned off for PropPaneCols
 
+## 1.0.91 - 2023-Jan-05: Drilldown Prop Pane Help supportedContacts
+- updated importBlockPropsFPS:  added 'supportContacts', 'documentationLinkDesc', 'documentationLinkUrl',
+-    so that if you export/import, it updates the SupportContact to current user and makes them update docs info.
+
 ## 1.0.90 - 2023-Jan-05: Drilldown Prop Pane Help supportedContacts
 - added console.log whenever onFPSPropPaneClosed automatically updates supportContacts
 - updated onFPSPropPaneClosed to put correct email, name and imageUrl in the prop pane props
